@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="excluir-pedidos-carrinho/style.css">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <title>Excluir Pedidos</title>
+</head>
+<body>
+    <main>
+        <h2>Digite o numero de dias para que os pedidos não pagos sejam excluidos</h2>
+        <form id="excluirPedidosForm">
+            <label for="dias">Número de dias para exclusão:</label>
+            <input type="number" id="dias" name="dias" min="1" required><br><br>
+            <button type="submit">Excluir pedidos não pagos</button>
+        </form>
+    </main>
+
+    <script>
+        // Captura o formulário
+        const form = document.getElementById('excluirPedidosForm');
+
+        // Função que será executada ao enviar o formulário
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Previne o comportamento padrão de envio do formulário
+
+            // Captura o valor do campo de dias
+            const dias = document.getElementById('dias').value;
+
+            // Cria o objeto de dados que será enviado
+            const dados = {
+                dias: parseInt(dias)
+            };
+
+            try {
+                // Envia a requisição POST para o backend
+                const response = await fetch('http://localhost:8080/administrador/excluir/pedidos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                });
+
+                // Verifica se a requisição foi bem-sucedida
+                if (response.ok) {
+                    alert('Todos os pedidos serão excluidos em ' + dias + " dias");
+                } else {
+                    alert('Erro ao excluir pedidos.');
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                alert('Erro ao enviar a requisição.');
+            }
+        });
+    </script>
+</body>
+</html>

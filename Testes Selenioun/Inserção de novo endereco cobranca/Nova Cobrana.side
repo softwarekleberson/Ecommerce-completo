@@ -1,0 +1,401 @@
+{
+  "id": "6570cc55-75b3-4c28-ab00-d37657c3ba22",
+  "version": "2.0",
+  "name": "Nova Cobrança",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "38c3c48e-0a99-4755-80a1-a4343c402d82",
+    "name": "Nova cobrança adicionada",
+    "commands": [{
+      "id": "6f2dc73b-1e46-4773-98c6-97bff9ac6879",
+      "comment": "",
+      "command": "open",
+      "target": "/adicionar-Cobranca.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14c507bc-2cdd-464b-8a51-934aaf646131",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb5f9768-cae5-45d3-9e65-2e80438b8fe7",
+      "comment": "",
+      "command": "click",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77107484-e845-49a8-9180-8f12ef810199",
+      "comment": "",
+      "command": "type",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "eadbe29f-c5e3-4ca7-bda0-ff8933aec01a",
+      "comment": "",
+      "command": "click",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ba09ac5-479f-48ef-84cd-8a1e7f9128d0",
+      "comment": "",
+      "command": "type",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "José saramago"
+    }, {
+      "id": "265ec9d2-0324-4185-b408-54af4d11ea5d",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoResidenciaCobranca",
+      "targets": [
+        ["id=tipoResidenciaCobranca", "id"],
+        ["name=tipoResidenciaCobranca", "name"],
+        ["css=#tipoResidenciaCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "Apartamento"
+    }, {
+      "id": "b4830a93-0bd1-43ab-8435-c0e70f7633f2",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,202.5"
+    }, {
+      "id": "1f0f5e92-95bd-4bab-8b7f-8aec6a5e0b9d",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,202.5"
+    }, {
+      "id": "7b376215-0910-4a73-a535-2bfe7b650329",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,202.5"
+    }, {
+      "id": "63cb2995-69bc-4ae3-852d-db8350591a1b",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoLogradouroCobranca",
+      "targets": [
+        ["id=tipoLogradouroCobranca", "id"],
+        ["name=tipoLogradouroCobranca", "name"],
+        ["css=#tipoLogradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoLogradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Travessa das ovelhas"
+    }, {
+      "id": "588e0c22-2211-4f5d-ba84-0d09370f33fb",
+      "comment": "",
+      "command": "type",
+      "target": "id=logradouroCobranca",
+      "targets": [
+        ["id=logradouroCobranca", "id"],
+        ["name=logradouroCobranca", "name"],
+        ["css=#logradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='logradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "Rua natal"
+    }, {
+      "id": "56b4f014-1e11-457f-8b1b-dd9ef463c695",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroCobranca",
+      "targets": [
+        ["id=numeroCobranca", "id"],
+        ["name=numeroCobranca", "name"],
+        ["css=#numeroCobranca", "css:finder"],
+        ["xpath=//input[@id='numeroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "59779838-6af0-42ee-91c0-e83a48d4f572",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "401.8984375,250.5"
+    }, {
+      "id": "7f1c2e02-e7d1-4777-979e-e88eb4653ef1",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "401.8984375,250.5"
+    }, {
+      "id": "5c0c743c-9372-418c-9001-ccbf73cef598",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "401.8984375,250.5"
+    }, {
+      "id": "f43d65e5-ffd8-40b8-a9a6-e6f71d60f9ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=bairroCobranca",
+      "targets": [
+        ["id=bairroCobranca", "id"],
+        ["name=bairroCobranca", "name"],
+        ["css=#bairroCobranca", "css:finder"],
+        ["xpath=//input[@id='bairroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "vila natal"
+    }, {
+      "id": "83fe9bb2-e37d-4e4f-b3df-c227fefe427f",
+      "comment": "",
+      "command": "click",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02778bd7-58d1-4b72-aec9-b0346179a123",
+      "comment": "",
+      "command": "type",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "08725-320"
+    }, {
+      "id": "30034aed-7671-4eaf-accf-9dfb51dfb8cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[10]", "xpath:idRelative"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": "Mogi das Cruzes"
+    }, {
+      "id": "b1d99a14-d24f-47ca-9f99-36a4f122474c",
+      "comment": "",
+      "command": "type",
+      "target": "id=estadoCobranca",
+      "targets": [
+        ["id=estadoCobranca", "id"],
+        ["name=estadoCobranca", "name"],
+        ["css=#estadoCobranca", "css:finder"],
+        ["xpath=//input[@id='estadoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[11]", "xpath:idRelative"],
+        ["xpath=//input[11]", "xpath:position"]
+      ],
+      "value": "SP"
+    }, {
+      "id": "e5dc0aad-903a-4903-9c8c-8d11456721a5",
+      "comment": "",
+      "command": "type",
+      "target": "id=paisCobranca",
+      "targets": [
+        ["id=paisCobranca", "id"],
+        ["name=paisCobranca", "name"],
+        ["css=#paisCobranca", "css:finder"],
+        ["xpath=//input[@id='paisCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[12]", "xpath:idRelative"],
+        ["xpath=//input[12]", "xpath:position"]
+      ],
+      "value": "Brasil"
+    }, {
+      "id": "c193f1ba-cc6c-4566-bb07-e9a3787c09f7",
+      "comment": "",
+      "command": "type",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "08725320"
+    }, {
+      "id": "8a45d051-5e3d-42df-a4ad-2f3d0f3e46cb",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "394.8984375,391.5"
+    }, {
+      "id": "b1549f19-5202-42a0-90b9-11a6503d1587",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "394.8984375,391.5"
+    }, {
+      "id": "653836d4-3b50-4a18-9530-2a04590f9648",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "394.8984375,391.5"
+    }, {
+      "id": "92bc1f09-85b4-44df-af1a-603a58427d63",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "397.8984375,438.5"
+    }, {
+      "id": "5d8b9fce-ca12-48de-bc14-4e0bd9807faf",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "397.8984375,438.5"
+    }, {
+      "id": "d694eec1-33ab-4775-b4de-86e77d7eca1c",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "397.8984375,438.5"
+    }, {
+      "id": "7f282be9-712c-40c7-b8ff-67a3abf3ae69",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(51)",
+      "targets": [
+        ["css=input:nth-child(51)", "css:finder"],
+        ["xpath=//input[@value='Enviar']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[13]", "xpath:idRelative"],
+        ["xpath=//input[13]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1dba4bba-cebd-42a0-887f-4c1660d6dd03",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["38c3c48e-0a99-4755-80a1-a4343c402d82"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

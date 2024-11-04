@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="devolucao-adm/style.css">
+    <title>Devoluções</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Devoluções</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Devolução</th>
+                    <th>Código Devolução</th>
+                    <th>Código Pedido</th>
+                    <th>Data Pedido Troca</th>
+                    <th>Data Conclusão Troca</th>
+                    <th>Email Adm</th>
+                    <th>Análise Pedido Devolução</th>
+                    <th>Análise Devolução</th>
+                </tr>
+            </thead>
+            <tbody id="devolucoes">
+                <!-- As devoluções serão inseridas aqui dinamicamente -->
+            </tbody>
+
+            <a href="analise-pedido-devolucao.html" target="_blank" rel="noopener noreferrer">Aceitar ou Recusar Devolução</a>
+        </table>
+    </div>
+    
+    <script>
+        // Obtém o ID da devolução da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const devolucaoId = urlParams.get('id') || 1; // Usa 1 como padrão se não houver ID na URL
+        
+        // URL da API com o ID dinâmico
+        const apiUrl = `http://localhost:8080/administrador/devolucoes/${devolucaoId}`;
+
+        // Função para buscar as devoluções
+        async function fetchDevolucoes() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar as devoluções');
+                }
+                const data = await response.json();
+                populateTable(data.content);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Função para popular a tabela com os dados
+        function populateTable(devolucoes) {
+            const devolucoesTable = document.getElementById('devolucoes');
+            devolucoesTable.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
+            
+            devolucoes.forEach(devolucao => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${devolucao.idDevolucao}</td>
+                    <td>${devolucao.codigoDevolucao}</td>
+                    <td>${devolucao.codigoPedido}</td>
+                    <td>${devolucao.dataPedidoTroca}</td>
+                    <td>${devolucao.dataConclusaoTroca ? devolucao.dataConclusaoTroca : 'Não Concluído'}</td>
+                    <td>${devolucao.emailAdm}</td>
+                    <td>${devolucao.analisePedidoDevolucao}</td>
+                    <td>${devolucao.analiseDevolucao}</td>
+                `;
+                devolucoesTable.appendChild(row);
+            });
+        }
+
+        // Chama a função para buscar as devoluções ao carregar a página
+        fetchDevolucoes();
+    </script>
+</body>
+</html>

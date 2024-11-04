@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_17" directorySegmentName="seg_0" id="FBA4A47B-A36F-8ACD-AF22-F22EB9438DDD">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 17:43:22 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<sourcePk>CDF8DE80-CE20-D75D-F399-7913C5E6A10B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5B61FF6C-7D17-D895-CBBB-1EE426214E2B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D7781EE3-27CF-DA9C-D53B-3553E23D2910</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

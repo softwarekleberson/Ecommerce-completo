@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="0EDF79EA-36DA-348A-3086-92EB096A1EB7" name="FKArc_1">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>D847986C-FC33-B800-054C-FCABFB543FEE</table>
+<fkeys>
+<fkeyID>27E5E376-7B3B-5125-C10A-4D17127BDF5D</fkeyID>
+<fkeyID>18637CFF-93B5-7B6F-A598-7ACC0E65C710</fkeyID>
+</fkeys>
+</FKArc>

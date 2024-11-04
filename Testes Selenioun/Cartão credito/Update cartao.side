@@ -1,0 +1,103 @@
+{
+  "id": "e3e41d37-1621-44fc-95e3-e266315dd19a",
+  "version": "2.0",
+  "name": "Update cartao",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "64ab7d17-ffb5-4006-844d-9319cbdf411a",
+    "name": "Update cartão",
+    "commands": [{
+      "id": "690f05ac-7342-4865-9444-e14a88c591ef",
+      "comment": "",
+      "command": "open",
+      "target": "/alterar-cartao.html?cartaoId=1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2609fbd-2f42-4f4e-9775-4a67d8c2d5f5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc373b91-90e6-4fcd-bd45-40230790e6e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=principal",
+      "targets": [
+        ["id=principal", "id"],
+        ["name=principal", "name"],
+        ["css=#principal", "css:finder"],
+        ["xpath=//input[@id='principal']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "724985c6-b210-4c52-a50e-4acae78b6e08",
+      "comment": "",
+      "command": "click",
+      "target": "id=nomeImpresso",
+      "targets": [
+        ["id=nomeImpresso", "id"],
+        ["name=nomeImpresso", "name"],
+        ["css=#nomeImpresso", "css:finder"],
+        ["xpath=//input[@id='nomeImpresso']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35b38348-b8e1-4fd6-a870-e0c787532352",
+      "comment": "",
+      "command": "type",
+      "target": "id=nomeImpresso",
+      "targets": [
+        ["id=nomeImpresso", "id"],
+        ["name=nomeImpresso", "name"],
+        ["css=#nomeImpresso", "css:finder"],
+        ["xpath=//input[@id='nomeImpresso']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Siqueirinha"
+    }, {
+      "id": "0b8a29ec-6d79-4d74-acdb-641d9592a8f7",
+      "comment": "",
+      "command": "type",
+      "target": "id=codigo",
+      "targets": [
+        ["id=codigo", "id"],
+        ["name=codigo", "name"],
+        ["css=#codigo", "css:finder"],
+        ["xpath=//input[@id='codigo']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "999"
+    }, {
+      "id": "49cd557b-f913-4456-99e6-2f995eda604f",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(14)",
+      "targets": [
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@value='Enviar']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8e5c8fdc-a2ad-4544-ab00-abdbf7679f85",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["64ab7d17-ffb5-4006-844d-9319cbdf411a"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

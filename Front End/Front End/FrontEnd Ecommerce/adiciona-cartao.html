@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="cartoes/estilo/adicionar-cartao.css">
+    <title>Adicionar novo cartão</title>
+</head>
+
+<body>
+    <div class="container-imagem">
+        <form id="myForm" autocomplete="on">
+            <a href="cartoes.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+
+            <label for="idCliente">ID Cliente:</label><br>
+            <input type="text" id="idCliente" name="idCliente" required autocapitalize=""><br>
+
+            <label for="principal">Principal:</label><br>
+            <input type="checkbox" id="principal" name="principal" checked><br>
+
+            <label for="numeroCartao">Número do Cartão:</label><br>
+            <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Ex: 1234567899874563" required><br>
+
+            <label for="nomeImpresso">Nome Impresso:</label><br>
+            <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome completo" required autocomplete="name"><br>
+
+            <label for="codigo">Código:</label><br>
+            <input type="text" id="codigo" name="codigo" placeholder="Ex: 123" required><br>
+
+            <label for="dataExpiracao">Data validade</label><br>
+            <input type="date" id="dataExpiracao" name="dataExpiracao" placeholder="Data validade cartão">
+
+            <label for="bandeira">Bandeira:</label><br>
+            <select id="bandeira" name="bandeira">
+                <option value="ELO">ELO</option>
+                <option value="MASTERCARD" selected>Mastercard</option>
+                <option value="VISA">Visa</option>
+            </select><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script src="cartoes/javascript/insert.js"></script>
+</body>
+
+</html>

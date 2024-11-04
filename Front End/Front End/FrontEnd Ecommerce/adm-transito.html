@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Status de Entrega</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .alert {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .alert.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <form id="statusForm">
+        <h2>Atualizar Status de Entrega</h2>
+        <label for="codigo">Código do Pedido:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <button type="submit">Enviar</button>
+        <div id="alert" class="alert"></div>
+    </form>
+
+    <script>
+        document.getElementById('statusForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const codigoPedido = document.getElementById('codigo').value;
+            
+            const dados = {
+                codigo: codigoPedido
+            };
+
+            fetch('http://localhost:8080/administrador/status/entrega/transporte', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+            .then(response => {
+                const alertBox = document.getElementById('alert');
+                if (response.ok) {
+                    alertBox.textContent = 'Status atualizado com sucesso!';
+                    alertBox.className = 'alert success';
+                } else {
+                    throw new Error('Erro ao enviar o pedido');
+                }
+                alertBox.style.display = 'block';
+            })
+            .catch(error => {
+                const alertBox = document.getElementById('alert');
+                alertBox.textContent = 'Ocorreu um erro ao atualizar o status.';
+                alertBox.className = 'alert error';
+                alertBox.style.display = 'block';
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+</body>
+</html>

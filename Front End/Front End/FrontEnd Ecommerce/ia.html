@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de Compras de Livros</title>
+    <style>
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Assistente de Compras de Livros</h2>
+        <form id="shoppingAssistantForm">
+            <!-- Step 1: Gênero -->
+            <div class="step active" id="step1">
+                <label>Qual gênero de livro você prefere?</label><br>
+                <select id="genre" multiple>
+                    <option value="fiction">Ficção</option>
+                    <option value="nonfiction">Não-ficção</option>
+                    <option value="romance">Romance</option>
+                    <option value="mystery">Mistério</option>
+                    <option value="fantasy">Fantasia</option>
+                    <option value="science">Ciência</option>
+                    <option value="biography">Biografia</option>
+                    <option value="selfhelp">Autoajuda</option>
+                    <option value="history">História</option>
+                </select>
+            </div>
+
+            <!-- Step 2: Propósito -->
+            <div class="step" id="step2">
+                <label>Qual o motivo da compra?</label><br>
+                <input type="radio" name="purpose" value="myself"> Para mim mesmo<br>
+                <input type="radio" name="purpose" value="gift"> Para presente<br>
+                <input type="radio" name="purpose" value="study"> Para estudar<br>
+                <input type="radio" name="purpose" value="children"> Para crianças<br>
+                <input type="radio" name="purpose" value="other"> Outro<br>
+            </div>
+
+            <!-- Step 3: Idade do Destinatário -->
+            <div class="step" id="step3">
+                <label>Qual a idade da pessoa que receberá o livro?</label><br>
+                <select id="ageRange">
+                    <option value="0-3">0-3 anos</option>
+                    <option value="4-7">4-7 anos</option>
+                    <option value="8-12">8-12 anos</option>
+                    <option value="13-18">13-18 anos</option>
+                    <option value="adult">Adulto</option>
+                </select>
+            </div>
+
+            <!-- Step 4: Orçamento -->
+            <div class="step" id="step4">
+                <label>Qual o seu orçamento para este livro?</label><br>
+                <input type="number" id="budget" placeholder="Digite seu orçamento em R$">
+            </div>
+
+            <!-- Step 5: Formato Preferido -->
+            <div class="step" id="step5">
+                <label>Você prefere algum formato específico?</label><br>
+                <input type="checkbox" name="format" value="hardcover"> Capa dura<br>
+                <input type="checkbox" name="format" value="paperback"> Capa comum<br>
+                <input type="checkbox" name="format" value="ebook"> E-book<br>
+                <input type="checkbox" name="format" value="audiobook"> Audiobook<br>
+            </div>
+
+            <!-- Step 6: Urgência da Entrega -->
+            <div class="step" id="step6">
+                <label>Você precisa receber o livro rapidamente?</label><br>
+                <input type="radio" name="urgency" value="urgent"> Sim, é urgente (até 3 dias)<br>
+                <input type="radio" name="urgency" value="week"> Dentro de uma semana<br>
+                <input type="radio" name="urgency" value="no_hurry"> Não tenho pressa<br>
+            </div>
+
+            <!-- Step 7: Preferências de Avaliação -->
+            <div class="step" id="step7">
+                <label>Você gostaria de priorizar livros com avaliações altas?</label><br>
+                <input type="radio" name="highRating" value="yes"> Sim<br>
+                <input type="radio" name="highRating" value="no"> Não<br>
+            </div>
+
+            <!-- Step 8: Interesse em Edição Especial -->
+            <div class="step" id="step8">
+                <label>Você tem interesse em edições especiais ou colecionáveis?</label><br>
+                <input type="radio" name="specialEdition" value="yes"> Sim<br>
+                <input type="radio" name="specialEdition" value="no"> Não<br>
+            </div>
+
+            <!-- Step 9: Interesse em Temas Específicos -->
+            <div class="step" id="step9">
+                <label>Está buscando algum tema ou tópico específico?</label><br>
+                <input type="text" id="specificTopic" placeholder="Digite um tema, exemplo: desenvolvimento pessoal">
+            </div>
+
+            <!-- Step 10: Recomendação Personalizada -->
+            <div class="step" id="step10">
+                <label>Você gostaria de recomendações personalizadas baseadas nos livros que já leu?</label><br>
+                <input type="radio" name="personalizedRecommendations" value="yes"> Sim<br>
+                <input type="radio" name="personalizedRecommendations" value="no"> Não<br>
+            </div>
+
+            <!-- Step 11: Preferência de Autor -->
+            <div class="step" id="step11">
+                <label>Você tem algum autor favorito?</label><br>
+                <input type="text" id="favoriteAuthor" placeholder="Digite o nome do autor">
+            </div>
+
+            <!-- Buttons to Navigate -->
+            <div class="buttons">
+                <button type="button" id="prevBtn" onclick="nextStep(-1)">Anterior</button>
+                <button type="button" id="nextBtn" onclick="nextStep(1)">Próximo</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const steps = document.getElementsByClassName("step");
+
+        function showStep(step) {
+            for (let i = 0; i < steps.length; i++) {
+                steps[i].classList.remove("active");
+            }
+            steps[step].classList.add("active");
+        }
+
+        function nextStep(n) {
+            if (n == 1 && !validateStep()) return; // Optionally add validation
+            currentStep += n;
+            if (currentStep >= steps.length) {
+                alert("Obrigado! As recomendações aparecerão em breve.");
+                document.getElementById("shoppingAssistantForm").submit();
+                return;
+            }
+            showStep(currentStep);
+        }
+
+        function validateStep() {
+            // Implementar validação se necessário
+            return true;
+        }
+
+        // Inicializa mostrando a primeira etapa
+        showStep(currentStep);
+    </script>
+</body>
+</html>

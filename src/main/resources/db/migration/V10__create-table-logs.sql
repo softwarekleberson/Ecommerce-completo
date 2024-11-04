@@ -1,0 +1,6 @@
+CREATE TABLE logs (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  id_Cliente bigint(20) NOT NULL,
+  data_Hora TIMESTAMP NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home/style/home.css">
+    <link rel="stylesheet" href="home/style/pesquisa.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="home.html">Hatchards</a>
+        <nav>
+            <a href="home.html#romance">Romance</a>
+            <a href="home.html#classico">Classico</a>
+            <a href="home.html#ficcao">Ficção</a>
+            <a href="home.html#autoajuda">Autoajuda</a>
+            <a href="contas-listas.html">Contas e Listas</a>
+            <a href="pedidos.html">Meus pedidos</a>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" id="searchQuery" placeholder="Search">
+            <button type="submit" id="pesquisa"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="cart-and-avatar">
+            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pesquisa-dinamica">
+            <form id="pesquisa-livros-form">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo"><br><br>
+
+                <label for="precoMenor">Preço Menor:</label>
+                <input type="number" id="precoMenor" name="precoMenor" step="0.01"><br><br>
+
+                <label for="precoMaior">Preço Maior:</label>
+                <input type="number" id="precoMaior" name="precoMaior" step="0.01"><br><br>
+
+                <label for="dataMenor">Data Mínima:</label>
+                <input type="date" id="dataMenor" name="dataMenor"><br><br>
+
+                <label for="dataMaior">Data Máxima:</label>
+                <input type="date" id="dataMaior" name="dataMaior"><br><br>
+
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn"><br><br>
+
+                <label for="paginas">Páginas:</label>
+                <input type="number" id="paginas" name="paginas"><br><br>
+
+                <label for="editora">Editora:</label>
+                <input type="text" id="editora" name="editora"><br><br>
+
+                <label for="edicao">Edição:</label>
+                <input type="text" id="edicao" name="edicao"><br><br>
+
+                <label for="autorIds">IDs dos Autores (separados por vírgula):</label>
+                <input type="text" id="autorIds" name="autorIds"><br><br>
+
+                <label for="categoriaIds">IDs das Categorias (separados por vírgula):</label>
+                <input type="text" id="categoriaIds" name="categoriaIds"><br><br>
+
+                <button type="submit">Filtrar Livros</button>
+            </form>
+        </section>
+
+        <section class="container">
+            <div id="produtos"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos
+                    clientes.</p>
+                <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
+                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3 class="links-uteis">Links Úteis</h3>
+                <ul>
+                    <li><a href="home.html">Página Inicial</a></li>
+                    <li><a href="home.html#">Catálogo de Livros</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="home/javascript/listar.js"></script>
+    <script src="home/javascript/pesquisa-geral.js"></script>
+    <script src="home/javascript/pesquisa-paramentros.js"></script>
+
+</body>
+
+</html>

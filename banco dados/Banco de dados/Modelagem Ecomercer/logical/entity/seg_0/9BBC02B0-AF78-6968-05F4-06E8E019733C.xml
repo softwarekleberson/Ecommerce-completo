@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9BBC02B0-AF78-6968-05F4-06E8E019733C" name="Cartoes">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:25:53 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="40DF5B74-A4B3-246B-045C-BDA85DBB89FF">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:26:48 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="principal" id="C933FE7F-F793-3C4A-4348-D7622C9306DD">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:26:59 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="137DC76B-B42D-DFE9-6A02-810E8570862F">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:35:29 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo" id="FDFC2739-0EEC-A027-9DE4-51D4EF05E2F2">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:35:58 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="5E2D021F-AF3E-54C9-A740-221733CA9CB7">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:36:12 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="E4322608-0D13-F0B8-9711-D92EBCCD4B9E">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:42:27 UTC</createdTime>
+<generatorID>EA14FF64-E330-0234-9A76-3AB8ED7D7D67</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<referedAttribute>BB3930C5-4330-75A1-3CA6-7D1ADDE35B3A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bandeira" id="9D45A34D-AD88-7FD3-187A-9B9205E58E4D">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:43:43 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id2" id="7DB68BE6-4D80-8E52-44C9-0ABFD8DA446C">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 17:38:37 UTC</createdTime>
+<generatorID>3EDDAB36-5713-EF48-50F6-99C9A13E8DBF</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<referedAttribute>656FABB9-90A0-14A6-0914-92B1FD037BB4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DB8F4B79-891F-01CF-8E87-914F624C24FD" name="Cartoes PK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 12:26:58 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>40DF5B74-A4B3-246B-045C-BDA85DBB89FF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

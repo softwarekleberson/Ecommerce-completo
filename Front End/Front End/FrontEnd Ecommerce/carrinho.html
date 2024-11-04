@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carrinho/estilo/carrinho.css">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
+    <title>Carrinho De Compra</title>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="home.html">Hatchards</a>
+        <nav>
+            <a href="home.html#romance">Romance</a>
+            <a href="home.html#classico">Classico</a>
+            <a href="home.html#ficcao">Ficção</a>
+            <a href="home.html#autoajuda">Autoajuda</a>
+            <a href="contas-listas.html">Contas e Listas</a>
+            <a href="pedidos.html">Meus pedidos</a>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="cart-and-avatar">
+            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Seu Carrinho</h2>
+            <table>
+                <tr>
+                    <td><a href="#"><img src="carrinho/imagens/arte-da-guerra.jpg"
+                                alt="A arte da guerra versão de luxo"></a></td>
+                    <td class="descricao">
+                        <h4>A arte da guerra - Versão de luxo</h4>
+                        <p>Sun Tzu</p>
+                    </td>
+                    <td>
+                        <label class="selecionar-quantidade" for=""></label>
+                        <select class="cor-seletor" name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </td>
+                    <td class="valor-produto">
+                        <p>R$25.00</p>
+                    </td>
+                    <td><i class="fa-solid fa-square-xmark"></i></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><img src="carrinho/imagens/edgar-alan-poe.jpg" alt="Medo Clássico"></a></td>
+                    <td class="descricao">
+                        <h4>Medo Clássico</h4>
+                        <p>Edgar Allan Poe</p>
+                    </td>
+                    <td>
+                        <label class="selecionar-quantidade" for=""></label>
+                        <select class="cor-seletor" name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </td>
+                    <td class="valor-produto">
+                        <p>R$35.50</p>
+                    </td>
+                    <td><i class="fa-solid fa-square-xmark"></i></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><img src="carrinho/imagens/o-principe.jpg" alt="O Principe"></a></td>
+                    <td class="descricao">
+                        <h4>O principe</h4>
+                        <p>Maquiavel</p>
+                    </td>
+                    <td>
+                        <label class="selecionar-quantidade" for=""></label>
+                        <select class="cor-seletor" name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </td>
+                    <td class="valor-produto">
+                        <p>R$25.00</p>
+                    </td>
+                    <td><i class="fa-solid fa-square-xmark"></i></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#"><img src="carrinho/imagens/revolucao-dos-bixos.jpg"
+                                alt="A arte da guerra versão de luxo"></a></td>
+                    <td class="descricao">
+                        <h4>A revolução dos bixos</h4>
+                        <p>Dale Allen</p>
+                    </td>
+                    <td>
+                        <label class="selecionar-quantidade" for=""></label>
+                        <select class="cor-seletor" name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </td>
+                    <td class="valor-produto">
+                        <p>R$74.00</p>
+                    </td>
+                    <td><i class="fa-solid fa-square-xmark"></i></td>
+                </tr>
+            </table>
+
+        </section>
+        <section>
+            <div class="card-compra">
+                <div class="item">
+                    <p class="paragrafo">Subtotal</p>
+                    <p class="valor-subtotal">R$ 275.44</p>
+                </div>
+                <hr>
+                <div class="item">
+                    <p class="paragrafo">Taxa de entrega</p>
+                    <p class="valor-subtotal">R$ 0</p>
+                </div>
+                <hr>
+                <div class="item">
+                    <p class="paragrafo">Total</p>
+                    <p class="valor-total">R$ 285</p>
+                </div>
+
+                <div class="botao-wrapper">
+                    <a href="checkout.html" class="link-botao"><button class="botao estilo-botao">Confirmar
+                            Pagamento</button></a>
+                    <a href="home.html" class="link-botao"><button class="botao">Continue Comprando</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos
+                    clientes.</p>
+                <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
+                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3 class="links-uteis">Links Úteis</h3>
+                <ul>
+                    <li><a href="home.html">Página Inicial</a></li>
+                    <li><a href="home.html#">Catálogo de Livros</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="carrinho/javascript/index.js"></script>
+</body>
+
+</html>

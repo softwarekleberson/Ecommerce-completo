@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --cor0: rgb(000, 000, 000);
+    --cor1: rgb(255, 255, 255);
+    --cor2: rgb(120, 120, 120);
+    --cor3: rgba(237, 228, 228, 0.41);
+    --cor4: rgba(237, 228, 228, 0.643);
+    --cor5: #FF7E1B;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Kumbh Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    background-color: var(--cor1);
+    font-family: var(--font-destaque);
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav a {
+    margin-right: 15px;
+}
+
+.logo {
+    font-size: 2em;
+    margin: auto;
+}
+
+.cart-and-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.fa-cart-shopping {
+    font-size: 24px;
+}
+
+/* Estilos do campo de pesquisa */
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-box button[type="submit"] {
+    background-color: white;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.fa-search {
+    font-size: 16px;
+    color: black;
+}
+
+.fa-cart-shopping {
+    margin-right: 20px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cor5);
+}
+
+main>h2 {
+    margin-top: 40px;
+    margin-left: 110px;
+}
+
+.container {
+    display: flex;
+    margin-left: 180px;
+    margin-bottom: 185px;
+    flex-wrap: wrap;
+    height: 60px;
+}
+
+.container>div {
+    width: 240px;
+    height: 110px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 30px;
+    background-color: var(--cor1);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1.5px dotted var(--cor2)
+}
+
+.container>div>a>h3 {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: var(--cor0);
+    font-family: var(--font-destaque);
+    text-decoration: none;
+}
+
+.container>div>a>p {
+    text-align: center;
+    font-weight: 500;
+    font-family: var(--font-padrao);
+    font-size: 1.1em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--cor0);
+}
+
+footer {
+    margin-top: 260px;
+    background-color: var(--cor0);
+    color: #fff;
+    padding: 50px;
+    height: 165px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 400px;
+}
+
+.links-uteis {
+    margin-left: 400px;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+.contact span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    margin-left: 480px;
+}

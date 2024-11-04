@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.InheritanceRelation" name="Hierarchy_1" directorySegmentName="seg_0" id="5AF11669-8822-8C92-29F5-D25518768269">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:23:04 UTC</createdTime>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<engineerTo>
+<item key="C17D48FC-CCD7-DD8F-6A93-8E6F00DCD47A" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Super Type</nameOnSource>
+<nameOnTarget>Sub Type</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceEntity>B02272EF-E5BE-B5C6-9532-22964C87975C</sourceEntity>
+<targetEntity>BF631111-69D5-0D8C-92CD-11A7DF6227FC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

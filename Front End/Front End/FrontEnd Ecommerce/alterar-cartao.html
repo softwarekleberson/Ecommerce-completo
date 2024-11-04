@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="cartoes/estilo/adicionar-cartao.css">
+    <title>Update cartão</title>
+</head>
+
+<body>
+    <div class="container-imagem">
+        <form id="myForm" autocomplete="on">
+            <a href="cartoes.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+
+            <label for="principal">Principal:</label><br>
+            <input type="checkbox" id="principal" name="principal"><br>
+
+            <label for="nomeImpresso">Nome Impresso:</label><br>
+            <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome completo" autocomplete="name"><br>
+
+            <label for="codigo">Código:</label><br>
+            <input type="text" id="codigo" name="codigo" placeholder="Ex: 123"><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script src="cartoes/javascript/update.js"></script>
+</body>
+
+</html>

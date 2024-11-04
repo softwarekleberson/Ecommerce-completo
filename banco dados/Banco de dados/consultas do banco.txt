@@ -1,0 +1,15 @@
+create database lab_engenharia;
+
+select * from estoques;
+select * from clientes;
+select * from livros;
+select * from categorias;
+select * from autores;
+select * from administradores;
+select * from livro_categoria;
+select * from cupons;
+select * from cartoes;
+select * FROM entregas;
+select * from cobrancas;
+select * from precificacoes;
+select * from logs;

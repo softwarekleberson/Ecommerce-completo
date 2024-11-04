@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <title>Desativar livro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: -150px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .form-group>div {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group>div:last-child {
+            margin-right: 0;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="desativar-livro">
+        <h1>Retirar livro da home</h1>
+
+        <label for="idLivro">ID do Livro:</label>
+        <input type="number" id="idLivro" name="idLivro" placeholder="Id do livro" required><br><br>
+
+        <label for="justificativa">Justificativa:</label>
+        <textarea id="justificativa" name="justificativa" placeholder="Qual a justificativa da retirada deste livro da home ?" required></textarea><br><br>
+
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="FORA_MERCADO">Fora de Mercado</option>
+            <option value="DESATUALIZADO">Desatualizado</option>
+            <option value="BAIXA_DEMANADA">Baixa Demanda</option>
+            <option value="CONTEUDO_SENSIVEL">Conteúdo Sensível</option>
+        </select><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+<script src="desativar-livro/put-desativar-livro.js"></script>
+
+</html>

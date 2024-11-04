@@ -1,0 +1,52 @@
+#produtos-pesquisa {
+    display: block;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.livro-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    width: 350px;
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 20px;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.livro-item:hover {
+    transform: scale(1.05);
+}
+
+.livro-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.livro-item h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.livro-item p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.livro-item p strong {
+    color: #222;
+}
+
+.livro-item p strong + span {
+    font-size: 1.1rem;
+    color: #e63946;
+}

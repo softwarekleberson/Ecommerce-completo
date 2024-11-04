@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DFCF96A8-A5C3-5121-CC8F-A58DD05893EB" containerWithKeyObject="F3D35E86-1030-E3D2-EC29-D9823B054350" localFKIndex="F73C96B6-7A1B-31D6-EF54-7C4DB17F1846" name="Cartoes_Cliente_FK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>EA14FF64-E330-0234-9A76-3AB8ED7D7D67</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<referredTableLongName>Cliente</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D25F6DCD-12E3-6550-4B11-6F2394459CCD</referredTableID>
+<keyObject>0E4A2B8B-41BD-E4C0-081D-4141B1FAAD1B</keyObject>
+<referredKeyID>0E4A2B8B-41BD-E4C0-081D-4141B1FAAD1B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

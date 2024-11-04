@@ -1,0 +1,7 @@
+Severidade;Ficha;Mensagem
+Erro;Crédito - Identificação - Contribuições Descontadas - Nº Ordem 1 - CNPJ / CPF;"""CPF"" não pode ser igual ao CPF do declarante"
+Erro;Crédito - Identificação - Contribuições Descontadas - Nº Ordem 1 - Valor da Contribuição Descontada;Valor da Contribuição Descontada não pode ser maior que a Remuneração Recebida
+Erro;Débitos;Dado(s) obrigatório(s): [Débitos]
+Aviso;Crédito - Identificação;"No Período de Apuração informado, o contribuinte é Optante pelo eSocial"
+Aviso;Crédito - Identificação - Contribuições Descontadas;Certifique-se de que estão sendo informadas todas as contribuições descontadas de todas as fontes pagadoras referentes à competência objeto do pedido independentemente do valor do direito creditório pleiteado
+Aviso;Crédito - Identificação - GPS;Não foram preenchidas informações de GPS

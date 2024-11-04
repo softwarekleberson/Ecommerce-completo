@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pesquisa de Livros</title>
+    <style>
+        /* Estilos básicos para o layout do formulário */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, button {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="pesquisa-dinamica">
+        <h2>Filtrar Livros</h2>
+        <form id="pesquisa-livros-form">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo"><br><br>
+
+            <label for="precoMenor">Preço Mínimo:</label>
+            <input type="number" id="precoMenor" name="precoMenor" step="0.01"><br><br>
+
+            <label for="precoMaior">Preço Máximo:</label>
+            <input type="number" id="precoMaior" name="precoMaior" step="0.01"><br><br>
+
+            <label for="dataMenor">Data Mínima:</label>
+            <input type="date" id="dataMenor" name="dataMenor"><br><br>
+
+            <label for="dataMaior">Data Máxima:</label>
+            <input type="date" id="dataMaior" name="dataMaior"><br><br>
+
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn"><br><br>
+
+            <label for="paginas">Páginas:</label>
+            <input type="number" id="paginas" name="paginas"><br><br>
+
+            <label for="editora">Editora:</label>
+            <input type="text" id="editora" name="editora"><br><br>
+
+            <label for="edicao">Edição:</label>
+            <input type="text" id="edicao" name="edicao"><br><br>
+
+            <label for="autorIds">IDs dos Autores (separados por vírgula):</label>
+            <input type="text" id="autorIds" name="autorIds"><br><br>
+
+            <label for="categoriaIds">IDs das Categorias (separados por vírgula):</label>
+            <input type="text" id="categoriaIds" name="categoriaIds"><br><br>
+
+            <label for="alturaMenor">Altura Mínima (cm):</label>
+            <input type="number" id="alturaMenor" name="alturaMenor" step="0.01"><br><br>
+
+            <label for="alturaMaior">Altura Máxima (cm):</label>
+            <input type="number" id="alturaMaior" name="alturaMaior" step="0.01"><br><br>
+
+            <label for="larguraMenor">Largura Mínima (cm):</label>
+            <input type="number" id="larguraMenor" name="larguraMenor" step="0.01"><br><br>
+
+            <label for="larguraMaior">Largura Máxima (cm):</label>
+            <input type="number" id="larguraMaior" name="larguraMaior" step="0.01"><br><br>
+
+            <label for="pesoMenor">Peso Mínimo (g):</label>
+            <input type="number" id="pesoMenor" name="pesoMenor" step="0.01"><br><br>
+
+            <label for="pesoMaior">Peso Máximo (g):</label>
+            <input type="number" id="pesoMaior" name="pesoMaior" step="0.01"><br><br>
+
+            <label for="profundidadeMenor">Profundidade Mínima (cm):</label>
+            <input type="number" id="profundidadeMenor" name="profundidadeMenor" step="0.01"><br><br>
+
+            <label for="profundidadeMaior">Profundidade Máxima (cm):</label>
+            <input type="number" id="profundidadeMaior" name="profundidadeMaior" step="0.01"><br><br>
+
+            <button type="submit">Filtrar Livros</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("pesquisa-livros-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+            const livroConsultaDto = {
+                titulo: document.getElementById('titulo').value || null,
+                precoMenor: document.getElementById('precoMenor').value ? parseFloat(document.getElementById('precoMenor').value) : null,
+                precoMaior: document.getElementById('precoMaior').value ? parseFloat(document.getElementById('precoMaior').value) : null,
+                dataMenor: document.getElementById('dataMenor').value || null,
+                dataMaior: document.getElementById('dataMaior').value || null,
+                isbn: document.getElementById('isbn').value || null,
+                paginas: document.getElementById('paginas').value ? parseInt(document.getElementById('paginas').value) : null,
+                editora: document.getElementById('editora').value || null,
+                edicao: document.getElementById('edicao').value || null,
+                autorIds: document.getElementById('autorIds').value ? document.getElementById('autorIds').value.split(',').map(id => parseInt(id.trim())) : [],
+                categoriaIds: document.getElementById('categoriaIds').value ? document.getElementById('categoriaIds').value.split(',').map(id => parseInt(id.trim())) : [],
+                alturaMenor: document.getElementById('alturaMenor').value ? parseFloat(document.getElementById('alturaMenor').value) : null,
+                alturaMaior: document.getElementById('alturaMaior').value ? parseFloat(document.getElementById('alturaMaior').value) : null,
+                larguraMenor: document.getElementById('larguraMenor').value ? parseFloat(document.getElementById('larguraMenor').value) : null,
+                larguraMaior: document.getElementById('larguraMaior').value ? parseFloat(document.getElementById('larguraMaior').value) : null,
+                pesoMenor: document.getElementById('pesoMenor').value ? parseFloat(document.getElementById('pesoMenor').value) : null,
+                pesoMaior: document.getElementById('pesoMaior').value ? parseFloat(document.getElementById('pesoMaior').value) : null,
+                profundidadeMenor: document.getElementById('profundidadeMenor').value ? parseFloat(document.getElementById('profundidadeMenor').value) : null,
+                profundidadeMaior: document.getElementById('profundidadeMaior').value ? parseFloat(document.getElementById('profundidadeMaior').value) : null
+            };
+
+            fetch("http://localhost:8080/livro/consulta/parametros", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(livroConsultaDto),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data)) // Aqui você pode manipular os dados retornados
+            .catch(error => console.error("Erro ao buscar livros:", error));
+        });
+    </script>
+
+</body>
+</html>

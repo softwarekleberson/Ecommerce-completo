@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD219BC1-CE86-8E9C-5720-F4FDD3094D04" name="Cobrancas">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>BF631111-69D5-0D8C-92CD-11A7DF6227FC</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1B4CCED5-8012-834E-7BA6-326662C7E63C">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>98BAFD5C-26D6-F97B-BCDB-2C891520E7EE</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27E5E376-7B3B-5125-C10A-4D17127BDF5D" referredColumn="20F9A518-686F-C003-5583-981DFC58DFAF"/>
+</associations>
+</Column>
+<Column name="status" id="0AEFDDA0-6A22-B58D-FFE9-EBE0859C9523">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>F0297D6F-1BCC-5F04-2D5B-3A3FC61B1BEF</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_id" id="1C892683-D85E-2825-136D-0ED27C6B3FE7">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>9139BF59-3013-1511-314B-C0B7E313F2F1</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44C60E70-23C8-646B-8806-407BCCE4780B" referredColumn="61F339EB-BFA5-0F2B-5A67-75DEC8D41CA2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="260CF15F-33CC-0FDC-9D6A-A68CCADA152E" name="Cobrancas_PK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>144D5CCC-AF15-43C0-0BA7-3E12506F33F1</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B4CCED5-8012-834E-7BA6-326662C7E63C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7A5657A1-FA0E-88BF-CDC4-2F91679A6E6B" name="Cobrancas_Endereco_FK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>5AF11669-8822-8C92-29F5-D25518768269</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B4CCED5-8012-834E-7BA6-326662C7E63C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A4A62DA-4363-B4CA-6E54-CC875D0CB562" name="Cobrancas_Cliente_FK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>B513AD17-7A16-93E1-88AD-719C9ED2A370</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C892683-D85E-2825-136D-0ED27C6B3FE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

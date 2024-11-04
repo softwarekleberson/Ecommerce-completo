@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8E5FDB30-3B9E-7997-E8B9-0E89A8EBC730" name="Entrega">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>8ED1489E-0342-38EE-CDAF-19E12AFBA96F</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B6CD463C-2E66-2172-36C2-55541D09F07B">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>98BAFD5C-26D6-F97B-BCDB-2C891520E7EE</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18637CFF-93B5-7B6F-A598-7ACC0E65C710" referredColumn="20F9A518-686F-C003-5583-981DFC58DFAF"/>
+</associations>
+</Column>
+<Column name="frase_Entrega" id="D3081D26-876D-A0BC-0DBF-9E1B6B5288D5">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>91F0A955-A629-B613-3DA5-8E7D8FB83196</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="96B6C942-F812-6E58-0383-03A3BFAD3439">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>BE0114C3-F94D-050A-3EF1-4572FD537A47</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_id" id="B1ABCF0D-F705-52FF-F812-D212F6DB7BAC">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>9C37B3F8-8889-0803-FEA8-0C7612DE1B46</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C487AAFF-FA2D-6076-B9F5-4AE857276353" referredColumn="61F339EB-BFA5-0F2B-5A67-75DEC8D41CA2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0A5CEDDF-BF69-E7D9-30D8-9C2D5B821320" name="Entrega_PK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>144D5CCC-AF15-43C0-0BA7-3E12506F33F1</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6CD463C-2E66-2172-36C2-55541D09F07B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2702A26C-49D0-A2B1-EBBE-BEC2D0E6B40C" name="Entrega_PKv1">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>D4872795-0F7C-B96A-C026-40D3120CDB28</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1ABCF0D-F705-52FF-F812-D212F6DB7BAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FC21DE8-073C-ADB1-E572-3035F86D83F8" name="Entrega_Endereco_FK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>049D9EB8-774A-D626-D0A5-4EAD813D4024</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6CD463C-2E66-2172-36C2-55541D09F07B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD38A592-B028-B2A5-C693-A9C6867507AC" name="Entrega_Cliente_FK">
+<createdBy>User</createdBy>
+<createdTime>2024-05-03 13:35:27 UTC</createdTime>
+<generatorID>130D71D1-D137-8F87-A785-9B106A8F7045</generatorID>
+<ownerDesignName>Modelagem Ecomercer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1ABCF0D-F705-52FF-F812-D212F6DB7BAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

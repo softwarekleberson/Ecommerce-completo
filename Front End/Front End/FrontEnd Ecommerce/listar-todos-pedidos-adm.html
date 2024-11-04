@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <title>Dados dos Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #28a745;
+            /* Verde para status "APROVADO" */
+        }
+
+        a {
+            text-decoration: none;
+            /* Remove o sublinhado */
+            color: #3498db;
+            /* Cor azul */
+            font-family: Arial, sans-serif;
+            /* Fonte básica */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            padding: 8px 12px;
+            /* Espaçamento interno */
+            border: 1px solid #3498db;
+            /* Borda da mesma cor */
+            border-radius: 4px;
+            /* Bordas arredondadas */
+            transition: background-color 0.3s ease;
+            /* Transição suave de cor */
+        }
+
+        a:hover {
+            background-color: #3498db;
+            /* Muda a cor de fundo ao passar o mouse */
+            color: white;
+            /* Cor do texto quando o fundo mudar */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Pedidos de Livros</h1>
+        <a href="adm-transito.html" target="_blank" rel="noopener noreferrer">Mercadoria Transito</a>
+        <a href="adm-entregue.html" target="_blank" rel="noopener noreferrer">Mercadoria Entregue</a>
+        <table id="pedidos-table">
+            <thead>
+                <tr>
+                    <th>Código do Pedido</th>
+                    <th>Nome do Livro</th>
+                    <th>Quantidade</th>
+                    <th>Data do Pedido</th>
+                    <th>Status Pagamento</th>
+                    <th>Preço Unitário</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os pedidos serão inseridos aqui dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer" id="total-pedidos">
+        <p>Total de Pedidos: 0</p>
+    </div>
+
+    <script>
+        // Função para buscar dados dos pedidos
+        async function fetchPedidos() {
+            try {
+                const response = await fetch('http://localhost:8080/administrador/listar-pedidos');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                renderPedidos(data);
+            } catch (error) {
+                console.error('Houve um problema com a requisição:', error);
+            }
+        }
+
+        // Função para renderizar os pedidos na tabela
+        function renderPedidos(data) {
+            const tbody = document.querySelector('#pedidos-table tbody');
+            const totalPedidos = document.getElementById('total-pedidos').querySelector('p');
+            tbody.innerHTML = ''; // Limpa o corpo da tabela antes de adicionar os novos pedidos
+
+            data.content.forEach(pedido => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${pedido.codigoPedido}</td>
+                    <td>${pedido.nome}</td>
+                    <td>${pedido.quantidade}</td>
+                    <td>${pedido.dataPedido}</td>
+                    <td class="status">${pedido.status}</td>
+                    <td>R$ ${pedido.precoUnitario.toFixed(2)}</td>
+                    <td>R$ ${pedido.subtotal.toFixed(2)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Atualiza o total de pedidos
+            totalPedidos.textContent = `Total de Pedidos: ${data.totalElements}`;
+        }
+
+        // Chama a função para buscar os pedidos ao carregar a página
+        window.onload = fetchPedidos;
+    </script>
+
+</body>
+
+</html>

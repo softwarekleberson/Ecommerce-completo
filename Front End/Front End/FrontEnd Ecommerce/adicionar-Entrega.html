@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="entrega/estilo/nova-entrega.css">
+    <title>Novo endereço entrega</title>
+</head>
+
+<body>
+    <div class="container-imagem">
+        <form id="myForm">
+
+            <a href="entrega.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+
+            <label for="idCliente">ID Cliente:</label>
+            <input type="text" id="idCliente" name="idCliente" required><br><br>
+
+            <label for="">Entrega principal</label>
+            <input type="checkbox" id="principal" name="principal" checked><br>
+
+            <label for="receptorEntrega">Receptor</label>
+            <input type="text" name="receptorEntrega" id="receptorEntrega" autocomplete="name" required
+                placeholder="Quem irá receber a entrega">
+
+            <label for="cepEntrega">CEP:</label>
+            <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" required autocomplete="off"
+                pattern="\d{5}-\d{3}" onblur="buscarCEP()"><br><br>
+
+            <label for="tipoResidenciaEntrega">Tipo de Residência:</label>
+            <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega"
+                placeholder="casa, apartamento, kitnet, chalé, cobertura etc" required autocomplete="off"><br><br>
+
+            <label for="tipoLogradouroEntrega">Tipo de Logradouro:</label>
+            <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega"
+                placeholder="Rua, Avenida, Alameda, Travessa, etc" required autocomplete="off"><br><br>
+
+            <label for="logradouroEntrega">Logradouro:</label>
+            <input type="text" id="logradouroEntrega" name="logradouroEntrega"
+                placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required
+                autocomplete="off"><br><br>
+
+            <label for="numeroEntrega">Número:</label>
+            <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o número do imóvel"
+                required><br><br>
+
+            <label for="bairroEntrega">Bairro:</label>
+            <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o nome do bairro"
+                required><br><br>
+
+            <label for="observacaoEntrega">Observação:</label>
+            <textarea id="observacaoEntrega" name="observacaoEntrega" placeholder="Opcional"></textarea><br><br>
+
+            <label for="cidadeEntrega">Cidade:</label>
+            <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua cidade" required><br><br>
+
+            <label for="estadoEntrega">Estado:</label>
+            <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu estado" required><br><br>
+
+            <label for="fraseEntregaEntrega">Frase de Entrega:</label>
+            <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"
+                placeholder="Informe instruções específicas de entrega" required><br><br>
+
+            <label for="paisEntrega">País:</label>
+            <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu pais" required
+                value="Brasil"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script src="entrega/estilo/javascript/insert.js"></script>
+    <script src="entrega/estilo/javascript/cep.js"></script>
+</body>
+
+</html>

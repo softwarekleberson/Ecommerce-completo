@@ -1,0 +1,133 @@
+{
+  "id": "b417f580-a02f-4b4a-950b-a411640fb09d",
+  "version": "2.0",
+  "name": "Update senha",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "ecca81bc-4b39-4cc2-b6fc-db4553e47d0c",
+    "name": "Update senha cliente",
+    "commands": [{
+      "id": "6e22a663-de3a-4732-aa61-b6f20f039e76",
+      "comment": "",
+      "command": "open",
+      "target": "/alterar-senha.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78d6c6c6-e8e4-4b33-90be-0aecc308ea32",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f233932d-9715-44ba-a2f1-ba1c334b9e45",
+      "comment": "",
+      "command": "click",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09a87636-94ec-4104-8a76-d621916f911f",
+      "comment": "",
+      "command": "type",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "00c65e7c-8a06-4a50-a069-d69b8c9ced2a",
+      "comment": "",
+      "command": "click",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0619467-ac41-4d4c-87d4-f96464158e90",
+      "comment": "",
+      "command": "type",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "8972VAIsantos1@"
+    }, {
+      "id": "5640f469-bf5f-475d-a154-51c1b676113e",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirmarSenha",
+      "targets": [
+        ["id=confirmarSenha", "id"],
+        ["name=confirmarSenha", "name"],
+        ["css=#confirmarSenha", "css:finder"],
+        ["xpath=//input[@id='confirmarSenha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eff1516e-b254-4614-a1ad-26ba0cf99ecd",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmarSenha",
+      "targets": [
+        ["id=confirmarSenha", "id"],
+        ["name=confirmarSenha", "name"],
+        ["css=#confirmarSenha", "css:finder"],
+        ["xpath=//input[@id='confirmarSenha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "8972VAIsantos1@"
+    }, {
+      "id": "992cfd2c-6ce8-4c7b-b33b-f39a531d840a",
+      "comment": "",
+      "command": "click",
+      "target": "id=enviarBtn",
+      "targets": [
+        ["id=enviarBtn", "id"],
+        ["css=#enviarBtn", "css:finder"],
+        ["xpath=//button[@id='enviarBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9fe2b512-93c0-4daf-ac5d-1397e5dd110b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ecca81bc-4b39-4cc2-b6fc-db4553e47d0c"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <title>Update Livro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 800px;
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .form-group>div {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group>div:last-child {
+            margin-right: 0;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="livro">
+        <h1>Update de Livro</h1>
+        <div class="form-group">
+            <div>
+                <label for="id">ID do livro:</label>
+                <input type="number" id="id" name="id" placeholder="Id do livro" required>
+            </div>
+            <div>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+            </div>
+            <div>
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" name="preco" min="0" step="0.01" placeholder="R$: 0.01">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo">
+            </div>
+            <div>
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn" placeholder="Formato isbn xxx-x-xx-xxxxxx-x">
+            </div>
+            <div>
+                <label for="paginas">Páginas:</label>
+                <input type="number" id="paginas" name="paginas" min="0">
+            </div>
+        </div>
+
+        <label for="sinopse">Sinopse:</label>
+        <textarea id="sinopse" name="sinopse"></textarea>
+
+        <div class="form-group">
+            <div>
+                <label for="codigoBarra">Código de Barra:</label>
+                <input type="text" id="codigoBarra" name="codigoBarra" placeholder="xxxxxxxxxxxxx">
+            </div>
+            <div>
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" name="altura" min="0" step="0.01" placeholder="Menor valor 0,01">
+            </div>
+            <div>
+                <label for="largura">Largura (cm):</label>
+                <input type="number" id="largura" name="largura" min="0" step="0.01" placeholder="Menor valor 0,01">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" min="0" step="0.01" placeholder="Menor valor 0,01">
+            </div>
+            <div>
+                <label for="profundidade">Profundidade (cm):</label>
+                <input type="number" id="profundidade" name="profundidade" min="0" step="0.01" placeholder="Menor valor 0,01">
+            </div>
+            <div>
+                <label for="editora">Editora:</label>
+                <input type="text" id="editora" name="editora">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <label for="edicao">Edição:</label>
+                <input type="text" id="edicao" name="edicao">
+            </div>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+<script src="livro/put-livro.js"></script>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=1.0">
+    <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="pagamento/pagamento.css">
+    <title>Checkout</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="home.html">Hatchards</a>
+        <nav>
+            <a href="home.html#romance">Romance</a>
+            <a href="home.html#classico">Clássico</a>
+            <a href="home.html#ficcao">Ficção</a>
+            <a href="home.html#distopia">Distopia</a>
+            <a href="home.html#autoajuda">Autoajuda</a>
+            <a href="cupom.html">Cupons</a>
+            <a href="contas-listas.html">Contas e Listas</a>
+            <a href="home-adm.html">Adm</a>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="cart-and-avatar">
+            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div id="entrega">
+                <!--Aqui entra entrega principal-->
+            </div>
+        </section>
+
+        <section>
+            <button id="add-delivery-btn">Adicionar nova entrega</button>
+            <div id="delivery-overlay" class="overlay">
+                <div class="form-container">
+                    <form id="delivery-form">
+                        <div>
+                            <label for="principal">Principal:</label>
+                            <input type="checkbox" id="principal">
+                        </div>
+                        <div>
+                            <label for="receptorEntrega">Receptor da Entrega:</label>
+                            <input type="text" id="receptorEntrega">
+                        </div>
+                        <div>
+                            <label for="tipoResidenciaEntrega">Tipo de Residência:</label>
+                            <input type="text" id="tipoResidenciaEntrega">
+                        </div>
+                        <div>
+                            <label for="tipoLogradouroEntrega">Tipo de Logradouro:</label>
+                            <input type="text" id="tipoLogradouroEntrega">
+                        </div>
+                        <div>
+                            <label for="logradouroEntrega">Logradouro:</label>
+                            <input type="text" id="logradouroEntrega">
+                        </div>
+                        <div>
+                            <label for="numeroEntrega">Número:</label>
+                            <input type="text" id="numeroEntrega">
+                        </div>
+                        <div>
+                            <label for="bairroEntrega">Bairro:</label>
+                            <input type="text" id="bairroEntrega">
+                        </div>
+                        <div>
+                            <label for="cepEntrega">CEP:</label>
+                            <input type="text" id="cepEntrega">
+                        </div>
+                        <div>
+                            <label for="observacaoEntrega">Observação:</label>
+                            <input type="text" id="observacaoEntrega">
+                        </div>
+                        <div>
+                            <label for="cidadeEntrega">Cidade:</label>
+                            <input type="text" id="cidadeEntrega">
+                        </div>
+                        <div>
+                            <label for="estadoEntrega">Estado:</label>
+                            <input type="text" id="estadoEntrega">
+                        </div>
+                        <div>
+                            <label for="paisEntrega">País:</label>
+                            <input type="text" id="paisEntrega">
+                        </div>
+                        <div>
+                            <label for="fraseEntregaEntrega">Frase de Entrega:</label>
+                            <input type="text" id="fraseEntregaEntrega">
+                        </div>
+                        <button type="submit">Enviar</button>
+                        <button type="button" id="close-delivery-form">Fechar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <button id="add-card-btn">Adicionar novo cartão</button>
+            <div id="card-overlay" class="overlay">
+                <div class="form-container">
+                    <form id="card-form">
+                        <div>
+                            <label for="principal">Principal:</label>
+                            <input type="checkbox" id="principal">
+                        </div>
+                        <div>
+                            <label for="numeroCartao">Número do Cartão:</label>
+                            <input type="text" id="numeroCartao">
+                        </div>
+                        <div>
+                            <label for="nomeImpresso">Nome Impresso no Cartão:</label>
+                            <input type="text" id="nomeImpresso">
+                        </div>
+                        <div>
+                            <label for="codigo">Código de Segurança (CVV):</label>
+                            <input type="text" id="codigo">
+                        </div>
+                        <div>
+                            <label for="bandeira">Bandeira:</label>
+                            <input type="text" id="bandeira">
+                        </div>
+                        <div>
+                            <label for="dataExpiracao">Data de Expiração:</label>
+                            <input type="date" id="dataExpiracao">
+                        </div>
+                        <button type="submit">Enviar</button>
+                        <button type="button" id="close-card-form">Fechar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos clientes.</p>
+                <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
+                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3 class="links-uteis">Links Úteis</h3>
+                <ul>
+                    <li><a href="home.html">Página Inicial</a></li>
+                    <li><a href="home.html#">Catálogo de Livros</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("add-delivery-btn").addEventListener("click", function () {
+            const deliveryOverlay = document.getElementById("delivery-overlay");
+            deliveryOverlay.style.display = "flex";
+        });
+
+        document.getElementById("close-delivery-form").addEventListener("click", function () {
+            const deliveryOverlay = document.getElementById("delivery-overlay");
+            deliveryOverlay.style.display = "none";
+        });
+
+        document.getElementById("add-card-btn").addEventListener("click", function () {
+            const cardOverlay = document.getElementById("card-overlay");
+            cardOverlay.style.display = "flex";
+        });
+
+        document.getElementById("close-card-form").addEventListener("click", function () {
+            const cardOverlay = document.getElementById("card-overlay");
+            cardOverlay.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

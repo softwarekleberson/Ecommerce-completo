@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="meus-pedidos/estilo/meus-pedidos.css">
+    <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="carrinho/imagens/Simpleicons-Team-Simple-4chan.512.png" type="image/x-icon">
+    <title>Lista de produtos</title>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="home.html">Hatchards</a>
+        <nav>
+            <a href="home.html#romance">Romance</a>
+            <a href="home.html#classico">Classico</a>
+            <a href="home.html#ficcao">Ficção</a>
+            <a href="home.html#autoajuda">Autoajuda</a>
+            <a href="contas-listas.html">Contas e Listas</a>
+            <a href="pedidos.html">Meus pedidos</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="cart-and-avatar">
+            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Produtos comprados</h2>
+            <table>
+                <tr>
+                    <td><a href="#"><img src="carrinho/imagens/arte-da-guerra.jpg"
+                                alt="A arte da guerra versão de luxo"></a></td>
+                    <td class="descricao">
+                        <h4>A arte da guerra - Versão de luxo</h4>
+                        <p>Sun Tzu</p>
+                    </td>
+                    <td>
+                        <label class="selecionar-quantidade" for=""></label>
+                    </td>
+                    <td class="valor-produto">
+                        <p>R$ : 25.00</p>
+                    </td>
+                    <td class="valor-produto">
+                        <p>Quantidade : 3</p>
+                    </td>
+                    <td>
+                        <div class="buttons">
+                            <button class="button" onclick="solicitarTroca()">Troca</button>
+                            <button class="button" onclick="solicitarDevolucao()">Devolução</button>
+                            <button class="button">Entregue</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos
+                    clientes.</p>
+                <div class="contact">
+                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
+                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3 class="links-uteis">Links Úteis</h3>
+                <ul>
+                    <li><a href="home.html">Página Inicial</a></li>
+                    <li><a href="home.html#">Catálogo de Livros</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="meus-pedidos/javascript/index.js"></script>
+</body>
+
+</html>
