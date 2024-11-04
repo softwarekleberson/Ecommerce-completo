@@ -35,4 +35,7 @@ public interface CartaoRepository extends JpaRepository<Cartao, Long>{
 	void atualizarCartoesNaoPrincipalCliente(Long id);
 
 	Optional<Cartao> findBynumeroCartao(String numeroCartao);
+
+	Cartao findByPrincipalTrue();
+
 }

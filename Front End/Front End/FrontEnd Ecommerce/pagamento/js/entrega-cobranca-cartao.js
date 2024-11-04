@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.classList.add('card');
                         div.innerHTML = `
                             <h3>3 Método de pagamento</h3>
+                            <p id="idCartao1" hidden>id cartao 1 = ${cartaoPrincipal.id}</p>
                             <p id="bandeira">Pagar com ${cartaoPrincipal.bandeira} </p>
                             <p id="nomeImpresso"> ${cartaoPrincipal.nomeImpresso}</p>
                             <p id="codigo">Código: ${cartaoPrincipal.codigo}</p>

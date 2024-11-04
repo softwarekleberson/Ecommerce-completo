@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pagamento.DadosCadastroPagamento;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.Cartao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.Cupom;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.TipoCupom;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.Estoque;
@@ -147,17 +149,31 @@ public class ServicePagamento {
 	    }
 
 	    somaDosMetodosPagamento = valorDoCartao.add(valorDoCupom);
-	    System.out.println(somaDosMetodosPagamento + " soma geral");
 
 	    if (somaDosMetodosPagamento.compareTo(pagamento.getValorTotal()) >= 0) {
 	        pagamento.setStatusCompra(StatusCompra.APROVADO);
 	        pagamentoRepository.save(pagamento);
 	        pagamentoRepository.flush();
+	        
 	    } else {
 	        pagamento.setStatusCompra(StatusCompra.REPROVADO);
 	        pagamentoRepository.save(pagamento);
 	        pagamentoRepository.flush();
 	    }
+	    
+	    verificaNecessidadeNovoCupom(valorDoCupom, pagamento);
+	}
+
+	private void verificaNecessidadeNovoCupom(BigDecimal valorDoCupom, Pagamento pagamento) {
+		if(valorDoCupom.compareTo(pagamento.getValorTotal()) > 0) {
+			
+			BigDecimal valor = BigDecimal.ZERO;
+			valor = valorDoCupom.subtract(pagamento.getValorTotal());
+			
+			Cliente cliente = pagamento.getPedidos().get(0).getCliente();
+			Cupom cupom = new Cupom(null, TipoCupom.PROMOCIONAL, valor, true, cliente);
+			cupomRepository.save(cupom);
+		}
 	}
 
 	private void checarQuantidadeCartoesPermitida(BigDecimal valorTotalPedido, List<Cartao> cartoes, Long cartao1, Long cartao2) {
@@ -280,7 +296,7 @@ public class ServicePagamento {
 	}
 
 	private List<Cartao> verificaInformacoesSobreCartao(Long idCartao1, Long idCartao2) {
-	    List<Cartao> cartoes = new ArrayList<>();
+		List<Cartao> cartoes = new ArrayList<>();
 
 	    if (idCartao1 != null) {
 	        var cartao1 = cartaoRepository.findById(idCartao1);
