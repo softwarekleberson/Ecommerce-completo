@@ -72,8 +72,8 @@ public class ServicePagamento {
 
 	@Transactional
 	public void validarDadosDoPagamento(@Valid DadosCadastroPagamento dados, Long clienteId) {
-		var entrega = verificarExistenciaEntrega(dados.idEntrega());
-		var cobranca = verificarExistenciaCobranca(dados.idCobranca());
+		var entrega = verificarExistenciaEntrega();
+		var cobranca = verificarExistenciaCobranca();
 		BigDecimal valorTotalPedido = calcularValorTotalDosPedidos(clienteId);
 		List<Pedido> pedidos = listaPedidos(clienteId);
 		List<Cartao> cartoes = verificaInformacoesSobreCartao(dados.idCartao1(), dados.idCartao2());
@@ -323,14 +323,20 @@ public class ServicePagamento {
 		return pedidosNaoPagos;
 	}
 
-	private Entrega verificarExistenciaEntrega(Long id) {
-		return entregaRepository.findById(id)
-				.orElseThrow(() -> new ValidacaoException("Id da entrega não encontrado"));
+	private Entrega verificarExistenciaEntrega() {
+		Entrega entrega = entregaRepository.findByPrincipalTrue();
+		if(entrega == null) {
+			throw new ValidacaoException("Entrega principal não encontrada");
+		}
+		return entrega;
 	}
 
-	private Cobranca verificarExistenciaCobranca(Long id) {
-		return cobrancaRepository.findById(id)
-				.orElseThrow(() -> new ValidacaoException("Id da cobrança não existe"));
+	private Cobranca verificarExistenciaCobranca() {
+		Cobranca cobranca = cobrancaRepository.findByPrincipalTrue();
+		if(cobranca == null) {
+			throw new ValidacaoException("Entrega principal não encontrada");
+		}
+		return cobranca;
 	}
 
 	private BigDecimal calcularValorTotalDosPedidos(Long clienteId) {
