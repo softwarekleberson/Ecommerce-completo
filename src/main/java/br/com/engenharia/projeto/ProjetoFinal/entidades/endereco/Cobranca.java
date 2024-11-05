@@ -32,7 +32,7 @@ public class Cobranca extends Endereco{
 	public Cobranca(@Valid DadosCadastroCobranca dados) {
 		super(dados);
 		setAtivo(true);
-		setPrincipal(dados.principal());
+		setPrincipal(dados.principalCobranca());
 		setCliente(dados.idCliente());
 	}
 	

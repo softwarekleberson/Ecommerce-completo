@@ -5,7 +5,7 @@ public record DadosCadastroEntrega(
 		
 		Long idCliente,
 		
-		boolean principal,
+		Boolean principalEntrega,
 		
 		@NotNull
 		String receptorEntrega,

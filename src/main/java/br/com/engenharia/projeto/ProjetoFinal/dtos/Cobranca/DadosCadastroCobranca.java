@@ -6,7 +6,7 @@ public record DadosCadastroCobranca(
 		
 		Long idCliente,
 		
-		boolean principal,
+		Boolean principalCobranca,
 		
 		@NotNull
 		String receptorCobranca,
