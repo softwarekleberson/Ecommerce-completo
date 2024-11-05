@@ -146,7 +146,7 @@ public class ServicePagamento {
 	        }
 	    }
 
-	    mudancaStatusPagamento(pagamento, valorDoCartao, valorDoCupom);
+	    mudancaStatusPagamento(pagamento, valorDoCartao, valorDoCupom, idCupom1, idCupom2);
 	    verificaNecessidadeNovoCupom(valorDoCupom, pagamento);
 	}
 	
