@@ -109,7 +109,6 @@ public class ServicePagamento {
 	    
 	    BigDecimal valorDoCartao = BigDecimal.ZERO;
 	    BigDecimal valorDoCupom = BigDecimal.ZERO;
-	    BigDecimal somaDosMetodosPagamento = BigDecimal.ZERO;
 
 	    if (idCartao1 != null) {
 	        Optional<CartaoFake> cartao1 = fakeRepository.findById(idCartao1);
@@ -132,7 +131,6 @@ public class ServicePagamento {
 	    if (idCupom1 != null) {
 	        Optional<Cupom> cupom1 = cupomRepository.findById(idCupom1);
 	        if (cupom1.isPresent()) {
-	        	cupom1.get().setStatus(false);
 	            valorDoCupom = valorDoCupom.add(cupom1.get().getValor());
 	        } else {
 	            throw new ValidacaoException("Cupom 1 não encontrado");
@@ -142,17 +140,39 @@ public class ServicePagamento {
 	    if (idCupom2 != null) {
 	        Optional<Cupom> cupom2 = cupomRepository.findById(idCupom2);
 	        if (cupom2.isPresent()) {
-	        	cupom2.get().setStatus(false);
 	            valorDoCupom = valorDoCupom.add(cupom2.get().getValor());
 	        } else {
 	            throw new ValidacaoException("Cupom 2 não encontrado");
 	        }
 	    }
 
-	    somaDosMetodosPagamento = valorDoCartao.add(valorDoCupom);
-
+	    mudancaStatusPagamento(pagamento, valorDoCartao, valorDoCupom);
+	    verificaNecessidadeNovoCupom(valorDoCupom, pagamento);
+	}
+	
+	private void desabilitaCupons(String idCupom1, String idCupom2) {
+        
+		if(idCupom1 != null) {
+        	Optional<Cupom> cupom1 = cupomRepository.findById(idCupom1);
+            if(cupom1.isPresent()) {
+            	cupom1.get().setStatus(false);
+            }
+        }
+		
+        if(idCupom2 != null) {
+        	Optional<Cupom> cupom2 = cupomRepository.findById(idCupom2);
+            if(cupom2.isPresent()) {
+            	cupom2.get().setStatus(false);
+            }
+        }   
+	}
+	
+	private void mudancaStatusPagamento(Pagamento pagamento, BigDecimal valorDoCartao, BigDecimal valorDoCupom, String idCupom1, String idCupom2) {
+		BigDecimal somaDosMetodosPagamento;
+		somaDosMetodosPagamento = valorDoCartao.add(valorDoCupom);
 	    if (somaDosMetodosPagamento.compareTo(pagamento.getValorTotal()) >= 0) {
-	        pagamento.setStatusCompra(StatusCompra.APROVADO);
+		    desabilitaCupons(idCupom1, idCupom2);
+	    	pagamento.setStatusCompra(StatusCompra.APROVADO);
 	        pagamentoRepository.save(pagamento);
 	        pagamentoRepository.flush();
 	        
@@ -161,8 +181,6 @@ public class ServicePagamento {
 	        pagamentoRepository.save(pagamento);
 	        pagamentoRepository.flush();
 	    }
-	    
-	    verificaNecessidadeNovoCupom(valorDoCupom, pagamento);
 	}
 
 	private void verificaNecessidadeNovoCupom(BigDecimal valorDoCupom, Pagamento pagamento) {
@@ -299,7 +317,7 @@ public class ServicePagamento {
 		List<Cartao> cartoes = new ArrayList<>();
 
 	    if (idCartao1 != null) {
-	        var cartao1 = cartaoRepository.findById(idCartao1);
+	        Optional<Cartao> cartao1 = cartaoRepository.findById(idCartao1);
 	        if (cartao1.isPresent()) {
 	            cartoes.add(cartao1.get());
 
@@ -309,7 +327,7 @@ public class ServicePagamento {
 	    }
 
 	    if (idCartao2 != null) {
-	        var cartao2 = cartaoRepository.findById(idCartao2);
+	    	Optional<Cartao> cartao2 = cartaoRepository.findById(idCartao2);
 	        if (cartao2.isPresent()) {
 	            cartoes.add(cartao2.get());
 
