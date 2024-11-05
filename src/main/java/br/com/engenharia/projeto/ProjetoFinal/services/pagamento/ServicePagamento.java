@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -165,15 +166,14 @@ public class ServicePagamento {
 	}
 
 	private void verificaNecessidadeNovoCupom(BigDecimal valorDoCupom, Pagamento pagamento) {
-		if(valorDoCupom.compareTo(pagamento.getValorTotal()) > 0) {
-			
-			BigDecimal valor = BigDecimal.ZERO;
-			valor = valorDoCupom.subtract(pagamento.getValorTotal());
-			
-			Cliente cliente = pagamento.getPedidos().get(0).getCliente();
-			Cupom cupom = new Cupom(null, TipoCupom.PROMOCIONAL, valor, true, cliente);
-			cupomRepository.save(cupom);
-		}
+	    if (valorDoCupom.compareTo(pagamento.getValorTotal()) > 0) {
+	        BigDecimal valorNovoCupom = valorDoCupom.subtract(pagamento.getValorTotal());
+	        
+	        Cliente cliente = pagamento.getPedidos().get(0).getCliente();
+	        String id = UUID.randomUUID().toString();
+	        Cupom cupom = new Cupom(id, TipoCupom.PROMOCIONAL, valorNovoCupom, true, cliente);
+	        cupomRepository.save(cupom);
+	    }
 	}
 
 	private void checarQuantidadeCartoesPermitida(BigDecimal valorTotalPedido, List<Cartao> cartoes, Long cartao1, Long cartao2) {
