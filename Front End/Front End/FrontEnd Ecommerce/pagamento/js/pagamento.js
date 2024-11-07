@@ -45,6 +45,7 @@ async function enviarPagamento() {
         if (response.ok) {
             alert("Pagamento enviado com sucesso!");
             console.log("Pagamento enviado com sucesso");
+            window.location.reload();
         } else {
             // Captura a mensagem de erro personalizada do backend
             const errorData = await response.json();
