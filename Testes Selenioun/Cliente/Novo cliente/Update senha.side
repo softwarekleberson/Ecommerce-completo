@@ -1,0 +1,168 @@
+{
+  "id": "9b7157c6-652a-470e-84c5-6afe30967c01",
+  "version": "2.0",
+  "name": "Update senha",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "b548d9a0-5cec-4e7d-8628-c18e6ae483c6",
+    "name": "update senha cliente",
+    "commands": [{
+      "id": "a7556d02-a390-464b-982d-0ac70ea1d12e",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "878a0d1a-e10b-477b-a56b-48fcb2ac8630",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0598634e-f270-4dca-a64c-2480c4aff85a",
+      "comment": "",
+      "command": "click",
+      "target": "css=header",
+      "targets": [
+        ["css=header", "css:finder"],
+        ["xpath=//header", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ebdebe9-829f-4a35-a052-4dff6e268340",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contas e Listas",
+      "targets": [
+        ["linkText=Contas e Listas", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contas e Listas')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contas-listas.html')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Contas e Listas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a47fac1-32b0-4d4b-9305-06a4946782a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(7) p",
+      "targets": [
+        ["css=div:nth-child(7) p", "css:finder"],
+        ["xpath=//div[7]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Alterar senha')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d5e129c-11d2-48db-a492-55a3aebde9f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe4587f0-46ef-4e20-86f9-9233dd5f2720",
+      "comment": "",
+      "command": "type",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "2ea5f273-d5bf-45b9-b181-f2259e899d78",
+      "comment": "",
+      "command": "click",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9898fdd7-f20b-44d8-95b5-21d9abdabfbf",
+      "comment": "",
+      "command": "type",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "VAISANTOs1@"
+    }, {
+      "id": "57d99fc6-b3f0-463d-ba3e-f6bf0aa9d02a",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirmarSenha",
+      "targets": [
+        ["id=confirmarSenha", "id"],
+        ["name=confirmarSenha", "name"],
+        ["css=#confirmarSenha", "css:finder"],
+        ["xpath=//input[@id='confirmarSenha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07fd8a8e-7b4c-43fc-a795-bafd3c6e44da",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirmarSenha",
+      "targets": [
+        ["id=confirmarSenha", "id"],
+        ["name=confirmarSenha", "name"],
+        ["css=#confirmarSenha", "css:finder"],
+        ["xpath=//input[@id='confirmarSenha']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "VAISANTOs1@"
+    }, {
+      "id": "260b2ebf-c7cd-48e0-8264-f50465f208cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=enviarBtn",
+      "targets": [
+        ["id=enviarBtn", "id"],
+        ["css=#enviarBtn", "css:finder"],
+        ["xpath=//button[@id='enviarBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='meuFormulario']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "134cdb7a-fe6b-4dea-aa0c-62200b390705",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b548d9a0-5cec-4e7d-8628-c18e6ae483c6"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

@@ -7,7 +7,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
     var idCliente = document.getElementById('idCliente').value;
-    var principal = document.getElementById('principal').checked;
+    var principalEntrega = document.getElementById('principalEntrega').checked;
     var tipoResidenciaEntrega = document.getElementById('tipoResidenciaEntrega').value;
     var receptorEntrega = document.getElementById('receptorEntrega').value;
     var tipoLogradouroEntrega = document.getElementById('tipoLogradouroEntrega').value;
@@ -23,7 +23,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     
     var data = {
         "idCliente": idCliente,
-        "principal": principal,
+        "principalEntrega": principalEntrega,
         "receptorEntrega": receptorEntrega,
         "tipoResidenciaEntrega": tipoResidenciaEntrega,
         "tipoLogradouroEntrega": tipoLogradouroEntrega,

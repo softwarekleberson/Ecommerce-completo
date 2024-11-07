@@ -1,0 +1,145 @@
+{
+  "id": "3f373f2e-43cf-409b-82c0-773808186514",
+  "version": "2.0",
+  "name": "Criar cupom",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "b0053be9-3d19-47b8-85cf-7a23a1e3137f",
+    "name": "Novo cupom adm",
+    "commands": [{
+      "id": "18110da1-dd35-4654-9883-9a0f8078a348",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df42148e-630d-4d2c-8007-d04dcfae5a2b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6ed1122-cee2-4574-a23c-ec8f16b2845b",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(10) p",
+      "targets": [
+        ["css=div:nth-child(10) p", "css:finder"],
+        ["xpath=//div[10]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Registrar novo cupom promocional')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "782a3def-c3c9-4034-a06a-d03c82d13307",
+      "comment": "",
+      "command": "click",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01c9fa2a-ff48-4868-a7da-a91cf7cf84b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "e04758ab-8e38-44bb-91ce-b57cb447dddf",
+      "comment": "",
+      "command": "click",
+      "target": "id=tipoCupom",
+      "targets": [
+        ["id=tipoCupom", "id"],
+        ["name=tipoCupom", "name"],
+        ["css=#tipoCupom", "css:finder"],
+        ["xpath=//select[@id='tipoCupom']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Promocional')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb757d80-dd50-45e5-9446-6ce1c9b03ed1",
+      "comment": "",
+      "command": "click",
+      "target": "id=tipoCupom",
+      "targets": [
+        ["id=tipoCupom", "id"],
+        ["name=tipoCupom", "name"],
+        ["css=#tipoCupom", "css:finder"],
+        ["xpath=//select[@id='tipoCupom']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Promocional')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f73597a1-7c52-482f-9d32-37e74ddf08d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=valor",
+      "targets": [
+        ["id=valor", "id"],
+        ["name=valor", "name"],
+        ["css=#valor", "css:finder"],
+        ["xpath=//input[@id='valor']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21b8c06e-74b6-4308-97a8-e5be887da6e4",
+      "comment": "",
+      "command": "type",
+      "target": "id=valor",
+      "targets": [
+        ["id=valor", "id"],
+        ["name=valor", "name"],
+        ["css=#valor", "css:finder"],
+        ["xpath=//input[@id='valor']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "800.40"
+    }, {
+      "id": "1809efc7-8022-421b-9a53-5c0358d036ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='cupomForm']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "21271a8c-2a3f-4851-be44-e938bc5e3272",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b0053be9-3d19-47b8-85cf-7a23a1e3137f"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

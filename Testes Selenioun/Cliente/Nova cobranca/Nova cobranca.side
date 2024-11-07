@@ -1,0 +1,556 @@
+{
+  "id": "aa1b1fea-1e1c-4596-8ed0-d1b8cfc98d8b",
+  "version": "2.0",
+  "name": "Nova cobranca",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "2ea377d4-24a9-4d86-ac9e-f28c6933302a",
+    "name": "nova cobranca ",
+    "commands": [{
+      "id": "e41a8f43-a852-4f99-a766-2daeb282fb2e",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "865bb3ff-6fa7-4714-85bb-40f7da134bc0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a96413f3-31b6-4862-ac35-ce0b712eb939",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contas e Listas",
+      "targets": [
+        ["linkText=Contas e Listas", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contas e Listas')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contas-listas.html')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Contas e Listas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66448b13-2b65-4a58-9691-4740a769313c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) p",
+      "targets": [
+        ["css=div:nth-child(3) p", "css:finder"],
+        ["xpath=//div[3]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Novo Endereço cobrança')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80d0ad9f-6de2-4a9d-a8d2-6c8497c6ba5d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Adicionar",
+      "targets": [
+        ["linkText=Adicionar", "linkText"],
+        ["css=.actions:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Adicionar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'adicionar-Cobranca.html')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Adicionar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b1ed313-652b-4359-a923-fd9de3d085b0",
+      "comment": "",
+      "command": "click",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37f1da86-68b8-4f8a-a86f-2604b7c94330",
+      "comment": "",
+      "command": "type",
+      "target": "id=idCliente",
+      "targets": [
+        ["id=idCliente", "id"],
+        ["name=idCliente", "name"],
+        ["css=#idCliente", "css:finder"],
+        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "39e07caa-6e2a-4bc1-84f0-06ccab127ba3",
+      "comment": "",
+      "command": "click",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8c37a43-4142-4780-b330-38ba14589268",
+      "comment": "",
+      "command": "type",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "08717-380"
+    }, {
+      "id": "7502bc3b-a7cb-4fe0-8166-310f44188f51",
+      "comment": "",
+      "command": "click",
+      "target": "id=tipoResidenciaCobranca",
+      "targets": [
+        ["id=tipoResidenciaCobranca", "id"],
+        ["name=tipoResidenciaCobranca", "name"],
+        ["css=#tipoResidenciaCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2f2ec11-32d0-461f-806b-b47d5d363c98",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "410.8984375,384.5"
+    }, {
+      "id": "6b6621e6-b886-4d76-85b3-e5103665c5b4",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "410.8984375,384.5"
+    }, {
+      "id": "df0cc8da-d9e0-402d-a571-dd7b0fe1991b",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "410.8984375,384.5"
+    }, {
+      "id": "89533d95-748f-4706-9194-b97c143b23e2",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,314.5"
+    }, {
+      "id": "4c926215-6a48-4122-9860-99dbdfe1d9d7",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,314.5"
+    }, {
+      "id": "331af3f7-b592-438f-a543-f28ec225c7f8",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,314.5"
+    }, {
+      "id": "83677251-5ad9-4c7a-9084-2291564c2a46",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,170.5"
+    }, {
+      "id": "0994f9c7-181c-4f8e-9042-f2c7fc898662",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,170.5"
+    }, {
+      "id": "24cf57c7-7995-41a9-943a-982858e09114",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "399.8984375,170.5"
+    }, {
+      "id": "e69dfcae-a7c9-404f-91df-b56f3b51feb0",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "404.8984375,154.5"
+    }, {
+      "id": "f7d1ee13-d69a-4ef0-8e69-8d9bbb69de31",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "404.8984375,154.5"
+    }, {
+      "id": "03549e2c-e3fb-4473-9b53-4ccead4d5513",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "404.8984375,154.5"
+    }, {
+      "id": "44af0fef-99f5-4244-bc09-9c68066512f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0e00aad-6552-403e-80d9-bb4e96b618f4",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "398.8984375,212.5"
+    }, {
+      "id": "4149487f-48d7-4ed7-9032-83c6b30abe84",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "398.8984375,212.5"
+    }, {
+      "id": "6d8836ad-0d15-4d0e-85a2-9f8b63860b3b",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "398.8984375,212.5"
+    }, {
+      "id": "c504950e-0870-4df2-bd31-bf1543ffbb57",
+      "comment": "",
+      "command": "type",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "kawany"
+    }, {
+      "id": "123dd9ab-d0e5-438c-9e33-821b9a2dd3d8",
+      "comment": "",
+      "command": "click",
+      "target": "id=tipoResidenciaCobranca",
+      "targets": [
+        ["id=tipoResidenciaCobranca", "id"],
+        ["name=tipoResidenciaCobranca", "name"],
+        ["css=#tipoResidenciaCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63d343b6-7608-489b-9adc-de8dd1f1a5b6",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoResidenciaCobranca",
+      "targets": [
+        ["id=tipoResidenciaCobranca", "id"],
+        ["name=tipoResidenciaCobranca", "name"],
+        ["css=#tipoResidenciaCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "cobertura"
+    }, {
+      "id": "3ae48c5d-7537-42e3-82b2-11fdb9e727f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=tipoLogradouroCobranca",
+      "targets": [
+        ["id=tipoLogradouroCobranca", "id"],
+        ["name=tipoLogradouroCobranca", "name"],
+        ["css=#tipoLogradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoLogradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e1e2eea-fbfb-42a0-b65f-d311109ec154",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "400.8984375,258.5"
+    }, {
+      "id": "59d62466-52f0-4e34-a4d7-bdd35b59b9e2",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "400.8984375,258.5"
+    }, {
+      "id": "3f659836-6edf-45f1-8d42-bcd3d0282426",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "400.8984375,258.5"
+    }, {
+      "id": "62d468dc-cf58-43b0-b8e7-3cf24aed0a2a",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "391.8984375,306.5"
+    }, {
+      "id": "2fcab094-0dd1-46a0-9bae-07f02cc95712",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "391.8984375,306.5"
+    }, {
+      "id": "43895e26-ebc8-4c23-b10b-aec4dac80c49",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "391.8984375,306.5"
+    }, {
+      "id": "93b49477-0c88-4806-8b4d-d42ddffda092",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoLogradouroCobranca",
+      "targets": [
+        ["id=tipoLogradouroCobranca", "id"],
+        ["name=tipoLogradouroCobranca", "name"],
+        ["css=#tipoLogradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoLogradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "rua "
+    }, {
+      "id": "d53ad4d3-bc27-4a09-b350-f548a9ed15e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=numeroCobranca",
+      "targets": [
+        ["id=numeroCobranca", "id"],
+        ["name=numeroCobranca", "name"],
+        ["css=#numeroCobranca", "css:finder"],
+        ["xpath=//input[@id='numeroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9b34e46-1ee7-473b-9168-40922f823767",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "403.8984375,388.5"
+    }, {
+      "id": "71a3e23d-b1dd-478a-9a64-c219bdb99fb7",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "403.8984375,388.5"
+    }, {
+      "id": "7d6020a4-0597-4fb8-9e3d-74dede3d6470",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=myForm",
+      "targets": [
+        ["id=myForm", "id"],
+        ["css=#myForm", "css:finder"],
+        ["xpath=//form[@id='myForm']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": "403.8984375,388.5"
+    }, {
+      "id": "75c53b93-c198-4fb8-a3ce-4465a55e3fad",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroCobranca",
+      "targets": [
+        ["id=numeroCobranca", "id"],
+        ["name=numeroCobranca", "name"],
+        ["css=#numeroCobranca", "css:finder"],
+        ["xpath=//input[@id='numeroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "e099a330-4fac-4463-9f58-948de085826d",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(51)",
+      "targets": [
+        ["css=input:nth-child(51)", "css:finder"],
+        ["xpath=//input[@value='Enviar']", "xpath:attributes"],
+        ["xpath=//form[@id='myForm']/input[13]", "xpath:idRelative"],
+        ["xpath=//input[13]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0f8b099a-24b3-47b8-b2cc-0a0f941a8d1b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2ea377d4-24a9-4d86-ac9e-f28c6933302a"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
