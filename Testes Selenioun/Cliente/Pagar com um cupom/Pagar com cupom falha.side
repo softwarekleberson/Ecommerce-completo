@@ -1,0 +1,196 @@
+{
+  "id": "e7171af7-4a26-415c-b16c-3fb699fe0e73",
+  "version": "2.0",
+  "name": "Pagar com cupom falha",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "8251d95c-38e8-4350-b60a-8efbe6a45c59",
+    "name": "Pagar com apenas 1 cupom falha",
+    "commands": [{
+      "id": "625f0d26-7915-4cf3-845f-dd9c688ae243",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f1279bc-3e5e-4f21-9e57-2fc02fd85805",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2061115-44e7-4de3-b3ab-c60398a0be0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(1) > a > img",
+      "targets": [
+        ["css=div:nth-child(1) > a > img", "css:finder"],
+        ["xpath=//img[@alt='Vidas Secas']", "xpath:img"],
+        ["xpath=//div[@id='produtos']/div/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "440b91ef-6d26-469f-a76c-e028b591c092",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-solid",
+      "targets": [
+        ["css=.fa-solid", "css:finder"],
+        ["xpath=//button[@id='adicionar-carrinho']/i", "xpath:idRelative"],
+        ["xpath=//a/button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "557e4618-3d24-4e92-a444-75043e205e81",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68e17845-edf3-4373-b020-3a28512f32df",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hatchards",
+      "targets": [
+        ["linkText=Hatchards", "linkText"],
+        ["css=.logo", "css:finder"],
+        ["xpath=//a[contains(text(),'Hatchards')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'home.html')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hatchards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f8cb402-6eee-4e05-9247-39c61d1a8309",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contas e Listas",
+      "targets": [
+        ["linkText=Contas e Listas", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contas e Listas')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contas-listas.html')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Contas e Listas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b44275c-a42b-4a37-a726-bf3c43d3dfb9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container > div:nth-child(4) > a",
+      "targets": [
+        ["css=.container > div:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(@href, 'cupom.html')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "790729c0-4ae2-46de-94c0-112d05b97bc5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cupom",
+      "targets": [
+        ["css=.cupom", "css:finder"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61dd2f9e-a82e-45b8-80b3-a4c605c99994",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-cart-shopping",
+      "targets": [
+        ["css=.fa-cart-shopping", "css:finder"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "661d628d-1488-4096-87bd-783e959f9bcb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec23efc2-9376-4659-b0bb-b6f3677d0d25",
+      "comment": "",
+      "command": "click",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97cd7434-fbe5-413a-9352-4e12fb2c4570",
+      "comment": "",
+      "command": "click",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43795804-35c4-4c77-884f-7d445cbe0f41",
+      "comment": "",
+      "command": "type",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "a83cc84b-323c-4364-a90f-41b515460c56"
+    }, {
+      "id": "75ce7322-8b6f-4818-b6aa-8f52b4f3f4ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=finalizar",
+      "targets": [
+        ["id=finalizar", "id"],
+        ["css=#finalizar", "css:finder"],
+        ["xpath=//button[@id='finalizar']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abf54676-0fe5-4963-adc4-caf1d27699c3",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Erro ao processar o pagamento: Pagamento reprovado.",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "492ea54f-0f31-4e3a-a086-055097f377a4",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8251d95c-38e8-4350-b60a-8efbe6a45c59"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

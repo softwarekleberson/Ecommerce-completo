@@ -1,0 +1,123 @@
+{
+  "id": "156517e4-74ed-4ae5-87d6-79584ec05ddc",
+  "version": "2.0",
+  "name": "Pagar com cartao falta de credito",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "fa202250-78b2-4858-80bc-039fb13a9d28",
+    "name": "Pagamento reprovado falta de credito",
+    "commands": [{
+      "id": "608ffbf6-fe1c-4502-97d1-17a82762009c",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5260377f-4629-4ec7-bd3a-706e1128b55e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92ab8bdb-8c04-4b5f-a18d-f49bbae9a0f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) img",
+      "targets": [
+        ["css=div:nth-child(2) img", "css:finder"],
+        ["xpath=//img[@alt='Memórias Póstumas de Brás Cubas']", "xpath:img"],
+        ["xpath=//div[@id='produtos']/div[2]/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d60896a3-e367-4398-b611-f5c063487130",
+      "comment": "",
+      "command": "click",
+      "target": "id=adicionar-carrinho",
+      "targets": [
+        ["id=adicionar-carrinho", "id"],
+        ["css=#adicionar-carrinho", "css:finder"],
+        ["xpath=//button[@id='adicionar-carrinho']", "xpath:attributes"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fd7848a-cc0b-4af1-9c9b-ae2d79a6a6b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.link-botao:nth-child(2) > .botao",
+      "targets": [
+        ["css=.link-botao:nth-child(2) > .botao", "css:finder"],
+        ["xpath=//a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue Comprando')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c32a5abe-5311-4c7d-b7fe-677f33d6cd54",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) img",
+      "targets": [
+        ["css=div:nth-child(3) img", "css:finder"],
+        ["xpath=//img[@alt='A Metamorfose']", "xpath:img"],
+        ["xpath=//div[@id='produtos']/div[3]/a/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2374f46a-3c11-4277-b2c8-ee5f895bf9a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-solid",
+      "targets": [
+        ["css=.fa-solid", "css:finder"],
+        ["xpath=//button[@id='adicionar-carrinho']/i", "xpath:idRelative"],
+        ["xpath=//a/button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecd98982-e23b-4598-bb1e-a968db834905",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07c1ed26-0884-4d15-877c-86b8215c2ff3",
+      "comment": "",
+      "command": "click",
+      "target": "id=finalizar",
+      "targets": [
+        ["id=finalizar", "id"],
+        ["css=#finalizar", "css:finder"],
+        ["xpath=//button[@id='finalizar']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95155005-8d6d-4f8c-802d-a0ad56c51643",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Erro ao processar o pagamento: Pagamento reprovado.",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1382576f-d4cc-4f2a-88c1-a600552efd8b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["fa202250-78b2-4858-80bc-039fb13a9d28"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

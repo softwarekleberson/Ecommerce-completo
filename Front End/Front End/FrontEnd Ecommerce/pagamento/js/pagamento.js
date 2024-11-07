@@ -10,10 +10,20 @@ async function enviarPagamento() {
     const idCartao1Element = document.getElementById("idCartao1");
     const idCartao1 = idCartao1Element ? idCartao1Element.textContent.replace('id cartao 1 = ', '').trim() : null;
 
+    // Verificação para garantir que pelo menos um método de pagamento foi selecionado
+    if (!idCartao1 && !cupom1 && !cupom2) {
+        alert("Por favor, forneça pelo menos um método de pagamento: cartão, cupom ou ambos.");
+        return;
+    }
+
+    // Criação do objeto com os dados do pagamento
     const dadosPagamento = {
-        salvarCartao: salvarCartao,
-        idCartao1: idCartao1 ? parseInt(idCartao1) : null  
+        salvarCartao: salvarCartao
     };
+
+    if (idCartao1) {
+        dadosPagamento.idCartao1 = parseInt(idCartao1);
+    }
 
     if (cupom1) {
         dadosPagamento.cupom1 = cupom1;
@@ -36,8 +46,10 @@ async function enviarPagamento() {
             alert("Pagamento enviado com sucesso!");
             console.log("Pagamento enviado com sucesso");
         } else {
-            alert("Erro ao enviar pagamento. Tente novamente.");
-            console.error("Erro ao enviar pagamento");
+            // Captura a mensagem de erro personalizada do backend
+            const errorData = await response.json();
+            alert(`Erro ao processar o pagamento: ${errorData.message || "Pagamento recusado. Tente novamente."}`);
+            console.error("Erro ao processar o pagamento:", errorData);
         }
     } catch (error) {
         alert("Erro na requisição: " + error.message);

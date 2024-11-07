@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pagamento.DadosCadastroPagamento;
+import br.com.engenharia.projeto.ProjetoFinal.dtos.pagamento.DadosPagmento;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.Cartao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.Cupom;
@@ -74,7 +75,7 @@ public class ServicePagamento {
 	}
 
 	@Transactional
-	public void validarDadosDoPagamento(@Valid DadosCadastroPagamento dados, Long clienteId) {
+	public DadosPagmento validarDadosDoPagamento(@Valid DadosCadastroPagamento dados, Long clienteId) {
 		var entrega = verificarExistenciaEntrega();
 		var cobranca = verificarExistenciaCobranca();
 		BigDecimal valorTotalPedido = calcularValorTotalDosPedidos(clienteId);
@@ -103,6 +104,7 @@ public class ServicePagamento {
 		Log log = new Log(clienteId);
 		repositorioDeLog.save(log);
 		
+		return new DadosPagmento(pagamento);
 	}
 
 	private void apiDePagamentoFake(Pagamento pagamento, Long idCartao1, Long idCartao2, String idCupom1, String idCupom2) {

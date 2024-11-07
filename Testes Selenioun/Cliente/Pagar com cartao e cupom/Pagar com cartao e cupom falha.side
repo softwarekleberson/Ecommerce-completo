@@ -1,0 +1,211 @@
+{
+  "id": "5d0c420e-2873-43dd-82ac-b289d05f1fed",
+  "version": "2.0",
+  "name": "Pagar com cartao e cupom falha",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "96a9df64-1c05-4dd1-80f6-f347d7f6d28d",
+    "name": "Pagar com 1 cartao e 1 cupom reprovado",
+    "commands": [{
+      "id": "e5ae575a-f70f-4131-8f69-79fd4d2ddfe8",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6448ee4-7f3c-404d-adff-a3b76b9450a5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f61ae4ba-d113-4dfc-818e-7dd8db7c4197",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) img",
+      "targets": [
+        ["css=div:nth-child(2) img", "css:finder"],
+        ["xpath=//img[@alt='Memórias Póstumas de Brás Cubas']", "xpath:img"],
+        ["xpath=//div[@id='produtos']/div[2]/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dec39f41-e2ed-42f6-a14c-e31332f7e339",
+      "comment": "",
+      "command": "click",
+      "target": "id=incrementar",
+      "targets": [
+        ["id=incrementar", "id"],
+        ["css=#incrementar", "css:finder"],
+        ["xpath=//button[@id='incrementar']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c436e3f9-03b0-4e30-aab2-9c90a0c6491c",
+      "comment": "",
+      "command": "click",
+      "target": "id=adicionar-carrinho",
+      "targets": [
+        ["id=adicionar-carrinho", "id"],
+        ["css=#adicionar-carrinho", "css:finder"],
+        ["xpath=//button[@id='adicionar-carrinho']", "xpath:attributes"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be4fd30a-8d57-40aa-96cb-700988b48a63",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21b32a04-0ae8-4148-8550-a516fb7f0f7d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hatchards",
+      "targets": [
+        ["linkText=Hatchards", "linkText"],
+        ["css=.logo", "css:finder"],
+        ["xpath=//a[contains(text(),'Hatchards')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'home.html')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hatchards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ca073b8-c519-40ff-9428-5c27c554de65",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contas e Listas",
+      "targets": [
+        ["linkText=Contas e Listas", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Contas e Listas')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contas-listas.html')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Contas e Listas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c79838f-e5db-4282-b1a8-1ca65451ef1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container > div:nth-child(4) > a",
+      "targets": [
+        ["css=.container > div:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(@href, 'cupom.html')]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e5113d9-8ae4-4f1a-84a6-1862e41e89d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cupom > p:nth-child(2)",
+      "targets": [
+        ["css=.cupom > p:nth-child(2)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Código: a83cc84b-323c-4364-a90f-41b515460c56')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "85cb6a2d-34b2-4a9f-809e-aab427bcb3c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-cart-shopping",
+      "targets": [
+        ["css=.fa-cart-shopping", "css:finder"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cba1d67e-b5fa-4cbd-9006-aefd644a6293",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24942821-4ab2-4098-9b16-4228f333964d",
+      "comment": "",
+      "command": "click",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38c0bd96-464d-478a-a53b-93edc73985e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "587004c8-c881-4154-b4bf-f5af9e75600c",
+      "comment": "",
+      "command": "type",
+      "target": "id=cupom1",
+      "targets": [
+        ["id=cupom1", "id"],
+        ["css=#cupom1", "css:finder"],
+        ["xpath=//input[@id='cupom1']", "xpath:attributes"],
+        ["xpath=//div[@id='validar-cupom']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "a83cc84b-323c-4364-a90f-41b515460c56"
+    }, {
+      "id": "3cc4f785-d427-4e1f-86a9-81b3e5fe78a2",
+      "comment": "",
+      "command": "click",
+      "target": "id=finalizar",
+      "targets": [
+        ["id=finalizar", "id"],
+        ["css=#finalizar", "css:finder"],
+        ["xpath=//button[@id='finalizar']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d8a6fce-7199-4280-a53b-53da867f3248",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Erro ao processar o pagamento: Pagamento reprovado.",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e4364df2-a96f-45d4-bf29-77c8a9782680",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["96a9df64-1c05-4dd1-80f6-f347d7f6d28d"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
