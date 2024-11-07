@@ -1,0 +1,838 @@
+{
+  "id": "e56a72d2-f187-41f9-8b4c-0787c30244ad",
+  "version": "2.0",
+  "name": "Pesquisa com parametros",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "3d0b682d-5b5a-4632-8317-3f8862d4b43b",
+    "name": "Busca com muitos parametros",
+    "commands": [{
+      "id": "f9789a18-d0b9-47db-895f-8f15bc812551",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "778e8d82-fe93-4ed6-be06-59224fd8331b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86e511e5-be18-46bb-9e97-f30afc53f6d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "987685f2-8fb7-4f6c-94ca-f778869b3aa5",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "15"
+    }, {
+      "id": "80d42524-155d-4073-9820-61e87429af6d",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "698bc858-6a3b-477c-a332-0478d6e53247",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "60"
+    }, {
+      "id": "23e37e55-51ac-48f4-a67a-4fef4f3ba054",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1308e8e6-bcca-49a2-a935-e0fa68a80ae6",
+      "comment": "",
+      "command": "type",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "200"
+    }, {
+      "id": "a14678ce-7881-43fa-90bc-226fc7568869",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6389dda5-96b4-4c8e-a1f3-a0259435a1cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af7f867f-74b2-4e59-a908-beb27b379de1",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f17b4fe-51d8-48eb-a733-f46cb3be97e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33d6acaa-f0a9-4167-9305-c94ee1bc13d2",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e4b9257-3cc5-450a-a43b-2c7315fca9c4",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "516521c7-9e52-46d5-9209-147b63b8f5f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa59380d-cac3-4331-902a-1fc25e8616c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "36040078-fa59-4f82-a531-e1ec9cb91f17",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8d4e96d-4071-4c35-aa16-5c57c97b619b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6874215-966b-40e9-9f8d-55f53e3c6f0d",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fccc11f1-9c3f-4fcc-8702-cb08cbc89565",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17290aae-0fba-49c8-bf61-99453f58a36d",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d62819d5-b096-445f-a73b-940a7b0a023f",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "123ce161-2968-4e25-9475-946072c837c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9815d740-02ed-4991-9b4e-406d84f5bdba",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f02262dc-9e14-41ed-a2a0-37d436045087",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7a1614b-ca5a-4dec-8a99-bdd54a295e27",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "305d255e-677a-445e-b241-cf52ce9db0e4",
+      "comment": "",
+      "command": "type",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "300"
+    }, {
+      "id": "7bf74005-89c5-4b9f-ae38-692e30892031",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d29a61b6-3b3f-4c8e-9f60-925223833595",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dc9d3ca-ff42-4899-b3b8-68d318797391",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "90"
+    }, {
+      "id": "ac02c7c2-d54e-4105-8c4a-2192381ce071",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d49b3ed3-a0b3-4218-a07d-a0acce4d004c",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "50"
+    }, {
+      "id": "3defd8e6-e339-4655-be2e-8052939edbcf",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "075949de-74af-4a98-9bf3-a47adaa66c4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd7aa79-5886-46cc-8d8a-245653d853d1",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMenor",
+      "targets": [
+        ["id=precoMenor", "id"],
+        ["name=precoMenor", "name"],
+        ["css=#precoMenor", "css:finder"],
+        ["xpath=//input[@id='precoMenor']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "60"
+    }, {
+      "id": "3ef7776e-1717-4272-a0c5-e2cacf238d05",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33be444e-1c6b-4038-bdda-b74db24b7928",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ee06fc8-6ea1-4cba-98db-e22346133f4f",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85c0bbe5-466e-437a-9839-3e2af64ee5df",
+      "comment": "",
+      "command": "click",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10a2f63a-2732-4ea2-b4b2-6d861655aff1",
+      "comment": "",
+      "command": "type",
+      "target": "id=precoMaior",
+      "targets": [
+        ["id=precoMaior", "id"],
+        ["name=precoMaior", "name"],
+        ["css=#precoMaior", "css:finder"],
+        ["xpath=//input[@id='precoMaior']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e5964fc-f9ef-40e2-9bb8-277824124b26",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "49f50b36-878e-4a18-a006-2ac3377f9a71",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05388581-eebc-47e2-a108-ac4b992c26f7",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7aadaedc-91ea-43cc-88cf-a37efa1319ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=editora",
+      "targets": [
+        ["id=editora", "id"],
+        ["name=editora", "name"],
+        ["css=#editora", "css:finder"],
+        ["xpath=//input[@id='editora']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d84b88d-9b12-49c9-9e7d-74d712d45c04",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc13a492-94e2-4e52-8cad-f5eaa9a3968c",
+      "comment": "",
+      "command": "click",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "030b2c97-a8e6-4475-a68f-044aa47a8e92",
+      "comment": "",
+      "command": "type",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "1 edição"
+    }, {
+      "id": "e90e8618-be4b-4e3f-8766-76273d8ac83b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9784203b-3146-426a-bd0d-8bd8ff04cd92",
+      "comment": "",
+      "command": "click",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30b913aa-aaa7-43dc-9633-422ed600c0f4",
+      "comment": "",
+      "command": "click",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bc5258f-954f-4eba-8311-d2a4ca9a7dcd",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "955d4594-3dc5-4db1-9b25-d6f1a4b2a647",
+      "comment": "",
+      "command": "click",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91985c0c-d39e-4fd8-8585-af0ecc09db84",
+      "comment": "",
+      "command": "type",
+      "target": "id=edicao",
+      "targets": [
+        ["id=edicao", "id"],
+        ["name=edicao", "name"],
+        ["css=#edicao", "css:finder"],
+        ["xpath=//input[@id='edicao']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7aadc2fd-93ed-4970-89eb-456971b0d700",
+      "comment": "",
+      "command": "click",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5bb2778-8223-4688-836e-9c2ba9880091",
+      "comment": "",
+      "command": "type",
+      "target": "id=paginas",
+      "targets": [
+        ["id=paginas", "id"],
+        ["name=paginas", "name"],
+        ["css=#paginas", "css:finder"],
+        ["xpath=//input[@id='paginas']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "400"
+    }, {
+      "id": "f4a6e08f-2650-4d0f-9dc6-c56a04e519ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80476a83-c545-400c-8bde-1d8c85cdf98b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "927c0565-0157-4e06-95cc-3ed21a807665",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b731e74b-aa33-4f79-9db1-e82e25f00c59",
+      "comment": "",
+      "command": "click",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7754cba1-3b81-47ea-a5bf-619cf835d8aa",
+      "comment": "",
+      "command": "type",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "uma breve"
+    }, {
+      "id": "d9c0dc20-1790-46ca-8774-c9c10c9de9d4",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(45)",
+      "targets": [
+        ["css=button:nth-child(45)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='pesquisa-livros-form']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Filtrar Livros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "eee07b1c-51c0-4b6a-82b7-abb6c91e14b6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3d0b682d-5b5a-4632-8317-3f8862d4b43b"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
