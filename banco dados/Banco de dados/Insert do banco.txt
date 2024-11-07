@@ -352,10 +352,10 @@ VALUES (15, 15);
 /*Categorias*/
 
 /*Insert categoria*/
-INSERT INTO categorias (categoria) VALUES ('Romance');
-INSERT INTO categorias (categoria) VALUES ('Clássico');
-INSERT INTO categorias (categoria) VALUES ('Ficção');
-INSERT INTO categorias (categoria) VALUES ('Distopia');
+INSERT INTO categorias (categoria) VALUES ('romance');
+INSERT INTO categorias (categoria) VALUES ('clássico');
+INSERT INTO categorias (categoria) VALUES ('ficção');
+INSERT INTO categorias (categoria) VALUES ('distopia');
 INSERT INTO categorias (categoria) VALUES ('autoajuda');
 
 
