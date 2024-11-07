@@ -1,0 +1,85 @@
+{
+  "id": "b20e140b-db86-43e8-9a4e-bb9aecb7b8d0",
+  "version": "2.0",
+  "name": "Nova precificação",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "4c6d5d09-9d78-4f01-9e0d-388a45518493",
+    "name": "Nova precificacao",
+    "commands": [{
+      "id": "7ebac6f6-6bca-49a7-af13-53c078898789",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ff5245b-90ab-46f3-b0be-e695358b14c3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32700be4-80de-48c0-a0b5-db44e492fa1c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(5) p",
+      "targets": [
+        ["css=div:nth-child(5) p", "css:finder"],
+        ["xpath=//div[5]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Insira uma nova precificação ao sistemas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7585cd1c-7d00-41eb-aa4a-f31ced29e9a2",
+      "comment": "",
+      "command": "click",
+      "target": "name=precificacao",
+      "targets": [
+        ["name=precificacao", "name"],
+        ["css=#precificacao > #precificacao", "css:finder"],
+        ["xpath=//input[@id='precificacao']", "xpath:attributes"],
+        ["xpath=//form[@id='precificacao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58d7f755-83f3-4a90-8f7f-f5f17599ee71",
+      "comment": "",
+      "command": "type",
+      "target": "name=precificacao",
+      "targets": [
+        ["name=precificacao", "name"],
+        ["css=#precificacao > #precificacao", "css:finder"],
+        ["xpath=//input[@id='precificacao']", "xpath:attributes"],
+        ["xpath=//form[@id='precificacao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "78f8c1d6-d604-4d0a-a242-7a65c301ad44",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='precificacao']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9e0b928d-7e84-4848-b2cb-23b495ba21e7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4c6d5d09-9d78-4f01-9e0d-388a45518493"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

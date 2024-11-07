@@ -1,0 +1,167 @@
+{
+  "id": "4a1d811f-837b-4a78-945a-6cda49f35d36",
+  "version": "2.0",
+  "name": "Adm",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "5e1fb34c-f9b1-4087-bf15-e32c7a5e52ba",
+    "name": "Novo adm",
+    "commands": [{
+      "id": "0dbe857c-7802-4acf-9c30-c776d3e63fa2",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e6ab1a5-4c87-45af-975a-1d3ce3be5ec5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "521c5acb-9f56-4f40-8e8a-f49e6e141991",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(1) > a > p",
+      "targets": [
+        ["css=div:nth-child(1) > a > p", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Registrar novo adm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bed91a38-aa92-4198-9a7e-e3f4052d4c63",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f417f15-56e8-4de8-9e7b-abd9e8678b47",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Jose da silva sauro"
+    }, {
+      "id": "c399cbee-0229-4f24-b3b5-15038d9efc02",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "josesilva@gmail.com"
+    }, {
+      "id": "91f0f74c-5dfa-4935-8ebe-e6b94e46bbeb",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb632311-4768-43bf-883c-d892157093ee",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "8972VAIsantos1@"
+    }, {
+      "id": "c7bfe92a-4723-4a3d-b178-69da11b67c59",
+      "comment": "",
+      "command": "click",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e258cb8-2a15-4e38-982c-ced9c6d4a36e",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm_password",
+      "targets": [
+        ["id=confirm_password", "id"],
+        ["name=confirm_password", "name"],
+        ["css=#confirm_password", "css:finder"],
+        ["xpath=//input[@id='confirm_password']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "8972VAIsantos1@"
+    }, {
+      "id": "44469933-2e9f-412f-9791-915fb464c9c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='admin-form']/div[5]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Criar Adm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "34e2df42-b74a-4a1d-bc58-c3bbb4c72c37",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4e336cde-6c1e-46ca-b2a2-5cb025f2a8e1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5e1fb34c-f9b1-4087-bf15-e32c7a5e52ba"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

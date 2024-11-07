@@ -1,0 +1,251 @@
+{
+  "id": "76479716-0ced-47e8-9430-cfbbd74c8dde",
+  "version": "2.0",
+  "name": "Estoque",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "e3222908-fe0f-4e37-8712-d3de55e468f0",
+    "name": "Inserção em estoque novo livro",
+    "commands": [{
+      "id": "fc73410d-681b-4536-8413-370e87d4fb1e",
+      "comment": "",
+      "command": "open",
+      "target": "/Front%20End/FrontEnd%20Ecommerce/home-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7eff4a4a-809d-4301-9d82-d4740899397f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ba92deb-2435-4610-a8d1-48ed85536b4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(6)",
+      "targets": [
+        ["css=div:nth-child(6)", "css:finder"],
+        ["xpath=//div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "974cae57-4933-4404-87be-26eed375ab60",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(6) p",
+      "targets": [
+        ["css=div:nth-child(6) p", "css:finder"],
+        ["xpath=//div[6]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Insira novos livros ao estoque')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e511574-76e3-4b2e-b232-a94986794695",
+      "comment": "",
+      "command": "click",
+      "target": "id=idLivro",
+      "targets": [
+        ["id=idLivro", "id"],
+        ["name=idLivro", "name"],
+        ["css=#idLivro", "css:finder"],
+        ["xpath=//input[@id='idLivro']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eabe3e30-fbc4-4f37-b531-542c9ed9914e",
+      "comment": "",
+      "command": "type",
+      "target": "id=idLivro",
+      "targets": [
+        ["id=idLivro", "id"],
+        ["name=idLivro", "name"],
+        ["css=#idLivro", "css:finder"],
+        ["xpath=//input[@id='idLivro']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "ba09e846-609e-4339-aacb-dc89f1bb6e53",
+      "comment": "",
+      "command": "click",
+      "target": "id=quantidade",
+      "targets": [
+        ["id=quantidade", "id"],
+        ["name=quantidade", "name"],
+        ["css=#quantidade", "css:finder"],
+        ["xpath=//input[@id='quantidade']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f340115d-9266-4535-8cf1-e75e2e66fa6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=quantidade",
+      "targets": [
+        ["id=quantidade", "id"],
+        ["name=quantidade", "name"],
+        ["css=#quantidade", "css:finder"],
+        ["xpath=//input[@id='quantidade']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "de6be1d7-8eb2-4be3-8628-d57ac411fb9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=valorCusto",
+      "targets": [
+        ["id=valorCusto", "id"],
+        ["name=valorCusto", "name"],
+        ["css=#valorCusto", "css:finder"],
+        ["xpath=//input[@id='valorCusto']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3013513e-98c7-4221-b578-197f8cdb504d",
+      "comment": "",
+      "command": "type",
+      "target": "id=valorCusto",
+      "targets": [
+        ["id=valorCusto", "id"],
+        ["name=valorCusto", "name"],
+        ["css=#valorCusto", "css:finder"],
+        ["xpath=//input[@id='valorCusto']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "6733b777-a044-41ed-8367-a330d5e144b0",
+      "comment": "",
+      "command": "click",
+      "target": "id=dataEntrada",
+      "targets": [
+        ["id=dataEntrada", "id"],
+        ["name=dataEntrada", "name"],
+        ["css=#dataEntrada", "css:finder"],
+        ["xpath=//input[@id='dataEntrada']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3aae0f2-d980-43cb-b9d8-09b56c8be4c4",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataEntrada",
+      "targets": [
+        ["id=dataEntrada", "id"],
+        ["name=dataEntrada", "name"],
+        ["css=#dataEntrada", "css:finder"],
+        ["xpath=//input[@id='dataEntrada']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "0002-11-06"
+    }, {
+      "id": "93d6d5f9-c658-4e3c-8272-5b34c3234be7",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataEntrada",
+      "targets": [
+        ["id=dataEntrada", "id"],
+        ["name=dataEntrada", "name"],
+        ["css=#dataEntrada", "css:finder"],
+        ["xpath=//input[@id='dataEntrada']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "0020-11-06"
+    }, {
+      "id": "9611cddf-7cde-4712-bb08-148e6af19aab",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataEntrada",
+      "targets": [
+        ["id=dataEntrada", "id"],
+        ["name=dataEntrada", "name"],
+        ["css=#dataEntrada", "css:finder"],
+        ["xpath=//input[@id='dataEntrada']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "0202-11-06"
+    }, {
+      "id": "46d39686-e2ef-45b8-9e8e-385590c6935f",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataEntrada",
+      "targets": [
+        ["id=dataEntrada", "id"],
+        ["name=dataEntrada", "name"],
+        ["css=#dataEntrada", "css:finder"],
+        ["xpath=//input[@id='dataEntrada']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "2024-11-06"
+    }, {
+      "id": "c0f0b43b-dc10-422e-a08f-2829d93edba8",
+      "comment": "",
+      "command": "click",
+      "target": "id=fornecedor",
+      "targets": [
+        ["id=fornecedor", "id"],
+        ["name=fornecedor", "name"],
+        ["css=#fornecedor", "css:finder"],
+        ["xpath=//input[@id='fornecedor']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f581c9de-d304-4e6d-acd3-b653da9f29e6",
+      "comment": "",
+      "command": "type",
+      "target": "id=fornecedor",
+      "targets": [
+        ["id=fornecedor", "id"],
+        ["name=fornecedor", "name"],
+        ["css=#fornecedor", "css:finder"],
+        ["xpath=//input[@id='fornecedor']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "Amazon"
+    }, {
+      "id": "d406ab60-24c0-4b19-be74-82f1409cc86b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='estoqueForm']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7ac3bdfa-f011-4e39-beaf-04860a1048a3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e3222908-fe0f-4e37-8712-d3de55e468f0"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
