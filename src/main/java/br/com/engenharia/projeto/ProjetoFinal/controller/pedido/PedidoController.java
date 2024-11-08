@@ -30,6 +30,7 @@ import br.com.engenharia.projeto.ProjetoFinal.persistencia.pedidos.PedidoReposit
 import br.com.engenharia.projeto.ProjetoFinal.services.pedido.ServicePedido;
 import br.com.engenharia.projeto.ProjetoFinal.services.pedido.ServicePedidoUpdate;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Sort;
 
 @RestController
 @RequestMapping("pedidos")
@@ -71,7 +72,7 @@ public class PedidoController {
 	@GetMapping("pagos/{clienteId}")
 	public ResponseEntity<Page<DadosDetalhamentoItensPagos>> listarItensPagos(
 	        										   @PathVariable Long clienteId,
-	        										   @PageableDefault(size = 15, sort = "id") Pageable pageable) {
+	        										   @PageableDefault(size = 15, sort = "dataPedido", direction = Sort.Direction.DESC) Pageable pageable) {
 		
 	    Page<DadosDetalhamentoItensPagos> itens = repositorioDeItem.pedidosPagos(clienteId, pageable);
 	    
