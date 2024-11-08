@@ -89,14 +89,14 @@ function atualizarQuantidade(itemId, novaQuantidade) {
     .then(response => {
         if (response.ok) {
             console.log(`Quantidade do item ${itemId} atualizada para ${novaQuantidade}.`);
-           
+            // Recarrega a página após a atualização da quantidade
+            location.reload();
         } else {
             console.error(`Erro ao atualizar a quantidade do item ${itemId}.`);
         }
     })
     .catch(error => console.error('Erro ao tentar atualizar a quantidade:', error));
 }
-
 
 function generateQuantityOptions(quantidadeSelecionada) {
     let options = '';
