@@ -353,8 +353,8 @@ VALUES (15, 15);
 
 /*Insert categoria*/
 INSERT INTO categorias (categoria) VALUES ('romance');
-INSERT INTO categorias (categoria) VALUES ('clássico');
-INSERT INTO categorias (categoria) VALUES ('ficção');
+INSERT INTO categorias (categoria) VALUES ('classico');
+INSERT INTO categorias (categoria) VALUES ('ficcao');
 INSERT INTO categorias (categoria) VALUES ('distopia');
 INSERT INTO categorias (categoria) VALUES ('autoajuda');
 

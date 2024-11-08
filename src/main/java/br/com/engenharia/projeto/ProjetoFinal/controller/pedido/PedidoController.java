@@ -21,7 +21,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.engenharia.projeto.ProjetoFinal.dao.item.RepositorioDeItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosAtualizacaoItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItem;
-import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagos;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagosPorCliente;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pedido.DadosCadastroPedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
