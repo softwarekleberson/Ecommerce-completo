@@ -62,14 +62,11 @@ function excluirEntrega(idCobranca) {
         })
         .then(response => {
             if (!response.ok) {
+                alert("Está endereço de cobrança está sendo usado em um pedido")
                 throw new Error('Erro ao excluir cobrança: ' + response.statusText);
             }
-            const idCliente = getClienteIdFromURL();
-            if (idCliente) {
-                carregarUsuarios(idCliente);
-            } else {
-                console.error('ID do cliente não encontrado na URL.');
-            }
+            
+            location.reload();
         })
         .catch(error => {
             console.error(error);
