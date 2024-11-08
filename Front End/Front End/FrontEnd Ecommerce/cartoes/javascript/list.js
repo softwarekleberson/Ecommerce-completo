@@ -53,12 +53,8 @@ function excluirCartao(cartaoId) {
         })
         .then(response => {
             if (response.ok) {
-                const idCliente = getClienteIdFromURL();
-                if (idCliente) {
-                    carregarUsuarios(idCliente);
-                } else {
-                    console.error('ID do cliente não encontrado na URL.');
-                }
+                // Recarrega a página para refletir as mudanças
+                location.reload();
             } else {
                 console.error('Erro ao excluir cartão:', response.statusText);
             }
