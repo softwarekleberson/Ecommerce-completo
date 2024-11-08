@@ -62,17 +62,15 @@ function excluirEntrega(idEntrega) {
         })
         .then(response => {
             if (!response.ok) {
+                alert("Este endereço de entrega está sendo usada em um pedido")
                 throw new Error('Erro ao excluir entrega: ' + response.statusText);
             }
-            const idCliente = getClienteIdFromURL();
-            if (idCliente) {
-                carregarUsuarios(idCliente);
-            } else {
-                console.error('ID do cliente não encontrado na URL.');
-            }
+            
+            location.reload();
         })
         .catch(error => {
             console.error(error);
         });
     }
 }
+
