@@ -3,6 +3,7 @@ package br.com.engenharia.projeto.ProjetoFinal.controller.administrador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Cupom.ValidarCupom;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.RepositorioDeCupom;
 import br.com.engenharia.projeto.ProjetoFinal.services.administradores.ServiceGeraCupomPromocioal;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Sort;
 
 @RestController
 @RequestMapping("administrador")
@@ -54,8 +56,11 @@ public class CupomAdministradorController {
 	}
 	
 	@GetMapping("/cupons/{clienteId}")
-	public ResponseEntity<Page<DadosDetalhamentoCupom>> listarCupomPorCliente(@PathVariable Long clienteId, Pageable pageable){
-		Page<DadosDetalhamentoCupom> cupons = repositorioDeCupom.listarCuponsDosClientes(clienteId, pageable);
-		return ResponseEntity.ok(cupons);
-    }
+	public ResponseEntity<Page<DadosDetalhamentoCupom>> listarCupomPorCliente(
+	        @PathVariable Long clienteId,
+	        @PageableDefault(sort = "valor", direction = Sort.Direction.DESC) Pageable pageable) {
+	    Page<DadosDetalhamentoCupom> cupons = repositorioDeCupom.listarCuponsDosClientes(clienteId, pageable);
+	    return ResponseEntity.ok(cupons);
+	}
+
 }
