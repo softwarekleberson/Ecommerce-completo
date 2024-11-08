@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagos;
+import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagosPorCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 
 public interface ItemPedidoRepository extends JpaRepository<Item, Long> {
@@ -28,9 +29,10 @@ public interface ItemPedidoRepository extends JpaRepository<Item, Long> {
 	List<DadosDetalhamentoItem> buscarItensDetalhadosPorClienteId(@Param("clienteId") Long clienteId);
 
 	
-	@Query("SELECT new br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagos( " +
-		       "i.id, l.id, p.id, p.pago, p.entregue,i.quantidade, p.pedidoRealizado, l.titulo, " +
-		       "img.url, pag.statusCompra, i.precoUnitario, i.subtotal, p.codigoPedido, p.trocaDevolucao ) " +
+	@Query("SELECT i.id as id, l.id as idLivro, p.id as idPedido, p.pago as pago, p.entregue as entregue, " +
+		       "i.quantidade as quantidade, p.pedidoRealizado as dataPedido, l.titulo as nome, " +
+		       "img.url as primeiraImagem, pag.statusCompra as status, i.precoUnitario as precoUnitario, " +
+		       "i.subtotal as subtotal, p.codigoPedido as codigoPedido, p.trocaDevolucao as trocaDevolucao " +
 		       "FROM Item i " +
 		       "JOIN i.livro l " +
 		       "JOIN l.imagens img " + 
@@ -39,7 +41,7 @@ public interface ItemPedidoRepository extends JpaRepository<Item, Long> {
 		       "JOIN p.cliente c " +
 		       "WHERE c.id = :clienteId AND pag.statusCompra = APROVADO " + 
 		       "AND img.id = (SELECT MIN(i2.id) FROM Imagens i2 WHERE i2.livro.id = l.id)")
-	List<DadosDetalhamentoItensPagos> buscarItensPagos(@Param("clienteId") Long clienteId);
+	List<DadosDetalhamentoItensPagosPorCliente> buscarItensPagos(@Param("clienteId") Long clienteId);
 
 
 	@Query("SELECT i.id as id, l.id as idLivro, p.id as idPedido, p.pago as pago, p.entregue as entregue, " +

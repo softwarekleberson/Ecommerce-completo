@@ -22,6 +22,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dao.item.RepositorioDeItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosAtualizacaoItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagos;
+import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagosPorCliente;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pedido.DadosCadastroPedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
@@ -70,11 +71,11 @@ public class PedidoController {
 	}
 
 	@GetMapping("pagos/{clienteId}")
-	public ResponseEntity<Page<DadosDetalhamentoItensPagos>> listarItensPagos(
+	public ResponseEntity<Page<DadosDetalhamentoItensPagosPorCliente>> listarItensPagos(
 	        										   @PathVariable Long clienteId,
 	        										   @PageableDefault(size = 15, sort = "dataPedido", direction = Sort.Direction.DESC) Pageable pageable) {
 		
-	    Page<DadosDetalhamentoItensPagos> itens = repositorioDeItem.pedidosPagos(clienteId, pageable);
+	    Page<DadosDetalhamentoItensPagosPorCliente> itens = repositorioDeItem.pedidosPagos(clienteId, pageable);
 	    
 	    return ResponseEntity.ok(itens);
 	}
