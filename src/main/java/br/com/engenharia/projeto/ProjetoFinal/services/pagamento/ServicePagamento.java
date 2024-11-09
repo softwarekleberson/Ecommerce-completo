@@ -100,11 +100,20 @@ public class ServicePagamento {
 		apiDePagamentoFake(pagamento, dados.idCartao1(), dados.idCartao2(), dados.cupom1(), dados.cupom2());
 		associarPagamentoAPedidos(pagamento, pedidos);
 		baixaNoEstoque(pedidos);
+		verificaSeCartaoSeraExcluido(dados.salvarCartao(), cartoes);
 		
 		Log log = new Log(clienteId);
 		repositorioDeLog.save(log);
 		
 		return new DadosPagmento(pagamento);
+	}
+	
+	private void verificaSeCartaoSeraExcluido(Boolean salvarCartao, List<Cartao> cartoes) {
+		if(salvarCartao != true) {
+			for(Cartao cartao : cartoes) {
+				cartaoRepository.delete(cartao);
+			}
+		}
 	}
 
 	private void apiDePagamentoFake(Pagamento pagamento, Long idCartao1, Long idCartao2, String idCupom1, String idCupom2) {

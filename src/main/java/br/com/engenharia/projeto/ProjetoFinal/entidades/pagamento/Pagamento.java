@@ -53,10 +53,6 @@ public class Pagamento {
 	    
 	 @OneToMany(mappedBy = "pagamento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	 private List<Pedido> pedidos;
-	    
-	 @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	 @JoinColumn(name = "pagamento_id", nullable = true)
-	 private List<Cartao> cartoes;
 
 	 @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	 @JoinColumn(name = "pagamento_id", nullable = true)
@@ -80,7 +76,6 @@ public class Pagamento {
 		this.cobranca = cobranca;
 		this.valorTotal = valorTotalPedido;
 		this.pedidos = pedidos;
-		this.cartoes = cartoes;
 		this.cupons = cupons;
 		this.statusCompra = statusCompra;
 		
