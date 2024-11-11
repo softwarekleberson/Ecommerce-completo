@@ -64,7 +64,6 @@ public class Cartao {
 		setNomeImpresso(dados.nomeImpresso());
 		setNumeroCartao(dados.numeroCartao());
 		setDataExpiracao(dados.dataExpiracao());
-		setCliente(dados.idCliente());
 		setAtivo(true);
 	}
 	

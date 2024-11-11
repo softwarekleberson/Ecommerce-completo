@@ -33,9 +33,9 @@ public class CartaoController {
 	@Autowired
 	private RepositorioDeCartao repositorioDeCartao;
 		
-	@PostMapping
-	public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroCartao dados, UriComponentsBuilder uriBuilder) {
-		var dto = service.criar(dados);
+	@PostMapping("{idCliente}")
+	public ResponseEntity cadastrar(@PathVariable Long idCliente, @RequestBody @Valid DadosCadastroCartao dados, UriComponentsBuilder uriBuilder) {
+		var dto = service.criar(idCliente, dados);
 	    var uri = uriBuilder.path("/cartao/{id}").buildAndExpand(dto.id()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}

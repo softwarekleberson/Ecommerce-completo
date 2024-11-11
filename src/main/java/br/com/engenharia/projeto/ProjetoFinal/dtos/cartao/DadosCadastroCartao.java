@@ -7,10 +7,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroCartao(
 		
-		@NotNull
-		Long idCliente,
-		
-		boolean principal,
+		Boolean principal,
 		
 		@NotNull
 		String numeroCartao,

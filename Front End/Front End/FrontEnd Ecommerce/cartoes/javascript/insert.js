@@ -1,7 +1,9 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    var isChecked = document.getElementById('principal').checked;
-    document.getElementById('principal').value = isChecked ? 'true' : 'false';
-});
+function getIdClienteFromURL() {
+    const pathSegments = window.location.pathname.split('/');
+    const idCliente = pathSegments[pathSegments.length - 1];
+
+    return isNaN(idCliente) ? '1' : idCliente;
+}
 
 document.getElementById("myForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -15,12 +17,13 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
 
     sendDataToBackend(jsonData);
     this.reset();
-    window.location.href = "cartoes.html"
+    window.location.href = "cartoes.html";
 });
 
 function sendDataToBackend(data) {
-   
-    fetch('http://localhost:8080/cartoes', {
+    const idCliente = getIdClienteFromURL();
+
+    fetch(`http://localhost:8080/cartoes/${idCliente}`, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -40,5 +43,3 @@ function sendDataToBackend(data) {
         console.error('Erro:', error);
     });
 }
-
-
