@@ -33,7 +33,6 @@ public class Cobranca extends Endereco{
 		super(dados);
 		setAtivo(true);
 		setPrincipal(dados.principalCobranca());
-		setCliente(dados.idCliente());
 	}
 	
 	public void setCliente(Long idCliente) {

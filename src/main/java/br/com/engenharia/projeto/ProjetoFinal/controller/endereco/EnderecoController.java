@@ -46,9 +46,10 @@ public class EnderecoController {
 		return ResponseEntity.ok(entrega);
 	}
 	
-	@PostMapping("/cobranca")
-	public ResponseEntity cadastrarCobranca(@RequestBody @Valid DadosCadastroCobranca dados) {
+	@PostMapping("/cobranca/{clienteId}")
+	public ResponseEntity cadastrarCobranca(@PathVariable Long clienteId, @RequestBody @Valid DadosCadastroCobranca dados) {
 		var cobranca = new Cobranca(dados);
+		cobranca.setCliente(clienteId);
 		repositorioDeCobranca.salvarNovaCobranca(cobranca);
 		return ResponseEntity.ok(cobranca);
 	}

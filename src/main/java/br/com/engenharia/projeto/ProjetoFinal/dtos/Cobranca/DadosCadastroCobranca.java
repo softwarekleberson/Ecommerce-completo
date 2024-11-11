@@ -3,9 +3,7 @@ package br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroCobranca(
-		
-		Long idCliente,
-		
+				
 		Boolean principalCobranca,
 		
 		@NotNull
