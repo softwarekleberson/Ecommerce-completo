@@ -1,38 +1,38 @@
 {
-  "id": "597053c1-30b0-4ead-a965-90d2785344e6",
+  "id": "20d0bc92-e5a7-43d8-b106-f153df375b08",
   "version": "2.0",
-  "name": "Ativar livro",
+  "name": "Inativar livro",
   "url": "http://127.0.0.90:5500",
   "tests": [{
-    "id": "9aa3cf8f-931d-435f-b551-37e5924ec659",
-    "name": "Ativar livro",
+    "id": "5f9ccf96-0800-4b8f-bd8c-e05d7e57739c",
+    "name": "Inativar livro",
     "commands": [{
-      "id": "68eaed12-a45d-4a15-92a0-4a53a7c44298",
+      "id": "2c64e3af-aecb-4c13-beb5-22484e5260cd",
       "comment": "",
       "command": "open",
-      "target": "/Front%20End/FrontEnd%20Ecommerce/home-adm.html",
+      "target": "http://127.0.0.90:5500/home-adm.html",
       "targets": [],
       "value": ""
     }, {
-      "id": "5f759896-62b1-48ac-aa36-20a1803abd3d",
+      "id": "d790ad65-74ba-41e4-9efe-e74d1450f92b",
       "comment": "",
       "command": "setWindowSize",
       "target": "1382x744",
       "targets": [],
       "value": ""
     }, {
-      "id": "3fd3bb92-0e30-44bc-b1fa-8fcb4c22f6c8",
+      "id": "3c55db26-5856-4751-9571-085d42b2a501",
       "comment": "",
       "command": "click",
-      "target": "css=div:nth-child(8) p",
+      "target": "css=div:nth-child(7) > a",
       "targets": [
-        ["css=div:nth-child(8) p", "css:finder"],
-        ["xpath=//div[8]/a/p", "xpath:position"],
-        ["xpath=//p[contains(.,'Ativar livro, voltar ao catalogo')]", "xpath:innerText"]
+        ["css=div:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(@href, 'desativar-Livro.html')]", "xpath:href"],
+        ["xpath=//div[7]/a", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "5f693384-82f1-41e9-8e32-b0880e829231",
+      "id": "d6acf982-70ad-404f-8230-8e032a9f9d17",
       "comment": "",
       "command": "click",
       "target": "id=idLivro",
@@ -41,12 +41,12 @@
         ["name=idLivro", "name"],
         ["css=#idLivro", "css:finder"],
         ["xpath=//input[@id='idLivro']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form[@id='desativar-livro']/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "8c1de024-0219-4ed9-ab1a-9251660933c6",
+      "id": "804550b6-b09a-4bac-ab8c-575fd9f0ae37",
       "comment": "",
       "command": "type",
       "target": "id=idLivro",
@@ -55,12 +55,40 @@
         ["name=idLivro", "name"],
         ["css=#idLivro", "css:finder"],
         ["xpath=//input[@id='idLivro']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form[@id='desativar-livro']/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": "1"
     }, {
-      "id": "ecf269a6-5262-4cbc-ab59-ec6323fe0579",
+      "id": "9c38faf1-49e5-48e0-8084-e57728f3ee97",
+      "comment": "",
+      "command": "click",
+      "target": "id=justificativa",
+      "targets": [
+        ["id=justificativa", "id"],
+        ["name=justificativa", "name"],
+        ["css=#justificativa", "css:finder"],
+        ["xpath=//textarea[@id='justificativa']", "xpath:attributes"],
+        ["xpath=//form[@id='desativar-livro']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d86d1b4e-51ab-46da-adb3-4280597f8a07",
+      "comment": "",
+      "command": "type",
+      "target": "id=justificativa",
+      "targets": [
+        ["id=justificativa", "id"],
+        ["name=justificativa", "name"],
+        ["css=#justificativa", "css:finder"],
+        ["xpath=//textarea[@id='justificativa']", "xpath:attributes"],
+        ["xpath=//form[@id='desativar-livro']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Uma nova versão do livro foi criada"
+    }, {
+      "id": "3a2b0383-18da-4ca6-a2c7-e914b5c3e141",
       "comment": "",
       "command": "click",
       "target": "id=categoria",
@@ -69,54 +97,26 @@
         ["name=categoria", "name"],
         ["css=#categoria", "css:finder"],
         ["xpath=//select[@id='categoria']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//form[@id='desativar-livro']/select", "xpath:idRelative"],
         ["xpath=//select", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "cd604390-6745-4c47-a9dc-643e8eaf8d65",
+      "id": "79b97f61-4b81-4c3f-a82a-154f66ec2b49",
       "comment": "",
       "command": "select",
       "target": "id=categoria",
       "targets": [],
-      "value": "label=PETICAO PUBLICA"
+      "value": "label=Desatualizado"
     }, {
-      "id": "4aabee56-b2e0-49d3-8e7d-a6536cbabfce",
-      "comment": "",
-      "command": "click",
-      "target": "id=justificativa",
-      "targets": [
-        ["id=justificativa", "id"],
-        ["name=justificativa", "name"],
-        ["css=#justificativa", "css:finder"],
-        ["xpath=//textarea[@id='justificativa']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/textarea", "xpath:idRelative"],
-        ["xpath=//textarea", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f1553fb3-c4b0-4757-b4b9-28a410ae2a83",
-      "comment": "",
-      "command": "type",
-      "target": "id=justificativa",
-      "targets": [
-        ["id=justificativa", "id"],
-        ["name=justificativa", "name"],
-        ["css=#justificativa", "css:finder"],
-        ["xpath=//textarea[@id='justificativa']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/textarea", "xpath:idRelative"],
-        ["xpath=//textarea", "xpath:position"]
-      ],
-      "value": "O livro é foda tem que voltar logo."
-    }, {
-      "id": "d013cb8f-3d46-46b1-ac2f-e11a087b1b78",
+      "id": "7454ea2c-9c5c-4a1a-b343-685da1d94133",
       "comment": "",
       "command": "click",
       "target": "css=button",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//form[@id='ativarForm']/button", "xpath:idRelative"],
+        ["xpath=//form[@id='desativar-livro']/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
       ],
@@ -124,12 +124,12 @@
     }]
   }],
   "suites": [{
-    "id": "c988ef1b-251c-4f90-b890-96e64b66d6fe",
+    "id": "698555de-1598-4fa2-a6a4-47fa83fc0e7b",
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["9aa3cf8f-931d-435f-b551-37e5924ec659"]
+    "tests": ["5f9ccf96-0800-4b8f-bd8c-e05d7e57739c"]
   }],
   "urls": ["http://127.0.0.90:5500/"],
   "plugins": []

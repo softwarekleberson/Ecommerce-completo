@@ -122,7 +122,8 @@ public class ServicePagamento {
 	    BigDecimal valorDoCupom = BigDecimal.ZERO;
 
 	    if (idCartao1 != null) {
-	        Optional<CartaoFake> cartao1 = fakeRepository.findById(idCartao1);
+	    	Optional<Cartao> cartaoCorrente = cartaoRepository.findById(idCartao1);
+	        Optional<CartaoFake> cartao1 = fakeRepository.findByNumeroCartao(cartaoCorrente.get().getNumeroCartao());
 	        if (cartao1.isPresent()) {
 	            valorDoCartao = valorDoCartao.add(cartao1.get().getSaldoDisponivel());
 	        } else {
@@ -131,7 +132,8 @@ public class ServicePagamento {
 	    }
 
 	    if (idCartao2 != null) {
-	        Optional<CartaoFake> cartao2 = fakeRepository.findById(idCartao2);
+	    	Optional<Cartao> cartaoCorrente2 = cartaoRepository.findById(idCartao2);
+	    	Optional<CartaoFake> cartao2 = fakeRepository.findByNumeroCartao(cartaoCorrente2.get().getNumeroCartao());
 	        if (cartao2.isPresent()) {
 	            valorDoCartao = valorDoCartao.add(cartao2.get().getSaldoDisponivel());
 	        } else {

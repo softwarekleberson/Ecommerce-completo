@@ -38,4 +38,6 @@ public interface CartaoRepository extends JpaRepository<Cartao, Long>{
 
 	Cartao findByPrincipalTrue();
 
+	Optional<Cartao> findByNumeroCartao(Long idCartao1);
+
 }

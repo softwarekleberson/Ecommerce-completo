@@ -10,7 +10,7 @@
       "id": "f9789a18-d0b9-47db-895f-8f15bc812551",
       "comment": "",
       "command": "open",
-      "target": "/Front%20End/FrontEnd%20Ecommerce/home.html",
+      "target": "http://127.0.0.90:5500/home.html",
       "targets": [],
       "value": ""
     }, {
