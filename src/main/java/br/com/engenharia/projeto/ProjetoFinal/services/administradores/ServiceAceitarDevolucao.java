@@ -18,6 +18,9 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.Devolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.RepositorioDeDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.Estoque;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.RepositorioDeEstoque;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.DevolucaoFoiPedidaOUNAO;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
+import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.validation.Valid;
 
 @Service
@@ -27,23 +30,35 @@ public class ServiceAceitarDevolucao {
 	private RepositorioDeDevolucao repositorioDeDevolucao;
 	
 	@Autowired
+	private RepositorioDePedido repositorioDePedido;
+	
+	@Autowired
 	private RepositorioDeCupom repositorioDeCupom;
 	
 	@Autowired
 	private RepositorioDeEstoque repositorioDeEstoque;
 	
 	public DadosDetalhamentoTotalDevolucao devolucaoAceita (@Valid DadosAtualizacaoDevolucao dados) {
+			
 		var aceitaDevolucao = repositorioDeDevolucao.carregarDevolucao(dados.codigoDevolucao());
+		var pedido = repositorioDePedido.verificaCodigoPedido(dados.codigoPedido());
 		
-		aceitaDevolucao.setDataConclusaoTroca(LocalDate.now());
-		aceitaDevolucao.devoluvaoChegou(dados.esperandoDevolucaoOuRecebido());
-		aceitaDevolucao.analisePedidoDevolucao(AnalisePedidoDevolucaoAceitoOuRecusa.TROCA_ACEITA);
-		
-		geraCupomAposAprovarDevolucao(aceitaDevolucao);
-		devolucaoVoltaParaEstoque(dados, aceitaDevolucao);
-		repositorioDeDevolucao.salvar(aceitaDevolucao);
-		
-		return new DadosDetalhamentoTotalDevolucao(aceitaDevolucao);
+		if(pedido.isPresent()) {
+			pedido.get().devolucaoPedida(DevolucaoFoiPedidaOUNAO.ACEITO);
+			aceitaDevolucao.setDataConclusaoTroca(LocalDate.now());
+			aceitaDevolucao.setAnalisePedido(AnalisePedidoDevolucaoAceitoOuRecusa.TROCA_ACEITA);
+			aceitaDevolucao.devoluvaoChegou(dados.esperandoDevolucaoOuRecebido());
+			aceitaDevolucao.analisePedidoDevolucao(AnalisePedidoDevolucaoAceitoOuRecusa.TROCA_ACEITA);
+			
+			geraCupomAposAprovarDevolucao(aceitaDevolucao);
+			devolucaoVoltaParaEstoque(dados, aceitaDevolucao);
+			repositorioDeDevolucao.salvar(aceitaDevolucao);
+			
+			return new DadosDetalhamentoTotalDevolucao(aceitaDevolucao);
+			
+		}else {
+			throw new ValidacaoException("Codigo do pedido não encontrado");
+		}
 	}
 
 	private void devolucaoVoltaParaEstoque(DadosAtualizacaoDevolucao dados, Devolucao devolucao) {

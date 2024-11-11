@@ -9,6 +9,9 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.devolucao.DadosAtualizacaoDev
 import br.com.engenharia.projeto.ProjetoFinal.dtos.devolucao.DadosDetalhamentoTotalDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.AnalisePedidoDevolucaoAceitoOuRecusa;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.RepositorioDeDevolucao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.DevolucaoFoiPedidaOUNAO;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
+import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.validation.Valid;
 
 @Service
@@ -17,14 +20,24 @@ public class ServiceRecusarDevolucao {
 	@Autowired 
 	private RepositorioDeDevolucao repositorioDeDevolucao;
 	
+	@Autowired
+	private RepositorioDePedido repositorioDePedido;
+	
 	public DadosDetalhamentoTotalDevolucao devolucaoRecusada(@Valid DadosAtualizacaoDevolucao dados) {
 		var recusaDevolucao = repositorioDeDevolucao.carregarDevolucao(dados.codigoDevolucao());
+		var pedido = repositorioDePedido.verificaCodigoPedido(dados.codigoPedido());
 		
-		recusaDevolucao.setDataConclusaoTroca(LocalDate.now());
-		recusaDevolucao.devoluvaoChegou(dados.esperandoDevolucaoOuRecebido());
-		recusaDevolucao.analisePedidoDevolucao(AnalisePedidoDevolucaoAceitoOuRecusa.TROCA_RECUSADA);
-		repositorioDeDevolucao.salvar(recusaDevolucao);
+		if(pedido.isPresent()) {
+			pedido.get().devolucaoPedida(DevolucaoFoiPedidaOUNAO.RECUSADO);
+			recusaDevolucao.setDataConclusaoTroca(LocalDate.now());
+			recusaDevolucao.devoluvaoChegou(dados.esperandoDevolucaoOuRecebido());
+			recusaDevolucao.analisePedidoDevolucao(AnalisePedidoDevolucaoAceitoOuRecusa.TROCA_RECUSADA);
+			repositorioDeDevolucao.salvar(recusaDevolucao);
+			
+			return new DadosDetalhamentoTotalDevolucao(recusaDevolucao);
 		
-		return new DadosDetalhamentoTotalDevolucao(recusaDevolucao);
+		}else {
+			throw new ValidacaoException("Codigo do pedido não encontrado");
+		}
 	}
 }
