@@ -38,12 +38,10 @@ public class EnderecoController {
 	@Autowired
 	private RepositorioDeCobranca repositorioDeCobranca;
 	
-	@Autowired
-	private RepositorioDeCliente repositorioDeCliente;
-	
-	@PostMapping("/entrega")
-	public ResponseEntity cadastrarEntrega(@RequestBody @Valid DadosCadastroEntrega dados) {
+	@PostMapping("/entrega/{clienteId}")
+	public ResponseEntity cadastrarEntrega(@PathVariable Long clienteId, @RequestBody @Valid DadosCadastroEntrega dados) {
 		var entrega = new Entrega(dados);
+		entrega.setCliente(clienteId);
 		repositorioDeEntrega.salvarNovoEntrega(entrega);
 		return ResponseEntity.ok(entrega);
 	}

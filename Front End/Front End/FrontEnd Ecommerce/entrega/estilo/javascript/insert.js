@@ -1,66 +1,57 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    var isChecked = document.getElementById('principal').checked;
-    document.getElementById('principal').value = isChecked ? 'true' : 'false';
-});
+function getIdClienteFromUrl() {
+    const urlPath = window.location.pathname;
+    const idCliente = urlPath.split('/').pop();
+    return isNaN(idCliente) ? 1 : parseInt(idCliente, 10);
+}
+
+const idCliente = getIdClienteFromUrl();
 
 document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    
-    var idCliente = document.getElementById('idCliente').value;
-    var principalEntrega = document.getElementById('principalEntrega').checked;
-    var tipoResidenciaEntrega = document.getElementById('tipoResidenciaEntrega').value;
-    var receptorEntrega = document.getElementById('receptorEntrega').value;
-    var tipoLogradouroEntrega = document.getElementById('tipoLogradouroEntrega').value;
-    var logradouroEntrega = document.getElementById('logradouroEntrega').value;
-    var numeroEntrega = document.getElementById('numeroEntrega').value;
-    var bairroEntrega = document.getElementById('bairroEntrega').value;
-    var cepEntrega = document.getElementById('cepEntrega').value;
-    var observacaoEntrega = document.getElementById('observacaoEntrega').value;
-    var cidadeEntrega = document.getElementById('cidadeEntrega').value;
-    var estadoEntrega = document.getElementById('estadoEntrega').value;
-    var paisEntrega = document.getElementById('paisEntrega').value;
-    var fraseEntregaEntrega = document.getElementById('fraseEntregaEntrega').value;
-    
-    var data = {
-        "idCliente": idCliente,
-        "principalEntrega": principalEntrega,
-        "receptorEntrega": receptorEntrega,
-        "tipoResidenciaEntrega": tipoResidenciaEntrega,
-        "tipoLogradouroEntrega": tipoLogradouroEntrega,
-        "logradouroEntrega": logradouroEntrega,
-        "numeroEntrega": numeroEntrega,
-        "bairroEntrega": bairroEntrega,
-        "cepEntrega": cepEntrega,
-        "observacaoEntrega": observacaoEntrega,
-        "cidadeEntrega": cidadeEntrega,
-        "estadoEntrega": estadoEntrega,
-        "paisEntrega": paisEntrega,
-        "fraseEntregaEntrega": fraseEntregaEntrega
+
+    const data = {
+        "principalEntrega": document.getElementById('principalEntrega').checked,
+        "receptorEntrega": document.getElementById('receptorEntrega').value,
+        "tipoResidenciaEntrega": document.getElementById('tipoResidenciaEntrega').value,
+        "tipoLogradouroEntrega": document.getElementById('tipoLogradouroEntrega').value,
+        "logradouroEntrega": document.getElementById('logradouroEntrega').value,
+        "numeroEntrega": document.getElementById('numeroEntrega').value,
+        "bairroEntrega": document.getElementById('bairroEntrega').value,
+        "cepEntrega": document.getElementById('cepEntrega').value,
+        "observacaoEntrega": document.getElementById('observacaoEntrega').value,
+        "cidadeEntrega": document.getElementById('cidadeEntrega').value,
+        "estadoEntrega": document.getElementById('estadoEntrega').value,
+        "paisEntrega": document.getElementById('paisEntrega').value,
+        "fraseEntregaEntrega": document.getElementById('fraseEntregaEntrega').value
     };
 
-    sendDataToBackend(data);
-    window.location.href = "entrega.html"
+    sendDataToBackend(idCliente, data)
+        .then(() => {
+            window.location.href = "entrega.html";
+        })
+        .catch(error => {
+            console.error('Erro ao enviar dados:', error);
+        });
 });
 
-function sendDataToBackend(data) {
-    fetch('http://localhost:8080/endereco/entrega', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => {
+async function sendDataToBackend(idCliente, data) {
+    try {
+        const response = await fetch(`http://localhost:8080/endereco/entrega/${idCliente}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
         if (!response.ok) {
             throw new Error('Erro ao enviar dados para o backend');
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Dados enviados com sucesso:', data);
+
+        console.log('Dados enviados com sucesso:', await response.json());
         document.getElementById('myForm').reset();
-    })
-    .catch(error => {
+
+    } catch (error) {
         console.error('Erro:', error);
-    });
+    }
 }

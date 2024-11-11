@@ -34,7 +34,6 @@ public class Entrega extends Endereco{
 	
 	public Entrega(@Valid DadosCadastroEntrega dados) {
 		super(dados);
-		setCliente(dados.idCliente());
 		setPrincipal(dados.principalEntrega());
 		setFraseEntrega(dados.fraseEntregaEntrega());
 		setAtivo(true);
