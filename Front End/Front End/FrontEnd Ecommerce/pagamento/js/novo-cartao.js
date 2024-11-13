@@ -1,26 +1,28 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+document.getElementById('novo-cartao').addEventListener('submit', function(event) {
+    event.preventDefault();
+
     var isChecked = document.getElementById('principal').checked;
 
     const formData = new FormData(this);
     const jsonData = {};
 
     formData.forEach((value, key) => {
-        
         if (key === 'principal') {
-            jsonData[key] = isChecked ? true : false; 
-
+            jsonData[key] = isChecked ? true : false;
         } else {
             jsonData[key] = value;
         }
     });
 
-    sendDataToBackend(jsonData);
-    this.reset(); 
+    sendCartaoToBackend(jsonData);
+    this.reset();
 });
 
-function sendDataToBackend(data) {
-    fetch('http://localhost:8080/cartoes', {
+function sendCartaoToBackend(data) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id') || '1';
+
+    fetch(`http://localhost:8080/cartoes/${id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

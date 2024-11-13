@@ -1,13 +1,12 @@
 document.getElementById('nova-entrega').addEventListener('submit', function(event) {
-    var isChecked = document.getElementById('principal').checked;
-    document.getElementById('principal').value = isChecked ? 'true' : 'false';
-});
-
-document.getElementById('nova-entrega').addEventListener('submit', function(event) {
     event.preventDefault();
-    
-    var idCliente = document.getElementById('idCliente').value;
-    var principal = document.getElementById('principal').checked;
+
+    // Extrai o idCliente da URL ou define um valor padrão
+    const url = new URL(window.location.href);
+    let idCliente = url.pathname.split('/').pop();
+    idCliente = isNaN(Number(idCliente)) ? 1 : Number(idCliente); // Se não for número, usa o padrão 1
+
+    var principalEntrega = document.getElementById('principalEntrega').checked;
     var tipoResidenciaEntrega = document.getElementById('tipoResidenciaEntrega').value;
     var receptorEntrega = document.getElementById('receptorEntrega').value;
     var tipoLogradouroEntrega = document.getElementById('tipoLogradouroEntrega').value;
@@ -20,10 +19,9 @@ document.getElementById('nova-entrega').addEventListener('submit', function(even
     var estadoEntrega = document.getElementById('estadoEntrega').value;
     var paisEntrega = document.getElementById('paisEntrega').value;
     var fraseEntregaEntrega = document.getElementById('fraseEntregaEntrega').value;
-    
+
     var data = {
-        "idCliente": idCliente,
-        "principal": principal,
+        "principalEntrega": principalEntrega,
         "receptorEntrega": receptorEntrega,
         "tipoResidenciaEntrega": tipoResidenciaEntrega,
         "tipoLogradouroEntrega": tipoLogradouroEntrega,
@@ -38,11 +36,14 @@ document.getElementById('nova-entrega').addEventListener('submit', function(even
         "fraseEntregaEntrega": fraseEntregaEntrega
     };
 
-    sendDataToBackend(data);
+    sendEntregaToBackend(idCliente, data);
 });
 
-function sendDataToBackend(data) {
-    fetch('http://localhost:8080/endereco/entrega', {
+function sendEntregaToBackend(idCliente, data) {
+    // Constroi a URL dinâmica incluindo o idCliente
+    const url = `http://localhost:8080/endereco/entrega/${idCliente}`;
+
+    fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

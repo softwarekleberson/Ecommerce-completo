@@ -1,0 +1,5 @@
+INSERT INTO cartao_fake (numero_cartao, nome_titular, limite_credito, saldo_disponivel, is_ativo, is_simulado)
+VALUES ('5508463824557694', 'chica silva', 5000.00, 5000.00, TRUE, TRUE);
+
+INSERT INTO cartao_fake (numero_cartao, nome_titular, limite_credito, saldo_disponivel, is_ativo, is_simulado)
+VALUES ('6227866523087086', 'cartai recusado', 3000.00, 8.00, TRUE, TRUE);

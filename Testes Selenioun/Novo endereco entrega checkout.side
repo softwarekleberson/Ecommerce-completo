@@ -1,0 +1,324 @@
+{
+  "id": "19dc8da3-00e6-4bef-ac73-6031bc671b36",
+  "version": "2.0",
+  "name": "Novos enderecos, cobrancas e cartao",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "f2460b9c-b542-4b7d-ae48-4891820f8d69",
+    "name": "Novo endereco",
+    "commands": [{
+      "id": "55af5fe3-0452-44e3-9a45-f07f312b2844",
+      "comment": "",
+      "command": "open",
+      "target": "/checkout.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93fb7161-4607-4ac1-a26e-02d14d1f753d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48e9d00f-cb05-417b-9b39-f51f56f45ab6",
+      "comment": "",
+      "command": "click",
+      "target": "id=editEntrega",
+      "targets": [
+        ["id=editEntrega", "id"],
+        ["css=#editEntrega", "css:finder"],
+        ["xpath=//button[@id='editEntrega']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Novo Endereço de Entrega')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c118176-7860-45bd-82c9-d663202040d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=receptorEntrega",
+      "targets": [
+        ["id=receptorEntrega", "id"],
+        ["name=receptorEntrega", "name"],
+        ["css=#receptorEntrega", "css:finder"],
+        ["xpath=//input[@id='receptorEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44587c8e-2480-4f0f-bb4e-b339d6fd82a5",
+      "comment": "",
+      "command": "type",
+      "target": "id=receptorEntrega",
+      "targets": [
+        ["id=receptorEntrega", "id"],
+        ["name=receptorEntrega", "name"],
+        ["css=#receptorEntrega", "css:finder"],
+        ["xpath=//input[@id='receptorEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "chica da silva"
+    }, {
+      "id": "0d5d01f9-f0f8-47be-959d-4a5a433ee862",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoResidenciaEntrega",
+      "targets": [
+        ["id=tipoResidenciaEntrega", "id"],
+        ["name=tipoResidenciaEntrega", "name"],
+        ["css=#tipoResidenciaEntrega", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "casa"
+    }, {
+      "id": "1852294a-d5e2-4218-8410-9fc24163baa1",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoLogradouroEntrega",
+      "targets": [
+        ["id=tipoLogradouroEntrega", "id"],
+        ["name=tipoLogradouroEntrega", "name"],
+        ["css=#tipoLogradouroEntrega", "css:finder"],
+        ["xpath=//input[@id='tipoLogradouroEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "rua"
+    }, {
+      "id": "eac8e8bb-98be-4c73-95ec-9b39ee010a89",
+      "comment": "",
+      "command": "click",
+      "target": "id=nova-entrega",
+      "targets": [
+        ["id=nova-entrega", "id"],
+        ["css=#nova-entrega", "css:finder"],
+        ["xpath=//form[@id='nova-entrega']", "xpath:attributes"],
+        ["xpath=//div[@id='modalEntrega']/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b19deafd-b0b4-4ed7-b9cc-b86a4cfeba67",
+      "comment": "",
+      "command": "click",
+      "target": "id=logradouroEntrega",
+      "targets": [
+        ["id=logradouroEntrega", "id"],
+        ["name=logradouroEntrega", "name"],
+        ["css=#logradouroEntrega", "css:finder"],
+        ["xpath=//input[@id='logradouroEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca736be0-cfcb-49fa-adf1-d9d9447c9672",
+      "comment": "",
+      "command": "type",
+      "target": "id=logradouroEntrega",
+      "targets": [
+        ["id=logradouroEntrega", "id"],
+        ["name=logradouroEntrega", "name"],
+        ["css=#logradouroEntrega", "css:finder"],
+        ["xpath=//input[@id='logradouroEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[5]", "xpath:idRelative"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "praça central"
+    }, {
+      "id": "2ff7b15c-9050-4fd8-b6f4-e67a4295fa2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroEntrega",
+      "targets": [
+        ["id=numeroEntrega", "id"],
+        ["name=numeroEntrega", "name"],
+        ["css=#numeroEntrega", "css:finder"],
+        ["xpath=//input[@id='numeroEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "155"
+    }, {
+      "id": "f5f8f3c7-013c-4ea3-b64c-d780b4df1bac",
+      "comment": "",
+      "command": "type",
+      "target": "id=bairroEntrega",
+      "targets": [
+        ["id=bairroEntrega", "id"],
+        ["name=bairroEntrega", "name"],
+        ["css=#bairroEntrega", "css:finder"],
+        ["xpath=//input[@id='bairroEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "vila da penha"
+    }, {
+      "id": "4bc83cee-aeff-4a2a-921b-87509bc7f0b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=cepEntrega",
+      "targets": [
+        ["id=cepEntrega", "id"],
+        ["name=cepEntrega", "name"],
+        ["css=#cepEntrega", "css:finder"],
+        ["xpath=//input[@id='cepEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38d485c8-4cfa-4925-83c9-d1c6a954b1d1",
+      "comment": "",
+      "command": "type",
+      "target": "id=cepEntrega",
+      "targets": [
+        ["id=cepEntrega", "id"],
+        ["name=cepEntrega", "name"],
+        ["css=#cepEntrega", "css:finder"],
+        ["xpath=//input[@id='cepEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[8]", "xpath:idRelative"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "08725-320"
+    }, {
+      "id": "97fab1e8-bd29-4fba-8aa7-33dafd4c536e",
+      "comment": "",
+      "command": "type",
+      "target": "id=cidadeEntrega",
+      "targets": [
+        ["id=cidadeEntrega", "id"],
+        ["name=cidadeEntrega", "name"],
+        ["css=#cidadeEntrega", "css:finder"],
+        ["xpath=//input[@id='cidadeEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[9]", "xpath:idRelative"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "Mogi das Cruzes"
+    }, {
+      "id": "0382dd61-fd8c-4d35-8266-a1d248347806",
+      "comment": "",
+      "command": "type",
+      "target": "id=estadoEntrega",
+      "targets": [
+        ["id=estadoEntrega", "id"],
+        ["name=estadoEntrega", "name"],
+        ["css=#estadoEntrega", "css:finder"],
+        ["xpath=//input[@id='estadoEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[10]", "xpath:idRelative"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": "SP"
+    }, {
+      "id": "861b9f1c-7906-46fc-8182-b59eeb77ddb3",
+      "comment": "",
+      "command": "type",
+      "target": "id=paisEntrega",
+      "targets": [
+        ["id=paisEntrega", "id"],
+        ["name=paisEntrega", "name"],
+        ["css=#paisEntrega", "css:finder"],
+        ["xpath=//input[@id='paisEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[11]", "xpath:idRelative"],
+        ["xpath=//input[11]", "xpath:position"]
+      ],
+      "value": "Brasil"
+    }, {
+      "id": "f460528e-f7e4-4576-b677-dc4eb83d4e58",
+      "comment": "",
+      "command": "click",
+      "target": "id=observacaoEntrega",
+      "targets": [
+        ["id=observacaoEntrega", "id"],
+        ["name=observacaoEntrega", "name"],
+        ["css=#observacaoEntrega", "css:finder"],
+        ["xpath=//textarea[@id='observacaoEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "415ee636-3a34-4929-a8ad-1b6198a7e530",
+      "comment": "",
+      "command": "type",
+      "target": "id=observacaoEntrega",
+      "targets": [
+        ["id=observacaoEntrega", "id"],
+        ["name=observacaoEntrega", "name"],
+        ["css=#observacaoEntrega", "css:finder"],
+        ["xpath=//textarea[@id='observacaoEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "bater três vezes no portão"
+    }, {
+      "id": "14ec9d4a-0a59-4b26-ab85-5f059197175f",
+      "comment": "",
+      "command": "click",
+      "target": "id=nova-entrega",
+      "targets": [
+        ["id=nova-entrega", "id"],
+        ["css=#nova-entrega", "css:finder"],
+        ["xpath=//form[@id='nova-entrega']", "xpath:attributes"],
+        ["xpath=//div[@id='modalEntrega']/div/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bedae61e-de42-489b-a77c-b8df2242c7ea",
+      "comment": "",
+      "command": "click",
+      "target": "id=fraseEntregaEntrega",
+      "targets": [
+        ["id=fraseEntregaEntrega", "id"],
+        ["name=fraseEntregaEntrega", "name"],
+        ["css=#fraseEntregaEntrega", "css:finder"],
+        ["xpath=//input[@id='fraseEntregaEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[12]", "xpath:idRelative"],
+        ["xpath=//input[12]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e740fd6a-5203-49d1-9c60-d54df4f3e50a",
+      "comment": "",
+      "command": "type",
+      "target": "id=fraseEntregaEntrega",
+      "targets": [
+        ["id=fraseEntregaEntrega", "id"],
+        ["name=fraseEntregaEntrega", "name"],
+        ["css=#fraseEntregaEntrega", "css:finder"],
+        ["xpath=//input[@id='fraseEntregaEntrega']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-entrega']/input[12]", "xpath:idRelative"],
+        ["xpath=//input[12]", "xpath:position"]
+      ],
+      "value": "Qual a cor do mar"
+    }, {
+      "id": "d3d5d459-3024-40ab-8ec9-152bbe60cb5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(50)",
+      "targets": [
+        ["css=.button:nth-child(50)", "css:finder"],
+        ["xpath=//form[@id='nova-entrega']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Salvar Endereço')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3b2ef076-665a-409d-8223-5109adf38b81",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f2460b9c-b542-4b7d-ae48-4891820f8d69"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

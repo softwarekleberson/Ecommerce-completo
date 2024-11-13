@@ -6,6 +6,6 @@ public record DadosCadastroPagamento(
 		Long idCartao2,
 		String cupom1,
 		String cupom2,
-		Boolean salvarCartao
+		boolean salvarCartao
 									) {
 }

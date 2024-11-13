@@ -1,0 +1,242 @@
+{
+  "id": "5b84b84f-4c8b-4d10-a989-e9a7eee44181",
+  "version": "2.0",
+  "name": "Novo cartao checkout",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "3c89a906-b087-4de3-9c98-d73cacb6fbe2",
+    "name": "Novo cartao checkout",
+    "commands": [{
+      "id": "b036bd1f-dd54-4582-87c0-d474fff0adb8",
+      "comment": "",
+      "command": "open",
+      "target": "/checkout.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c5fa273-4ed8-4f44-beb8-020ac3fa2bea",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac6c5ac2-146f-4163-8181-ae7704ca4140",
+      "comment": "",
+      "command": "click",
+      "target": "id=editCartao",
+      "targets": [
+        ["id=editCartao", "id"],
+        ["css=#editCartao", "css:finder"],
+        ["xpath=//button[@id='editCartao']", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Novo Cartão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3e9037d-d881-453f-b47e-f0ad02f85402",
+      "comment": "",
+      "command": "click",
+      "target": "id=numeroCartao",
+      "targets": [
+        ["id=numeroCartao", "id"],
+        ["name=numeroCartao", "name"],
+        ["css=#numeroCartao", "css:finder"],
+        ["xpath=//input[@id='numeroCartao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63352ec5-2d9f-4f1a-b6f4-170676ea3941",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroCartao",
+      "targets": [
+        ["id=numeroCartao", "id"],
+        ["name=numeroCartao", "name"],
+        ["css=#numeroCartao", "css:finder"],
+        ["xpath=//input[@id='numeroCartao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "5041752739330393"
+    }, {
+      "id": "8db071c5-ca67-46cd-a806-3f21cbdcf0fa",
+      "comment": "",
+      "command": "click",
+      "target": "name=nomeImpresso",
+      "targets": [
+        ["name=nomeImpresso", "name"],
+        ["css=#novo-cartao > #nomeImpresso", "css:finder"],
+        ["xpath=//input[@id='nomeImpresso']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc79d488-958d-43c0-b17c-38539e5da2fd",
+      "comment": "",
+      "command": "type",
+      "target": "name=nomeImpresso",
+      "targets": [
+        ["name=nomeImpresso", "name"],
+        ["css=#novo-cartao > #nomeImpresso", "css:finder"],
+        ["xpath=//input[@id='nomeImpresso']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "Manuel do açai"
+    }, {
+      "id": "6c9e87ca-6819-44cd-a98d-dd8bb05fc052",
+      "comment": "",
+      "command": "type",
+      "target": "name=codigo",
+      "targets": [
+        ["name=codigo", "name"],
+        ["css=#novo-cartao > #codigo", "css:finder"],
+        ["xpath=//input[@id='codigo']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "730"
+    }, {
+      "id": "8869ace1-72f9-4444-befb-ab7a9edf4d3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=novo-cartao",
+      "targets": [
+        ["id=novo-cartao", "id"],
+        ["css=#novo-cartao", "css:finder"],
+        ["xpath=//form[@id='novo-cartao']", "xpath:attributes"],
+        ["xpath=//div[@id='modalCartao']/div/form", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73fad406-f602-4500-a66e-5d7de8100d28",
+      "comment": "",
+      "command": "click",
+      "target": "id=dataExpiracao",
+      "targets": [
+        ["id=dataExpiracao", "id"],
+        ["name=dataExpiracao", "name"],
+        ["css=#dataExpiracao", "css:finder"],
+        ["xpath=//input[@id='dataExpiracao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30e5e027-b9f7-46f0-91c2-2b692dd769c0",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataExpiracao",
+      "targets": [
+        ["id=dataExpiracao", "id"],
+        ["name=dataExpiracao", "name"],
+        ["css=#dataExpiracao", "css:finder"],
+        ["xpath=//input[@id='dataExpiracao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "0002-01-01"
+    }, {
+      "id": "7901d1f5-9020-4120-8c53-4cc2c2fa311f",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataExpiracao",
+      "targets": [
+        ["id=dataExpiracao", "id"],
+        ["name=dataExpiracao", "name"],
+        ["css=#dataExpiracao", "css:finder"],
+        ["xpath=//input[@id='dataExpiracao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "0020-01-01"
+    }, {
+      "id": "bc55ef82-d132-4a5c-a2cc-9f5108158b75",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataExpiracao",
+      "targets": [
+        ["id=dataExpiracao", "id"],
+        ["name=dataExpiracao", "name"],
+        ["css=#dataExpiracao", "css:finder"],
+        ["xpath=//input[@id='dataExpiracao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "0202-01-01"
+    }, {
+      "id": "6fd9298b-fb57-4503-826d-326cca89e836",
+      "comment": "",
+      "command": "type",
+      "target": "id=dataExpiracao",
+      "targets": [
+        ["id=dataExpiracao", "id"],
+        ["name=dataExpiracao", "name"],
+        ["css=#dataExpiracao", "css:finder"],
+        ["xpath=//input[@id='dataExpiracao']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "2026-01-01"
+    }, {
+      "id": "afdecbb1-cacb-438e-b405-2da3b1b97efc",
+      "comment": "",
+      "command": "click",
+      "target": "name=bandeira",
+      "targets": [
+        ["name=bandeira", "name"],
+        ["css=#novo-cartao > #bandeira", "css:finder"],
+        ["xpath=//select[@id='bandeira']", "xpath:attributes"],
+        ["xpath=//form[@id='novo-cartao']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dae2c935-d8c9-462b-a946-e4e98c32b5f0",
+      "comment": "",
+      "command": "select",
+      "target": "name=bandeira",
+      "targets": [],
+      "value": "label=Visa"
+    }, {
+      "id": "13897916-4575-4eca-92ad-480dc926e946",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(26)",
+      "targets": [
+        ["css=.button:nth-child(26)", "css:finder"],
+        ["xpath=//form[@id='novo-cartao']/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Salvar Cartão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0c47a87-f75b-4d09-a64a-4969d0073681",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalCartao",
+      "targets": [
+        ["id=modalCartao", "id"],
+        ["css=#modalCartao", "css:finder"],
+        ["xpath=//div[@id='modalCartao']", "xpath:attributes"],
+        ["xpath=//body/div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b2b12bb7-d095-4788-8279-e5ef42f62695",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3c89a906-b087-4de3-9c98-d73cacb6fbe2"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

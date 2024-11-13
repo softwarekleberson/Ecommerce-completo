@@ -1,0 +1,86 @@
+{
+  "id": "dcde0ead-96cd-444b-8b30-553ebb4a958e",
+  "version": "2.0",
+  "name": "Cartao recusado",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "e73e0005-4cb2-4e6c-a2d7-6f2402d5984a",
+    "name": "Cartao sem credito",
+    "commands": [{
+      "id": "4f02aeba-960a-439c-8263-0d70131f9424",
+      "comment": "",
+      "command": "open",
+      "target": "/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d61f64c5-6cfa-44ff-bb20-1e879a835725",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1500158e-7262-4fbe-91c5-e72157f325ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-cart-shopping",
+      "targets": [
+        ["css=.fa-cart-shopping", "css:finder"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5fbc14c-655c-41b3-8818-8717fddecc04",
+      "comment": "",
+      "command": "click",
+      "target": "css=.estilo-botao",
+      "targets": [
+        ["css=.estilo-botao", "css:finder"],
+        ["xpath=//a/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8e90a64-44cd-4278-b178-1fd0336036ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pedido-item",
+      "targets": [
+        ["css=.pedido-item", "css:finder"],
+        ["xpath=//section[@id='pedidos-pagar']/div", "xpath:idRelative"],
+        ["xpath=//section/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c67370f6-dbd0-430f-a339-3055fd0d015d",
+      "comment": "",
+      "command": "click",
+      "target": "id=finalizar",
+      "targets": [
+        ["id=finalizar", "id"],
+        ["css=#finalizar", "css:finder"],
+        ["xpath=//button[@id='finalizar']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c95e21fc-5a04-4b4d-9973-5a5efb197337",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Erro ao processar o pagamento: Pagamento reprovado.",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b17b548a-43e4-45b6-93a6-b101a9b791d7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e73e0005-4cb2-4e6c-a2d7-6f2402d5984a"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

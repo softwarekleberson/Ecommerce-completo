@@ -47,7 +47,7 @@
 
           <button class="button-small" id="editCartao">Novo Cartão</button>
           <a href="cartoes.html" target="_blank">Trocar cartão</a>
-          
+
           <label for="salvar" class="salvar">Salvar cartão ?</label><br>
           <input type="checkbox" id="salvar" name="salvar" checked>
         </div>
@@ -79,11 +79,8 @@
       <span class="close" id="closeEntrega">&times;</span>
       <form id="nova-entrega">
 
-        <label for="idCliente">ID Cliente:</label>
-        <input type="text" id="idCliente" name="idCliente" required><br><br>
-
-        <label for="">Entrega principal</label>
-        <input type="checkbox" id="principal" name="principal" checked><br>
+        <label for="principalEntrega">Entrega principal</label>
+        <input type="checkbox" id="principalEntrega" name="principal" checked><br>
 
         <label for="receptorEntrega">Receptor</label>
         <input type="text" name="receptorEntrega" id="receptorEntrega" autocomplete="name" required
@@ -141,15 +138,12 @@
 
       <form id="nova-cobranca" autocomplete="on">
 
-        <label for="idCliente">ID Cliente:</label>
-        <input type="text" id="idCliente" name="idCliente" required><br><br>
-
-        <label for="">Cobranca principal</label>
-        <input type="checkbox" id="principal" name="principal" checked><br>
+        <label for="principalCobranca">Cobranca principal</label>
+        <input type="checkbox" id="principalCobranca" name="principal" checked><br>
 
         <label for="receptorCobranca">Receptor</label>
         <input type="text" name="receptorCobranca" id="receptorCobranca" autocomplete="name" required
-          placeholder="Quem irá receber a cobrança">
+          placeholder="Quem irá receber a cobrança" checked>
 
         <label for="tipoResidenciaCobranca">Tipo de Residência:</label>
         <input type="text" id="tipoResidenciaCobranca" name="tipoResidenciaCobranca"
@@ -199,10 +193,7 @@
     <div class="modal-content">
       <span class="close" id="closeCartao">&times;</span>
 
-      <form id="myForm" autocomplete="on">
-
-        <label for="idCliente">ID Cliente:</label><br>
-        <input type="text" id="idCliente" name="idCliente" required autocapitalize=""><br>
+      <form id="novo-cartao" autocomplete="on">
 
         <label for="principal">Principal:</label><br>
         <input type="checkbox" id="principal" name="principal" checked><br>
@@ -219,6 +210,8 @@
 
         <label for="dataExpiracao">Data validade</label><br>
         <input type="date" id="dataExpiracao" name="dataExpiracao" placeholder="Data validade cartão">
+        <br>
+        <br>
 
         <label for="bandeira">Bandeira:</label><br>
         <select id="bandeira" name="bandeira">
@@ -227,7 +220,7 @@
           <option value="VISA">Visa</option>
         </select><br>
 
-        <input type="submit" value="Enviar">
+        <button class="button">Salvar Cartão</button>
       </form>
 
     </div>

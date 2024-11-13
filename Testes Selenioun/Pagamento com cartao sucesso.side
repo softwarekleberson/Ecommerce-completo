@@ -1,0 +1,55 @@
+{
+  "id": "66cf6fce-4807-4c7b-b749-71fb24ff46d9",
+  "version": "2.0",
+  "name": "Pagamento com cartao ",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "252d1b94-740c-4c9b-9d2e-7c825f1903c9",
+    "name": "Pagamento com cartao sucesso",
+    "commands": [{
+      "id": "dedfcbb9-85c7-49bd-98d3-a5a756df79d5",
+      "comment": "",
+      "command": "open",
+      "target": "/checkout.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b533b9c8-d09a-49ca-bb4e-3776d246eba1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92260070-9b9b-4c78-bf95-81a031d05081",
+      "comment": "",
+      "command": "click",
+      "target": "id=finalizar",
+      "targets": [
+        ["id=finalizar", "id"],
+        ["css=#finalizar", "css:finder"],
+        ["xpath=//button[@id='finalizar']", "xpath:attributes"],
+        ["xpath=//body/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07642336-3b53-4ced-8e53-562aaae5452b",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Pagamento enviado com sucesso!",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "bc71ddac-624d-4585-9e7c-5c6e5540310a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["252d1b94-740c-4c9b-9d2e-7c825f1903c9"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

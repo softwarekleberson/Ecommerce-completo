@@ -1,0 +1,392 @@
+{
+  "id": "ce700711-b69c-4567-947f-060394fd3ad3",
+  "version": "2.0",
+  "name": "Novo endereco cobranca checkout",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "36424a2b-1156-4c05-8cb2-c69dff46e405",
+    "name": "Novo endereco cobranca checkout",
+    "commands": [{
+      "id": "52926c9b-ff9c-4b0b-ac71-f297c350277c",
+      "comment": "",
+      "command": "open",
+      "target": "/checkout.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8c159c5-865a-4266-a0c5-f960f5c509d9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7619ed8-ca28-4298-a695-dabaea5979c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=editCobranca",
+      "targets": [
+        ["id=editCobranca", "id"],
+        ["css=#editCobranca", "css:finder"],
+        ["xpath=//button[@id='editCobranca']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Novo Endereço de Cobrança')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b97126da-6137-4ee0-afab-3a00781ada01",
+      "comment": "",
+      "command": "click",
+      "target": "id=nova-cobranca",
+      "targets": [
+        ["id=nova-cobranca", "id"],
+        ["css=#nova-cobranca", "css:finder"],
+        ["xpath=//form[@id='nova-cobranca']", "xpath:attributes"],
+        ["xpath=//div[@id='modalCobranca']/div/form", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18a7da21-c507-4116-9ea5-63ef23f179fc",
+      "comment": "",
+      "command": "click",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15b92687-af7e-495a-ad2e-754df81ed689",
+      "comment": "",
+      "command": "type",
+      "target": "id=receptorCobranca",
+      "targets": [
+        ["id=receptorCobranca", "id"],
+        ["name=receptorCobranca", "name"],
+        ["css=#receptorCobranca", "css:finder"],
+        ["xpath=//input[@id='receptorCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[2]", "xpath:position"]
+      ],
+      "value": "Valdir santana"
+    }, {
+      "id": "a0bcae41-67ab-4806-a9e9-059193e94bc9",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoResidenciaCobranca",
+      "targets": [
+        ["id=tipoResidenciaCobranca", "id"],
+        ["name=tipoResidenciaCobranca", "name"],
+        ["css=#tipoResidenciaCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoResidenciaCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[3]", "xpath:position"]
+      ],
+      "value": "apartamento"
+    }, {
+      "id": "fd6baa42-eda6-403d-b65d-22456f1859ee",
+      "comment": "",
+      "command": "type",
+      "target": "id=tipoLogradouroCobranca",
+      "targets": [
+        ["id=tipoLogradouroCobranca", "id"],
+        ["name=tipoLogradouroCobranca", "name"],
+        ["css=#tipoLogradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='tipoLogradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[4]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[4]", "xpath:position"]
+      ],
+      "value": "avenida"
+    }, {
+      "id": "65051863-9b33-459e-a6df-e312014b8adc",
+      "comment": "",
+      "command": "type",
+      "target": "id=logradouroCobranca",
+      "targets": [
+        ["id=logradouroCobranca", "id"],
+        ["name=logradouroCobranca", "name"],
+        ["css=#logradouroCobranca", "css:finder"],
+        ["xpath=//input[@id='logradouroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[5]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[5]", "xpath:position"]
+      ],
+      "value": "praça da libertadores"
+    }, {
+      "id": "47420083-02b6-4766-a29e-232bc3745c5f",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroCobranca",
+      "targets": [
+        ["id=numeroCobranca", "id"],
+        ["name=numeroCobranca", "name"],
+        ["css=#numeroCobranca", "css:finder"],
+        ["xpath=//input[@id='numeroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[6]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[6]", "xpath:position"]
+      ],
+      "value": "555"
+    }, {
+      "id": "c51adf56-7c35-490f-863e-21ef5504fbac",
+      "comment": "",
+      "command": "click",
+      "target": "id=nova-cobranca",
+      "targets": [
+        ["id=nova-cobranca", "id"],
+        ["css=#nova-cobranca", "css:finder"],
+        ["xpath=//form[@id='nova-cobranca']", "xpath:attributes"],
+        ["xpath=//div[@id='modalCobranca']/div/form", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec401cc1-682d-4024-b208-62965de48de0",
+      "comment": "",
+      "command": "click",
+      "target": "id=bairroCobranca",
+      "targets": [
+        ["id=bairroCobranca", "id"],
+        ["name=bairroCobranca", "name"],
+        ["css=#bairroCobranca", "css:finder"],
+        ["xpath=//input[@id='bairroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5ddc36f-f89b-4ff2-8ad6-4f522a6b5771",
+      "comment": "",
+      "command": "type",
+      "target": "id=bairroCobranca",
+      "targets": [
+        ["id=bairroCobranca", "id"],
+        ["name=bairroCobranca", "name"],
+        ["css=#bairroCobranca", "css:finder"],
+        ["xpath=//input[@id='bairroCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[7]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[7]", "xpath:position"]
+      ],
+      "value": "vila conceição"
+    }, {
+      "id": "1c05a79b-5552-4891-aad1-5acfcfb8a55c",
+      "comment": "",
+      "command": "click",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[8]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "450d3275-2f38-4f14-a192-fa09f805c3ca",
+      "comment": "",
+      "command": "type",
+      "target": "id=cepCobranca",
+      "targets": [
+        ["id=cepCobranca", "id"],
+        ["name=cepCobranca", "name"],
+        ["css=#cepCobranca", "css:finder"],
+        ["xpath=//input[@id='cepCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[8]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[8]", "xpath:position"]
+      ],
+      "value": "08725-320"
+    }, {
+      "id": "9aec178e-179b-4ad5-8f2a-d31cc9d52b28",
+      "comment": "",
+      "command": "type",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[9]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[9]", "xpath:position"]
+      ],
+      "value": "Mogi das Cruzes"
+    }, {
+      "id": "d408dc25-1546-4803-b372-7ff9f9a9e428",
+      "comment": "",
+      "command": "type",
+      "target": "id=estadoCobranca",
+      "targets": [
+        ["id=estadoCobranca", "id"],
+        ["name=estadoCobranca", "name"],
+        ["css=#estadoCobranca", "css:finder"],
+        ["xpath=//input[@id='estadoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[10]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[10]", "xpath:position"]
+      ],
+      "value": "SP"
+    }, {
+      "id": "ecd25b75-df8b-4390-ac12-6724070dcc4c",
+      "comment": "",
+      "command": "type",
+      "target": "id=paisCobranca",
+      "targets": [
+        ["id=paisCobranca", "id"],
+        ["name=paisCobranca", "name"],
+        ["css=#paisCobranca", "css:finder"],
+        ["xpath=//input[@id='paisCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[11]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[11]", "xpath:position"]
+      ],
+      "value": "Brasil"
+    }, {
+      "id": "2dc32340-abdd-4657-9944-838ba9f13c0e",
+      "comment": "",
+      "command": "click",
+      "target": "id=observacaoCobranca",
+      "targets": [
+        ["id=observacaoCobranca", "id"],
+        ["name=observacaoCobranca", "name"],
+        ["css=#observacaoCobranca", "css:finder"],
+        ["xpath=//textarea[@id='observacaoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fc3bce9-80c3-4719-b61d-76578dbdf2ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=observacaoCobranca",
+      "targets": [
+        ["id=observacaoCobranca", "id"],
+        ["name=observacaoCobranca", "name"],
+        ["css=#observacaoCobranca", "css:finder"],
+        ["xpath=//textarea[@id='observacaoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/textarea", "xpath:position"]
+      ],
+      "value": "Que dia é hoje ?"
+    }, {
+      "id": "eab842c8-f250-4a03-8c2c-1db56b69bfa8",
+      "comment": "",
+      "command": "click",
+      "target": "id=nova-cobranca",
+      "targets": [
+        ["id=nova-cobranca", "id"],
+        ["css=#nova-cobranca", "css:finder"],
+        ["xpath=//form[@id='nova-cobranca']", "xpath:attributes"],
+        ["xpath=//div[@id='modalCobranca']/div/form", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f5b667c-1262-4ece-b860-1fce7a9ca9ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[9]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4107606-a8d3-49b8-8151-92fd8725b4f0",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[9]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e2ac6d9-4ec2-4e1e-a46d-01c677988ef1",
+      "comment": "",
+      "command": "click",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[9]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8f6c170-bbce-4fe6-b26d-33ff844889be",
+      "comment": "",
+      "command": "type",
+      "target": "id=cidadeCobranca",
+      "targets": [
+        ["id=cidadeCobranca", "id"],
+        ["name=cidadeCobranca", "name"],
+        ["css=#cidadeCobranca", "css:finder"],
+        ["xpath=//input[@id='cidadeCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[9]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[9]", "xpath:position"]
+      ],
+      "value": "Belo Horizonte"
+    }, {
+      "id": "0a973a28-0485-43e1-953d-579695a20992",
+      "comment": "",
+      "command": "click",
+      "target": "id=estadoCobranca",
+      "targets": [
+        ["id=estadoCobranca", "id"],
+        ["name=estadoCobranca", "name"],
+        ["css=#estadoCobranca", "css:finder"],
+        ["xpath=//input[@id='estadoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[10]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b701fc79-7b8e-41bb-ad5d-e7caea698045",
+      "comment": "",
+      "command": "type",
+      "target": "id=estadoCobranca",
+      "targets": [
+        ["id=estadoCobranca", "id"],
+        ["name=estadoCobranca", "name"],
+        ["css=#estadoCobranca", "css:finder"],
+        ["xpath=//input[@id='estadoCobranca']", "xpath:attributes"],
+        ["xpath=//form[@id='nova-cobranca']/input[10]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/input[10]", "xpath:position"]
+      ],
+      "value": "MG"
+    }, {
+      "id": "387d7fe1-644f-4323-99fb-d3962c747a3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(46)",
+      "targets": [
+        ["css=.button:nth-child(46)", "css:finder"],
+        ["xpath=//form[@id='nova-cobranca']/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2c2c4199-c2b8-4eaf-bf74-3d9091805f9a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["36424a2b-1156-4c05-8cb2-c69dff46e405"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
