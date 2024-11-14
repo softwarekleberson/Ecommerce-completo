@@ -60,34 +60,6 @@
       ],
       "value": ""
     }, {
-      "id": "6b1ed313-652b-4359-a923-fd9de3d085b0",
-      "comment": "",
-      "command": "click",
-      "target": "id=idCliente",
-      "targets": [
-        ["id=idCliente", "id"],
-        ["name=idCliente", "name"],
-        ["css=#idCliente", "css:finder"],
-        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
-        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "37f1da86-68b8-4f8a-a86f-2604b7c94330",
-      "comment": "",
-      "command": "type",
-      "target": "id=idCliente",
-      "targets": [
-        ["id=idCliente", "id"],
-        ["name=idCliente", "name"],
-        ["css=#idCliente", "css:finder"],
-        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
-        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "1"
-    }, {
       "id": "39e07caa-6e2a-4bc1-84f0-06ccab127ba3",
       "comment": "",
       "command": "click",

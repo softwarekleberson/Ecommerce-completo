@@ -116,20 +116,6 @@
       ],
       "value": "valdir do porco"
     }, {
-      "id": "f835c093-8c8b-4fda-94ce-a4c2fa4c778f",
-      "comment": "",
-      "command": "click",
-      "target": "id=idCliente",
-      "targets": [
-        ["id=idCliente", "id"],
-        ["name=idCliente", "name"],
-        ["css=#idCliente", "css:finder"],
-        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
-        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "c65567ae-4175-4e73-a720-7a98465af33f",
       "comment": "",
       "command": "mouseDownAt",
@@ -165,20 +151,6 @@
         ["xpath=//form", "xpath:position"]
       ],
       "value": "398.8984375,231.5"
-    }, {
-      "id": "5fbf931d-0e0c-4ee5-b2cf-fc83d82c73c0",
-      "comment": "",
-      "command": "type",
-      "target": "id=idCliente",
-      "targets": [
-        ["id=idCliente", "id"],
-        ["name=idCliente", "name"],
-        ["css=#idCliente", "css:finder"],
-        ["xpath=//input[@id='idCliente']", "xpath:attributes"],
-        ["xpath=//form[@id='myForm']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "1"
     }, {
       "id": "1386cda9-38df-4fbe-9228-5fbd8e360d58",
       "comment": "",
