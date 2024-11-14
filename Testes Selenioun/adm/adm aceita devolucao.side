@@ -1,0 +1,333 @@
+{
+  "id": "efefa5ea-751c-4203-9b53-2f18f16c639e",
+  "version": "2.0",
+  "name": "adm aceita devolucao",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "aa4ae29e-e8ac-44e3-a8fa-2b1f2e26c3c2",
+    "name": "devolucao aceita adm",
+    "commands": [{
+      "id": "43a947a1-bab3-4005-9327-cc9420593156",
+      "comment": "",
+      "command": "open",
+      "target": "/home-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5968d680-0522-440f-8780-16dc2f1758e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4f08660-c199-41e5-a03a-47a4c9c94540",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(9) p",
+      "targets": [
+        ["css=div:nth-child(9) p", "css:finder"],
+        ["xpath=//div[9]/a/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Visualizar seus pedidos de troca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5672325-5fda-4fb6-a10f-de4e73b5f7f9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aceitar ou Recusar Devolução",
+      "targets": [
+        ["linkText=Aceitar ou Recusar Devolução", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aceitar ou Recusar Devolução')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'analise-pedido-devolucao.html')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aceitar ou Recusar Devolução')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win3427",
+      "windowTimeout": 2000
+    }, {
+      "id": "37ac87fe-814c-4e3e-8e3d-83b1868ead8b",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd9ea943-a7bd-457e-9ced-4bfea388d2a1",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3427}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4617a64a-edd7-4820-b2f8-30f1316d0bff",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51cf07ee-79b7-4d82-ba24-568719f1a3c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(3)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(3)", "css:finder"],
+        ["xpath=//tbody[@id='devolucoes']/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'530eeb8c-3ac1-4164-af72-229783d844a4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b84edb6-fae2-431f-9bf6-cbd27d2840c3",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3427}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e54f4f2-eb00-41c8-89e3-e90ff57c673a",
+      "comment": "",
+      "command": "click",
+      "target": "id=codigoPedido",
+      "targets": [
+        ["id=codigoPedido", "id"],
+        ["name=codigoPedido", "name"],
+        ["css=#codigoPedido", "css:finder"],
+        ["xpath=//input[@id='codigoPedido']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcdeae37-e0e8-4b8e-abe5-38597ca32491",
+      "comment": "",
+      "command": "click",
+      "target": "id=codigoPedido",
+      "targets": [
+        ["id=codigoPedido", "id"],
+        ["name=codigoPedido", "name"],
+        ["css=#codigoPedido", "css:finder"],
+        ["xpath=//input[@id='codigoPedido']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2752639-bab6-459a-9fc6-e2f8a6016dda",
+      "comment": "",
+      "command": "click",
+      "target": "id=codigoPedido",
+      "targets": [
+        ["id=codigoPedido", "id"],
+        ["name=codigoPedido", "name"],
+        ["css=#codigoPedido", "css:finder"],
+        ["xpath=//input[@id='codigoPedido']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "338fe865-a119-4934-873c-37ca70ccbe43",
+      "comment": "",
+      "command": "type",
+      "target": "id=codigoPedido",
+      "targets": [
+        ["id=codigoPedido", "id"],
+        ["name=codigoPedido", "name"],
+        ["css=#codigoPedido", "css:finder"],
+        ["xpath=//input[@id='codigoPedido']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "530eeb8c-3ac1-4164-af72-229783d844a4"
+    }, {
+      "id": "700f227b-0ac6-4df9-8ecf-db2a86c9c909",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58efc9ba-9c36-4c49-b229-5bdbb28939f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tbody[@id='devolucoes']/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2963bb97-6cb4-4723-9fe4-7847f16ea38b')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32ff5897-0ea4-49df-9910-b0d744dcd6ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tbody[@id='devolucoes']/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2963bb97-6cb4-4723-9fe4-7847f16ea38b')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "45bfaa72-2e39-4080-834c-240e3dc1c13d",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tbody[@id='devolucoes']/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2963bb97-6cb4-4723-9fe4-7847f16ea38b')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32ab2f16-8637-40da-b605-3da4d3734bb7",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tbody[@id='devolucoes']/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2963bb97-6cb4-4723-9fe4-7847f16ea38b')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "43b77fc0-d8a6-4a15-bc00-7423c1c6e506",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3427}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86569ad2-1fec-4d2b-b399-94fefcd299a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=codigoDevolucao",
+      "targets": [
+        ["id=codigoDevolucao", "id"],
+        ["name=codigoDevolucao", "name"],
+        ["css=#codigoDevolucao", "css:finder"],
+        ["xpath=//input[@id='codigoDevolucao']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "769299f2-112a-43c9-84a7-bd39bb04bd35",
+      "comment": "",
+      "command": "type",
+      "target": "id=codigoDevolucao",
+      "targets": [
+        ["id=codigoDevolucao", "id"],
+        ["name=codigoDevolucao", "name"],
+        ["css=#codigoDevolucao", "css:finder"],
+        ["xpath=//input[@id='codigoDevolucao']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2963bb97-6cb4-4723-9fe4-7847f16ea38b"
+    }, {
+      "id": "23d56e33-a5f8-4b27-b0d6-80735161daab",
+      "comment": "",
+      "command": "click",
+      "target": "id=esperandoDevolucaoOuRecebido",
+      "targets": [
+        ["id=esperandoDevolucaoOuRecebido", "id"],
+        ["name=esperandoDevolucaoOuRecebido", "name"],
+        ["css=#esperandoDevolucaoOuRecebido", "css:finder"],
+        ["xpath=//select[@id='esperandoDevolucaoOuRecebido']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64e69a2d-8f07-4383-95ff-9aa8807f7d61",
+      "comment": "",
+      "command": "select",
+      "target": "id=esperandoDevolucaoOuRecebido",
+      "targets": [],
+      "value": "label=Recebido"
+    }, {
+      "id": "4f6eadaa-c3fa-46ba-a860-a41f06868cc7",
+      "comment": "",
+      "command": "click",
+      "target": "id=produtoVoltaParaEstoque",
+      "targets": [
+        ["id=produtoVoltaParaEstoque", "id"],
+        ["name=produtoVoltaParaEstoque", "name"],
+        ["css=#produtoVoltaParaEstoque", "css:finder"],
+        ["xpath=//select[@id='produtoVoltaParaEstoque']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c95575ee-d1f5-4544-bd7d-5f706e350574",
+      "comment": "",
+      "command": "select",
+      "target": "id=produtoVoltaParaEstoque",
+      "targets": [],
+      "value": "label=Sim"
+    }, {
+      "id": "f3b99c03-e458-4558-984d-2871533e0bad",
+      "comment": "",
+      "command": "click",
+      "target": "id=estadoProduto",
+      "targets": [
+        ["id=estadoProduto", "id"],
+        ["name=estadoProduto", "name"],
+        ["css=#estadoProduto", "css:finder"],
+        ["xpath=//select[@id='estadoProduto']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/select[3]", "xpath:idRelative"],
+        ["xpath=//select[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1033b7ef-5284-4423-b689-4988a5dd1f7f",
+      "comment": "",
+      "command": "select",
+      "target": "id=estadoProduto",
+      "targets": [],
+      "value": "label=Novo"
+    }, {
+      "id": "c00c2237-ffee-471f-8514-8d4479d63b3d",
+      "comment": "",
+      "command": "click",
+      "target": "id=aceitar",
+      "targets": [
+        ["id=aceitar", "id"],
+        ["css=#aceitar", "css:finder"],
+        ["xpath=//button[@id='aceitar']", "xpath:attributes"],
+        ["xpath=//form[@id='formDevolucao']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aceitar Devolução')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f75d57c-e202-4f17-a88b-abf976f1ffd3",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Devolução aceita com sucesso!",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "52c08859-7208-4407-9bab-7a074dc9af68",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["aa4ae29e-e8ac-44e3-a8fa-2b1f2e26c3c2"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

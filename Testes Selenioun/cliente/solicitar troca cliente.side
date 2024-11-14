@@ -1,0 +1,82 @@
+{
+  "id": "d4d13244-dd82-4a95-84f4-79a17e8d4690",
+  "version": "2.0",
+  "name": "solicitar troca cliente",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "f4a2f99b-94a5-43fa-b094-3c484eb4d59d",
+    "name": "troca solicitada cliente",
+    "commands": [{
+      "id": "cad3dedf-f8ce-4b2d-b8cb-04d89f97b374",
+      "comment": "",
+      "command": "open",
+      "target": "/home.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "463142a3-ea34-4db0-a30e-20a04c6e6e6e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c9ee55d-a50e-4224-ad0a-f2a635fffd19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Meus pedidos",
+      "targets": [
+        ["linkText=Meus pedidos", "linkText"],
+        ["css=a:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Meus pedidos')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'pedidos.html')]", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Meus pedidos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cb3170d-28a1-4fa0-8cfa-a0477b8450a7",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7514a358-a0b6-4ad7-954c-4f50e5e3a3d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-devolucao",
+      "targets": [
+        ["css=.botao-devolucao", "css:finder"],
+        ["xpath=//div[@id='orders-container']/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Troca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb0446c4-9ad7-454e-8699-3e8e67a1af85",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Você tem certeza que deseja solicitar a troca deste pedido?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf6adbb0-8fec-4193-bd9b-1140f5d14f7a",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cce16d92-e6fb-4106-9cba-50741e3f0b4b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f4a2f99b-94a5-43fa-b094-3c484eb4d59d"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}

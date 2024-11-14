@@ -1,0 +1,133 @@
+{
+  "id": "1bc9d01e-4838-4ccb-862b-94a38a600036",
+  "version": "2.0",
+  "name": "adm modifica status pedido transito",
+  "url": "http://127.0.0.90:5500",
+  "tests": [{
+    "id": "68888c10-67e6-4cdf-a6b0-b2e1f1a9a4f9",
+    "name": "Mercadoria em transito adm",
+    "commands": [{
+      "id": "4ac4c66d-5446-4e13-9bbc-cc0b669d7881",
+      "comment": "",
+      "command": "open",
+      "target": "/listar-todos-pedidos-adm.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d482f153-2227-4cca-b537-6c01389d09b2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c290378d-4fc8-4e41-ad72-a5daff86d996",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mercadoria Transito",
+      "targets": [
+        ["linkText=Mercadoria Transito", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Mercadoria Transito')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'adm-transito.html')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mercadoria Transito')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win4896",
+      "windowTimeout": 2000
+    }, {
+      "id": "749e24a2-e812-4140-b199-6c771e091eff",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd844899-0aa8-474f-904b-6bfecc6926c7",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win4896}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc9d8ab1-292a-4523-83e7-3798c6b9dadd",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2eaa0a18-8723-41a0-9b6b-64a93419d41d",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='pedidos-table']/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'aee59257-5b9b-44e1-b238-47ad9c58e67c')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e967d008-af50-4d04-aba7-ce1cac6d495b",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win4896}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba6ab9e0-ba01-4ced-8479-778e8ed10a16",
+      "comment": "",
+      "command": "click",
+      "target": "id=codigo",
+      "targets": [
+        ["id=codigo", "id"],
+        ["name=codigo", "name"],
+        ["css=#codigo", "css:finder"],
+        ["xpath=//input[@id='codigo']", "xpath:attributes"],
+        ["xpath=//form[@id='statusForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f8097a8-ccf9-4a65-b9fd-3ba618b34335",
+      "comment": "",
+      "command": "type",
+      "target": "id=codigo",
+      "targets": [
+        ["id=codigo", "id"],
+        ["name=codigo", "name"],
+        ["css=#codigo", "css:finder"],
+        ["xpath=//input[@id='codigo']", "xpath:attributes"],
+        ["xpath=//form[@id='statusForm']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "aee59257-5b9b-44e1-b238-47ad9c58e67c"
+    }, {
+      "id": "7d6f7757-5e0f-4b31-9bdd-882af3e1de2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='statusForm']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enviar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1bc667b2-5223-4574-a24b-3c3c24e02b63",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["68888c10-67e6-4cdf-a6b0-b2e1f1a9a4f9"]
+  }],
+  "urls": ["http://127.0.0.90:5500/"],
+  "plugins": []
+}
