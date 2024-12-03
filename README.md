@@ -55,9 +55,42 @@ Execute a aplicação:
 
  mvn spring-boot:run
 
+# API Endpoints Documentation
 
-Acesse a aplicação:
+Este documento descreve os principais endpoints da API, organizados por funcionalidades e tipos de usuário (Cliente e Administrador).
 
+--- # API Endpoints Documentação
+
+## Cliente
+
+| Funcionalidade               | Método  | Endpoint                                   | Body                                                                                                   |
+|------------------------------|---------|-------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Consulta pesquisa            | `GET`   | `/livro/consulta/pesquisa`                | `{ "termoDePesquisa": "vid" }`                                                                         |
+| Consulta com parâmetro       | `GET`   | `/livro/consulta/parametros`              | `{ "edicao": 4 }`                                                                                     |
+| Excluir item do carrinho     | `DELETE`| `/pedidos/itens/produto/5`                | -                                                                                                      |
+| Atualizar itens no carrinho  | `PUT`   | `/pedidos/itens/produto/5`                | `{ "quantidade": 6 }`                                                                                 |
+| Criar pedido                 | `POST`  | `/pedidos/1/1`                            | `{ "id": 1, "pedidoRealizado": "2024-10-15", "codigoPedido": "b1089fab-ff04-4efd-8092-ab0732d452ca", "statusPedido": "AGUARDANDO_PAGAMENTO" }` |
+| Listar pedidos por cliente   | `GET`   | `/pedidos/1`                              | -                                                                                                      |
+| Listar pedidos pagos         | `GET`   | `/pedidos/pagos/1`                        | -                                                                                                      |
+| Listar livros ativos         | `GET`   | `/livro`                                  | -                                                                                                      |
+| Ativar livro                 | `POST`  | `/livro/ativar`                           | `{ "idLivro": "1", "justificativa": "Esta versão está fora do padrão da livraria", "categoria": "PETICAO_PUBLICA" }` |
+
+---
+
+## Administrador
+
+| Funcionalidade                 | Método  | Endpoint                                   | Body                                                                                                   |
+|--------------------------------|---------|-------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Listar todos os pedidos pagos  | `GET`   | `/administrador/listar-pedidos`           | -                                                                                                      |
+| Aceitar devolução              | `POST`  | `/administrador/aceitar`                  | `{ "codigoPedido": "69319b5c-3406-42fd-b8a9-f96b7b002e48", "esperandoDevolucaoOuRecebido": "RECEBIDO", "produtoVoltaParaEstoque": "SIM", "estadoProduto": "NOVO" }` |
+| Novo estoque                   | `POST`  | `/estoque`                                | `{ "idLivro": 16, "quantidade": 100, "valorCusto": "35.44", "dataEntrada": "1990-01-01", "fornecedor": "Casa da letra", "estadoProduto": "NOVO" }` |
+| Criar cupom                    | `POST`  | `/administrador/cupons`                   | `{ "idCliente": 1, "tipoCupom": "TROCA", "valor": 200 }`                                               |
+| Cadastrar livro                | `POST`  | `/livro`                                  | `{ "idPrecificacao": 1, "data": "2024-01-30", "preco": "55.70", "titulo": "Psicologia Financeira", "isbn": "978-3-01-144444-1", "autor": [ { "nome": "Morgan Housel" } ], "categoria": [ { "nome": "autoajuda" } ] }` |
+| Atualizar livro                | `PUT`   | `/livro`                                  | `{ "id": 6, "autor": { "nome": "Morgan Housel" } }`                                                     |
+
+---
+
+Para mais informações sobre os endpoints, revise as tabelas acima ou entre em contato com o responsável pela API.
 
 Frontend: http://localhost:8080
 Swagger API Docs (se configurado): http://localhost:8080/swagger-ui.html
