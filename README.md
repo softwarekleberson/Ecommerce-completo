@@ -80,10 +80,9 @@ Abra um Pull Request.
 📄 Licença
 Este projeto está licenciado sob a MIT License.
 
-Desenvolvido com ❤️ por Seu Nome.
+Desenvolvido com ❤️ por Kleberson dos santos silva.
 
 ### Adaptação
-- Substitua os placeholders como `https://github.com/seu-usuario/ecommerce-java` e `Seu Nome` com informações reais do projeto.
 - Inclua qualquer configuração adicional necessária, como variáveis de ambiente para integração com APIs externas.
 
 Se precisar de ajuda para implementar alguma funcionalidade específica, é só pedir! 😊
