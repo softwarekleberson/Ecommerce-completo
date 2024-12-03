@@ -2,6 +2,8 @@
 
 Bem-vindo ao projeto de E-commerce em Java! Este é um sistema completo de comércio eletrônico desenvolvido para gerenciamento de produtos, usuários, pedidos e pagamento online. 
 
+## Vídeo da aplicação em uso : https://www.linkedin.com/feed/update/urn:li:activity:7264333426760024064/
+
 ## 🚀 Funcionalidades
 
 - **Gestão de usuários**: Cadastro, login e gerenciamento de perfis (administradores e clientes).
