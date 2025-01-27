@@ -102,25 +102,13 @@ Faça um fork do repositório.
 Crie uma nova branch:
  git checkout -b minha-nova-feature
 
-
 Commit suas alterações:
  git commit -m "Minha nova feature"
 
-
 Envie para o repositório remoto:
  git push origin minha-nova-feature
-
-
-Abra um Pull Request.
-📄 Licença
-Este projeto está licenciado sob a MIT License.
 
 Desenvolvido com ❤️ por Kleberson dos santos silva.
 
 ### Adaptação
 - Inclua qualquer configuração adicional necessária, como variáveis de ambiente para integração com APIs externas.
-
-Se precisar de ajuda para implementar alguma funcionalidade específica, é só pedir! 😊
-
-
-
