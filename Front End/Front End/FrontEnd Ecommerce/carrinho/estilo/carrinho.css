@@ -234,10 +234,12 @@ footer .footer-content {
 .footer-section h3 {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
+    padding: 10px;
 }
 
 .footer-section p, .footer-section span {
     font-size: 0.9rem;
+    padding: 10px;
 }
 
 .footer-bottom {
@@ -248,4 +250,5 @@ footer .footer-content {
 .footer-section ul {
     list-style: none; 
     text-decoration: none; 
+    padding: 10px;
 }

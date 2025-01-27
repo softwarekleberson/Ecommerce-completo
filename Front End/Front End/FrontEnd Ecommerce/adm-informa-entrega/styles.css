@@ -6,7 +6,8 @@ body {
 }
 
 .form-container {
-    max-width: 400px;
+    max-width: 600px;
+    min-width: 200px;
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -35,7 +36,7 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -48,7 +49,7 @@ input[type="text"]:focus {
 }
 
 button {
-    width: 100%;
+    width: 94%;
     padding: 10px;
     background-color: #5cb85c;
     color: white;

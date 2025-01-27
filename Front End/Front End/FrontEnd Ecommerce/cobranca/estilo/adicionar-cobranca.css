@@ -35,9 +35,11 @@ body {
 form {
     background-position: center center;
     width: 30%;
-    max-width: 600px;
+    max-width: 500px;
+    min-width: 350px;
     max-height: 500px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 20px;
     background-color: var(--cor1);
     position: absolute;
@@ -47,6 +49,7 @@ form {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: var(--font-destaque);
+    margin: 1px;
 }
 
 .section {
@@ -80,7 +83,7 @@ textarea {
 }
 
 input[type="submit"] {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: var(--cor5);
     color: white;
@@ -112,6 +115,6 @@ div > h3 {
   .fechar {
     height: 20px;
     width: 20px;
-    margin-bottom: -25px;
-    margin-left: 330px;
+    margin-bottom: -65px;
+    margin-left: 290px;
 }
