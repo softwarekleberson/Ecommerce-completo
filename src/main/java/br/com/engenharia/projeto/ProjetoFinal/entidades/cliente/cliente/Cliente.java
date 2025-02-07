@@ -6,64 +6,45 @@ import java.util.stream.Collectors;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosCadastroEntrega;
-import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosAtualizacaoSenha;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosCadastroCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.Cartao;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.contato.Email;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.contato.Telefone;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.Cupom;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.user.Roles;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity(name = "Cliente")
 @Table(name = "clientes")
+@PrimaryKeyJoinColumn(name = "id")
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
-public class Cliente {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	public static final int VERIFICA_NOME = 2;
-	private String nome;
+public class Cliente extends UserEntity{
 
 	public static final int VERICA_CPF = 11;
 	private String cpf;
-
 	private LocalDate nascimento;
-	private String senha;
 	private Boolean ativo;
-
-	@Transient
-	private String confirmar_Senha;
 
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
 
 	@Embedded
 	private Telefone telefone;
-
-	@Embedded
-	private Email email;
 
 	@OneToMany(mappedBy = "cliente")
 	private List<Cartao> cartoes;
@@ -78,48 +59,24 @@ public class Cliente {
 	private List<Cupom> cupons;
 
 	public Cliente(@Valid DadosCadastroCliente dados) {
-
-		algoritmoVerificaSenha(dados.senha(), dados.confirmarSenha());
-		algoritmoVerificaFormatoSenha(dados.senha());
-		
+		super(dados.nome(),dados.email(),dados.senha(),dados.confirmarSenha());
+							
 		setAtivo(true);
-		setNome(dados.nome());
 		setCpf(dados.cpf());
 		setGenero(dados.genero());
 		setNascimento(dados.nascimento());
-		setSenha(dados.senha());
-		setConfirmar_Senha(dados.confirmarSenha());
 		setTelefone(dados);
-		setEmail(dados.email());
 		setEntregas(dados.entrega());
 		setCobrancas(dados.cobranca());
+		setRole(Roles.CLIENTE);
 	}
 	
-	public void algoritmoVerificaSenha(String senha, String confirmaSenha) {
-		AlgoritmoVerificaSenhaCliente.algoritmoVerificaSenhaCliente(senha, confirmaSenha);
-	}
-	
-	public void algoritmoVerificaFormatoSenha(String senha) {
-		AlgoritmoVerificaFormatoSenha.algoritmoVerificaFormatoSenha(senha);
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
 	}
 	
 	public Telefone getTelefone() {
 		return telefone;
-	}
-
-	public void setNome(String nome) {
-		if (nome == null || nome.trim().length() <= VERIFICA_NOME) {
-			throw new ValidacaoException("Nome deve possuir mais de 2 digitos");
-		}
-		this.nome = nome.trim().toLowerCase();
 	}
 
 	public void setCpf(String cpf) {
@@ -145,39 +102,15 @@ public class Cliente {
 		this.cartoes = cartoes;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha.trim();
-	}
-
-	public void setConfirmar_Senha(DadosAtualizacaoSenha senha) {
-		this.confirmar_Senha = senha.confirmarSenha();
-	}
-
-	public void CriptografarSenha(String senhaCriptografada) {
-		this.senha = senhaCriptografada;
-	}
-
-	public String devolveSenhaCriptografada() {
-		return this.senha;
-	}
-
-	public void setConfirmar_Senha(String confirmar_Senha) {
-		this.confirmar_Senha = confirmar_Senha;
-	}
-
-	public void setEmail(String email) {
-		this.email = new Email(email);
-	}
-
 	public void setEntregas(List<DadosCadastroEntrega> entregas) {
 		this.entregas = entregas.stream()
-				.map(entrega -> new Entrega(entrega)) // Convertendo DadosCadastroEntrega para Entrega
+				.map(entrega -> new Entrega(entrega)) 
 				.collect(Collectors.toList());
 	}
 
 	public void setCobrancas(List<DadosCadastroCobranca> cobrancas) {
 		this.cobrancas = cobrancas.stream()
-				.map(cobranca -> new Cobranca(cobranca)) // Convertendo DadosCadastroCobranca para Cobranca
+				.map(cobranca -> new Cobranca(cobranca))
 				.collect(Collectors.toList());
 	}
 
@@ -187,5 +120,9 @@ public class Cliente {
 
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
+	}
+
+	public String devolveSenhaCriptografada() {
+		return this.getSenha();
 	}
 }

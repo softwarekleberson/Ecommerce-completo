@@ -28,7 +28,7 @@ public class ServiceAdministrador {
 			throw new IllegalArgumentException("Email cadastrado anteriormente");
 		}
 		
-		Administrador administrador = new Administrador(dados);
+		Administrador administrador = new Administrador(dados, dados.roles());
 		criptografia.processar(administrador);
 		
 		repositorioDeAdministrador.salvar(administrador);

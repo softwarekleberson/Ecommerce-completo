@@ -1,2 +1,0 @@
-ALTER TABLE clientes
-MODIFY senha VARCHAR(255);

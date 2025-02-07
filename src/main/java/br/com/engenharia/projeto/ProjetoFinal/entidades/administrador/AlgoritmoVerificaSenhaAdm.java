@@ -8,6 +8,7 @@ import jakarta.validation.ValidationException;
 
 public class AlgoritmoVerificaSenhaAdm {
 
+	/*dddddddd*/
 	private static final String SENHA_CURTA = "Senha deve ter no mínimo 8 caracteres";
     private static final String SENHA_INVALIDA = "Senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial";
     private static final String REGEX_SENHA = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\",.<>?]).*$";
