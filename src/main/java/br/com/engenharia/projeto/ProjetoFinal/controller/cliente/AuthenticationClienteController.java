@@ -1,7 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.controller.cliente;
 
-import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -15,11 +13,15 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@RequiredArgsConstructor
 public class AuthenticationClienteController {
 
 	private final ServiceCliente service;
     private final AuthenticationService authenticationService;
+    
+    public AuthenticationClienteController(ServiceCliente service, AuthenticationService authenticationService) {
+		this.service = service;
+		this.authenticationService = authenticationService;
+	}
 
     @PostMapping("/login/cliente")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {

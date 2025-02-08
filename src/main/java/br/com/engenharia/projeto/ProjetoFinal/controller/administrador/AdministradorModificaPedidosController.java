@@ -21,7 +21,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.administradores.ServiceMo
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("admin")
+@RequestMapping("admin/pedidos")
 @CrossOrigin(origins = "*")
 public class AdministradorModificaPedidosController {
 

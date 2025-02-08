@@ -1,6 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.controller.administrador;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,16 +9,31 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Administrador.DadosCadastroAdministrador;
 import br.com.engenharia.projeto.ProjetoFinal.services.administradores.ServiceAdministrador;
+import br.com.engenharia.projeto.ProjetoFinal.services.seguranca.AuthResponse;
+import br.com.engenharia.projeto.ProjetoFinal.services.seguranca.AuthenticationService;
+import br.com.engenharia.projeto.ProjetoFinal.services.seguranca.LoginRequest;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "*")
-public class AuthentificationControllerAdm {
+public class AuthentificationAdmController {
 
-	@Autowired
-	private ServiceAdministrador serviceAdministrador;
-
+	private final AuthenticationService authenticationService;
+	private final ServiceAdministrador serviceAdministrador;
+	
+	public AuthentificationAdmController(AuthenticationService authenticationService,
+			ServiceAdministrador serviceAdministrador) {
+		this.authenticationService = authenticationService;
+		this.serviceAdministrador = serviceAdministrador;
+	}
+	
+	@PostMapping("/login/adm")
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+        String token = authenticationService.authenticate(request);
+        return ResponseEntity.ok(new AuthResponse(token));
+    }
+	
 	@PostMapping("/criar/adm")
 	public ResponseEntity cadastrarAdministrador(@RequestBody @Valid DadosCadastroAdministrador dados, UriComponentsBuilder uriBuilder) {
 		var dto = serviceAdministrador.criarAdministrador(dados);
