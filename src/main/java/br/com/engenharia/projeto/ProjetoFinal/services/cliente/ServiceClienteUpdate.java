@@ -36,29 +36,29 @@ public class ServiceClienteUpdate {
     @Autowired
     private List<CriptografaSenhaCliente> validaoresCriptografiaSenha;
 
-	public DadosDetalhamentoCliente atualizarCliente(@Valid DadosAtualizacaoCliente dados) {
-		Optional<Cliente> cliente = clienteRepositoy.findById(dados.idCliente());
+	public DadosDetalhamentoCliente atualizarCliente(@Valid DadosAtualizacaoCliente dados, Long id) {
+		Optional<Cliente> cliente = clienteRepositoy.findById(id);
 		if(cliente.isEmpty()) {
 			throw new IllegalArgumentException("Id incorreto");
 		}
 		
 		repositorioDeCliente.alterarCliente(cliente.get().getId(), dados); 
-		Log log = new Log(dados.idCliente());
+		Log log = new Log(id);
 		repositorioDeLog.save(log);
 		return null;		
 	}
 	
-	public DadosDetalhamentoCliente atualizarSenha(@Valid DadosAtualizacaoSenha dados) {
-		Optional<Cliente> cliente = clienteRepositoy.findById(dados.idCliente());
+	public DadosDetalhamentoCliente atualizarSenha(@Valid DadosAtualizacaoSenha dados, Long id) {
+		Optional<Cliente> cliente = clienteRepositoy.findById(id);
 		if(cliente.isEmpty()) {
 			throw new IllegalArgumentException("Id incorreto");
 		}
 		
 		validadores.forEach(v-> v.processar(dados));
 		validaoresCriptografiaSenha.forEach(v-> v.processar(cliente.get()));
-		repositorioDeCliente.alterarSenha(dados.idCliente(), cliente.get().devolveSenhaCriptografada());
+		repositorioDeCliente.alterarSenha(id, cliente.get().devolveSenhaCriptografada());
 		
-		Log log = new Log(dados.idCliente());
+		Log log = new Log(id);
 		repositorioDeLog.save(log);
 		return null;		
 	}

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 
 public record DadosDetalhamentoCliente(
-		Long id, String nome, LocalDate nascimento, String email,
+		Long id, String nome, LocalDate nascimento,
 		String ddd, String telefone
 		
 		)
@@ -14,7 +14,7 @@ public record DadosDetalhamentoCliente(
 
 	public DadosDetalhamentoCliente(Cliente cliente) {
 		this(cliente.getId() ,cliente.getNome(), cliente.getNascimento(),
-			 cliente.getEmail(), cliente.getTelefone().getDdd(),
+			 cliente.getTelefone().getDdd(),
 			 cliente.getTelefone().getTelefone());
 	}
 

@@ -5,9 +5,6 @@ import jakarta.validation.constraints.NotNull;
 public record DadosAtualizacaoSenha(
 		
 		@NotNull
-		Long idCliente,
-		
-		@NotNull
 		String senha,
 		
 		@NotNull

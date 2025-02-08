@@ -74,10 +74,6 @@ public class ClienteDao implements RepositorioDeCliente {
 				clienteUpdate.setNascimento(dados.nascimento());
 			}
 			
-			if(dados.email() != null) {
-				clienteUpdate.setEmail(dados.email());
-			}
-			
 			if(dados.ddd() != null) { 
 				clienteUpdate.getTelefone().setDdd(dados.ddd());
 			}
