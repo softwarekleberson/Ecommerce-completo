@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranc
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosDetalhamentoCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeCobranca;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 import jakarta.validation.Valid;
 
 @RestController
@@ -29,28 +31,34 @@ public class CobrancaController {
 	@Autowired
 	private RepositorioDeCobranca repositorioDeCobranca;
 	
-	@PostMapping("{clienteId}")
-	public ResponseEntity cadastrarCobranca(@PathVariable Long clienteId, @RequestBody @Valid DadosCadastroCobranca dados) {
+	@PostMapping
+	public ResponseEntity cadastrarCobranca(Authentication authentication, @RequestBody @Valid DadosCadastroCobranca dados) {
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
+		Long id = user.getId();
+		
 		var cobranca = new Cobranca(dados);
-		cobranca.setCliente(clienteId);
+		cobranca.setCliente(id);
 		repositorioDeCobranca.salvarNovaCobranca(cobranca);
 		return ResponseEntity.ok(cobranca);
 	}
 	
-	@GetMapping("{clienteId}")
-	public ResponseEntity<Page<DadosDetalhamentoCobranca>> listarEnderecosCobranca(@PathVariable Long clienteId, Pageable pageable){
-		Page<DadosDetalhamentoCobranca> cobrancas = repositorioDeCobranca.listarEnderecosCobrancaDoCliente(clienteId, pageable);
+	@GetMapping
+	public ResponseEntity<Page<DadosDetalhamentoCobranca>> listarEnderecosCobranca(Authentication authentication, Pageable pageable){
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
+		Long id = user.getId();
+		
+		Page<DadosDetalhamentoCobranca> cobrancas = repositorioDeCobranca.listarEnderecosCobrancaDoCliente(id, pageable);
 		return ResponseEntity.ok(cobrancas);
     }
 	
-	@PutMapping("{cobrancaId}")
-	public  ResponseEntity atualizarCobranca(@PathVariable Long cobrancaId, @RequestBody @Valid DadosAtualizacaoCobrancas dados) {
+	@PutMapping("/{cobrancaId}")
+	public  ResponseEntity atualizarCobranca(Authentication authentication, @PathVariable Long cobrancaId, @RequestBody @Valid DadosAtualizacaoCobrancas dados) {
 		Cobranca updateCobranca = repositorioDeCobranca.alterar(cobrancaId, dados);
 		return ResponseEntity.ok(updateCobranca);
 	}
 	
-	@DeleteMapping("{idCobranca}")
-	public ResponseEntity<Void> deletarEnderecoCobranca (@PathVariable Long idCobranca) {
+	@DeleteMapping("/{idCobranca}")
+	public ResponseEntity<Void> deletarEnderecoCobranca (Authentication authentication, @PathVariable Long idCobranca) {
 		repositorioDeCobranca.excluir(idCobranca);
 		return ResponseEntity.noContent().build();
 	}	
