@@ -49,11 +49,16 @@ public class ServiceCartao {
 		return new DadosDetalhamentoCartao(cartao);
 	}
 
-	public DadosDetalhamentoCartao atualizar(@Valid DadosAtualizacaoCartao dados, Long cartaoId) {
+	public DadosDetalhamentoCartao atualizar(@Valid DadosAtualizacaoCartao dados, Long cartaoId, Long idUsuario) {
 		
 		Optional<Cartao> cartaoExiste = cartaoRepository.findById(cartaoId);
+		
 		if(!cartaoExiste.isPresent()) {
 			throw new ValidationException("Id cartão não encontrado");
+		}
+		
+		if(!cartaoExiste.get().getCliente().getId().equals(idUsuario)) {
+			throw new ValidationException("Acesso negado! Este cartão não pertence ao usuário.");
 		}
 		
 		var cartao = repositorioDeCartao.alterar(cartaoId,dados);

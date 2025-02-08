@@ -13,5 +13,5 @@ public interface RepositorioDeCartao {
 	Cartao alterar(Long idCartao, DadosAtualizacaoCartao dados);
 	public void deletar(Long id);
 	public Optional<Cartao> cartaoCadastradoAnteriormente(String numeroCartao);
-	public Page listarCartaosDoCliente(Long clienteId, Pageable pageable);
+	public Page listarCartaosDoCliente(Long id, Pageable pageable);
 }
