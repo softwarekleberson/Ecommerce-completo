@@ -13,14 +13,14 @@ import br.com.engenharia.projeto.ProjetoFinal.services.administradores.ServiceAd
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("administrador")
+@RequestMapping("/auth")
 @CrossOrigin(origins = "*")
-public class AdministradorController {
+public class AuthentificationControllerAdm {
 
 	@Autowired
 	private ServiceAdministrador serviceAdministrador;
 
-	@PostMapping
+	@PostMapping("/criar/adm")
 	public ResponseEntity cadastrarAdministrador(@RequestBody @Valid DadosCadastroAdministrador dados, UriComponentsBuilder uriBuilder) {
 		var dto = serviceAdministrador.criarAdministrador(dados);
 	    var uri = uriBuilder.path("/administradores/{id}").buildAndExpand(dto.id()).toUri();

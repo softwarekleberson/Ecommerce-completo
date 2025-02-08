@@ -33,7 +33,7 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Sort;
 
 @RestController
-@RequestMapping("pedidos")
+@RequestMapping("cliente/pedidos")
 @CrossOrigin(origins = "*")
 public class PedidoController {
 

@@ -1,6 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.dtos.Administrador;
 
-import br.com.engenharia.projeto.ProjetoFinal.entidades.user.Roles;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroAdministrador(
@@ -15,9 +14,6 @@ public record DadosCadastroAdministrador(
 		String senha,
 		
 		@NotNull
-		String confirmarSenha,
-		
-		Roles roles
-		
+		String confirmarSenha		
 										) {
 }

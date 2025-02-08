@@ -23,12 +23,12 @@ public class ServiceAdministrador {
 	public DadosDetalhamentoAdministrador criarAdministrador(@Valid DadosCadastroAdministrador dados) {
 		
 		Email email = new Email(dados.email());
-		boolean emailCadastrado = repositorioDeAdministrador.verificaEmailCadastrado(email);
+		boolean emailCadastrado = repositorioDeAdministrador.verificaEmailCadastrado(email.getEmail());
 		if(!emailCadastrado) {
 			throw new IllegalArgumentException("Email cadastrado anteriormente");
 		}
 		
-		Administrador administrador = new Administrador(dados, dados.roles());
+		Administrador administrador = new Administrador(dados);
 		criptografia.processar(administrador);
 		
 		repositorioDeAdministrador.salvar(administrador);

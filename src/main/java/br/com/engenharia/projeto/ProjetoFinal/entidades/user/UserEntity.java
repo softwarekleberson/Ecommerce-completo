@@ -1,29 +1,38 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.user;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.AlgoritmoVerificaSenha;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.AlgoritmoVerificaFormatoSenha;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.contato.Email;
 import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "user_entity")
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class UserEntity {
+public abstract class UserEntity implements UserDetails{
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	protected Long id;
 	
-	private String nome;
-	private Email email;
-	private String senha;
+	protected String nome;
+	protected String email;
+	protected String senha;
 	
 	@Transient
-	private String confirmarSenha;
+	protected String confirmarSenha;
 	
 	@Enumerated(EnumType.STRING)
-	private Roles roles;
+	protected Roles roles;
 
 	public UserEntity(String nome, String email, String senha, String confirmarSenha) {
 		
@@ -34,9 +43,6 @@ public abstract class UserEntity {
 		setEmail(email);
 		setSenha(senha);
 		setConfirmarSenha(confirmarSenha);
-	}
-
-	public UserEntity() {
 	}
 
 	public void algoritmoVerificaFormatoSenha(String senha) {
@@ -70,14 +76,14 @@ public abstract class UserEntity {
 		this.nome = nome.trim().toLowerCase();
 	}
 
-	public Email getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
-		this.email = new Email(email);
+		this.email = email;
 	}
-
+	
 	public String getSenha() {
 		return senha;
 	}
@@ -98,7 +104,42 @@ public abstract class UserEntity {
 		return roles;
 	}
 
-	public void setRole(Roles roles) {
+	public void setRoles(Roles roles) {
 		this.roles = roles;
 	}
+	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+       return List.of(() -> roles.name()); 
+    }
+
+	 @Override
+	 public String getUsername() {
+	    return email;
+	 }
+
+	 @Override
+	 public boolean isAccountNonExpired() {
+       return true;
+	 }
+
+     @Override
+     public boolean isAccountNonLocked() {
+    	return true;
+	  }
+
+	  @Override
+	  public boolean isCredentialsNonExpired() {
+	     return true;
+	  }
+
+	  @Override
+	  public String getPassword() {
+	     return senha;  
+	  }
+	    
+	  @Override
+	  public boolean isEnabled() {
+	    return true;
+	  }
 }

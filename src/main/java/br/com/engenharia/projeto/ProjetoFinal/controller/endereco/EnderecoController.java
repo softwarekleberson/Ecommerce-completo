@@ -20,7 +20,6 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosDetalhamentoCob
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosAtualizacaoEntregas;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosCadastroEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosDetalhamentoEntrega;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.RepositorioDeCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeCobranca;
@@ -28,7 +27,7 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeEn
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("endereco")
+@RequestMapping("cliente/endereco")
 @CrossOrigin(origins = "*")
 public class EnderecoController {
 

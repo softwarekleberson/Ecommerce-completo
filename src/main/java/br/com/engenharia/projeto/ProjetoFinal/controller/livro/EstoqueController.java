@@ -14,7 +14,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.estoque.ServiceEstoque;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("estoque")
+@RequestMapping("admin/estoque")
 @CrossOrigin(origins = "*")
 public class EstoqueController {
 

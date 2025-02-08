@@ -1,6 +1,6 @@
 package br.com.engenharia.projeto.ProjetoFinal.casoDeUso.administrador;
 
-import org.jasypt.util.password.StrongPasswordEncryptor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.Administrador;
@@ -8,11 +8,12 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.Administra
 @Service
 public class CriptografarSenhaAdministrador implements CriptografiaSenhaAdministrador{
 
+	private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
 	@Override
 	public void processar(Administrador dominio) {
 		
-		StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
-	    String senhaCriptografada = passwordEncryptor.encryptPassword(dominio.getSenha());
+	    String senhaCriptografada = passwordEncoder.encode(dominio.getSenha());
 		dominio.CriptografarSenha(senhaCriptografada);	
 	}
 }

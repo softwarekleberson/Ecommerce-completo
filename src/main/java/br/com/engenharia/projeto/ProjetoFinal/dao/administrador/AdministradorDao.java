@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.Administrador;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.AdministradorNaoEncontradoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.RepositorioDeAdministrador;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.contato.Email;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.administrador.AdministradorRepository;
 
 @Service
@@ -41,7 +40,7 @@ public class AdministradorDao implements RepositorioDeAdministrador{
 	}
 
 	@Override
-	public boolean verificaEmailCadastrado(Email email) {
+	public boolean verificaEmailCadastrado(String email) {
 		Optional<Administrador> admEmail = repository.findByEmail(email);
 		if(admEmail.isEmpty()) {
 			return true;

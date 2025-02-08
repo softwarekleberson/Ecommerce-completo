@@ -14,7 +14,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.precificacao.ServicePreci
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("precificacao")
+@RequestMapping("admin/precificacao")
 @CrossOrigin(origins = "*")
 public class PrecificacaoController {
 

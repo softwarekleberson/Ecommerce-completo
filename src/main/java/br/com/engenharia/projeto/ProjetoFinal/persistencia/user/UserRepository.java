@@ -1,8 +1,8 @@
 package br.com.engenharia.projeto.ProjetoFinal.persistencia.user;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
-import com.google.common.base.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 

@@ -1,6 +1,6 @@
 package br.com.engenharia.projeto.ProjetoFinal.casoDeUso.cliente.NovaSenha;
 
-import org.jasypt.util.password.StrongPasswordEncryptor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
@@ -8,10 +8,10 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 @Service
 public class ValidaCriptografiaSenhaCliente implements CriptografaSenhaCliente{
 		
-	public void processar(Cliente dominio) {
-			
-			StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
-		    String senhaCriptografada = passwordEncryptor.encryptPassword(dominio.getSenha());
-			dominio.CriptografarSenha(senhaCriptografada);		    		
-	}
+	 private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+	 public void processar(Cliente dominio) {
+	     String senhaCriptografada = passwordEncoder.encode(dominio.getSenha());
+	     dominio.CriptografarSenha(senhaCriptografada);
+	 }
 }

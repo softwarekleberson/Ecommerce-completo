@@ -22,7 +22,7 @@ public record DadosDetalhamentoTotalDevolucao(
 	public DadosDetalhamentoTotalDevolucao(Devolucao dados) {
 		this(dados.getId(), dados.getCodigoDevolucao(),
 			 dados.getCodigoPedido(), dados.getDataPedidoTroca(),
-			 dados.getDataConclusaoTroca(), dados.getAdministrador().getEmail().getEmail(),
+			 dados.getDataConclusaoTroca(), dados.getAdministrador().getEmail(),
 			 dados.getEsperandoDevolucaoOuRecebido(),
 			 dados.getAnalisePedido());
 	}

@@ -24,7 +24,7 @@ import jakarta.validation.Valid;
 import org.springframework.data.domain.Sort;
 
 @RestController
-@RequestMapping("administrador")
+@RequestMapping("admin")
 @CrossOrigin(origins = "*")
 public class CupomAdministradorController {
 

@@ -20,7 +20,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.administradores.ServiceRe
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("administrador")
+@RequestMapping("admin")
 @CrossOrigin(origins = "*")
 public class DevolucaoAdministradorController {
 

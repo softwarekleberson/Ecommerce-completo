@@ -19,7 +19,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.pagamento.ServicePagament
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("pagamentos")
+@RequestMapping("cliente/pagamentos")
 @CrossOrigin(origins = "*")
 public class PagamentoController {
 

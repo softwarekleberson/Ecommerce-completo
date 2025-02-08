@@ -35,6 +35,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Cliente extends UserEntity{
 
+	private static final long serialVersionUID = 1L;
 	public static final int VERICA_CPF = 11;
 	private String cpf;
 	private LocalDate nascimento;
@@ -68,7 +69,7 @@ public class Cliente extends UserEntity{
 		setTelefone(dados);
 		setEntregas(dados.entrega());
 		setCobrancas(dados.cobranca());
-		setRole(Roles.CLIENTE);
+		setRoles(Roles.CLIENTE);
 	}
 	
 	public void setAtivo(Boolean ativo) {

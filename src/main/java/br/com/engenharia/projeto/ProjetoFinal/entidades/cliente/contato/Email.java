@@ -6,17 +6,19 @@ import java.util.regex.Pattern;
 import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embeddable;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Embeddable
 @Getter
-@NoArgsConstructor
 public class Email {
 
 	private String email;
 	
 	public Email(String email) {
 		setEmail(email);
+	}
+	
+	public Email() {
+		
 	}
 	
 	public void setEmail(String email) { 

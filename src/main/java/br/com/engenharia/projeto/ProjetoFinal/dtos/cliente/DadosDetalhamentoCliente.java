@@ -14,7 +14,7 @@ public record DadosDetalhamentoCliente(
 
 	public DadosDetalhamentoCliente(Cliente cliente) {
 		this(cliente.getId() ,cliente.getNome(), cliente.getNascimento(),
-			 cliente.getEmail().getEmail(), cliente.getTelefone().getDdd(),
+			 cliente.getEmail(), cliente.getTelefone().getDdd(),
 			 cliente.getTelefone().getTelefone());
 	}
 

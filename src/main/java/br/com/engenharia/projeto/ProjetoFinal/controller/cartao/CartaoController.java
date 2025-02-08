@@ -23,7 +23,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.cliente.ServiceCartao;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("cartoes")
+@RequestMapping("cliente/cartoes")
 @CrossOrigin(origins = "*")
 public class CartaoController {
 
