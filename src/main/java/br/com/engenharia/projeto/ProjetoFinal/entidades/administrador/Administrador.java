@@ -20,6 +20,4 @@ public class Administrador extends UserEntity{
 		super(dados.nome(),dados.email(),dados.senha(),dados.confirmarSenha());
 		setRoles(Roles.ADMIN);
 	}
-	 
-	
 }

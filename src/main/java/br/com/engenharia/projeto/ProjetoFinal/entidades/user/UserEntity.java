@@ -6,8 +6,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.AlgoritmoVerificaSenha;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.AlgoritmoVerificaFormatoSenha;
 import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
@@ -40,9 +38,9 @@ public abstract class UserEntity implements UserDetails{
 		algoritmoConfirmacaoSenha(senha, confirmarSenha);
 		
 		setNome(nome);
-		setEmail(email);
-		setSenha(senha);
-		setConfirmarSenha(confirmarSenha);
+		this.email = email;
+		this.senha = senha;
+		this.confirmarSenha = confirmarSenha;
 	}
 
 	public void algoritmoVerificaFormatoSenha(String senha) {

@@ -16,7 +16,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -120,7 +119,7 @@ public class Cartao {
 	
 	public void setDataExpiracao(LocalDate dataExpiracao) {
 		if(dataExpiracao.isBefore(LocalDate.now())) {
-			throw new ValidationException("Data de expiração não deve ser no passado");
+			throw new ValidacaoException("Data de expiração não deve ser no passado");
 		}
 		this.dataExpiracao = dataExpiracao;
 	}

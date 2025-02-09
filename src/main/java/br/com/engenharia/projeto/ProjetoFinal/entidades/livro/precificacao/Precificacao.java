@@ -42,7 +42,6 @@ public class Precificacao {
 	
 	public void setId(Long id) {
 		this.id = id;
-		System.out.println("id precificacao" + this.id);
 	}
 	
 	public void setPrecificacao(BigDecimal precificacao) {

@@ -104,7 +104,7 @@ public abstract class Endereco {
 	
 	public void setReceptor(String receptor) {
 		if(receptor == null || receptor.trim().length() <= RECEPTOR_TAMANHO) {
-			throw new ValidationException("Receptor não deve ser nulo");
+			throw new ValidacaoException("Receptor não deve ser nulo");
 		}
 		this.receptor = receptor.trim().toLowerCase();
 	}

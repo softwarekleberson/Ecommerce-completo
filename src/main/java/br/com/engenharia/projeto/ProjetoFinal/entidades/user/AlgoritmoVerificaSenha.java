@@ -1,4 +1,4 @@
-package br.com.engenharia.projeto.ProjetoFinal.entidades.administrador;
+package br.com.engenharia.projeto.ProjetoFinal.entidades.user;
 
 import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 
