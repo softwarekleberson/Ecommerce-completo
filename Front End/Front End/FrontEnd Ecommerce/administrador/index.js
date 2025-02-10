@@ -13,7 +13,7 @@ document.getElementById('admin-form').addEventListener('submit', function(event)
         confirmarSenha: confirmarSenha
     };
 
-    fetch('http://localhost:8080/administrador', { 
+    fetch('http://localhost:8080/auth/criar/adm', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

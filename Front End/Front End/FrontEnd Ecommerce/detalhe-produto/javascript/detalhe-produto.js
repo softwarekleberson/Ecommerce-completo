@@ -1,6 +1,6 @@
 async function carregarDetalhesLivro(id) {
     try {
-      const response = await fetch(`http://localhost:8080/livro/${id}`);
+      const response = await fetch(`http://localhost:8080/livros/listar/${id}`);
       const livro = await response.json();
       preencherTabela(livro);
       preencherDetalhes(livro);

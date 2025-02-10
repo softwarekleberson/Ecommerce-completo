@@ -15,7 +15,7 @@ document.getElementById("pesquisa-livros-form").addEventListener("submit", funct
         categoriaIds: document.getElementById('categoriaIds').value ? document.getElementById('categoriaIds').value.split(',').map(id => parseInt(id.trim())) : [],
     };
 
-    fetch("http://localhost:8080/livro/consulta/parametros", {
+    fetch("http://localhost:8080/livros/listar/consulta/parametros", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

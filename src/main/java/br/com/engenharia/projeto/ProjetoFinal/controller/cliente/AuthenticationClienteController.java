@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "*")
 public class AuthenticationClienteController {
 
 	private final ServiceCliente service;

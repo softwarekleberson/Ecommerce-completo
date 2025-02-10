@@ -21,8 +21,6 @@ public class AuthenticationService {
     public String authenticate(LoginRequest request) {
     	UserEntity user = userRepository.findByEmail(request.getEmail())
         .orElseThrow(() -> new UserNotFoundException("Usuário não encontrado"));
-
-    	System.out.println(user.getEmail() + user.getNome());
     	
         if (!passwordEncoder.matches(request.getSenha(), user.getSenha())) {
             throw new RuntimeException("Credenciais inválidas");

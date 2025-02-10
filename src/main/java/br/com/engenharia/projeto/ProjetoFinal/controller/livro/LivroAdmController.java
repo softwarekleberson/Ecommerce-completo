@@ -20,7 +20,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.livro.ServiceUpdateLivro;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("admin/livro")
+@RequestMapping("admin/livros")
 @CrossOrigin(origins = "*")
 public class LivroAdmController {
 

@@ -5,7 +5,7 @@ document.getElementById('pesquisa').addEventListener('click', function (event) {
 
     if (query.trim()) {
 
-        fetch('http://localhost:8080/livro/consulta/pesquisa', {
+        fetch('http://localhost:8080/livros/listar/consulta/pesquisa', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

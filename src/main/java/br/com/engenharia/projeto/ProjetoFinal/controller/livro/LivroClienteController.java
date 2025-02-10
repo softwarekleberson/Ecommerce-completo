@@ -22,7 +22,7 @@ import br.com.engenharia.projeto.ProjetoFinal.services.livro.ServiceGetLivro;
 import br.com.engenharia.projeto.ProjetoFinal.services.livro.consulta.LivroConsultaService;
 
 @RestController
-@RequestMapping("cliente/livro")
+@RequestMapping("livros/listar")
 @CrossOrigin(origins = "*")
 public class LivroClienteController {
 		

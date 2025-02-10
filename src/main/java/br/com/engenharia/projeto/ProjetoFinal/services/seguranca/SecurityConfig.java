@@ -27,11 +27,17 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/login/cliente").permitAll()
+                
+            	/*Cliente*/
+            	.requestMatchers("/auth/login/cliente").permitAll()
                 .requestMatchers("/auth/criar/cliente").permitAll()
                 
+                /*Adm*/
                 .requestMatchers("/auth/login/adm").permitAll()
                 .requestMatchers("/auth/criar/adm").permitAll()
+                
+                /*Livros*/
+                .requestMatchers("/livros/listar/**").permitAll()
                 
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
                 .requestMatchers("/cliente/**").hasAuthority("CLIENTE")

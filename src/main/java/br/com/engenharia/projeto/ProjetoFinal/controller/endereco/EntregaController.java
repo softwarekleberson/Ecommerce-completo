@@ -22,7 +22,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 
 @RestController
 @RequestMapping("cliente/entregas")

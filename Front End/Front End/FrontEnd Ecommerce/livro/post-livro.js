@@ -1,8 +1,10 @@
-document.getElementById('livro').addEventListener('submit', function(event) {
+document.getElementById('livro').addEventListener('submit', function(event) { 
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
+    const token = localStorage.getItem('token'); // Pegando o token do localStorage
+
     const data = {
         idPrecificacao: formData.get('idPrecificacao'),
         data: formData.get('data'),
@@ -29,10 +31,11 @@ document.getElementById('livro').addEventListener('submit', function(event) {
         categoria: [{ nome: formData.get('categoria') }]
     };
 
-    fetch('http://localhost:8080/livro', {
+    fetch('http://localhost:8080/admin/livros', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Adicionando o token no cabeçalho
         },
         body: JSON.stringify(data)
     })

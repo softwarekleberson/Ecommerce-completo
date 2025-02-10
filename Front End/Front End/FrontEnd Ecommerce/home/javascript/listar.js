@@ -2,7 +2,7 @@
 const categoriaFiltrada = window.location.hash ? window.location.hash.substring(1).toLowerCase() : null;
 
 // Faz a requisição à API
-fetch('http://localhost:8080/livro')
+fetch('http://localhost:8080/livros/listar')
     .then(response => response.json())
     .then(data => {
         const produtosDiv = document.getElementById('produtos');
