@@ -40,7 +40,7 @@ public class CobrancaDao implements RepositorioDeCobranca{
 	public DadosDetalhamentoCobranca salvarNovaCobranca(Cobranca cobranca) {
 		Optional<Cliente> cliente = clienteRepository.findById(cobranca.getCliente().getId());
 		if(cliente.isEmpty()) {
-			throw new IllegalArgumentException("Id do cliente incorreto");
+			throw new CobrancaDaoExcecao("Id do cliente incorreto");
 		}
 		
 		cobranca.setCliente(cobranca.getCliente().getId());

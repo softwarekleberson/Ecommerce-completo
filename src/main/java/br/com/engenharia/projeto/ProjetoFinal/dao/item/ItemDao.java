@@ -15,7 +15,6 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItem;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagos;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPagosPorCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoServiceException;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.itemPedido.ItemPedidoRepository;
 
 @Service
@@ -46,7 +45,7 @@ public class ItemDao implements RepositorioDeItem{
 				item.setSubtotal(upateSubtotal);
 			
 			}else {
-				throw new PedidoServiceException("Quantidade inferior ao permitido");
+				throw new PedidoDaoException("Quantidade inferior ao permitido");
 			}
 			
 			repository.save(item);
@@ -59,7 +58,7 @@ public class ItemDao implements RepositorioDeItem{
 	public void deletar(Long id) {
 		Optional<Item> item = repository.findById(id);
 		if(item.isEmpty()) {
-			throw new PedidoServiceException("Item não encontrado");
+			throw new PedidoDaoException("Item não encontrado");
 		}
 		repository.deleteById(id);
 	}

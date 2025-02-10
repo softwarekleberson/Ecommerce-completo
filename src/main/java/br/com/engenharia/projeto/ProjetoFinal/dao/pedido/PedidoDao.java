@@ -9,9 +9,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import br.com.engenharia.projeto.ProjetoFinal.dao.item.PedidoDaoException;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pedido.DadosDetalhamentoPedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoServiceException;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.pedidos.PedidoRepository;
 
@@ -40,7 +40,7 @@ public class PedidoDao implements RepositorioDePedido{
 	public Pedido devolvePedidoPeloCodigo(String codigoPedido) {
 		var pedido = pedidoRepository.findByCodigoPedido(codigoPedido);
 		if(pedido == null) {
-			throw new PedidoServiceException("Codigo pedido incorreto");
+			throw new PedidoDaoException("Codigo pedido incorreto");
 		}
 		return pedido.get();
 	}
@@ -48,9 +48,8 @@ public class PedidoDao implements RepositorioDePedido{
 	@Override
 	public Page<DadosDetalhamentoPedido> listarPedidosCliente(Long clienteId, Pageable pageable) {
 		 Page<Pedido> pedidosPage = pedidoRepository.findByCliente_Id(clienteId, pageable);	        
-	     System.out.println("zzzzzzz");
 		 if(pedidosPage.isEmpty()) {
-	    	 throw new PedidoServiceException("Id incorreto");
+	    	 throw new PedidoDaoException("Id incorreto");
 	     }
 		 return pedidosPage.map(DadosDetalhamentoPedido::new);
 	}
