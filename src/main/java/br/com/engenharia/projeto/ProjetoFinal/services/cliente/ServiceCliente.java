@@ -66,10 +66,8 @@ public class ServiceCliente {
 			return new DetalharCliente(cliente);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    	
-		return null;
+			throw new ValidacaoClienteServiceExpetion("Erro ao salvar cliente");
+		}    	
     }
 
     private List<Cobranca> criarCobrancas(DadosCadastroCliente dados, Cliente cliente) {        

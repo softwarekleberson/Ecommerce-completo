@@ -28,7 +28,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.pagamento.StatusCompra;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cartaoFake.FakeRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CartaoRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CobrancaRepository;
@@ -127,7 +126,7 @@ public class ServicePagamento {
 	        if (cartao1.isPresent()) {
 	            valorDoCartao = valorDoCartao.add(cartao1.get().getSaldoDisponivel());
 	        } else {
-	            throw new ValidacaoException("Cartão 1 não encontrado");
+	            throw new ValidacaoPagamentoServiceException("Cartão 1 não encontrado");
 	        }
 	    }
 
@@ -137,7 +136,7 @@ public class ServicePagamento {
 	        if (cartao2.isPresent()) {
 	            valorDoCartao = valorDoCartao.add(cartao2.get().getSaldoDisponivel());
 	        } else {
-	            throw new ValidacaoException("Cartão 2 não encontrado");
+	            throw new ValidacaoPagamentoServiceException("Cartão 2 não encontrado");
 	        }
 	    }
 
@@ -146,7 +145,7 @@ public class ServicePagamento {
 	        if (cupom1.isPresent()) {
 	            valorDoCupom = valorDoCupom.add(cupom1.get().getValor());
 	        } else {
-	            throw new ValidacaoException("Cupom 1 não encontrado");
+	            throw new ValidacaoPagamentoServiceException("Cupom 1 não encontrado");
 	        }
 	    }
 
@@ -155,7 +154,7 @@ public class ServicePagamento {
 	        if (cupom2.isPresent()) {
 	            valorDoCupom = valorDoCupom.add(cupom2.get().getValor());
 	        } else {
-	            throw new ValidacaoException("Cupom 2 não encontrado");
+	            throw new ValidacaoPagamentoServiceException("Cupom 2 não encontrado");
 	        }
 	    }
 
@@ -227,7 +226,7 @@ public class ServicePagamento {
 			}
 			
 			if(saldoCartao1.compareTo(BigDecimal.TEN) < 0 && saldoCartao2.compareTo(BigDecimal.TEN) < 0) {
-				throw new ValidacaoException("Não se pode usar dois cartões e o valor a ser pago com os"
+				throw new ValidacaoPagamentoServiceException("Não se pode usar dois cartões e o valor a ser pago com os"
 											+ " dois cartões ser menor que 10 reais em cada cartão");	
 			}
 		}
@@ -261,7 +260,7 @@ public class ServicePagamento {
 	            }
 
 	            if (quantidadeRequeridaNoPedido > 0) {
-	                throw new RuntimeException("Estoque insuficiente para o livro ID: " + idDoLivro);
+	                throw new ValidacaoPagamentoServiceException("Estoque insuficiente para o livro ID: " + idDoLivro);
 	            }
 	        }
 	    }	    
@@ -308,7 +307,7 @@ public class ServicePagamento {
 				cupons.add(cupom1.get());
 			}
 			else {
-				throw new ValidacaoException("Cupom 1 não encontrado");
+				throw new ValidacaoPagamentoServiceException("Cupom 1 não encontrado");
 			}
 		}
 		
@@ -318,10 +317,9 @@ public class ServicePagamento {
 				cupons.add(cupom2.get());
 			}
 			else {
-				throw new ValidacaoException("Cupom 2 não encontrado");
+				throw new ValidacaoPagamentoServiceException("Cupom 2 não encontrado");
 			}
 		}
-		
 		
 		return cupons;
 	}
@@ -335,7 +333,7 @@ public class ServicePagamento {
 	            cartoes.add(cartao1.get());
 
 	        } else {
-	            throw new ValidacaoException("Cartão 1 não encontrado.");
+	            throw new ValidacaoPagamentoServiceException("Cartão 1 não encontrado.");
 	        }
 	    }
 
@@ -345,7 +343,7 @@ public class ServicePagamento {
 	            cartoes.add(cartao2.get());
 
 	        } else {
-	            throw new ValidacaoException("Cartão 2 não encontrado.");
+	            throw new ValidacaoPagamentoServiceException("Cartão 2 não encontrado.");
 	        }
 	    }
 	    
@@ -364,7 +362,7 @@ public class ServicePagamento {
 		}
 		
 	    if (pedidosNaoPagos.isEmpty()) {
-	        throw new ValidacaoException("Nenhum pedido não pago encontrado para o cliente com ID " + clienteId);
+	        throw new ValidacaoPagamentoServiceException("Nenhum pedido não pago encontrado para o cliente com ID " + clienteId);
 	    }
 		
 		return pedidosNaoPagos;
@@ -373,7 +371,7 @@ public class ServicePagamento {
 	private Entrega verificarExistenciaEntrega() {
 		Entrega entrega = entregaRepository.findByPrincipalTrue();
 		if(entrega == null) {
-			throw new ValidacaoException("Entrega principal não encontrada");
+			throw new ValidacaoPagamentoServiceException("Entrega principal não encontrada");
 		}
 		return entrega;
 	}
@@ -381,7 +379,7 @@ public class ServicePagamento {
 	private Cobranca verificarExistenciaCobranca() {
 		Cobranca cobranca = cobrancaRepository.findByPrincipalTrue();
 		if(cobranca == null) {
-			throw new ValidacaoException("Entrega principal não encontrada");
+			throw new ValidacaoPagamentoServiceException("Entrega principal não encontrada");
 		}
 		return cobranca;
 	}

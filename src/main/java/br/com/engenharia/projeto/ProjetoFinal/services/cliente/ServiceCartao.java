@@ -16,7 +16,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.log.RepositorioDeLog;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CartaoRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.ClienteRepository;
 import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 
 @Service
 public class ServiceCartao {
@@ -36,7 +35,7 @@ public class ServiceCartao {
 	public DadosDetalhamentoCartao criar(Long idCliente, DadosCadastroCartao dados) {
 		Optional<Cliente> clienteExiste = clienteRepository.findById(idCliente);
 		if(!clienteExiste.isPresent()) {
-			throw new ValidationException("Id cliente não encontrado");
+			throw new ValidacaoCartaoServiceException("Id cliente não encontrado");
 		}	
 				
 		Cartao cartao = new Cartao(dados);
@@ -54,11 +53,11 @@ public class ServiceCartao {
 		Optional<Cartao> cartaoExiste = cartaoRepository.findById(cartaoId);
 		
 		if(!cartaoExiste.isPresent()) {
-			throw new ValidationException("Id cartão não encontrado");
+			throw new ValidacaoCartaoServiceException("Id cartão não encontrado");
 		}
 		
 		if(!cartaoExiste.get().getCliente().getId().equals(idUsuario)) {
-			throw new ValidationException("Acesso negado! Este cartão não pertence ao usuário.");
+			throw new ValidacaoCartaoServiceException("Acesso negado! Este cartão não pertence ao usuário.");
 		}
 		
 		var cartao = repositorioDeCartao.alterar(cartaoId,dados);

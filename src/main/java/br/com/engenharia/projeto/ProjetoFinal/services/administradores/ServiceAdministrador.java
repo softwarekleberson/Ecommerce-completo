@@ -25,7 +25,7 @@ public class ServiceAdministrador {
 		Email email = new Email(dados.email());
 		boolean emailCadastrado = repositorioDeAdministrador.verificaEmailCadastrado(email.getEmail());
 		if(!emailCadastrado) {
-			throw new IllegalArgumentException("Email cadastrado anteriormente");
+			throw new ValidacaoAdmServiceException("Email cadastrado anteriormente");
 		}
 		
 		Administrador administrador = new Administrador(dados);

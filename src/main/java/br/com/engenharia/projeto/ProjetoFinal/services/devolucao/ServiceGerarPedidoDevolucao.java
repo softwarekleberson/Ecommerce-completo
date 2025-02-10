@@ -25,7 +25,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.validation.Valid;
 
 @Service
@@ -55,11 +54,11 @@ public class ServiceGerarPedidoDevolucao {
 		pedido.devolucaoPedida(DevolucaoFoiPedidaOUNAO.DEVOLUCAO_PEDIDO);
 		
 		if(pedido.getStatusPedido() != StatusPedido.PAGO) {
-			throw new ValidacaoException("Pedido ainda não pago");
+			throw new ValidarPedidoDevolucaoServiceException("Pedido ainda não pago");
 		}
 		
 		if(pedido.getStatusEntrega() != StatusEntrega.ENTREGUE) {
-			throw new ValidacaoException("Pedido ainda não entregue");
+			throw new ValidarPedidoDevolucaoServiceException("Pedido ainda não entregue");
 		}
 		
 		repositorioDePedido.salvar(pedido);

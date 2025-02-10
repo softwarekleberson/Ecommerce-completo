@@ -30,7 +30,7 @@ public class ServiceEstoque {
 
 		Optional<Livro> existeLivro = repository.findById(dados.idLivro());
 		if(existeLivro.isEmpty()) {
-			throw new IllegalArgumentException("Id do livro incorreto");
+			throw new ValidarEstoqueServiceExpetion("Id do livro incorreto");
 		}
 		
 		Livro livro = repository.getReferenceById(dados.idLivro());

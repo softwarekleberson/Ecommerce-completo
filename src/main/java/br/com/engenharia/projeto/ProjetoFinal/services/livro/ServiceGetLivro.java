@@ -1,6 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.services.livro;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.RepositorioD
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.statusLivro.Categoria;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.statusLivro.RepositorioDeInativacao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.statusLivro.StatusLivro;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.livro.EstoqueRepository;
 
 @Service
@@ -36,7 +34,7 @@ public class ServiceGetLivro {
         Page<DadosDetalhamentoLivro> livros = repositorioDeLivro.listarLivros(pageable);
         
         if (livros.isEmpty()) {
-            throw new ValidacaoException("Não há livros disponíveis");
+            throw new ValidacaoLivroServiceExpetion("Não há livros disponíveis");
         }
         
         return livros;

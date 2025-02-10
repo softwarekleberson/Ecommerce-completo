@@ -11,7 +11,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.AnalisePedidoD
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.RepositorioDeDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.DevolucaoFoiPedidaOUNAO;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.validation.Valid;
 
 @Service
@@ -37,7 +36,7 @@ public class ServiceRecusarDevolucao {
 			return new DadosDetalhamentoTotalDevolucao(recusaDevolucao);
 		
 		}else {
-			throw new ValidacaoException("Codigo do pedido não encontrado");
+			throw new ValidacaoRecusaDevolucaoServiceException("Codigo do pedido não encontrado");
 		}
 	}
 }

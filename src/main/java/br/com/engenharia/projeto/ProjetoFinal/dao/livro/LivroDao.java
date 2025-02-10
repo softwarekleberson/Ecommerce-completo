@@ -13,7 +13,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosAtualizarLivro;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosDetalhamentoLivro;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosDetalhamentoLivroCompleto;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.LivroDaoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.LivroServiceExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.RepositorioDeLivro;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.livro.AutorRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.livro.CategoriaRepository;
@@ -66,7 +66,7 @@ public class LivroDao implements RepositorioDeLivro{
 	public Page<DadosDetalhamentoLivro> listarLivros(Pageable pageable) {
 		Page<Livro> livros = livroRepository.findAllByAtivoTrue(pageable);
 		if (livros.isEmpty()) {
-		   throw new LivroDaoExcecao("Não há livros disponíveis");
+		   throw new LivroServiceExcecao("Não há livros disponíveis");
 		}
 		    
 		Page<DadosDetalhamentoLivro> dadosDetalhamentoLivros = livros.map(DadosDetalhamentoLivro::new);		    
@@ -175,7 +175,7 @@ public class LivroDao implements RepositorioDeLivro{
 		Optional<Livro> livro = livroRepository.findById(livroId);
 		
 		if(livro.isEmpty()) {
-			throw new LivroDaoExcecao("Id do livro incorreto");
+			throw new LivroServiceExcecao("Id do livro incorreto");
 		}
 		
 		var exclusaoLogica = livroRepository.getReferenceById(livroId);

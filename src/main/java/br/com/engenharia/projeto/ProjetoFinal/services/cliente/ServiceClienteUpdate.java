@@ -39,7 +39,7 @@ public class ServiceClienteUpdate {
 	public DadosDetalhamentoCliente atualizarCliente(@Valid DadosAtualizacaoCliente dados, Long id) {
 		Optional<Cliente> cliente = clienteRepositoy.findById(id);
 		if(cliente.isEmpty()) {
-			throw new IllegalArgumentException("Id incorreto");
+			throw new ValidacaoClienteServiceExpetion("Erro ao atualizar cliente");
 		}
 		
 		repositorioDeCliente.alterarCliente(cliente.get().getId(), dados); 
@@ -51,7 +51,7 @@ public class ServiceClienteUpdate {
 	public DadosDetalhamentoCliente atualizarSenha(@Valid DadosAtualizacaoSenha dados, Long id) {
 		Optional<Cliente> cliente = clienteRepositoy.findById(id);
 		if(cliente.isEmpty()) {
-			throw new IllegalArgumentException("Id incorreto");
+			throw new ValidacaoClienteServiceExpetion("Erro ao atualizar senha cliente");
 		}
 		
 		validadores.forEach(v-> v.processar(dados));

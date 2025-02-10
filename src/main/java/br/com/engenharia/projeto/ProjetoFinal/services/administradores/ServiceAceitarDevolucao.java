@@ -20,7 +20,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.Estoque;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.RepositorioDeEstoque;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.DevolucaoFoiPedidaOUNAO;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.validation.Valid;
 
 @Service
@@ -57,7 +56,7 @@ public class ServiceAceitarDevolucao {
 			return new DadosDetalhamentoTotalDevolucao(aceitaDevolucao);
 			
 		}else {
-			throw new ValidacaoException("Codigo do pedido não encontrado");
+			throw new ValidacaoAceitaDevolucaoServiceException("Codigo do pedido não encontrado");
 		}
 	}
 

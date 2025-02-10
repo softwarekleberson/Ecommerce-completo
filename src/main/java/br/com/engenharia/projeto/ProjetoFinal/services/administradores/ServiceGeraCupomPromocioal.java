@@ -26,7 +26,7 @@ public class ServiceGeraCupomPromocioal {
 	public DadosDetalhamentoCupom criarCupom(@Valid DadosCadastroCupom dados) {
 		Optional<Cliente> clienteExiste = clienteRepository.findById(dados.idCliente());
 		if(clienteExiste.isEmpty()) {
-			throw new IllegalArgumentException("Id do cliente não existe");
+			throw new ValidacaoCupomServiceException("Id do cliente não existe");
 		}
 		
 		Cupom cupom = new Cupom(dados);
