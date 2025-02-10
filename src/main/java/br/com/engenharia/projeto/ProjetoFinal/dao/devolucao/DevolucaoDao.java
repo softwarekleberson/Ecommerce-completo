@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.devolucao.DadosDetalhamentoTotalDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.Devolucao;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.DevolucaoNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.DevolucaoDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.RepositorioDeDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.devolucao.DevolucaoRepository;
 
@@ -29,7 +29,7 @@ public class DevolucaoDao implements RepositorioDeDevolucao{
 	public Page<DadosDetalhamentoTotalDevolucao> listarTodasAsDevolucoes(Pageable pageable, Long admId) {
 		Page<Devolucao> devolucoesPage = devolucao.findByAdministrador_Id(admId, pageable);
 		if(devolucoesPage.isEmpty()) {
-			throw new DevolucaoNaoEncontradoExcecao("Id do administrador incorreto");
+			throw new DevolucaoDaoExcecao("Id do administrador incorreto");
 		}
 		return devolucoesPage.map(DadosDetalhamentoTotalDevolucao::new);
 	}
@@ -38,7 +38,7 @@ public class DevolucaoDao implements RepositorioDeDevolucao{
 	public Devolucao carregarDevolucao(String codigoDevolucao) {
 		Optional<Devolucao> devolucaoExiste = devolucao.findByCodigoDevolucao(codigoDevolucao);
 		if(devolucaoExiste.isEmpty()) {
-			throw new DevolucaoNaoEncontradoExcecao("Codigo devolução incorreto ou não existe");
+			throw new DevolucaoDaoExcecao("Codigo devolução incorreto ou não existe");
 		}
 		return devolucaoExiste.get();
 	}

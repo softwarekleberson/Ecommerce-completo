@@ -1,9 +1,10 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.estoque;
 
-public class EstoqueNaoEncontradoExcecao extends RuntimeException{
+public class ValidacaoFornecedorException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
-	public EstoqueNaoEncontradoExcecao(String message) {
+
+	public ValidacaoFornecedorException(String message) {
 		super(message);
 	}
 }

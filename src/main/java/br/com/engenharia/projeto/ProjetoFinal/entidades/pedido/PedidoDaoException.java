@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.pedido;
 
-public class PedidoNaoEncontradoExcecao extends RuntimeException{
+public class PedidoDaoException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public PedidoNaoEncontradoExcecao(String message) {
+	public PedidoDaoException(String message) {
 		super(message);
 	}
 }

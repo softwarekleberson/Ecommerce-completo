@@ -2,7 +2,6 @@ package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosCadastroEntrega;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +25,7 @@ public class TipoResidencia {
 
 	public void setTipoResidencia(String tipoResidencia) {
 		if(tipoResidencia == null || tipoResidencia.trim().length() == 0) {
-			throw new ValidacaoException("Tipo residencia não deve ser nulo");
+			throw new ValidacaoResidenciaException("Tipo residencia não deve ser nulo");
 		}
 		this.tipoResidencia = tipoResidencia.trim().toLowerCase();
 	}

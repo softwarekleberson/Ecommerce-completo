@@ -2,7 +2,6 @@ package br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.contato;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosAtualizacaoCliente;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosCadastroCliente;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,7 +32,7 @@ public class Telefone {
 	public void setDdd(String ddd) {
 		String regexDDD = "\\d{2}";
 		if(!ddd.matches(regexDDD)) {
-			throw new ValidacaoException("Ddd deve posusir 2 digitos");
+			throw new ValidacaoTelefoneException("Ddd deve posusir 2 digitos");
 		}
 		this.ddd = ddd.trim().toLowerCase();
 	}
@@ -41,7 +40,7 @@ public class Telefone {
 	public void setTelefone(String telefone) {
         String regexTelefone = "\\d{8,9}";
         if(!telefone.matches(regexTelefone)) {
-        	throw new ValidacaoException("Telefone deve conter 8 ou 9 digitos");
+        	throw new ValidacaoTelefoneException("Telefone deve conter 8 ou 9 digitos");
         }
 		this.telefone = telefone.trim().toLowerCase();
 	}
@@ -49,7 +48,7 @@ public class Telefone {
 	public void setTelefone(DadosAtualizacaoCliente dadosAtualizacaoCliente) {
         String regexTelefone = "\\d{8,9}";
         if(!dadosAtualizacaoCliente.telefone().matches(regexTelefone)) {
-        	throw new ValidacaoException("Telefone deve conter 8 ou 9 digitos");
+        	throw new ValidacaoTelefoneException("Telefone deve conter 8 ou 9 digitos");
         }
 		this.telefone = dadosAtualizacaoCliente.telefone();
 	}

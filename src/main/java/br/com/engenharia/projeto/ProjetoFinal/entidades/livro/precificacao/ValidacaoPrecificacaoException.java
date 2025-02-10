@@ -1,9 +1,10 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.livro.precificacao;
 
-public class PrecificacaoNaoEncontradoExcecao extends RuntimeException{
+public class ValidacaoPrecificacaoException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public PrecificacaoNaoEncontradoExcecao(String message) {
+
+	public ValidacaoPrecificacaoException(String message) {
 		super(message);
 	}
 }

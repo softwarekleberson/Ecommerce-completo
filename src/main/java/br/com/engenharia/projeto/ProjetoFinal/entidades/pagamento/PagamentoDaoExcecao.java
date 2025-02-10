@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.pagamento;
 
-public class PagamentoNaoEncontradoExcecao extends RuntimeException{
+public class PagamentoDaoExcecao extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public PagamentoNaoEncontradoExcecao(String message) {
+	public PagamentoDaoExcecao(String message) {
 		super(message);
 	}
 }

@@ -11,7 +11,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosAtualizacaoEntre
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosDetalhamentoEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.EntregaNaoEncontradaExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.EntregaDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.ClienteRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.EntregaRepository;
@@ -41,7 +41,7 @@ public class EntregaDao implements RepositorioDeEntrega{
 		Optional<Cliente> existeCliente = clienteRepository.findById(entrega.getCliente().getId());
 		
 		if(existeCliente.isEmpty()) {
-			throw new EntregaNaoEncontradaExcecao("Id do cliente não existe");
+			throw new EntregaDaoExcecao("Id do cliente não existe");
 		}
 		
 		entrega.setCliente(entrega.getCliente().getId());
@@ -57,7 +57,7 @@ public class EntregaDao implements RepositorioDeEntrega{
 		Optional<Entrega> opDataBaseEntrega = repository.findById(entregaId);
 		
 		if(opDataBaseEntrega.isEmpty()) {
-			throw new EntregaNaoEncontradaExcecao("Id Entrega incorreto");
+			throw new EntregaDaoExcecao("Id Entrega incorreto");
 		}
 		
 		else {
@@ -129,7 +129,7 @@ public class EntregaDao implements RepositorioDeEntrega{
 	public Page<DadosDetalhamentoEntrega> listarEntregasDoCliente(Long clienteId, Pageable pageable) {
 		Page<Entrega> entregas = repository.findByCliente_Id(clienteId, pageable);	        
 	    if(entregas.isEmpty()) {
-	    	throw new EntregaNaoEncontradaExcecao("Id incorreto");
+	    	throw new EntregaDaoExcecao("Id incorreto");
 	    }
 		return entregas.map(DadosDetalhamentoEntrega::new);
 	}
@@ -140,7 +140,7 @@ public class EntregaDao implements RepositorioDeEntrega{
 		Optional<Entrega> entrega =  repository.findById(idEntrega);
 		
 		if(entrega.isEmpty()) {
-			throw new EntregaNaoEncontradaExcecao("Id incorreto do cliente ou entrega");
+			throw new EntregaDaoExcecao("Id incorreto do cliente ou entrega");
 		}else {
 			repository.deleteById(idEntrega);
 		}

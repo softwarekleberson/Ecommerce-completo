@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoDaoException;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
@@ -28,7 +28,7 @@ public class ServiceModificaPedido {
 			
 		}
 		else {
-			throw new PedidoNaoEncontradoExcecao("Codigo de pedido não encontrado");
+			throw new PedidoDaoException("Codigo de pedido não encontrado");
 		}
 	}
 
@@ -52,7 +52,7 @@ public class ServiceModificaPedido {
 			
 		}
 		else {
-			throw new PedidoNaoEncontradoExcecao("Codigo de pedido não encontrado");
+			throw new PedidoDaoException("Codigo de pedido não encontrado");
 		}
 		
 	}

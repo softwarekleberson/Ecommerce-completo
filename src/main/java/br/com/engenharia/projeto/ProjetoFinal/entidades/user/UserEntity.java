@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
@@ -38,7 +37,7 @@ public abstract class UserEntity implements UserDetails{
 		algoritmoConfirmacaoSenha(senha, confirmarSenha);
 		
 		setNome(nome);
-		this.email = email;
+		setEmail(email);
 		this.senha = senha;
 		this.confirmarSenha = confirmarSenha;
 	}
@@ -69,7 +68,7 @@ public abstract class UserEntity implements UserDetails{
 
 	public void setNome(String nome) {
 		if(nome.trim() == null) {
-			throw new ValidacaoException("Nome não pode ser nulo");
+			throw new ValidacaoNomeException("Nome não pode ser nulo");
 		}
 		this.nome = nome.trim().toLowerCase();
 	}
@@ -79,6 +78,9 @@ public abstract class UserEntity implements UserDetails{
 	}
 
 	public void setEmail(String email) {
+		if (email == null || !email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+		        throw new ValidacaoEmailException("E-mail inválido");
+		}
 		this.email = email;
 	}
 	

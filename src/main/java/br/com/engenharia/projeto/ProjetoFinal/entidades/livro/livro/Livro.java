@@ -15,7 +15,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor.Autor;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.categoria.Categoria;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.imagem.Imagens;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.precificacao.Precificacao;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -133,14 +132,14 @@ public class Livro {
     
     public void setPreco(BigDecimal preco) {
         if(preco.compareTo(BigDecimal.ZERO) <= 0 ) {
-            throw new ValidacaoException("Preço não deve ser menor ou igual a 0");
+            throw new ValidacaoLivroException("Preço não deve ser menor ou igual a 0");
         }
         this.preco = preco;
     }
 
     public void setTitulo(String titulo) {
         if (titulo == null || titulo.trim().isEmpty() || titulo.length() > QUANTIDADE_MAXIMA_CARACTERES_TITULO) {
-            throw new ValidacaoException("Quantidade de caracteres em título superior ao permitido");
+            throw new ValidacaoLivroException("Quantidade de caracteres em título superior ao permitido");
         }
         this.titulo = titulo.trim().toLowerCase();
     }
@@ -148,21 +147,21 @@ public class Livro {
     public void setIsbn(String isbn) {
         String regex = "^(?=(?:\\D*\\d){10}(?:(?:\\D*\\d){3})?$)[\\d-]+$";
         if (!isbn.matches(regex)) {
-            throw new ValidacaoException("Isbn incorreto, formato correto xxx-x-xx-xxxxxx-x");
+            throw new ValidacaoLivroException("Isbn incorreto, formato correto xxx-x-xx-xxxxxx-x");
         }
         this.isbn = isbn.trim().toLowerCase();
     }
 
     public void setPaginas(int paginas) {
         if (paginas <= 0) {
-            throw new ValidacaoException("Quantidade de páginas deve ser superior a 0 páginas");
+            throw new ValidacaoLivroException("Quantidade de páginas deve ser superior a 0 páginas");
         }
         this.paginas = paginas;
     }
 
     public void setSinopse(String sinopse) {
         if (sinopse == null || sinopse.trim().isEmpty()) {
-            throw new ValidacaoException("Sinopse não deve ser nula ou vazia");
+            throw new ValidacaoLivroException("Sinopse não deve ser nula ou vazia");
         }
         this.sinopse = sinopse.trim().toLowerCase();
     }

@@ -2,14 +2,12 @@ package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosCadastroEntrega;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -75,21 +73,21 @@ public abstract class Endereco {
 
 	public void setLogradouro(String logradouro) {
 		if(logradouro == null || logradouro.trim().length() == 0) {
-			throw new ValidacaoException("Logradouro não deve ser nulo");
+			throw new ValidacaoEnderecoException("Logradouro não deve ser nulo");
 		}
 		this.logradouro = logradouro.trim().toLowerCase();
 	}
 
 	public void setNumero(String numero) {
 		if(numero == null || numero.trim().length() == 0) {
-			throw new ValidacaoException("Numero não deve ser nulo");
+			throw new ValidacaoEnderecoException("Numero não deve ser nulo");
 		}
 		this.numero = numero.trim().toLowerCase();
 	}
 
 	public void setBairro(String bairro) {
 		if(bairro == null || bairro.trim().length() == 0) {
-			throw new ValidacaoException("Bairro não deve ser nulo");
+			throw new ValidacaoEnderecoException("Bairro não deve ser nulo");
 		}
 		this.bairro = bairro.trim().toLowerCase();
 	}
@@ -104,21 +102,21 @@ public abstract class Endereco {
 	
 	public void setReceptor(String receptor) {
 		if(receptor == null || receptor.trim().length() <= RECEPTOR_TAMANHO) {
-			throw new ValidacaoException("Receptor não deve ser nulo");
+			throw new ValidacaoEnderecoException("Receptor não deve ser nulo");
 		}
 		this.receptor = receptor.trim().toLowerCase();
 	}
 
 	public void setTipoLogradouro(String tipoLogradouro) {
 		if(tipoLogradouro == null || tipoLogradouro.trim().length() == 0) {
-			throw new ValidacaoException("Tipo de logradouro não deve ser nulo");
+			throw new ValidacaoEnderecoException("Tipo de logradouro não deve ser nulo");
 		}
 		this.tipoLogradouro = new TipoLogradouro(tipoLogradouro);
 	}
 
 	public void setTipoResidencia(String tipoResidencia) {
 		if(tipoResidencia == null || tipoResidencia.trim().length() == 0) {
-			throw new ValidacaoException("Tipo de residencia não deve ser nulo");
+			throw new ValidacaoEnderecoException("Tipo de residencia não deve ser nulo");
 
 		}
 		this.tipoResidencia = new TipoResidencia(tipoResidencia);

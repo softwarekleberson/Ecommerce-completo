@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cupom.DadosDetalhamentoCupom;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.Cupom;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.CupomNaoEcontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.CupomDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.RepositorioDeCupom;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cupom.CupomRepositroy;
 
@@ -31,7 +31,7 @@ public class CupomDao implements RepositorioDeCupom{
 	public Page listarCuponsDosClientes(Long clienteId, Pageable pageable) {
 		 Page<Cupom> cuponsPage = repository.listarCupomAtivo(clienteId, pageable);	        
 	     if(cuponsPage.isEmpty()) {
-	    	 throw new CupomNaoEcontradoExcecao("Id incorreto");
+	    	 throw new CupomDaoExcecao("Id incorreto");
 	     }
 		 return cuponsPage.map(DadosDetalhamentoCupom::new);
 	}

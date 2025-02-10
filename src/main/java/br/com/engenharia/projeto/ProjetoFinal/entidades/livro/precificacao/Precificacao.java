@@ -5,7 +5,6 @@ import java.util.List;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.estoque.DadosCadastroPrecificacao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -46,7 +45,7 @@ public class Precificacao {
 	
 	public void setPrecificacao(BigDecimal precificacao) {
 		if(precificacao == null || precificacao.compareTo(BigDecimal.ZERO) <= 0) {
-	        throw new ValidacaoException("A precificação deve ser um valor positivo maior que zero.");
+	        throw new ValidacaoPrecificacaoException("A precificação deve ser um valor positivo maior que zero.");
 		}
 		this.precificacao = precificacao;
 	}

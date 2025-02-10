@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pedido.DadosDetalhamentoPedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.PedidoDaoException;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.pedidos.PedidoRepository;
 
@@ -40,7 +40,7 @@ public class PedidoDao implements RepositorioDePedido{
 	public Pedido devolvePedidoPeloCodigo(String codigoPedido) {
 		var pedido = pedidoRepository.findByCodigoPedido(codigoPedido);
 		if(pedido == null) {
-			throw new PedidoNaoEncontradoExcecao("Codigo pedido incorreto");
+			throw new PedidoDaoException("Codigo pedido incorreto");
 		}
 		return pedido.get();
 	}
@@ -50,7 +50,7 @@ public class PedidoDao implements RepositorioDePedido{
 		 Page<Pedido> pedidosPage = pedidoRepository.findByCliente_Id(clienteId, pageable);	        
 	     System.out.println("zzzzzzz");
 		 if(pedidosPage.isEmpty()) {
-	    	 throw new PedidoNaoEncontradoExcecao("Id incorreto");
+	    	 throw new PedidoDaoException("Id incorreto");
 	     }
 		 return pedidosPage.map(DadosDetalhamentoPedido::new);
 	}

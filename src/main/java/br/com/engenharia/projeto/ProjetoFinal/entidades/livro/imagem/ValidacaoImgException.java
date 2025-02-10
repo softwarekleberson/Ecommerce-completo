@@ -1,9 +1,10 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.livro.imagem;
 
-public class ImagemNaoEncontradoExcecao extends RuntimeException{
+public class ValidacaoImgException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
-	public ImagemNaoEncontradoExcecao(String message) {
+
+	public ValidacaoImgException(String message) {
 		super(message);
 	}
 }

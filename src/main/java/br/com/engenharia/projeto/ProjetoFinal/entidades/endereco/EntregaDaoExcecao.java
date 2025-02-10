@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
-public class CobrancaNaoEncontradaExcecao extends RuntimeException{
+public class EntregaDaoExcecao extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public CobrancaNaoEncontradaExcecao(String message) {
+	public EntregaDaoExcecao(String message) {
 		super(message);
 	}
 }

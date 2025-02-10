@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosAtulizacaoAutor;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor.Autor;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor.AutorNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor.AutorDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor.RepositorioDeAutor;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.livro.AutorRepository;
@@ -41,7 +41,7 @@ public class AutorDao implements RepositorioDeAutor{
 			Optional<Autor> optAutor = autorRepository.findById(dado.idAutor());
 			
 			if(optLivro.isEmpty() || optAutor.isEmpty()) {
-	            throw new AutorNaoEncontradoExcecao("Id do autor ou id livro incorreto");
+	            throw new AutorDaoExcecao("Id do autor ou id livro incorreto");
 			}
 			
 			Autor autor = optAutor.get();
@@ -58,7 +58,7 @@ public class AutorDao implements RepositorioDeAutor{
 		Optional<Autor> autorExiste = autorRepository.findById(idAutor);
 		
 		if(existeAutor.isEmpty() || autorExiste.isEmpty()) {
-			throw new AutorNaoEncontradoExcecao("Id incorreto do livro ou autor");
+			throw new AutorDaoExcecao("Id incorreto do livro ou autor");
 		}
 		
 		autorRepository.deleteById(idAutor);

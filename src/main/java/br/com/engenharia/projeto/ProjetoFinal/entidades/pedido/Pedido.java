@@ -8,7 +8,6 @@ import java.util.List;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pagamento.Pagamento;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -137,14 +136,14 @@ public class Pedido {
 
     public void setValorTotal(BigDecimal valorTotal) {
         if(valorTotal.compareTo(BigDecimal.ZERO) < 0) {
-			throw new ValidacaoException("Valor do pedido não deve ser nulo");
+			throw new ValidacaoPedidoException("Valor do pedido não deve ser nulo");
         }
     	this.valorTotal = valorTotal;
     }
 
     public void setCodigoPedido(String codigoPedido) {
     	if(codigoPedido.trim() == null) {
-			throw new ValidacaoException("Codigo do pedido não pode ser nulo");
+			throw new ValidacaoPedidoException("Codigo do pedido não pode ser nulo");
     	}
     	this.codigoPedido = codigoPedido.trim().toLowerCase();
     }

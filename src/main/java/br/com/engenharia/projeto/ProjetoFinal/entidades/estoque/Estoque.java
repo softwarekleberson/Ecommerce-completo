@@ -5,7 +5,6 @@ import java.time.LocalDate;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.estoque.DadosCadastroEstoque;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -71,7 +70,7 @@ public class Estoque {
 	
 	public void setQuantidade(int quantidade) {
 		if(quantidade < QUANTIDADE_ESTOQUE) {
-			throw new ValidacaoException("Não é permitido entrada no estoque "
+			throw new ValidacaoEstoqueException("Não é permitido entrada no estoque "
 											 + "com quantidade de livros igual ou"
 											 + " inferior a 0");
 		}
@@ -80,7 +79,7 @@ public class Estoque {
 
 	public void setValorCusto(BigDecimal valorCusto) {
 		if(valorCusto.compareTo(BigDecimal.ZERO) < 0) {
-			throw new ValidacaoException("Valor de custo não deve ser menor que "
+			throw new ValidacaoEstoqueException("Valor de custo não deve ser menor que "
 											 + "0");
 		}
 		this.valorCusto = valorCusto;

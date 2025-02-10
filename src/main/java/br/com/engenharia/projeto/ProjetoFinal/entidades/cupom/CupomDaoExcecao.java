@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.cupom;
 
-public class CupomNaoEcontradoExcecao extends RuntimeException{
+public class CupomDaoExcecao extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public CupomNaoEcontradoExcecao(String message) {
+	public CupomDaoExcecao(String message) {
 		super(message);
 	}
 }

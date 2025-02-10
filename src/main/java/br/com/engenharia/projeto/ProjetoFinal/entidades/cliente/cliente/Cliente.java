@@ -14,7 +14,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.user.Roles;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -82,7 +81,7 @@ public class Cliente extends UserEntity{
 
 	public void setCpf(String cpf) {
 		if (cpf == null || cpf.trim().length() != VERICA_CPF) {
-			throw new ValidacaoException("Cpf deve conter apenas numeros");
+			throw new ValidacaoClienteException("Cpf deve conter apenas numeros");
 		}
 		this.cpf = cpf.trim().toLowerCase();
 	}

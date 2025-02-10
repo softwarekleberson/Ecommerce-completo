@@ -1,7 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao;
 
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
-
 public class AlgoritmoLuhn {
 
     private static final String MENSAGEM_ERRO = "O número %s é inválido.";
@@ -24,7 +22,7 @@ public class AlgoritmoLuhn {
 	        }
 
 	        if (sum % 10 != 0) {
-	            throw new ValidacaoException(String.format(MENSAGEM_ERRO, numero));
+	            throw new ValidacaoCartaoException(String.format(MENSAGEM_ERRO, numero));
 	        }
 	}
 }

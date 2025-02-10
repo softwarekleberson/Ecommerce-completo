@@ -15,11 +15,11 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.ClienteNaoEncontradoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.RepositorioDeCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.Estoque;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.EstoqueNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.EstoqueDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.RepositorioDeEstoque;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.LivroNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.LivroDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.RepositorioDeLivro;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.log.Log;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.log.RepositorioDeLog;
@@ -104,7 +104,7 @@ public class ServicePedido {
 		
 		System.out.println(disponivel + "em estoque");
 		if(dados.quantidade() > disponivel) {
-			throw new EstoqueNaoEncontradoExcecao("Quantidade requerida superior a disponivel em estoque");
+			throw new EstoqueDaoExcecao("Quantidade requerida superior a disponivel em estoque");
 		}
 	}
 
@@ -119,7 +119,7 @@ public class ServicePedido {
 	private Livro verificaExistenciaLivro(Long livroId) {
 		var livro = repositorioDeLivro.buscarLivroPeloId(livroId);
 		if(livroId == null && livro.isEmpty()) {
-			throw new LivroNaoEncontradoExcecao("Livro não encontrado");
+			throw new LivroDaoExcecao("Livro não encontrado");
 		}
 		return livro.get();
 	}

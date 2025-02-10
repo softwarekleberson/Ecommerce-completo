@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.Administrador;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.AdministradorNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.AdministradorDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.administrador.RepositorioDeAdministrador;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.administrador.AdministradorRepository;
 
@@ -34,7 +34,7 @@ public class AdministradorDao implements RepositorioDeAdministrador{
 	public void deletar(Long id) {
 		Optional<Administrador> existeAdministrador = repository.findById(id);
 		if(existeAdministrador.isEmpty()) {
-			throw new AdministradorNaoEncontradoExcecao("Administrador excluido ou id incorreto");
+			throw new AdministradorDaoExcecao("Administrador excluido ou id incorreto");
 		}
 		repository.deleteById(id);
 	}

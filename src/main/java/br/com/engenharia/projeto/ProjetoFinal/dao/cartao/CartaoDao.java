@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cartao.DadosAtualizacaoCartao;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cartao.DadosDetalhamentoCartao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.Cartao;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.CartaoNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.CartaoDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.RepositorioDeCartao;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CartaoRepository;
 import jakarta.transaction.Transactional;
@@ -62,7 +62,7 @@ public class CartaoDao implements RepositorioDeCartao{
 	public void deletar(Long id) {
 		Optional<Cartao> cartao = repository.findById(id);
 		if(cartao.isEmpty()) {
-			throw new CartaoNaoEncontradoExcecao("Id cartão incorreto");
+			throw new CartaoDaoExcecao("Id cartão incorreto");
 		}
 		repository.deleteById(id);
 	}
@@ -70,7 +70,7 @@ public class CartaoDao implements RepositorioDeCartao{
 	public Page listarCartaosDoCliente(Long clienteId, Pageable pageable) {
 		 Page<Cartao> cartoesPage = repository.findByCliente_Id(clienteId, pageable);	        
 	     if(cartoesPage.isEmpty()) {
-	    	 throw new CartaoNaoEncontradoExcecao("Id incorreto");
+	    	 throw new CartaoDaoExcecao("Id incorreto");
 	     }
 		 return cartoesPage.map(DadosDetalhamentoCartao::new);
 	}

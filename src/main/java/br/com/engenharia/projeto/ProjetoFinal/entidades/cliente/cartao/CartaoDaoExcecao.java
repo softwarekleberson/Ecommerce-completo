@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao;
 
-public class CartaoNaoEncontradoExcecao extends RuntimeException{
+public class CartaoDaoExcecao extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public CartaoNaoEncontradoExcecao(String message) {
+	public CartaoDaoExcecao(String message) {
 		super(message);
 	}
 }

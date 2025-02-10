@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosAtualizarCategoria;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.categoria.Categoria;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.categoria.CategoriaNaoEncontradoExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.categoria.CategoriaDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.categoria.RepositorioDeCategoria;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.livro.CategoriaRepository;
@@ -40,7 +40,7 @@ public class CategoriaDao implements RepositorioDeCategoria{
 	        Optional<Livro> optLivro = livroRepository.findById(dado.idLivro());
 	        
 	        if(optCategoria.isEmpty() || optLivro.isEmpty()) {
-	            throw new CategoriaNaoEncontradoExcecao("Id da categoria ou id livro incorreto");
+	            throw new CategoriaDaoExcecao("Id da categoria ou id livro incorreto");
 	        }
 	        
 	        Categoria categoria = optCategoria.get();
@@ -58,7 +58,7 @@ public class CategoriaDao implements RepositorioDeCategoria{
 		Optional<Livro> optLivro = livroRepository.findById(livroId);
 		
 		if(optCategoria.isEmpty() || optLivro.isEmpty()) {
-			throw new CategoriaNaoEncontradoExcecao("Id da categoria ou id livro incorreto");
+			throw new CategoriaDaoExcecao("Id da categoria ou id livro incorreto");
 		}
 		
 		categoriaRepository.deleteById(idCategoria);

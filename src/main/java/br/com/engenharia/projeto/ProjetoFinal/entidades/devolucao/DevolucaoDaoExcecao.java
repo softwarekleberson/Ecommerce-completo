@@ -1,9 +1,9 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao;
 
-public class DevolucaoNaoEncontradoExcecao extends RuntimeException{
+public class DevolucaoDaoExcecao extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-	public DevolucaoNaoEncontradoExcecao(String message) {
+	public DevolucaoDaoExcecao(String message) {
 		super(message);
 	}
 }

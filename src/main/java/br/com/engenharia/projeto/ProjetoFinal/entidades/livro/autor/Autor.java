@@ -2,7 +2,6 @@ package br.com.engenharia.projeto.ProjetoFinal.entidades.livro.autor;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Livro.DadosCadastroAutor;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.livro.livro.Livro;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -43,7 +42,7 @@ public class Autor {
 
 	    public void setAutor(String autor) {
 	        if (autor == null || autor.trim().isEmpty()) {
-	            throw new ValidacaoException("Nome do autor não deve ser nulo ou vazio");
+	            throw new ValidacaoAutorException("Nome do autor não deve ser nulo ou vazio");
 	        }
 	        this.autor = autor.trim().toLowerCase();
 	    }

@@ -11,7 +11,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosAtualizacaoCobr
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosDetalhamentoCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.CobrancaNaoEncontradaExcecao;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.CobrancaDaoExcecao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.RepositorioDeCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.ClienteRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CobrancaRepository;
@@ -55,7 +55,7 @@ public class CobrancaDao implements RepositorioDeCobranca{
 		Optional<Cobranca> opDataBaseCobranca = repository.findById(cobrancaId);
 		
 		if(opDataBaseCobranca.isEmpty()) {
-			throw new CobrancaNaoEncontradaExcecao("Id cliente ou id cobranca incorreto");
+			throw new CobrancaDaoExcecao("Id cliente ou id cobranca incorreto");
 		}
 		
 		else {
@@ -123,7 +123,7 @@ public class CobrancaDao implements RepositorioDeCobranca{
 	public Page<DadosDetalhamentoCobranca> listarEnderecosCobrancaDoCliente(Long clienteId, Pageable pageable) {
 		Page<Cobranca> cobrancas = repository.findByCliente_Id(clienteId, pageable);	        
 	    if(cobrancas.isEmpty()) {
-	    	throw new CobrancaNaoEncontradaExcecao("Id incorreto");
+	    	throw new CobrancaDaoExcecao("Id incorreto");
 	    }
 		return cobrancas.map(DadosDetalhamentoCobranca::new);
 	}
@@ -134,7 +134,7 @@ public class CobrancaDao implements RepositorioDeCobranca{
 		Optional<Cobranca> cobranca =  repository.findById(idCobranca);
 		
 		if(cobranca.isEmpty()) {
-			throw new CobrancaNaoEncontradaExcecao("Id cliente ou cobrança incorreto");
+			throw new CobrancaDaoExcecao("Id cliente ou cobrança incorreto");
 		}
 		
 		else {

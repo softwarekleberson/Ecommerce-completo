@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.devolucao.DadosCadastroDevolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.Devolucao;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.devolucao.RepositorioDeDevolucao;
-import br.com.engenharia.projeto.ProjetoFinal.infra.TratadorErros.erros.ValidacaoException;
 
 @Service
 public class VerificaCodigoPedido implements IstrategyDevolucao {
@@ -23,7 +22,7 @@ public class VerificaCodigoPedido implements IstrategyDevolucao {
         Optional<Devolucao> devolucao = repositorioDeDevolucao.verificaCodigoPedido(dados.codigoPedido());
         
         if (devolucao.isPresent()) {
-            throw new ValidacaoException(MENSAGEM_ERRO);
+            throw new ValidacaoCodigoPedidoException(MENSAGEM_ERRO);
         }
     }
 }
