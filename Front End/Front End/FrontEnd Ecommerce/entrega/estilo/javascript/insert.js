@@ -1,13 +1,13 @@
-function getIdClienteFromUrl() {
-    const urlPath = window.location.pathname;
-    const idCliente = urlPath.split('/').pop();
-    return isNaN(idCliente) ? 1 : parseInt(idCliente, 10);
-}
-
-const idCliente = getIdClienteFromUrl();
-
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('myForm').addEventListener('submit', async function(event) {
     event.preventDefault();
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        alert("Erro: Token JWT não encontrado! Faça login novamente.");
+        window.location.href = "login.html"; 
+        return;
+    }
 
     const data = {
         "principalEntrega": document.getElementById('principalEntrega').checked,
@@ -25,21 +25,21 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
         "fraseEntregaEntrega": document.getElementById('fraseEntregaEntrega').value
     };
 
-    sendDataToBackend(idCliente, data)
-        .then(() => {
-            window.location.href = "entrega.html";
-        })
-        .catch(error => {
-            console.error('Erro ao enviar dados:', error);
-        });
+    try {
+        await sendDataToBackend(data, token);
+        window.location.href = "entrega.html";
+    } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+    }
 });
 
-async function sendDataToBackend(idCliente, data) {
+async function sendDataToBackend(data, token) {
     try {
-        const response = await fetch(`http://localhost:8080/endereco/entrega/${idCliente}`, {
+        const response = await fetch(`http://localhost:8080/cliente/entregas`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             },
             body: JSON.stringify(data),
         });

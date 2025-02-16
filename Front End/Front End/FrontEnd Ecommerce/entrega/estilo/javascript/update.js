@@ -1,5 +1,13 @@
-document.getElementById("myForm").addEventListener("submit", function(event) {
+document.getElementById("myForm").addEventListener("submit", async function (event) {
     event.preventDefault();
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        alert("Erro: Token JWT não encontrado! Faça login novamente.");
+        window.location.href = "login.html"; // Redireciona para login
+        return;
+    }
 
     const principal = document.getElementById('principal').checked;
     const receptorEntrega = document.getElementById('receptorEntrega').value;
@@ -14,32 +22,35 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     const estadoEntrega = document.getElementById('estadoEntrega').value;
     const paisEntrega = document.getElementById('paisEntrega').value;
     const fraseEntregaEntrega = document.getElementById('fraseEntregaEntrega').value;
-    
-    const id = obterIdDaURL(); 
-    console.log(id)
+
+    const id = obterIdDaURL();
+    console.log(id);
 
     const data = {
         "principal": principal || null,
         "receptorEntrega": receptorEntrega || null,
-        "tipoResidenciaEntrega": tipoResidenciaEntrega  || null,
-        "tipoLogradouroEntrega": tipoLogradouroEntrega  || null,
-        "logradouroEntrega": logradouroEntrega  || null,
-        "numeroEntrega": numeroEntrega  || null,
-        "bairroEntrega": bairroEntrega  || null,
-        "cepEntrega": cepEntrega  || null,
-        "observacaoEntrega": observacaoEntrega  || null,
-        "cidadeEntrega": cidadeEntrega  || null,
-        "estadoEntrega": estadoEntrega  || null,
-        "paisEntrega": paisEntrega  || null,
-        "fraseEntregaEntrega": fraseEntregaEntrega  || null
+        "tipoResidenciaEntrega": tipoResidenciaEntrega || null,
+        "tipoLogradouroEntrega": tipoLogradouroEntrega || null,
+        "logradouroEntrega": logradouroEntrega || null,
+        "numeroEntrega": numeroEntrega || null,
+        "bairroEntrega": bairroEntrega || null,
+        "cepEntrega": cepEntrega || null,
+        "observacaoEntrega": observacaoEntrega || null,
+        "cidadeEntrega": cidadeEntrega || null,
+        "estadoEntrega": estadoEntrega || null,
+        "paisEntrega": paisEntrega || null,
+        "fraseEntregaEntrega": fraseEntregaEntrega || null
     };
 
-
-    const url = `http://localhost:8080/endereco/entrega/${id}`; 
-    sendDataToBackend(data, url);
-
-    this.reset();
-   window.location.href = "entrega.html";
+    const url = `http://localhost:8080/cliente/entregas/${id}`;
+    
+    try {
+        await sendDataToBackend(data, url, token);
+        this.reset();
+        window.location.href = "entrega.html";
+    } catch (error) {
+        console.error("Erro ao enviar os dados:", error);
+    }
 });
 
 function obterIdDaURL() {
@@ -47,24 +58,24 @@ function obterIdDaURL() {
     return urlParams.get('entregaId');
 }
 
-function sendDataToBackend(data, url) {
-    fetch(url, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => {
+async function sendDataToBackend(data, url, token) {
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data),
+        });
+
         if (!response.ok) {
-            throw new Error('Error sending data to the backend');
+            throw new Error('Erro ao enviar dados para o backend');
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Data sent successfully:', data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+
+        console.log('Dados enviados com sucesso:', await response.json());
+    } catch (error) {
+        console.error('Erro:', error);
+        throw error;
+    }
 }
