@@ -1,55 +1,51 @@
-document.getElementById("myForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("myForm").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Impede o recarregamento da página
 
-    const idCliente = getIdClienteFromURL();
+    // Pegando o token correto do localStorage
+    const token = localStorage.getItem("token");
 
-    const principal = document.getElementById('principal').checked;
-    const numeroCartao = document.getElementById('numeroCartao').value;
-    const nomeImpresso = document.getElementById('nomeImpresso').value;
-    const codigo = document.getElementById('codigo').value;
-    const bandeira = document.getElementById('bandeira').value;
-    const dataExpiracao = document.getElementById('dataExpiracao').value;
+    if (!token) {
+        alert("Erro: Token JWT não encontrado! Faça login novamente.");
+        window.location.href = "login.html"; // Redireciona para o login
+        return;
+    }
 
-    const data = {
-        principal: principal,
-        numeroCartao: numeroCartao,
-        nomeImpresso: nomeImpresso,
-        codigo: codigo,
-        bandeira: bandeira,
-        dataExpiracao: dataExpiracao,
+    // Pegando os dados do formulário
+    const dadosCartao = {
+        principal: document.getElementById("principal").checked,
+        numeroCartao: document.getElementById("numeroCartao").value.trim(),
+        nomeImpresso: document.getElementById("nomeImpresso").value.trim(),
+        codigo: document.getElementById("codigo").value.trim(),
+        dataExpiracao: document.getElementById("dataExpiracao").value,
+        bandeira: document.getElementById("bandeira").value
     };
 
-    sendDataToBackend(data);
-    this.reset();
-    window.location.href = "cartoes.html";
-});
+    console.log("Dados a serem enviados:", dadosCartao);
+    console.log("Token JWT a ser enviado:", token);
 
-function getIdClienteFromURL() {
-    const pathSegments = window.location.pathname.split('/');
-    const idCliente = pathSegments[pathSegments.length - 1];
-    return isNaN(idCliente) ? '1' : idCliente;
-}
-
-function sendDataToBackend(data) {
-    const idCliente = getIdClienteFromURL();
-
-    fetch(`http://localhost:8080/cartoes/${idCliente}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao enviar dados para o backend');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Dados enviados com sucesso:', data);
-        })
-        .catch(error => {
-            console.error('Erro:', error);
+    try {
+        const response = await fetch("http://localhost:8080/cliente/cartoes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` // Enviando o token corretamente
+            },
+            body: JSON.stringify(dadosCartao)
         });
-}
+
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+        }
+
+        const resultado = await response.json();
+        console.log("Resposta do servidor:", resultado);
+        alert("Cartão cadastrado com sucesso!");
+
+        // Redireciona para a página de cartões após o sucesso
+        window.location.href = "cartoes.html";
+
+    } catch (erro) {
+        console.error("Erro ao enviar requisição:", erro);
+        alert("Erro ao adicionar cartão. Verifique os dados e tente novamente.");
+    }
+});
