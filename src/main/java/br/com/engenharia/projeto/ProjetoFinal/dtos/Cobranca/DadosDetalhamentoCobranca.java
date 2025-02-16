@@ -18,7 +18,7 @@ public record DadosDetalhamentoCobranca(
 				cobranca.getNumero(),
 				cobranca.getBairro(),
 				cobranca.getCep().getCep(),
-				cobranca.getObservacao(),
+				cobranca.getObservacao() != null ? cobranca.getObservacao() : "",
 				cobranca.getTipoLogradouro().getTipoLogradouro(),
 				cobranca.getTipoResidencia().getTipoResidencia(),
 				cobranca.getCidade().getCidade(),

@@ -43,7 +43,6 @@ if (token) {
   console.error('Token não encontrado no localStorage');
 }
 
-// Função para excluir cartão
 function excluirCartao(cartaoId) {
   if (!confirm("Tem certeza que deseja excluir este cartão? Esta ação não pode ser desfeita.")) {
     return;
@@ -68,11 +67,11 @@ function excluirCartao(cartaoId) {
       if (!response.ok) {
         throw new Error(`Erro ao excluir cartão: ${response.status} - ${response.statusText}`);
       }
-      return response.text(); // Se o backend não retorna JSON
+      return response.text(); 
     })
     .then(() => {
       alert("Cartão excluído com sucesso!");
-      location.reload(); // Atualiza a página para remover o cartão da lista
+      location.reload(); 
     })
     .catch(error => {
       console.error('Erro ao excluir cartão:', error);

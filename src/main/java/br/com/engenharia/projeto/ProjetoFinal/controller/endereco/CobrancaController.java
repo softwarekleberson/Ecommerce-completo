@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosAtualizacaoCobrancas;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
@@ -32,14 +33,17 @@ public class CobrancaController {
 	private RepositorioDeCobranca repositorioDeCobranca;
 	
 	@PostMapping
-	public ResponseEntity cadastrarCobranca(Authentication authentication, @RequestBody @Valid DadosCadastroCobranca dados) {
+	public ResponseEntity cadastrarCobranca(Authentication authentication, @RequestBody @Valid DadosCadastroCobranca dados, UriComponentsBuilder uriBuilder) {
 		UserEntity user = (UserEntity) authentication.getPrincipal(); 
 		Long id = user.getId();
 		
 		var cobranca = new Cobranca(dados);
 		cobranca.setCliente(id);
+
 		repositorioDeCobranca.salvarNovaCobranca(cobranca);
-		return ResponseEntity.ok(cobranca);
+		var uri = uriBuilder.path("/cobrancas/{id}").buildAndExpand(cobranca.getId()).toUri();
+
+		return ResponseEntity.created(uri).body(cobranca);
 	}
 	
 	@GetMapping
