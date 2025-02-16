@@ -62,7 +62,7 @@ public class ClienteController {
 	
 	@PutMapping("/senha")
 	public  ResponseEntity atualizarSenha(Authentication authentication, @RequestBody @Valid DadosAtualizacaoSenha dados) {
-		UserEntity user = (UserEntity) authentication.getPrincipal(); // Pega o usuário autenticado
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
 		Long id = user.getId();
 		
 		DadosDetalhamentoCliente detalharCliente = serviceClienteUpdate.atualizarSenha(dados, id);
@@ -71,7 +71,7 @@ public class ClienteController {
 	
 	@DeleteMapping
 	public ResponseEntity<Void> deletar (Authentication authentication) {
-		UserEntity user = (UserEntity) authentication.getPrincipal(); // Pega o usuário autenticado
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
 		Long id = user.getId();
 		
 		repositorioDeCliente.deletar(id);

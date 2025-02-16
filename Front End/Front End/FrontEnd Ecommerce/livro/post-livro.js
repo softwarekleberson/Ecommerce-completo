@@ -3,7 +3,7 @@ document.getElementById('livro').addEventListener('submit', function(event) {
 
     const form = event.target;
     const formData = new FormData(form);
-    const token = localStorage.getItem('token'); // Pegando o token do localStorage
+    const token = localStorage.getItem('token'); 
 
     const data = {
         idPrecificacao: formData.get('idPrecificacao'),
@@ -35,7 +35,7 @@ document.getElementById('livro').addEventListener('submit', function(event) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}` // Adicionando o token no cabeçalho
+            'Authorization': `Bearer ${token}` 
         },
         body: JSON.stringify(data)
     })

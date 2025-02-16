@@ -1,43 +1,45 @@
-function enviarDados() {
-    var idCliente = document.getElementById("idCliente").value;
-    var genero = document.getElementById("genero").value;
-    var nome = document.getElementById("nome").value;
-    var nascimento = document.getElementById("nascimento").value;
-    var email = document.getElementById("email").value;
-    var ddd = document.getElementById("ddd").value;
-    var telefone = document.getElementById("telefone").value;
-    var tipo = document.getElementById("tipo").value;
+async function enviarDados() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.error("Erro: Token não encontrado. O usuário pode não estar autenticado.");
+        return;
+    }
 
-    var dados = {
-        idCliente: idCliente,
-        genero: genero || null,
-        nome: nome || null,
-        nascimento: nascimento || null,
-        email: email || null,
-        ddd: ddd || null,
-        telefone: telefone || null,
-        tipo: tipo || null
+    const dados = {
+        genero: document.getElementById("genero").value || null,
+        nome: document.getElementById("nome").value || null,
+        nascimento: document.getElementById("nascimento").value || null,
+        email: document.getElementById("email").value || null,
+        ddd: document.getElementById("ddd").value || null,
+        telefone: document.getElementById("telefone").value || null,
+        tipo: document.getElementById("tipo").value || null
     };
 
-    console.log(dados)
+    console.log("Enviando dados:", dados);
 
-    var url = 'http://localhost:8080/cliente'; 
-    fetch(url, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dados),
-    })
+    const url = "http://localhost:8080/cliente/atualizar";
 
-    .then(response => response.json())
-    .then(data => {
-        window.location.href = "contas-listas.html"
-    })
+    try {
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(dados)
+        });
 
-    .catch((error) => {
-        if(error){
-            window.location.href = "contas-listas.html"
+        const responseData = await response.json();
+
+        if (!response.ok) {
+            throw new Error(responseData.message || "Erro ao atualizar cliente");
         }
-    });
+
+        console.log("Dados atualizados com sucesso:", responseData);
+        window.location.href = "contas-listas.html";
+
+    } catch (error) {
+        console.error("Erro ao enviar os dados:", error);
+        alert("Ocorreu um erro ao atualizar os dados. Verifique e tente novamente.");
+    }
 }

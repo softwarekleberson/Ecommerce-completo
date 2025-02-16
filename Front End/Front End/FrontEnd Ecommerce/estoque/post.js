@@ -1,35 +1,45 @@
-document.getElementById('estoqueForm').addEventListener('submit', function (event) {
+document.getElementById("estoqueForm").addEventListener("submit", async function (event) {
     event.preventDefault();
+
     const formData = new FormData(this);
     const data = {
-        idLivro: parseInt(formData.get('idLivro'), 10),
-        quantidade: parseInt(formData.get('quantidade'), 10),
-        valorCusto: formData.get('valorCusto'),
-        dataEntrada: formData.get('dataEntrada'),
-        fornecedor: formData.get('fornecedor'),
-        estadoProduto: formData.get('estadoProduto')
+        idLivro: parseInt(formData.get("idLivro"), 10),
+        quantidade: parseInt(formData.get("quantidade"), 10),
+        valorCusto: formData.get("valorCusto"),
+        dataEntrada: formData.get("dataEntrada"),
+        fornecedor: formData.get("fornecedor"),
+        estadoProduto: formData.get("estadoProduto")
     };
 
-    fetch('http://localhost:8080/estoque', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(result => {
-            console.log('Sucesso:', result);
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-        })
-        .finally(() => {
-            document.getElementById('estoqueForm').reset();
+    // Obtém o token de autenticação
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("Erro: Token de autenticação não encontrado. Faça login novamente.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8080/admin/estoque", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
         });
+
+        if (!response.ok) {
+            const errorResponse = await response.json();
+            throw new Error(errorResponse.message || "Erro ao cadastrar estoque");
+        }
+
+        const result = await response.json();
+        console.log("Sucesso:", result);
+        alert("Estoque cadastrado com sucesso!");
+        this.reset();
+
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao cadastrar estoque. Verifique os dados e tente novamente.");
+    }
 });

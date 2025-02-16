@@ -1,25 +1,39 @@
-document.getElementById('precificacao').addEventListener('submit', function (event) {
+document.getElementById("precificacao").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
-    const precificacao = formData.get('precificacao');
+    const precificacao = formData.get("precificacao");
 
-    fetch('http://localhost:8080/precificacao', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            precificacao: precificacao
-        })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            form.reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    // Obtém o token de autenticação
+    const token = localStorage.getItem("token");
+    if (!token) {
+        alert("Erro: Token de autenticação não encontrado. Faça login novamente.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8080/admin/precificacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ precificacao })
         });
+
+        if (!response.ok) {
+            const errorResponse = await response.json();
+            throw new Error(errorResponse.message || "Erro ao cadastrar precificação");
+        }
+
+        const data = await response.json();
+        console.log("Success:", data);
+        alert("Precificação cadastrada com sucesso!");
+        form.reset();
+
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao cadastrar precificação. Verifique os dados e tente novamente.");
+    }
 });
