@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ import br.com.engenharia.projeto.ProjetoFinal.dtos.item.DadosDetalhamentoItensPa
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pedido.DadosCadastroPedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
+import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.carrinho.ItemRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.pedidos.PedidoRepository;
 import br.com.engenharia.projeto.ProjetoFinal.services.pedido.ServicePedido;
@@ -52,29 +54,36 @@ public class PedidoController {
 	@Autowired
 	private ItemRepository itemRepository;
 	
-	@PostMapping("{livroId}/{clienteId}")
-	public ResponseEntity cadastrar(@PathVariable Long clienteId, @PathVariable Long livroId, @RequestBody @Valid DadosCadastroPedido dados, UriComponentsBuilder uriBuilder) {
-		var dto = insert.criar(dados, clienteId, livroId);
+	@PostMapping("{livroId}")
+	public ResponseEntity cadastrar(Authentication authentication, @PathVariable Long livroId, @RequestBody @Valid DadosCadastroPedido dados, UriComponentsBuilder uriBuilder) {
+		UserEntity user = (UserEntity) authentication.getPrincipal();
+		Long id = user.getId();
+		
+		var dto = insert.criar(dados, id, livroId);
 	    var uri = uriBuilder.path("/pedido/{id}").buildAndExpand(dto.id()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}
 	
-	@GetMapping("{clienteId}")
+	@GetMapping
 	public ResponseEntity<Page<DadosDetalhamentoItem>> listarItensPorCliente(
-	        										   @PathVariable Long clienteId,
+													   Authentication authentication,
 	        										   @PageableDefault(size = 15, sort = "id") Pageable pageable) {
 
-	    Page<DadosDetalhamentoItem> itens = repositorioDeItem.listarItensDoCliente(clienteId, pageable);
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
+		Long id = user.getId();
+	    Page<DadosDetalhamentoItem> itens = repositorioDeItem.listarItensDoCliente(id, pageable);
 	    
 	    return ResponseEntity.ok(itens);
 	}
 
-	@GetMapping("pagos/{clienteId}")
+	@GetMapping("pagos")
 	public ResponseEntity<Page<DadosDetalhamentoItensPagosPorCliente>> listarItensPagos(
-	        										   @PathVariable Long clienteId,
+	        										   Authentication authentication,
 	        										   @PageableDefault(size = 15, sort = "dataPedido", direction = Sort.Direction.DESC) Pageable pageable) {
 		
-	    Page<DadosDetalhamentoItensPagosPorCliente> itens = repositorioDeItem.pedidosPagos(clienteId, pageable);
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
+		Long id = user.getId();
+	    Page<DadosDetalhamentoItensPagosPorCliente> itens = repositorioDeItem.pedidosPagos(id, pageable);
 	    
 	    return ResponseEntity.ok(itens);
 	}

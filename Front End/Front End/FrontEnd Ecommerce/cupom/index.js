@@ -1,41 +1,58 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    const endpoint = "http://localhost:8080/cliente/cupons";
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const clienteId = urlParams.get('clienteId') || 1;
+    const token = localStorage.getItem("token");
+    if (!token) {
+        console.error("Erro: Token de autenticação não encontrado.");
+        return;
+    }
 
-    const endpoint = `http://localhost:8080/administrador/cupons/${clienteId}`;
-
-    fetch(endpoint)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao carregar os dados do cupom.');
+    try {
+        const response = await fetch(endpoint, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
             }
-            return response.json();
-        })
-        .then(data => {
-
-            if (data.content && Array.isArray(data.content)) {
-
-                const cupomContainer = document.querySelector('.cupom-container');
-                data.content.forEach(cupom => {
-                    const cupomElement = document.createElement('div');
-                    cupomElement.classList.add('cupom');
-                    const status = cupom.status ? 'Válido' : 'Inválido';
-                    cupomElement.innerHTML = `
-                        <h3>${cupom.tipoCupom}</h3>
-                        <p>Código: ${cupom.idCupom}</p>
-                        <p>Valor R$ ${cupom.valor}</p>
-                        <p>Status: ${status}</p>
-                    `;
-                    cupomContainer.appendChild(cupomElement);
-                });
-            } else {
-
-                console.error('Os dados retornados não são válidos.');
-
-            }
-        })
-        .catch(error => {
-            console.error('Erro:', error);
         });
+
+        if (!response.ok) {
+            let errorMessage = `Erro ao carregar os dados do cupom (${response.status})`;
+
+            try {
+                const errorResponse = await response.json();
+                errorMessage = errorResponse.message || errorMessage;
+            } catch (jsonError) {
+                console.warn("A resposta do servidor não é um JSON válido.");
+            }
+
+            throw new Error(errorMessage);
+        }
+
+        let data = null;
+        const responseText = await response.text();
+        if (responseText) {
+            data = JSON.parse(responseText);
+        }
+
+        if (data && data.content && Array.isArray(data.content)) {
+            const cupomContainer = document.querySelector(".cupom-container");
+            cupomContainer.innerHTML = ""; 
+            data.content.forEach((cupom) => {
+                const cupomElement = document.createElement("div");
+                cupomElement.classList.add("cupom");
+                const status = cupom.status ? "Válido" : "Inválido";
+                cupomElement.innerHTML = `
+                    <h3>${cupom.tipoCupom}</h3>
+                    <p>Código: ${cupom.idCupom}</p>
+                    <p>Valor R$ ${cupom.valor.toFixed(2)}</p>
+                    <p>Status: ${status}</p>
+                `;
+                cupomContainer.appendChild(cupomElement);
+            });
+        } else {
+            console.warn("Os dados retornados não são válidos ou estão vazios.");
+        }
+    } catch (error) {
+        console.error("Erro:", error);
+    }
 });

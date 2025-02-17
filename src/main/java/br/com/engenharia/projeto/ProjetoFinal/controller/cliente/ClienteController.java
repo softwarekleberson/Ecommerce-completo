@@ -39,12 +39,12 @@ public class ClienteController {
 	@Autowired
 	private RepositorioDeCupom repositorioDeCupom;
 	
-	@GetMapping
+	@GetMapping("/cupons")
 	public ResponseEntity<Page<DadosDetalhamentoCupom>> listarCupomPorCliente(
 	        Authentication authentication,
 	        @PageableDefault(sort = "valor", direction = Sort.Direction.DESC) Pageable pageable) {
 	    
-		UserEntity user = (UserEntity) authentication.getPrincipal(); // Pega o usuário autenticado
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
 		Long id = user.getId();
 		
 		Page<DadosDetalhamentoCupom> cupons = repositorioDeCupom.listarCuponsDosClientes(id, pageable);
