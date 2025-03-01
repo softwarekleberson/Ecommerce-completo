@@ -2,32 +2,19 @@ package br.com.engenharia.projeto.ProjetoFinal.services.pagamento;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pagamento.DadosCadastroPagamento;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.pagamento.DadosPagmento;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao.Cartao;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.Cupom;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.cupom.TipoCupom;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Cobranca;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.estoque.Estoque;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.fake.cartao.CartaoFake;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.item.Item;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.log.Log;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.log.RepositorioDeLog;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pagamento.Pagamento;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pagamento.StatusCompra;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cartaoFake.FakeRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CartaoRepository;
 import br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente.CobrancaRepository;
@@ -51,7 +38,7 @@ public class ServicePagamento {
 	private final EstoqueRepository estoqueRepository;
 	private final RepositorioDeLog repositorioDeLog;
 	private final FakeRepository fakeRepository;
-	@Autowired
+	
 	public ServicePagamento(
 			EntregaRepository entregaRepository,
 			CobrancaRepository cobrancaRepository,
@@ -62,6 +49,7 @@ public class ServicePagamento {
 			EstoqueRepository estoqueRepository,
 			RepositorioDeLog repositorioDeLog,
 			FakeRepository fakeRepository) {
+		
 		this.entregaRepository = entregaRepository;
 		this.cobrancaRepository = cobrancaRepository;
 		this.cartaoRepository = cartaoRepository;
@@ -75,18 +63,19 @@ public class ServicePagamento {
 
 	@Transactional
 	public DadosPagmento validarDadosDoPagamento(@Valid DadosCadastroPagamento dados, Long clienteId) {
-		var entrega = verificarExistenciaEntrega();
-		var cobranca = verificarExistenciaCobranca();
-		BigDecimal valorTotalPedido = calcularValorTotalDosPedidos(clienteId);
-		List<Pedido> pedidos = listaPedidos(clienteId);
-		List<Cartao> cartoes = verificaInformacoesSobreCartao(dados.idCartao1(), dados.idCartao2());
-		List<Cupom> cupons = verificaInformacoesSobreCupom(dados.cupom1(), dados.cupom2());
 		
-		checarQuantidadeCartoesPermitida(valorTotalPedido, cartoes, dados.idCartao1(), dados.idCartao2());
+		var entrega = ServiceEntrega.verificaExistenciaEntrega(entregaRepository, clienteId);
+		var cobranca = ServiceCobranca.verificaExistenciaCobranca(cobrancaRepository, clienteId);
+		BigDecimal valorTotalPedido = ServiceValorTotal.verificaValorPedido(clienteId, pedidoRepository);
+		
+		List<Pedido> pedidos = ServicePedidos.listaPedidos(clienteId, pedidoRepository);
+		List<Cartao> cartoes = ServiceValidaCartao.validaCartao(dados.idCartao1(), dados.idCartao2(), cartaoRepository);
+		List<Cupom> cupons = ServiceCupom.verificaInformacoesSobreCupom(dados.cupom1(), dados.cupom2(), cupomRepository);
+		ServiceCartoesPermitidos.checarQuantidadeCartoesPermitida(valorTotalPedido, cartoes, dados.idCartao1(), dados.idCartao2(), fakeRepository);
 		
 		Pagamento pagamento = new Pagamento(LocalDateTime.now(),
-											entrega,
-											cobranca,
+											entrega.get(),
+											cobranca.get(),
 											valorTotalPedido,
 											pedidos,
 											cartoes,
@@ -96,297 +85,24 @@ public class ServicePagamento {
 		pagamentoRepository.save(pagamento);
 		pagamentoRepository.flush();
 		
-		apiDePagamentoFake(pagamento, dados.idCartao1(), dados.idCartao2(), dados.cupom1(), dados.cupom2());
-		associarPagamentoAPedidos(pagamento, pedidos);
-		baixaNoEstoque(pedidos);
-		verificaSeCartaoSeraExcluido(dados.salvarCartao(), cartoes);
+		ServiceFakePamento.apiDePagamentoFake(pagamento, 
+											  dados.idCartao1(),
+											  dados.idCartao2(),
+											  dados.cupom1(),
+											  dados.cupom2(), 
+			    							  cartaoRepository, 
+			    							  fakeRepository, 
+			    							  cupomRepository, 
+			    							  pagamentoRepository
+			    							 );
+		
+		ServicePagamentoPedido.associarPagamentoAPedidos(pagamento, pedidos, pedidoRepository);
+		ServiceBaixaEstoque.baixaNoEstoque(pedidos, estoqueRepository);
+		ServiceExclusaoCartao.cartaoSeraSalvo(dados.salvarCartao(), cartoes, cartaoRepository);
 		
 		Log log = new Log(clienteId);
 		repositorioDeLog.save(log);
 		
 		return new DadosPagmento(pagamento);
-	}
-	
-	private void verificaSeCartaoSeraExcluido(Boolean salvarCartao, List<Cartao> cartoes) {
-		if(salvarCartao != true) {
-			for(Cartao cartao : cartoes) {
-				cartaoRepository.delete(cartao);
-			}
-		}
-	}
-
-	private void apiDePagamentoFake(Pagamento pagamento, Long idCartao1, Long idCartao2, String idCupom1, String idCupom2) {
-	    
-	    BigDecimal valorDoCartao = BigDecimal.ZERO;
-	    BigDecimal valorDoCupom = BigDecimal.ZERO;
-
-	    if (idCartao1 != null) {
-	    	Optional<Cartao> cartaoCorrente = cartaoRepository.findById(idCartao1);
-	        Optional<CartaoFake> cartao1 = fakeRepository.findByNumeroCartao(cartaoCorrente.get().getNumeroCartao());
-	        if (cartao1.isPresent()) {
-	            valorDoCartao = valorDoCartao.add(cartao1.get().getSaldoDisponivel());
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cartão 1 não encontrado");
-	        }
-	    }
-
-	    if (idCartao2 != null) {
-	    	Optional<Cartao> cartaoCorrente2 = cartaoRepository.findById(idCartao2);
-	    	Optional<CartaoFake> cartao2 = fakeRepository.findByNumeroCartao(cartaoCorrente2.get().getNumeroCartao());
-	        if (cartao2.isPresent()) {
-	            valorDoCartao = valorDoCartao.add(cartao2.get().getSaldoDisponivel());
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cartão 2 não encontrado");
-	        }
-	    }
-
-	    if (idCupom1 != null) {
-	        Optional<Cupom> cupom1 = cupomRepository.findById(idCupom1);
-	        if (cupom1.isPresent()) {
-	            valorDoCupom = valorDoCupom.add(cupom1.get().getValor());
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cupom 1 não encontrado");
-	        }
-	    }
-
-	    if (idCupom2 != null) {
-	        Optional<Cupom> cupom2 = cupomRepository.findById(idCupom2);
-	        if (cupom2.isPresent()) {
-	            valorDoCupom = valorDoCupom.add(cupom2.get().getValor());
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cupom 2 não encontrado");
-	        }
-	    }
-
-	    mudancaStatusPagamento(pagamento, valorDoCartao, valorDoCupom, idCupom1, idCupom2);
-	    verificaNecessidadeNovoCupom(valorDoCupom, pagamento);
-	}
-	
-	private void desabilitaCupons(String idCupom1, String idCupom2) {
-        
-		if(idCupom1 != null) {
-        	Optional<Cupom> cupom1 = cupomRepository.findById(idCupom1);
-            if(cupom1.isPresent()) {
-            	cupom1.get().setStatus(false);
-            }
-        }
-		
-        if(idCupom2 != null) {
-        	Optional<Cupom> cupom2 = cupomRepository.findById(idCupom2);
-            if(cupom2.isPresent()) {
-            	cupom2.get().setStatus(false);
-            }
-        }   
-	}
-	
-	private void mudancaStatusPagamento(Pagamento pagamento, BigDecimal valorDoCartao, BigDecimal valorDoCupom, String idCupom1, String idCupom2) {
-		BigDecimal somaDosMetodosPagamento;
-		somaDosMetodosPagamento = valorDoCartao.add(valorDoCupom);
-	    if (somaDosMetodosPagamento.compareTo(pagamento.getValorTotal()) >= 0) {
-		    desabilitaCupons(idCupom1, idCupom2);
-	    	pagamento.setStatusCompra(StatusCompra.APROVADO);
-	        pagamentoRepository.save(pagamento);
-	        pagamentoRepository.flush();
-	        
-	    } else {
-	        pagamento.setStatusCompra(StatusCompra.REPROVADO);
-	        pagamentoRepository.save(pagamento);
-	        pagamentoRepository.flush();
-	    }
-	}
-
-	private void verificaNecessidadeNovoCupom(BigDecimal valorDoCupom, Pagamento pagamento) {
-	    if (valorDoCupom.compareTo(pagamento.getValorTotal()) > 0) {
-	        BigDecimal valorNovoCupom = valorDoCupom.subtract(pagamento.getValorTotal());
-	        
-	        Cliente cliente = pagamento.getPedidos().get(0).getCliente();
-	        String id = UUID.randomUUID().toString();
-	        Cupom cupom = new Cupom(id, TipoCupom.PROMOCIONAL, valorNovoCupom, true, cliente);
-	        cupomRepository.save(cupom);
-	    }
-	}
-
-	private void checarQuantidadeCartoesPermitida(BigDecimal valorTotalPedido, List<Cartao> cartoes, Long cartao1, Long cartao2) {
-		BigDecimal saldoCartao1 = BigDecimal.ZERO;
-		BigDecimal saldoCartao2 = BigDecimal.ZERO;
-
-		if(cartoes.size() == 2) {
-			if(cartao1 != null) {
-				Optional<CartaoFake> card1 = fakeRepository.findById(cartao1);
-				if(card1.isPresent()) {
-					saldoCartao1 = saldoCartao1.add(card1.get().getSaldoDisponivel()); 
-				}
-			}
-			
-			if(cartao2 != null) {
-				Optional<CartaoFake> card2 = fakeRepository.findById(cartao2);
-				if(card2.isPresent()) {
-					saldoCartao2 = saldoCartao2.add(card2.get().getSaldoDisponivel()); 
-				}
-			}
-			
-			if(saldoCartao1.compareTo(BigDecimal.TEN) < 0 && saldoCartao2.compareTo(BigDecimal.TEN) < 0) {
-				throw new ValidacaoPagamentoServiceException("Não se pode usar dois cartões e o valor a ser pago com os"
-											+ " dois cartões ser menor que 10 reais em cada cartão");	
-			}
-		}
-	}
-
-	private void baixaNoEstoque(List<Pedido> pedidos) {
-	    
-	    for (Pedido pedido : pedidos) {
-	        for (Item item : pedido.getItens()) {
-	            Long idDoLivro = item.getLivro().getId();
-	            int quantidadeRequeridaNoPedido = item.getQuantidade();
-	            
-	            List<Estoque> estoques = estoqueRepository.findByLivroId(idDoLivro);
-	            
-	            for (Estoque estoque : estoques) {
-	                if (quantidadeRequeridaNoPedido <= 0) {
-	                    break; 
-	                }
-	                
-	                if (estoque.getQuantidade() <= quantidadeRequeridaNoPedido) {
-
-	                	quantidadeRequeridaNoPedido -= estoque.getQuantidade();
-	                    estoque.setQuantidade(0); 
-	                } else {
-
-	                	estoque.setQuantidade(estoque.getQuantidade() - quantidadeRequeridaNoPedido);
-	                    quantidadeRequeridaNoPedido = 0; 
-	                }
-	                
-	                estoqueRepository.save(estoque); 
-	            }
-
-	            if (quantidadeRequeridaNoPedido > 0) {
-	                throw new ValidacaoPagamentoServiceException("Estoque insuficiente para o livro ID: " + idDoLivro);
-	            }
-	        }
-	    }	    
-	    
-	    verificaSeLivroConstaEmEstoque(pedidos);
-	}
-	
-	private void verificaSeLivroConstaEmEstoque(List<Pedido> pedidos) {
-		
-		 for (Pedido pedido : pedidos) {
-		        for (Item item : pedido.getItens()) {
-		            Long idDoLivro = item.getLivro().getId();
-		            
-		            List<Estoque> estoques = estoqueRepository.findByLivroId(idDoLivro);
-		            for(Estoque estoque : estoques) {
-		            	int quantidade =+ estoque.getQuantidade();
-		            	 if(quantidade == 0) {
-		            		 estoque.getLivro().setAtivo(false);
-		            	 }
-		            }
-		        }
-		 }   
-	}
-
-	private void associarPagamentoAPedidos(Pagamento pagamento, List<Pedido> pedidos) {
-		if(pagamento.getStatusCompra() == StatusCompra.APROVADO) {
-			
-			for (Pedido pedido : pedidos) {
-				pedido.setPagamento(pagamento);
-				pedido.setPago(true);
-				pedido.setStatusPedido(StatusPedido.PAGO);
-				pedidoRepository.save(pedido);
-			}
-		    pedidoRepository.flush();
-		}
-	}
-
-	private List<Cupom> verificaInformacoesSobreCupom(String idCupom1, String idCupom2) {
-
-		List<Cupom> cupons = new ArrayList<>();
-		if(idCupom1 != null) {
-			Optional<Cupom> cupom1 = cupomRepository.findById(idCupom1);
-			if(cupom1.isPresent()) {
-				cupons.add(cupom1.get());
-			}
-			else {
-				throw new ValidacaoPagamentoServiceException("Cupom 1 não encontrado");
-			}
-		}
-		
-		if(idCupom2 != null) {
-			Optional<Cupom> cupom2 = cupomRepository.findById(idCupom2);
-			if(cupom2.isPresent()) {
-				cupons.add(cupom2.get());
-			}
-			else {
-				throw new ValidacaoPagamentoServiceException("Cupom 2 não encontrado");
-			}
-		}
-		
-		return cupons;
-	}
-
-	private List<Cartao> verificaInformacoesSobreCartao(Long idCartao1, Long idCartao2) {
-		List<Cartao> cartoes = new ArrayList<>();
-
-	    if (idCartao1 != null) {
-	        Optional<Cartao> cartao1 = cartaoRepository.findById(idCartao1);
-	        if (cartao1.isPresent()) {
-	            cartoes.add(cartao1.get());
-
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cartão 1 não encontrado.");
-	        }
-	    }
-
-	    if (idCartao2 != null) {
-	    	Optional<Cartao> cartao2 = cartaoRepository.findById(idCartao2);
-	        if (cartao2.isPresent()) {
-	            cartoes.add(cartao2.get());
-
-	        } else {
-	            throw new ValidacaoPagamentoServiceException("Cartão 2 não encontrado.");
-	        }
-	    }
-	    
-	    return cartoes;
-	}
-
-
-	private List<Pedido> listaPedidos(Long clienteId) {
-		List<Pedido> pedidos = pedidoRepository.findByClienteId(clienteId);
-		List<Pedido> pedidosNaoPagos = new ArrayList<>();
-		for(Pedido pedido : pedidos) {
-			if(!pedido.isPago()) {
-				pedido.modificarStatusEntrega(StatusEntrega.EM_SEPARACAO);
-				pedidosNaoPagos.add(pedido);				
-			}	
-		}
-		
-	    if (pedidosNaoPagos.isEmpty()) {
-	        throw new ValidacaoPagamentoServiceException("Nenhum pedido não pago encontrado para o cliente com ID " + clienteId);
-	    }
-		
-		return pedidosNaoPagos;
-	}
-
-	private Entrega verificarExistenciaEntrega() {
-		Entrega entrega = entregaRepository.findByPrincipalTrue();
-		if(entrega == null) {
-			throw new ValidacaoPagamentoServiceException("Entrega principal não encontrada");
-		}
-		return entrega;
-	}
-
-	private Cobranca verificarExistenciaCobranca() {
-		Cobranca cobranca = cobrancaRepository.findByPrincipalTrue();
-		if(cobranca == null) {
-			throw new ValidacaoPagamentoServiceException("Entrega principal não encontrada");
-		}
-		return cobranca;
-	}
-
-	private BigDecimal calcularValorTotalDosPedidos(Long clienteId) {
-		return pedidoRepository.findByClienteIdAndPagoFalse(clienteId).stream()
-				.map(Pedido::atualizarValorTotal)
-				.reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 }

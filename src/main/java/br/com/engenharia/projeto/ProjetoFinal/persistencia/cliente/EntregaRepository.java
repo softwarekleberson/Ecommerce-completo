@@ -1,10 +1,13 @@
 package br.com.engenharia.projeto.ProjetoFinal.persistencia.cliente;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import br.com.engenharia.projeto.ProjetoFinal.entidades.endereco.Entrega;
 import jakarta.transaction.Transactional;
@@ -32,5 +35,6 @@ public interface EntregaRepository extends JpaRepository<Entrega, Long>{
     @Query("UPDATE Entrega e SET e.principal = true WHERE e.id = :entregaId")
     void updateEntregaPrincipal(Long entregaId);
 
-	Entrega findByPrincipalTrue();
+    @Query("SELECT e FROM Entrega e WHERE e.cliente.id = :idCliente AND e.principal = true AND e.ativo = true")
+    Optional<Entrega> findEntregaPrincipalByClienteId(@Param("idCliente") Long idCliente);
 }

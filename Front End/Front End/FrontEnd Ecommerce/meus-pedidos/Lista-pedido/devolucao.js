@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
-    const fetchOrders = async (orderId) => {
+    const fetchOrders = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/pedidos/pagos/${orderId}`);
+            const response = await fetch(`http://localhost:8080/cliente/pedidos/pagos`);
             if (!response.ok) {
                 throw new Error('Erro ao buscar o pedido');
             }
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const urlParams = new URLSearchParams(window.location.search);
                         const clienteId = urlParams.get('clienteId') || 1;
 
-                        const url = `http://localhost:8080/devolucoes/${clienteId}`;
+                        const url = `http://localhost:8080/cliente/devolucoes`;
 
                         const requestBody = {
                             codigoPedido: codigoPedido
@@ -98,12 +98,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderId = urlParams.get('clienteId') || 1;
-
-    if (orderId) {
-        fetchOrders(orderId);
-    } else {
-        console.error('ID do pedido não encontrado na URL');
-    }
 });

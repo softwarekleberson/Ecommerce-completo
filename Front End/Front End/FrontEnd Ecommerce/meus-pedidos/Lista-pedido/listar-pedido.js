@@ -31,12 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
-    const fetchOrders = async (orderId) => {
+    const fetchOrders = async () => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert("Usuário não autenticado. Faça login novamente.");
+            window.location.href = "login-cliente.html"
+            return;
+        }
+
         try {
-            const response = await fetch(`http://localhost:8080/pedidos/pagos/${orderId}`);
+            const response = await fetch(`http://localhost:8080/cliente/pedidos/pagos`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            
             if (!response.ok) {
                 throw new Error('Erro ao buscar o pedido');
             }
+
             const data = await response.json();
             const orders = data.content;
 
@@ -50,13 +65,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderId = urlParams.get('clienteId') || 1;
-
-    if (orderId) {
-        console.log('Order ID:', orderId);
-        fetchOrders(orderId);
-    } else {
-        console.error('ID do pedido não encontrado na URL');
-    }
+    fetchOrders();
 });

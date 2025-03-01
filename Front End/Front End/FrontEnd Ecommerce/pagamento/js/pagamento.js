@@ -1,64 +1,80 @@
-const baseURL = "http://localhost:8080/pagamentos";
-const pagamentoId = 1;  
-const postUrl = `${baseURL}/${pagamentoId}`;
+const baseURL = "http://localhost:8080/cliente/pagamentos";
+const postUrl = `${baseURL}`;
+
+document.getElementById("finalizar").addEventListener("click", async (event) => {
+    event.preventDefault();
+    await enviarPagamento();
+});
 
 async function enviarPagamento() {
-    const salvarCartao = document.getElementById("salvar").checked;
-    const cupom1 = document.getElementById("cupom1").value;
-    const cupom2 = document.getElementById("cupom2").value;
-
-    const idCartao1Element = document.getElementById("idCartao1");
-    const idCartao1 = idCartao1Element ? idCartao1Element.textContent.replace('id cartao 1 = ', '').trim() : null;
-
-    // Verificação para garantir que pelo menos um método de pagamento foi selecionado
-    if (!idCartao1 && !cupom1 && !cupom2) {
-        alert("Por favor, forneça pelo menos um método de pagamento: cartão, cupom ou ambos.");
-        return;
-    }
-
-    // Criação do objeto com os dados do pagamento
-    const dadosPagamento = {
-        salvarCartao: salvarCartao
-    };
-
-    if (idCartao1) {
-        dadosPagamento.idCartao1 = parseInt(idCartao1);
-    }
-
-    if (cupom1) {
-        dadosPagamento.cupom1 = cupom1;
-    }
-
-    if (cupom2) {
-        dadosPagamento.cupom2 = cupom2;
-    }
-
     try {
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            alert("Usuário não autenticado. Faça login novamente.");
+            return;
+        }
+
+        const salvarCartao = document.getElementById("salvar").checked;
+        const cupom1 = sanitizeInput(document.getElementById("cupom1")?.value);
+        const cupom2 = sanitizeInput(document.getElementById("cupom2")?.value);
+
+        const idCartao1Element = document.getElementById("idCartao1");
+        const idCartao1 = idCartao1Element
+            ? sanitizeInput(idCartao1Element.textContent.replace("id cartao 1 = ", "").trim())
+            : null;
+
+        if (!idCartao1 && !cupom1 && !cupom2) {
+            alert("Por favor, forneça pelo menos um método de pagamento: cartão, cupom ou ambos.");
+            return;
+        }
+
+        const dadosPagamento = { salvarCartao };
+
+        if (idCartao1) {
+            dadosPagamento.idCartao1 = parseInt(idCartao1);
+        }
+        if (cupom1) {
+            dadosPagamento.cupom1 = cupom1;
+        }
+        if (cupom2) {
+            dadosPagamento.cupom2 = cupom2;
+        }
+
+        console.log("Enviando dados do pagamento:", JSON.stringify(dadosPagamento, null, 2));
+
         const response = await fetch(postUrl, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
             },
-            body: JSON.stringify(dadosPagamento)
+            body: JSON.stringify(dadosPagamento),
         });
 
-        if (response.ok) {
-            alert("Pagamento enviado com sucesso!");
-            console.log("Pagamento enviado com sucesso");
-            window.location.reload();
-        } else {
-            // Captura a mensagem de erro personalizada do backend
-            const errorData = await response.json();
-            alert(`Erro ao processar o pagamento: ${errorData.message || "Pagamento recusado. Tente novamente."}`);
-            console.error("Erro ao processar o pagamento:", errorData);
+        const responseText = await response.text();
+        console.log("Resposta bruta do servidor:", responseText);
+
+        let responseData;
+        try {
+            responseData = JSON.parse(responseText); 
+        } catch (error) {
+            responseData = { message: responseText }; 
         }
+
+        if (!response.ok) {
+            throw new Error(responseData.message || "Pagamento recusado. Tente novamente.");
+        }
+
+        alert("Pagamento enviado com sucesso!");
+        console.log("Pagamento realizado:", responseData);
+        window.location.reload();
     } catch (error) {
-        alert("Erro na requisição: " + error.message);
         console.error("Erro na requisição:", error);
+        alert("Erro na requisição: " + error.message);
     }
 }
 
-document.getElementById("finalizar").addEventListener("click", (event) => {
-    event.preventDefault();  
-    enviarPagamento();       
-});
+function sanitizeInput(value) {
+    return value ? value.replace(/["\\]/g, "") : "";
+}

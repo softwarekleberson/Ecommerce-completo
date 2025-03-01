@@ -6,93 +6,103 @@ document.addEventListener('DOMContentLoaded', function () {
     const addCardBtn = document.getElementById("add-card-btn");
     const cardList = document.getElementById('cartao');
 
-    function getClienteIdFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('idCliente') || 1;
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        alert("Usuário não autenticado! Redirecionando para login...");
+        window.location.href = "login-cliente.html";
     }
 
-    function carregarEndereco(idCliente) {
-        fetch(`http://localhost:8080/endereco/entrega/${idCliente}`)
-            .then(response => response.json())
+    function fetchWithAuth(url, options = {}) {
+        return fetch(url, {
+            ...options,
+            headers: {
+                ...options.headers,
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.status === 401) {
+                alert("Sessão expirada! Faça login novamente.");
+                localStorage.removeItem("jwtToken");
+                window.location.href = "/login-cliente.html";
+            }
+            return response.json();
+        })
+        .catch(error => console.error('Erro:', error));
+    }
+
+    function carregarEndereco() {
+        fetchWithAuth(`http://localhost:8080/cliente/entregas`)
             .then(data => {
                 if (data.hasOwnProperty('content') && Array.isArray(data.content)) {
-                    const entrega = document.getElementById('entrega'); 
-                    entrega.innerHTML = ''; 
-    
+                    const entrega = document.getElementById('entrega');
+                    entrega.innerHTML = '';
+
                     const enderecoPrincipal = data.content.find(endereco => endereco.principal);
-    
+
                     if (enderecoPrincipal) {
                         const div = document.createElement('section');
                         div.classList.add('card');
                         div.innerHTML = `
                             <h3>1 Endereço entrega principal</h3>
-                            <p id="logradouro"> ${enderecoPrincipal.logradouro}</p>
-                            <p id="tipoResidencia"> ${enderecoPrincipal.tipoResidencia} - ${enderecoPrincipal.numero} ${enderecoPrincipal.observacao}</p>
-                            <p id="estado"> ${enderecoPrincipal.cidade}, ${enderecoPrincipal.estado} ${enderecoPrincipal.cep}</p>
-                            <p id="pais"> ${enderecoPrincipal.pais}</p>                           
+                            <p>${enderecoPrincipal.logradouro}</p>
+                            <p>${enderecoPrincipal.tipoResidencia} - ${enderecoPrincipal.numero} ${enderecoPrincipal.observacao}</p>
+                            <p>${enderecoPrincipal.cidade}, ${enderecoPrincipal.estado} ${enderecoPrincipal.cep}</p>
+                            <p>${enderecoPrincipal.pais}</p>                           
                         `;
-                        entrega.appendChild(div); 
-                        addDeliveryBtn.style.display = 'block'; 
+                        entrega.appendChild(div);
+                        addDeliveryBtn.style.display = 'block';
 
                     } else {
-                        deliveryForm.classList.remove("hidden"); 
-                        addDeliveryBtn.style.display = 'none'; 
+                        deliveryForm.classList.remove("hidden");
+                        addDeliveryBtn.style.display = 'none';
                     }
-    
+
+                    setTimeout(() => location.reload(), 2000);
                 } else {
                     console.error('Os dados retornados não estão no formato esperado.');
                 }
-            })
-            .catch(error => {
-                console.error(error);
-                deliveryForm.classList.remove("hidden"); 
-                addDeliveryBtn.style.display = 'none'; 
             });
     }
-    
-    function carregarCobranca(idCliente) {
-        fetch(`http://localhost:8080/endereco/cobranca/${idCliente}`)
-            .then(response => response.json())
+
+    function carregarCobranca() {
+        fetchWithAuth(`http://localhost:8080/cliente/cobrancas`)
             .then(data => {
                 if (data.hasOwnProperty('content') && Array.isArray(data.content)) {
-                    const cobranca = document.getElementById('cobranca'); 
-                    cobranca.innerHTML = ''; 
-    
+                    const cobranca = document.getElementById('cobranca');
+                    cobranca.innerHTML = '';
+
                     const enderecoPrincipal = data.content.find(endereco => endereco.principal);
-    
+
                     if (enderecoPrincipal) {
                         const div = document.createElement('section');
                         div.classList.add('card');
                         div.innerHTML = `
                             <h3>2 Endereço cobrança principal</h3>
-                            <p id="logradouro"> ${enderecoPrincipal.logradouro}</p>
-                            <p id="tipoResidencia"> ${enderecoPrincipal.tipoResidencia} - ${enderecoPrincipal.numero} ${enderecoPrincipal.observacao}</p>
-                            <p id="estado"> ${enderecoPrincipal.cidade}, ${enderecoPrincipal.estado} ${enderecoPrincipal.cep}</p>
-                            <p id="pais"> ${enderecoPrincipal.pais}</p>                           
+                            <p>${enderecoPrincipal.logradouro}</p>
+                            <p>${enderecoPrincipal.tipoResidencia} - ${enderecoPrincipal.numero} ${enderecoPrincipal.observacao}</p>
+                            <p>${enderecoPrincipal.cidade}, ${enderecoPrincipal.estado} ${enderecoPrincipal.cep}</p>
+                            <p>${enderecoPrincipal.pais}</p>                           
                         `;
-
-                        cobranca.appendChild(div); 
-                        addDeliveryBtn.style.display = 'block'; 
+                        cobranca.appendChild(div);
+                        addDeliveryBtn.style.display = 'block';
 
                     } else {
-                        deliveryForm.classList.remove("hidden"); 
-                        addDeliveryBtn.style.display = 'none'; 
+                        deliveryForm.classList.remove("hidden");
+                        addDeliveryBtn.style.display = 'none';
                     }
-    
+
+                    setTimeout(() => location.reload(), 2000);
                 } else {
                     console.error('Os dados retornados não estão no formato esperado.');
                 }
-            })
-            .catch(error => {
-                console.error(error);
-                deliveryForm.classList.remove("hidden"); 
-                addDeliveryBtn.style.display = 'none'; 
             });
     }
-       
-    function carregarCartao(idCliente) {
-        fetch(`http://localhost:8080/cartoes/${idCliente}`)
-            .then(response => response.json())
+
+    function carregarCartao() {
+        fetchWithAuth(`http://localhost:8080/cliente/cartoes`)
             .then(data => {
                 if (data.hasOwnProperty('content') && Array.isArray(data.content)) {
                     cardList.innerHTML = '';
@@ -105,35 +115,27 @@ document.addEventListener('DOMContentLoaded', function () {
                         div.innerHTML = `
                             <h3>3 Método de pagamento</h3>
                             <p id="idCartao1" hidden>id cartao 1 = ${cartaoPrincipal.id}</p>
-                            <p id="bandeira">Pagar com ${cartaoPrincipal.bandeira} </p>
-                            <p id="nomeImpresso"> ${cartaoPrincipal.nomeImpresso}</p>
-                            <p id="codigo">Código: ${cartaoPrincipal.codigo}</p>
+                            <p>Pagar com ${cartaoPrincipal.bandeira} </p>
+                            <p>${cartaoPrincipal.nomeImpresso}</p>
+                            <p>Código: ${cartaoPrincipal.codigo}</p>
                             <p>Escolha em quantas vezes parcelar</p>
                         `;
                         cardList.appendChild(div);
-                        addCardBtn.style.display = 'block'; 
+                        addCardBtn.style.display = 'block';
 
                     } else {
-                        cardForm.classList.remove("hidden"); 
-                        addCardBtn.style.display = 'none'; 
+                        cardForm.classList.remove("hidden");
+                        addCardBtn.style.display = 'none';
                     }
+
+                    setTimeout(() => location.reload(), 2000);
                 } else {
                     console.error('Os dados retornados não estão no formato esperado.');
                 }
-            })
-            .catch(error => {
-                console.error('Erro ao carregar usuários:', error);
-                cardForm.classList.remove("hidden"); 
-                addCardBtn.style.display = 'none'; 
             });
     }
 
-    const idCliente = getClienteIdFromURL();
-    if (idCliente) {
-        carregarEndereco(idCliente);
-        carregarCobranca(idCliente)
-        carregarCartao(idCliente);
-    } else {
-        console.error('ID do cliente não encontrado na URL.');
-    }
+    carregarEndereco();
+    carregarCobranca();
+    carregarCartao();
 });
