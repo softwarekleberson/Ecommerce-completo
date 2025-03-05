@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const ordersContainer = document.getElementById('orders-container');
 
     const createOrderHTML = (order) => {
@@ -8,46 +8,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="informacoes-pedito">
                     <p>Pedido realizado</p>
                     <p>Total</p>
-                    <p>Entregue</p>
+                    <p>Pedido troca</p>
                     <p>Nº pedido</p>
                 </div>
                 <div class="informacoes-pedito-valores">
                     <p>${order.dataPedido}</p>
                     <p>R$ ${order.subtotal}</p>
-                    <p>Pedido ID: ${order.idPedido}</p>
-                    <p>${order.codigoPedido}</p>
+                    <p>
+                        ${order.trocaDevolucao === "DEVOLUCAO_NAO_PEDIDA"
+                ? "Devolução não solicitada"
+                : order.trocaDevolucao === "DEVOLUCAO_PEDIDO"
+                    ? "Troca solicitada"
+                    : order.trocaDevolucao}
+                    </p>
+                    <p class="codigo-pedido">${order.codigoPedido}</p>
                 </div>
             </div>
             <div>
-                <p class="status">Status: ${order.status}</p>
+                <p class="data-entrega">
+                    Pagamento: ${order.status === "EM_PROCESSAMENTO" ? "Em processamento" : order.status}
+                </p>
                 <div class="imagem-e-descricao">
-                <img src="${order.primeiraImagem}" alt="">
-                <p class="data-entrega">Entregue ${order.entregue}</p>
-                <p class="nome-produto">${order.nome}</p>
-                <p class="quantidade-produto">${order.quantidade}</p>
-                <button class="botao-devolucao">Devolução</button>
+                    <img src="${order.primeiraImagem}" alt="">
+                    <p class="data-entrega">Entregue ${order.entregue}</p>
+                    <p class="nome-produto">${order.nome}</p>
+                    <p class="quantidade-produto">${order.quantidade}</p>
+                    <button class="botao-devolucao">Troca</button>
+                </div>
             </div>
         </div>
         `;
     };
 
     const fetchOrders = async () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            alert("Usuário não autenticado. Faça login novamente.");
-            window.location.href = "login-cliente.html"
-            return;
-        }
-
         try {
+            const token = localStorage.getItem('token'); // Pegando o token do localStorage
+            if (!token) {
+                console.error("Token não encontrado!");
+                return;
+            }
+
             const response = await fetch(`http://localhost:8080/cliente/pedidos/pagos`, {
                 method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}` // Incluindo o token no cabeçalho
                 }
             });
-            
+
             if (!response.ok) {
                 throw new Error('Erro ao buscar o pedido');
             }
@@ -60,10 +67,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 const orderHTML = createOrderHTML(order);
                 ordersContainer.innerHTML += orderHTML;
             });
+
+            document.querySelectorAll('.botao-devolucao').forEach((button) => {
+                button.addEventListener('click', async () => {
+                    const confirmDevolucao = confirm('Você tem certeza que deseja solicitar a troca deste pedido?');
+                    if (confirmDevolucao) {
+                        const orderElement = button.closest('.caixa-principal');
+                        const codigoPedido = orderElement.querySelector('.codigo-pedido').textContent;
+
+                        const url = `http://localhost:8080/cliente/devolucoes`;
+
+                        const requestBody = {
+                            codigoPedido: codigoPedido
+                        };
+
+                        try {
+                            const postResponse = await fetch(url, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}` // Incluindo o token no cabeçalho
+                                },
+                                body: JSON.stringify(requestBody)
+                            });
+
+                            if (postResponse.ok) {
+                                alert('Devolução solicitada com sucesso.');
+                            } else {
+                                console.error('Erro ao solicitar troca:', postResponse.statusText);
+                            }
+                        } catch (error) {
+                            console.error('Erro ao enviar a requisição de troca:', error);
+                        }
+                    }
+                });
+            });
+
         } catch (error) {
             console.error('Erro ao buscar o pedido:', error);
         }
     };
 
-    fetchOrders();
+    await fetchOrders(); 
 });

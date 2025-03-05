@@ -27,7 +27,8 @@ public class AdministradorDao implements RepositorioDeAdministrador{
 	
 	@Override
 	public Administrador pegaAdministradorAleatorio() {
-		return repository.findRandomAdministrador();
+		System.out.println("qqqqqqqqqqqq");
+		return repository.findAdminRand();
 	}
 
 	@Override

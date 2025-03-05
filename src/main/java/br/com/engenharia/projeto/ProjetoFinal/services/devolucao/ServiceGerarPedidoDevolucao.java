@@ -25,6 +25,7 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
+import br.com.engenharia.projeto.ProjetoFinal.persistencia.user.UserRepository;
 import jakarta.validation.Valid;
 
 @Service
@@ -50,7 +51,7 @@ public class ServiceGerarPedidoDevolucao {
 		
 	public DadosDetalhamentoDevolucao pedidoDevolucao(@Valid DadosCadastroDevolucao dados, Long idCliente) {
 		
-		var pedido = carregaPedidoPeloCodigoPedido(dados);
+		var pedido = carregaPedidoPeloCodigoPedido(dados);		
 		pedido.devolucaoPedida(DevolucaoFoiPedidaOUNAO.DEVOLUCAO_PEDIDO);
 		
 		if(pedido.getStatusPedido() != StatusPedido.PAGO) {
@@ -62,17 +63,22 @@ public class ServiceGerarPedidoDevolucao {
 		}
 		
 		repositorioDePedido.salvar(pedido);
-
 		validacoes.forEach(v ->v.processar(dados));
 		
 		var cliente = carregaClientePeloId(idCliente);
 		var admAleatorio = escolheAdmAleatoriamente();
 		String codigoPedido = pedido.getCodigoPedido();
 		String criaCodigoDevolucao = UUID.randomUUID().toString();
-				
-		var devolucao = new Devolucao(null, criaCodigoDevolucao,LocalDate.now(),
-									  null, cliente, pedido, codigoPedido,
-									  admAleatorio, EsperandoDevolucaoOuRecebido.ESPERANDO_DEVOLUCAO,
+		
+		var devolucao = new Devolucao(null,
+									  criaCodigoDevolucao,
+									  LocalDate.now(),
+									  null,
+									  cliente,
+									  pedido,
+									  codigoPedido,
+									  admAleatorio,
+									  EsperandoDevolucaoOuRecebido.ESPERANDO_DEVOLUCAO,
 									  AnalisePedidoDevolucaoAceitoOuRecusa.EM_ANALISE
 									  );
 		

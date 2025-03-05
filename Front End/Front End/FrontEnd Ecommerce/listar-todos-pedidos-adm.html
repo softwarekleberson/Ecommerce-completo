@@ -38,48 +38,7 @@
         <p>Total de Pedidos: 0</p>
     </div>
 
-    <script>
-        // Função para buscar dados dos pedidos
-        async function fetchPedidos() {
-            try {
-                const response = await fetch('http://localhost:8080/administrador/listar-pedidos');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                renderPedidos(data);
-            } catch (error) {
-                console.error('Houve um problema com a requisição:', error);
-            }
-        }
-
-        // Função para renderizar os pedidos na tabela
-        function renderPedidos(data) {
-            const tbody = document.querySelector('#pedidos-table tbody');
-            const totalPedidos = document.getElementById('total-pedidos').querySelector('p');
-            tbody.innerHTML = ''; // Limpa o corpo da tabela antes de adicionar os novos pedidos
-
-            data.content.forEach(pedido => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${pedido.codigoPedido}</td>
-                    <td>${pedido.nome}</td>
-                    <td>${pedido.quantidade}</td>
-                    <td>${pedido.dataPedido}</td>
-                    <td class="status">${pedido.status}</td>
-                    <td>R$ ${pedido.precoUnitario.toFixed(2)}</td>
-                    <td>R$ ${pedido.subtotal.toFixed(2)}</td>
-                `;
-                tbody.appendChild(tr);
-            });
-
-            // Atualiza o total de pedidos
-            totalPedidos.textContent = `Total de Pedidos: ${data.totalElements}`;
-        }
-
-        // Chama a função para buscar os pedidos ao carregar a página
-        window.onload = fetchPedidos;
-    </script>
+    <script src="adm-lista-pedidos/lista-pedidos-pagos.js"></script>
 
 </body>
 

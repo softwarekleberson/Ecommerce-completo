@@ -25,7 +25,7 @@ public class DevolucaoController {
 	
 	@PostMapping
 	public ResponseEntity cadastrarPedidoDevolucao(Authentication authentication, @RequestBody @Valid DadosCadastroDevolucao dados, UriComponentsBuilder uriBuilder) {
-		UserEntity user = (UserEntity) authentication.getPrincipal(); // Pega o usuário autenticado
+		UserEntity user = (UserEntity) authentication.getPrincipal(); 
 		Long id = user.getId();
 		
 		var dto = service.pedidoDevolucao(dados, id);

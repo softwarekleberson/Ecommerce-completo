@@ -11,10 +11,6 @@ public interface AdministradorRepository extends JpaRepository<Administrador, Lo
 
 	Optional<Administrador> findByEmail(String email);
 
-    @Query
-    (value = "SELECT * FROM Administradores"
-    + " ORDER BY RAND() LIMIT 1",
-    nativeQuery = true)
-	Administrador findRandomAdministrador();
-
+	@Query(value = "SELECT * FROM administradores a JOIN user_entity u ON a.id = u.id WHERE u.roles = 'ADMIN' ORDER BY RAND() LIMIT 1", nativeQuery = true)
+	Administrador findAdminRand();
 }

@@ -15,15 +15,15 @@ public record DadosDetalhamentoCobranca(
 
 	public DadosDetalhamentoCobranca(Cobranca cobranca) {
 		this(cobranca.getId(), cobranca.getLogradouro(),
-				cobranca.getNumero(),
-				cobranca.getBairro(),
-				cobranca.getCep().getCep(),
-				cobranca.getObservacao() != null ? cobranca.getObservacao() : "",
-				cobranca.getTipoLogradouro().getTipoLogradouro(),
-				cobranca.getTipoResidencia().getTipoResidencia(),
-				cobranca.getCidade().getCidade(),
-				cobranca.getCidade().getEstado().getEstado(), 
-				cobranca.getCidade().getEstado().getPais().getPais(),
-				cobranca.isPrincipal(), cobranca.getReceptor());
+			 cobranca.getNumero(),
+			 cobranca.getBairro(),
+			 cobranca.getCep().getCep(),
+			 cobranca.getObservacao() != null ? cobranca.getObservacao() : "",
+			 cobranca.getTipoLogradouro().getTipoLogradouro(),
+			 cobranca.getTipoResidencia().getTipoResidencia(),
+			 cobranca.getCidade().getCidade(),
+			 cobranca.getCidade().getEstado().getEstado(), 
+			 cobranca.getCidade().getEstado().getPais().getPais(),
+		   	 cobranca.isPrincipal(), cobranca.getReceptor());
 	}
 }

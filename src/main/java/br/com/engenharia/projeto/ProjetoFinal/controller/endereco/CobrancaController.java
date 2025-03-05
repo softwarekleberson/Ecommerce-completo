@@ -41,9 +41,7 @@ public class CobrancaController {
 		cobranca.setCliente(id);
 
 		repositorioDeCobranca.salvarNovaCobranca(cobranca);
-		var uri = uriBuilder.path("/cobrancas/{id}").buildAndExpand(cobranca.getId()).toUri();
-
-		return ResponseEntity.created(uri).body(cobranca);
+		return ResponseEntity.ok(cobranca);
 	}
 	
 	@GetMapping

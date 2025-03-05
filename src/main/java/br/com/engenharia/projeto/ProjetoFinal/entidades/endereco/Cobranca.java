@@ -1,10 +1,7 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
-import java.util.stream.Stream;
-
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
-import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -49,8 +46,4 @@ public class Cobranca extends Endereco{
 		this.ativo = ativo;
 	}
 
-	public Stream<Pedido> stream() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

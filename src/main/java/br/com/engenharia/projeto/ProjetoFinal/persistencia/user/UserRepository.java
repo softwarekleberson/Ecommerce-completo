@@ -9,4 +9,5 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.user.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Long>{
 
 	Optional<UserEntity> findByEmail(String email);
+
 }

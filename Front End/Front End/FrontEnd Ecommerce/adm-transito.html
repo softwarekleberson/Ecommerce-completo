@@ -17,41 +17,6 @@
         <div id="alert" class="alert"></div>
     </form>
 
-    <script>
-        document.getElementById('statusForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const codigoPedido = document.getElementById('codigo').value;
-            
-            const dados = {
-                codigo: codigoPedido
-            };
-
-            fetch('http://localhost:8080/administrador/status/entrega/transporte', {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dados)
-            })
-            .then(response => {
-                const alertBox = document.getElementById('alert');
-                if (response.ok) {
-                    alertBox.textContent = 'Status atualizado com sucesso!';
-                    alertBox.className = 'alert success';
-                } else {
-                    throw new Error('Erro ao enviar o pedido');
-                }
-                alertBox.style.display = 'block';
-            })
-            .catch(error => {
-                const alertBox = document.getElementById('alert');
-                alertBox.textContent = 'Ocorreu um erro ao atualizar o status.';
-                alertBox.className = 'alert error';
-                alertBox.style.display = 'block';
-                console.error('Erro:', error);
-            });
-        });
-    </script>
+   <script src="adm-transito/js/adm-transito.js"></script>
 </body>
 </html>
