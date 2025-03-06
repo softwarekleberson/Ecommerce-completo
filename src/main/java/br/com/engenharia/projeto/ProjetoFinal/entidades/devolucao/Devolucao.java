@@ -69,4 +69,5 @@ public class Devolucao {
 	public void analisePedidoDevolucao(AnalisePedidoDevolucaoAceitoOuRecusa analisePedido) {
 		this.analisePedido = analisePedido;
 	}
+	
 }
