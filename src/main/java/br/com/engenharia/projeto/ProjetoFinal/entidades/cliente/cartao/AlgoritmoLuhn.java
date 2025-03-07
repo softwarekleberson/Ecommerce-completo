@@ -2,7 +2,7 @@ package br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cartao;
 
 public class AlgoritmoLuhn {
 
-    private static final String MENSAGEM_ERRO = "O número %s é inválido.";
+    private static final String MENSAGEM_ERRO = "O número do seu cartão é inválido.";
 	
 	public static void algoritmoLuhn(String numero) {
 		
@@ -22,7 +22,7 @@ public class AlgoritmoLuhn {
 	        }
 
 	        if (sum % 10 != 0) {
-	            throw new ValidacaoCartaoException(String.format(MENSAGEM_ERRO, numero));
+	            throw new ValidacaoCartaoException(String.format(MENSAGEM_ERRO));
 	        }
 	}
 }
