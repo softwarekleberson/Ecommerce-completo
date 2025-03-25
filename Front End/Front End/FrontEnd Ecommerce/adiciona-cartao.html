@@ -10,36 +10,59 @@
 </head>
 
 <body>
-    <div class="container-imagem">
-        <form id="myForm" autocomplete="on">
-            <a href="cartoes.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
 
-            <label for="principal">Principal:</label><br>
-            <input type="checkbox" id="principal" name="principal" checked><br>
+    <form id="form" autocomplete="on">
+        <fieldset>
+            <legend>Cadastrar Novo Cartão</legend>
 
-            <label for="numeroCartao">Número do Cartão:</label><br>
-            <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Ex: 1234567899874563" required><br>
+            <div class="form-group">
+                <label for="principal">Quer Tornar Este O Cartão Principal ?</label>
+                <input type="checkbox" name="principal" id="principal" checked>
+            </div>
 
-            <label for="nomeImpresso">Nome Impresso:</label><br>
-            <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome completo" required autocomplete="name"><br>
+            <div class="form-group">
+                <label for="nomeImpresso"> Nome Impresso no Cartão</label>
+                <input type="text" name="nomeImpresso" id="nomeImpresso" placeholder="Nome Completo Impresso no Cartão"
+                required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="codigo">Código:</label><br>
-            <input type="text" id="codigo" name="codigo" placeholder="Ex: 123" required><br>
+            <div class="form-group">
+                <label for="numeroCartao"> Numero Cartão</label>
+                <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Digite os 16 números do cartão "
+                inputmode="numeric" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="dataExpiracao">Data validade</label><br>
-            <input type="date" id="dataExpiracao" name="dataExpiracao" placeholder="Data validade cartão">
+            <div class="form-group">
+                <label for="codigo"> Código</label>
+                <input type="text" name="codigo" id="codigo" placeholder="Digito Verificador" pattern="\d{3}"
+                maxlength="3" inputmode="numeric" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="bandeira">Bandeira:</label><br>
-            <select id="bandeira" name="bandeira">
-                <option value="ELO">ELO</option>
-                <option value="MASTERCARD" selected>Mastercard</option>
-                <option value="VISA">Visa</option>
-            </select><br>
+            <div class="form-group">
+                <label for="dataExpiracao"> Data Validação</label>
+                <input type="date" name="dataExpiracao" id="dataExpiracao" placeholder="Data Validade Cartão" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+            <div class="form-group">
+                <label for="bandeira">Bandeira</label>
+                <select name="bandeira" id="bandeira" required>
+                    <option value="MASTERCARD" selected>Mastercard</option>
+                    <option value="VISA">Visa</option>
+                    <option value="ELO">Elo</option>
+                </select>
+                <small class="mensagem-erro"></small>
+            </div>
 
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+        </fieldset>
+    </form>
+
+    <script src="cartoes/javascript/validacao.js"></script>
     <script src="cartoes/javascript/insert.js"></script>
 </body>
 
