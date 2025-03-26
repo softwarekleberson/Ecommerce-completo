@@ -6,36 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
     <title>Formulário de Cadastro de Estoque</title>
-    <link rel="stylesheet" href="./estoque/style/style.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
 </head>
 
 <body>
-    <form id="estoqueForm">
-        <h1>Registrar entrada no estoque</h1>
-        <label for="idLivro">ID do Livro:</label>
-        <input type="number" id="idLivro" name="idLivro" placeholder="Id do livro" required>
+    <form id="form">
 
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade" min="0" placeholder="Maior que 0" required>
+        <fildset>
+            <legend>Registrar entrada no estoque</legend>
+            <div class="form-group">
+                <label for="idLivro">ID do Livro:</label>
+                <input type="number" id="idLivro" name="idLivro" placeholder="Id do Livro" required>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="0" placeholder="Maior que 0" required>
+            </div>
+            <div class="form-group">
+                <label for="valorCusto">Valor de Custo:</label>
+                <input type="number" id="valorCusto" name="valorCusto" min="0" step="0.01" placeholder="Maior que 0"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="dataEntrada">Data de Entrada:</label>
+                <input type="date" id="dataEntrada" name="dataEntrada" required>
+            </div>
+            <div class="form-group">
+                <label for="fornecedor">Fornecedor:</label>
+                <input type="text" id="fornecedor" name="fornecedor" required>
+            </div>
+            <div class="form-group">
+                <label for="estadoProduto">Estado do Produto:</label>
+                <select id="estadoProduto" name="estadoProduto" required>
+                    <option value="NOVO">Novo</option>
+                    <option value="SEME_NOVO">Seme Novo</option>
+                    <option value="USADO">Usado</option>
+                    <option value="DANIFICADO">Danificado</option>
+                </select>
+            </div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fildset>
 
-        <label for="valorCusto">Valor de Custo:</label>
-        <input type="number" id="valorCusto" name="valorCusto" min="0" step="0.01" placeholder="Maior que 0" required>
-
-        <label for="dataEntrada">Data de Entrada:</label>
-        <input type="date" id="dataEntrada" name="dataEntrada" required>
-
-        <label for="fornecedor">Fornecedor:</label>
-        <input type="text" id="fornecedor" name="fornecedor" required>
-
-        <label for="estadoProduto">Estado do Produto:</label>
-        <select id="estadoProduto" name="estadoProduto" required>
-            <option value="NOVO">Novo</option>
-            <option value="SEME_NOVO">Seme Novo</option>
-            <option value="USADO">Usado</option>
-            <option value="DANIFICADO">Danificado</option>
-        </select>
-
-        <button type="submit">Enviar</button>
     </form>
 </body>
 <script src="estoque/post.js"></script>

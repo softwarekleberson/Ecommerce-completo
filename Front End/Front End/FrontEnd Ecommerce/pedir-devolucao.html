@@ -4,62 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Formulário de Código do Pedido</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    
 </head>
 <body>
-    <form action="/submit" method="post">
-        <label for="codigoPedido">Código do Pedido:</label>
-        <input type="text" id="codigoPedido" name="codigoPedido"  required>
-        <button type="submit">Enviar</button>
+    <form id="form">
+
+        <fildset>
+            <legend>Pedir Devolução</legend>
+            <div class="form-group">
+                <label for="codigoPedido">Código do Pedido:</label>
+                <input type="text" id="codigoPedido" name="codigoPedido"  required>
+            </div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fildset>
     </form>
 </body>
 </html>

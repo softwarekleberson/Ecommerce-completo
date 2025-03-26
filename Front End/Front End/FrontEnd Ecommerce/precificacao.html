@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="./precificacao/style/style.css">
     <title>Formulário de Precificação</title>
-    <link rel="stylesheet" href="precificacao/style/style.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
 </head>
+
 <body>
-    <form id="precificacao">
-        <h1>Registrar nova precificação</h1>
-        <label for="precificacao">Precificação:</label>
-        <input type="number" id="precificacao" name="precificacao" min="0" step="0.01" placeholder="Valor da precificação" required>
-        <button type="submit">Enviar</button>
+    <form id="id">
+
+        <fildset>
+            <legend>Registrar nova precificação</legend>
+            <div class="form-group">
+                <label for="precificacao">Precificação:</label>
+                <input type="number" id="precificacao" name="precificacao" min="0" step="0.01"
+                    placeholder="Valor da precificação" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </fildset>
     </form>
 
     <script src="precificacao/post-precificacao.js"></script>
 </body>
+
 </html>

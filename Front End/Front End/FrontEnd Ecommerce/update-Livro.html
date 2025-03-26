@@ -5,84 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="livro/style/style.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Update Livro</title>
-   
+
 </head>
 
 <body>
-    <form id="livro">
-        <h1>Update de Livro</h1>
-        <div class="form-group">
-            <div>
-                <label for="id">ID do livro:</label>
+    <form id="form">
+        <fildset>
+            <legend>Update Livro</legend>
+            <div class="form-group">
+                <label for="id">ID do Livro:</label>
                 <input type="number" id="id" name="id" placeholder="Id do livro" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="data">Data:</label>
                 <input type="date" id="data" name="data">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="preco">Preço:</label>
                 <input type="number" id="preco" name="preco" min="0" step="0.01" placeholder="R$: 0.01">
             </div>
-        </div>
-
-        <div class="form-group">
-            <div>
+            <div class="form-group">
                 <label for="titulo">Título:</label>
                 <input type="text" id="titulo" name="titulo">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="isbn">ISBN:</label>
                 <input type="text" id="isbn" name="isbn" placeholder="Formato isbn xxx-x-xx-xxxxxx-x">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="paginas">Páginas:</label>
                 <input type="number" id="paginas" name="paginas" min="0">
             </div>
-        </div>
-
-        <label for="sinopse">Sinopse:</label>
-        <textarea id="sinopse" name="sinopse"></textarea>
-
-        <div class="form-group">
-            <div>
+            <div class="form-group">
+                <label for="sinopse">Sinopse:</label>
+                <textarea id="sinopse" name="sinopse"></textarea>
+            </div>
+            <div class="form-group">
                 <label for="codigoBarra">Código de Barra:</label>
                 <input type="text" id="codigoBarra" name="codigoBarra" placeholder="xxxxxxxxxxxxx">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="altura">Altura (cm):</label>
                 <input type="number" id="altura" name="altura" min="0" step="0.01" placeholder="Menor valor 0,01">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="largura">Largura (cm):</label>
                 <input type="number" id="largura" name="largura" min="0" step="0.01" placeholder="Menor valor 0,01">
             </div>
-        </div>
-
-        <div class="form-group">
-            <div>
+            <div class="form-group">
                 <label for="peso">Peso (kg):</label>
                 <input type="number" id="peso" name="peso" min="0" step="0.01" placeholder="Menor valor 0,01">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="profundidade">Profundidade (cm):</label>
-                <input type="number" id="profundidade" name="profundidade" min="0" step="0.01" placeholder="Menor valor 0,01">
+                <input type="number" id="profundidade" name="profundidade" min="0" step="0.01"
+                    placeholder="Menor valor 0,01">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="editora">Editora:</label>
                 <input type="text" id="editora" name="editora">
             </div>
-        </div>
-
-        <div class="form-group">
-            <div>
+            <div class="form-group">
                 <label for="edicao">Edição:</label>
                 <input type="text" id="edicao" name="edicao">
             </div>
-        </div>
-        <button type="submit">Enviar</button>
+            <button type="submit">Enviar</button>
+            <button type="submit">Resetar</button>
+        </fildset>
     </form>
 </body>
 
