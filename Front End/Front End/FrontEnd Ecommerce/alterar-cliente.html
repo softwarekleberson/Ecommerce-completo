@@ -5,54 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="cadastrar/estilo/atualizar-cliente.css">
-    <title>Atualizar informações basicas cliente</title>
+    <link rel="stylesheet" href="css-global/form/style.css">
+    <title>Atualizar Cliente</title>
 </head>
 
 <body>
 
-    <div class="container-imagem">
-        <form onsubmit="enviarDados(); return false;" autocomplete="on">
-
-            <a href="contas-listas.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
-
-            <fieldset>
-                <legend>Dados Pessoais</legend>
-                <label for="genero">Gênero:</label>
+    <form id="form" autocomplete="on">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div class="form-group">
+                <label for="genero">Gênero</label>
                 <select id="genero" name="genero">
-                    <option value="MASCULINO">MASCULINO</option>
-                    <option value="FEMININO">FEMININO</option>
-                </select><br><br>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Nome completo"><br><br>
-                <label for="nascimento">Data de Nascimento:</label>
-                <input type="date" id="nascimento" name="nascimento"  ><br><br>
-            </fieldset>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                </select>
+            </div>
 
-            <fieldset>
-                <legend>Informações Contato</legend>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome Completo">
+            </div>
 
+            <div class="form-group">
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" id="nascimento" name="nascimento">
+            </div>
+        </fieldset>
+
+
+        <fildset>
+            <legend>Email</legend>
+            <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="email@gmail.com" autocomplete="email"><br><br>
-            </fieldset>
+                <input type="email" id="email" name="email" placeholder="email@gmail.com" autocomplete="email">
+            </div>
+        </fildset>
 
-            <fieldset>
-                <legend>Telefone</legend>
+        <fieldset>
+            <legend>Telefone</legend>
+
+            <div class="form-group">
                 <label for="ddd">DDD:</label>
-                <input type="text" id="ddd" name="ddd" placeholder="Ex: 11"><br><br>
+                <input type="text" id="ddd" name="ddd" placeholder="Ex: 11" inputmode="numeric">
+            </div>
+
+            <div class="form-group">
                 <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" placeholder="Ex: 123456789" autocomplete="tel"><br><br>
+                <input type="text" id="telefone" name="telefone" placeholder="Ex: 123456789" inputmode="numeric" autocomplete="tel">
+            </div>
+
+            <div class="form-group">
                 <label for="tipo">Tipo de Telefone:</label>
                 <select id="tipo" name="tipo">
                     <option value="COMERCIAL">COMERCIAL</option>
                     <option value="MOVEL">MOVEL</option>
                     <option value="FIXO">FIXO</option>
-                </select><br><br>
-            </fieldset>
+                </select>
+            </div>
 
-            <button id="enviarBtn" type="submit">Enviar</button>
-        </form>
-    </div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fieldset>
+    </form>
 
     <script src="cadastrar/javascript/updateCliente.js"></script>
 </body>

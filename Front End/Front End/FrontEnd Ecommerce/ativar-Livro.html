@@ -6,31 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
     <title>Ativar livro</title>
-    <link rel="stylesheet" href="./ativar-livro/style.css/style.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
 </head>
 
 <body>
-    <form id="ativarForm">
-        <h1>Ativar livro</h1>
-        <div class="form-group">
-            <div>
-                <label for="idLivro">ID do Livro:</label>
-                <input type="number" id="idLivro" name="idLivro" placeholder="Id do livro" required>
+    <form id="form">
+
+        <fildset>
+            <legend>Ativar Livro</legend>
+            <div class="form-group">
+                <label for="idLivro">ID do Livro</label>
+                <input type="number" id="idLivro" name="idLivro" placeholder="Id do Livro" required>
             </div>
-            <div>
-                <label for="categoria">Categoria:</label>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
                 <select id="categoria" name="categoria" required>
                     <option value="">Selecione uma categoria</option>
-                    <option value="NOSTALGICO">NOSTALGICO</option>
-                    <option value="PETICAO_PUBLICA">PETICAO PUBLICA</option>
+                    <option value="NOSTALGICO">Nostalgico</option>
+                    <option value="PETICAO_PUBLICA">Petição Pública</option>
                 </select>
             </div>
-        </div>
-
-        <label for="justificativa">Justificativa:</label>
-        <textarea id="justificativa" name="justificativa" placeholder="Qual a justificativa da retirada deste livro da home ?" required></textarea>
+            <div class="form-group">
+                <label for="justificativa">Justificativa</label>
+                <textarea id="justificativa" name="justificativa"
+                    placeholder="Qual a justificativa da Retirada deste Livro ?" required></textarea>
+            </div>
+        </fildset>
 
         <button type="submit">Enviar</button>
+        <button type="reset">Resetar</button>
     </form>
 </body>
 <script src="ativar-livro/put-ativar-livro.js"></script>

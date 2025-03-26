@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="adm-transito/style/style.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Atualizar Status de Entrega</title>
-   
+
 </head>
+
 <body>
-    <form id="statusForm">
-        <h2>Atualizar Status de Entrega -Trânsito</h2>
-        <label for="codigo">Código do Pedido:</label>
-        <input type="text" id="codigo" name="codigo" required>
-        <button type="submit">Enviar</button>
-        <div id="alert" class="alert"></div>
+    <form id="form">
+        <fieldset>
+            <legend>Atualizar Status de Entrega -Trânsito</legend>
+
+            <div class="form-group">
+                <label for="codigo">Código do Pedido:</label>
+                <input type="text" id="codigo" name="codigo" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fieldset>
     </form>
 
-   <script src="adm-transito/js/adm-transito.js"></script>
+    <script src="adm-transito/js/adm-transito.js"></script>
 </body>
+
 </html>

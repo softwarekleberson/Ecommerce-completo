@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
     <title>Formulário de Cadastro</title>
-    <link rel="stylesheet" href="cadastrar/estilo/atualizar-senha.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
 </head>
 
 <body>
 
-    <div class="container-imagem">
-        <form id="meuFormulario" onsubmit="enviarDados(); return false;">
+    <form id="form" autocomplete="on">
 
-            <a href="contas-listas.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+        <fildset>
+            <legend>Atualizar Senha</legend>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha"
+                    placeholder="Letra Maiscula, Minuscula, Numero e Caracter" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a Senha Anterior"
+                    required>
+            </div>
+        </fildset>
 
-            <div>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Senha deve conter 8 caracteres: letra maiscula, minuscula, numero e caracter" required>
-            </div>
-            <div>
-                <label for="confirmarSenha">Confirmar Senha:</label>
-                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a senha anterior" required>
-            </div>
-            <div>
-                <button id="enviarBtn" type="submit">Enviar</button>
-            </div>
-        </form>
-    </div>
+        <button type="submit">Enviar</button>
+        <button type="reset">Reset</button>
+    </form>
 
     <script src="cadastrar/javascript/updateSenha.js"></script>
 </body>

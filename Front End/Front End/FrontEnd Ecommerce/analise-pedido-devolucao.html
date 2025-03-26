@@ -6,56 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de Devolução</title>
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="analise-pedido-devolucao/style.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
 </head>
 
 <body>
-    <h1>Formulário de Atualização de Devolução</h1>
+    <form id="form">
 
-    <form id="formDevolucao">
-        <label for="codigoPedido">Código do Pedido:</label>
-        <input type="text" id="codigoPedido" name="codigoPedido" required>
-        <br><br>
+        <fildset>
+            <legend>Formulário de Atualização de Devolução</legend>
+            <div class="form-group">
+                <label for="codigoPedido">Código do Pedido</label>
+                <input type="text" id="codigoPedido" name="codigoPedido" required>
+            </div>
+            <div class="form-group">
+                <label for="codigoDevolucao">Código da Devolução</label>
+                <input type="text" id="codigoDevolucao" name="codigoDevolucao" required>
+            </div>
+            <div class="form-group">
+                <label for="esperandoDevolucaoOuRecebido">Status da Devolução</label>
+                <select id="esperandoDevolucaoOuRecebido" name="esperandoDevolucaoOuRecebido" required>
+                    <option value="">Selecione</option>
+                    <option value="ESPERANDO_DEVOLUCAO">Esperando Devolução</option>
+                    <option value="RECEBIDO">Recebido</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="produtoVoltaParaEstoque">Produto Volta Para o Estoque</label>
+                <select id="produtoVoltaParaEstoque" name="produtoVoltaParaEstoque" required>
+                    <option value="">Selecione</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estadoProduto">Estado do Produto ao Entrar no Estoque:</label>
+                <select id="estadoProduto" name="estadoProduto" required>
+                    <option value="">Selecione</option>
+                    <option value="NOVO">Novo</option>
+                    <option value="SEME_NOVO">Semi-novo</option>
+                    <option value="USADO">Usado</option>
+                    <option value="DANIFICADO">Danificado</option>
+                </select>
+            </div>
+        </fildset>
 
-        <label for="codigoDevolucao">Código da Devolução:</label>
-        <input type="text" id="codigoDevolucao" name="codigoDevolucao" required>
-        <br><br>
-
-        <label for="esperandoDevolucaoOuRecebido">Status da Devolução:</label>
-        <select id="esperandoDevolucaoOuRecebido" name="esperandoDevolucaoOuRecebido" required>
-            <option value="">Selecione</option>
-            <option value="ESPERANDO_DEVOLUCAO">Esperando Devolução</option>
-            <option value="RECEBIDO">Recebido</option>
-        </select>
-        <br><br>
-
-        <label for="produtoVoltaParaEstoque">Produto Volta Para o Estoque:</label>
-        <select id="produtoVoltaParaEstoque" name="produtoVoltaParaEstoque" required>
-            <option value="">Selecione</option>
-            <option value="SIM">Sim</option>
-            <option value="NAO">Não</option>
-        </select>
-        <br><br>
-
-        <label for="estadoProduto">Estado do Produto ao Entrar no Estoque:</label>
-        <select id="estadoProduto" name="estadoProduto" required>
-            <option value="">Selecione</option>
-            <option value="NOVO">Novo</option>
-            <option value="SEME_NOVO">Semi-novo</option>
-            <option value="USADO">Usado</option>
-            <option value="DANIFICADO">Danificado</option>
-        </select>
-        <br><br>
-
-        <div class="button-container">
-            <button type="submit" id="aceitar">Aceitar Devolução</button>
-            <button type="submit" id="recusar">Recusar Devolução</button>
-        </div>
+        <button type="submit" id="aceitar">Aceitar Devolução</button>
+        <button type="submit" id="recusar">Recusar Devolução</button>
+        <button type="reset">Resetar</button>
     </form>
 
 </body>
 
-    <script src="analise-pedido-devolucao/javascript/aceitar.js"></script>
-    <script src="analise-pedido-devolucao/javascript/recusar.js"></script>
+<script src="analise-pedido-devolucao/javascript/aceitar.js"></script>
+<script src="analise-pedido-devolucao/javascript/recusar.js"></script>
+
 </html>

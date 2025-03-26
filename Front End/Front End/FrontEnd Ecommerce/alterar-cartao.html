@@ -5,27 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="cartoes/estilo/adicionar-cartao.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Update cartão</title>
 </head>
 
 <body>
-    <div class="container-imagem">
-        <form id="myForm" autocomplete="on">
-            <a href="cartoes.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+    <form id="form" autocomplete="on">
 
-            <label for="principal">Principal:</label><br>
-            <input type="checkbox" id="principal" name="principal"><br>
+        <fieldset>
+            <legend>Atualizar Cartão</legend>
 
-            <label for="nomeImpresso">Nome Impresso:</label><br>
-            <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome completo" autocomplete="name"><br>
+            <div class="form-group">
+                <label for="principal">Principal:</label>
+                <input type="checkbox" id="principal" name="principal">
+            </div>
 
-            <label for="codigo">Código:</label><br>
-            <input type="text" id="codigo" name="codigo" placeholder="Ex: 123"><br>
+            <div class="form-group">
+                <label for="nomeImpresso">Nome Impresso</label>
+                <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome Completo"
+                    autocomplete="name">
+            </div>
 
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+            <div class="form-group">
+                <label for="codigo">Código</label>
+                <input type="text" id="codigo" name="codigo" pattern="\d{3}" maxlength="3" inputmode="numeric"
+                    placeholder="123">
+            </div>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fieldset>
+    </form>
 
     <script src="cartoes/javascript/update.js"></script>
 </body>

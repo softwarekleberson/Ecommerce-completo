@@ -5,152 +5,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="cadastrar/estilo/cadastrar.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Cadastrar Cliente</title>
 </head>
 
 <body>
-    <main>
-        <div class="container-imagem">
-            <form id="myForm" autocomplete="on">
-        
-            <a href="home.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+    <form id="form" autocomplete="on">
 
-                <fieldset>
-                    <legend>Dados pessoais</legend>
-                    <label for="genero">Gênero </label>
-                    <select id="genero" name="genero">
-                        <option value="MASCULINO">MASCULINO</option>
-                        <option value="FEMININO">FEMININO</option>
-                    </select><br><br>
-                    
-                    <label for="nome">Nome </label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required autocomplete="name"><br><br>
-                    
-                    <label for="nascimento">Data de Nascimento </label>
-                    <input type="date" id="nascimento" name="nascimento" required><br><br>
-                    
-                    <label for="cpf">CPF </label>
-                    <input type="text" id="cpf" name="cpf" placeholder="Ex : 12345678904" autocomplete="off"><br><br>
-                    
-                    <label for="senha">Senha </label>
-                    <input type="password" id="senha" name="senha" placeholder="Senha deve conter 8 caracteres : letra maiscula, minuscula, numero e caracter" required><br><br>
-                    
-                    <label for="confirmarSenha">Confirmar Senha </label>
-                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme senha anterior" required><br><br>
-                </fieldset>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
 
-                <fieldset>
-                    <legend>Dados de contato</legend>
-                    <label for="email">E-mail </label>
-                    <input type="email" id="email" name="email" required placeholder="email@gmail.com" autocomplete="on"><br><br>
-                    
-                    <label for="ddd">DDD </label>
-                    <input type="text" id="ddd" name="ddd" placeholder="Ex : 11"><br><br>
-                    
-                    <label for="telefone">Telefone </label>
-                    <input type="text" id="telefone" name="telefone" placeholder="Ex : 123456789" autocomplete="tel"><br><br>
-                    
-                    <label for="tipo">Tipo de Telefone </label>
-                    <select id="tipo" name="tipo">
-                        <option value="COMERCIAL">COMERCIAL</option>
-                        <option value="MOVEL">MOVEL</option>
-                        <option value="FIXO">FIXO</option>
-                    </select><br><br>
-                </fieldset>
+            <div class="form-group">
+                <label for="genero">Gênero </label>
+                <select id="genero" name="genero">
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                </select>
+            </div>
 
-                <fieldset>
-                    <legend>Dados entrega</legend>
-                    <div class="entrega">
+            <div class="form-group">
+                <label for="nome">Nome </label>
+                <input type="text" id="nome" name="nome" placeholder="Nome Completo" required autocomplete="name">
+            </div>
 
-                        <input type="checkbox" hidden id="principalEntrega" name="salvar" checked>
+            <div class="form-group">
+                <label for="nascimento">Data de Nascimento </label>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </div>
 
-                        <label for="receptorEntrega">Receptor Encomenda</label>
-                        <input type="text" name="receptorEntrega" id="receptorEntrega" placeholder="Quem irá receber a entrega" required autocomplete="name">
+            <label for="cpf">Cpf</label>
+            <input type="text" id="cpf" name="cpf" placeholder="12345678904">
 
-                        <label for="cepEntrega">CEP </label>
-                        <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" pattern="\d{5}-\d{3}" autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="senha">Senha </label>
+                <input type="password" id="senha" name="senha"
+                    placeholder="Letra Maiscula, Minuscula, Numero e Caracter" required>
+            </div>
 
-                        <label for="tipoResidenciaEntrega">Tipo de Residência </label>
-                        <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega" placeholder="casa, apartamento, kitnet, chalé, cobertura etc"><br><br>
+            <div class="form-group">
+                <label for="confirmarSenha">Confirmar Senha </label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme senha anterior"
+                    required>
+            </div>
+        </fieldset>
 
-                        <label for="tipoLogradouroEntrega">Tipo de Logradouro </label>
-                        <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega" placeholder="Rua, Avenida, Alameda, Travessa, etc."><br><br>
+        <fieldset>
+            <legend>Dados de Contato</legend>
 
-                        <label for="logradouroEntrega">Logradouro </label>
-                        <input type="text" id="logradouroEntrega" name="logradouroEntrega" placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade"><br><br>
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required placeholder="email@gmail.com" autocomplete="on">
+            </div>
 
-                        <label for="numeroEntrega">Número </label>
-                        <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o número do imóvel" ><br><br>
+            <div class="form-group">
+                <label for="ddd">Ddd </label>
+                <input type="text" id="ddd" name="ddd" placeholder="11" required>
+            </div>
 
-                        <label for="bairroEntrega">Bairro </label>
-                        <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o nome do bairro"><br><br>
+            <div class="form-group">
+                <label for="telefone">Telefone </label>
+                <input type="text" id="telefone" name="telefone" placeholder="123456789" autocomplete="tel" required>
+            </div>
 
-                        <label for="observacaoEntrega">Observação </label>
-                        <input type="text" id="observacaoEntrega" name="observacaoEntrega" placeholder="Observação adicional"><br><br>
+            <div class="form-group">
+                <label for="tipo">Tipo de Telefone </label>
+                <select id="tipo" name="tipo">
+                    <option value="COMERCIAL">Comercial</option>
+                    <option value="MOVEL">Movel</option>
+                    <option value="FIXO">Fixo</option>
+                </select>
+            </div>
+        </fieldset>
 
-                        <label for="cidadeEntrega">Cidade </label>
-                        <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua cidade"><br><br>
+        <fieldset>
+            <legend>Dados Entrega</legend>
 
-                        <label for="estadoEntrega">Estado </label>
-                        <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu estado"><br><br>
+            <div class="form-group">
+                <input type="checkbox" hidden id="principalEntrega" name="salvar" checked>
+            </div>
 
-                        <label for="fraseEntregaEntrega">Frase </label>
-                        <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"  placeholder="Informe instruções específicas de entrega"><br><br>
+            <div class="form-group">
+                <label for="receptorEntrega">Receptor Encomenda</label>
+                <input type="text" name="receptorEntrega" id="receptorEntrega" placeholder="Quem Irá Receber a Entrega"
+                    required autocomplete="name">
+            </div>
 
-                        <label for="paisEntrega">País </label>
-                        <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu pais" autocomplete="country" value="Brasil"><br><br>
-                        
-                    </div>
-                </fieldset>
+            <div class="form-group">
+                <label for="cepEntrega">Cep</label>
+                <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" pattern="\d{5}-\d{3}"
+                    required>
+            </div>
 
-                <fieldset>
-                    <legend>Dados cobranca</legend>
-                    <div class="cobranca">
+            <div class="form-group">
+                <label for="tipoResidenciaEntrega">Tipo de Residência </label>
+                <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega"
+                    placeholder="Casa, Apartamento, Kitnet, Chalé, Cobertura" required>
+            </div>
 
-                        <input type="checkbox" hidden id="principalCobranca" name="salvar" checked>
+            <div class="form-group">
+                <label for="tipoLogradouroEntrega">Tipo de Logradouro </label>
+                <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega"
+                    placeholder="Rua, Avenida, Alameda, Travessa" required>
+            </div>
 
-                        <label for="receptorCobranca">Receptor Cobranca</label>
-                        <input type="text" name="receptorCobranca" id="receptorCobranca" placeholder="Quem irá receber a cobranca" required autocomplete="name">
+            <div class="form-group">
+                <label for="logradouroEntrega">Logradouro </label>
+                <input type="text" id="logradouroEntrega" name="logradouroEntrega"
+                    placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required>
+            </div>
 
-                        <label for="cepCobranca">CEP </label>
-                        <input type="text" id="cepCobranca" name="cepCobranca" placeholder="12345-678" pattern="\d{5}-\d{3}" autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="numeroEntrega">Número</label>
+                <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o Número do Imóvel"
+                    required>
+            </div>
 
-                        <label for="tipoResidenciaCobranca">Tipo de Residência </label>
-                        <input type="text" id="tipoResidenciaCobranca" name="tipoResidenciaCobranca" placeholder="casa, apartamento, kitnet, chalé, cobertura etc" autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="bairroEntrega">Bairro </label>
+                <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o Nome do Bairro"
+                    required>
+            </div>
 
-                        <label for="tipoLogradouroCobranca">Tipo de Logradouro </label>
-                        <input type="text" id="tipoLogradouroCobranca" name="tipoLogradouroCobranca" placeholder="Rua, Avenida, Alameda, Travessa, etc." autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="observacaoEntrega">Observação </label>
+                <input type="text" id="observacaoEntrega" name="observacaoEntrega" placeholder="Observação Adicional">
+            </div>
 
-                        <label for="logradouroCobranca">Logradouro </label>
-                        <input type="text" id="logradouroCobranca" name="logradouroCobranca" placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="cidadeEntrega">Cidade </label>
+                <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua Cidade" required>
+            </div>
 
-                        <label for="numeroCobranca">Número </label>
-                        <input type="text" id="numeroCobranca" name="numeroCobranca" placeholder="Digite o número do imóvel"><br><br>
+            <div class="form-group">
+                <label for="estadoEntrega">Estado </label>
+                <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu Estado" required>
+            </div>
 
-                        <label for="bairroCobranca">Bairro </label>
-                        <input type="text" id="bairroCobranca" name="bairroCobranca" placeholder="Digite o nome do bairro"><br><br>
+            <div class="form-group">
+                <label for="fraseEntregaEntrega">Frase de Entrega </label>
+                <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"
+                    placeholder="Informe Instruções Específicas de Entrega" required>
+            </div>
 
-                        <label for="observacaoCobranca">Observação </label>
-                        <input type="text" id="observacaoCobranca" name="observacaoCobranca" placeholder="Observação adicional"><br><br>
+            <div class="form-group">
+                <label for="paisEntrega">País</label>
+                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais">
+            </div>
+        </fieldset>
 
-                        <label for="cidadeCobranca">Cidade </label>
-                        <input type="text" id="cidadeCobranca" name="cidadeCobranca" placeholder="Digite sua cidade"><br><br>
+        <fieldset>
+            <legend>Dados Cobranca</legend>
 
-                        <label for="estadoCobranca">Estado </label>
-                        <input type="text" id="estadoCobranca" name="estadoCobranca" placeholder="Digite seu estado"><br><br>
+            <div class="form-group"><input type="checkbox" hidden id="principalCobranca" name="salvar" checked>
+            </div>
 
-                        <label for="paisCobranca">País</label>
-                        <input type="text" id="paisCobranca" name="cobranca.paisCobranca" placeholder="Digite seu pais" autocomplete="country" value="Brasil"><br><br>
-                    </div>
-                </fieldset>
-        
-                <button id="enviarBtn" type="submit">Enviar</button>
-            </form>
-        </div>
-    </main>
-    
+            <div class="form-group">
+                <label for="receptorCobranca">Receptor Cobranca</label>
+                <input type="text" name="receptorCobranca" id="receptorCobranca"
+                    placeholder="Quem irá Receber a Cobranca" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+                <label for="cepCobranca">Cep</label>
+                <input type="text" id="cepCobranca" name="cepCobranca" placeholder="12345-678" pattern="\d{5}-\d{3}"
+                    autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="tipoResidenciaCobranca">Tipo de Residência</label>
+                <input type="text" id="tipoResidenciaCobranca" name="tipoResidenciaCobranca"
+                    placeholder="Casa, Apartamento, Kitnet, Chalé, Cobertura" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoLogradouroCobranca">Tipo de Logradouro</label>
+                <input type="text" id="tipoLogradouroCobranca" name="tipoLogradouroCobranca"
+                    placeholder="Rua, Avenida, Alameda, Travessa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="logradouroCobranca">Logradouro</label>
+                <input type="text" id="logradouroCobranca" name="logradouroCobranca"
+                    placeholder="Rua das Flores, Avenida Central, Praça da Liberdade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numeroCobranca">Número</label>
+                <input type="text" id="numeroCobranca" name="numeroCobranca" placeholder="Digite o número do imóvel"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="bairroCobranca">Bairro</label>
+                <input type="text" id="bairroCobranca" name="bairroCobranca" placeholder="Digite o nome do bairro"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="observacaoCobranca">Observação</label>
+                <input type="text" id="observacaoCobranca" name="observacaoCobranca" placeholder="Observação Adicional"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="cidadeCobranca">Cidade</label>
+                <input type="text" id="cidadeCobranca" name="cidadeCobranca" placeholder="Digite sua Cidade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estadoCobranca">Estado</label>
+                <input type="text" id="estadoCobranca" name="estadoCobranca" placeholder="Digite seu Estado" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paisCobranca">País</label>
+                <input type="text" id="paisCobranca" name="cobranca.paisCobranca" placeholder="Digite seu Pais">
+            </div>
+        </fieldset>
+
+        <button id="enviarBtn" type="submit">Enviar</button>
+        <button type="reset">Resetar</button>
+    </form>
+
     <script src="cadastrar/javascript/index.js"></script>
     <script src="cadastrar/javascript/cep.js"></script>
 </body>
+
 </html>

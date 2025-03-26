@@ -5,68 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="entrega/estilo/nova-entrega.css">
+    <link rel="stylesheet" href="css-global/form/style.css">
     <title>Novo endereço entrega</title>
 </head>
 
 <body>
-    <div class="container-imagem">
-        <form id="myForm">
+    <form id="form">
+        <fieldset>
+            <legend>Cadastrar Nova Cobrança</legend>
 
-            <a href="entrega.html"><img class="fechar" src="imagem/x.jpeg" alt="voltar pagina"></a>
+            <div class="form-group">
+                <label for="principalEntrega">Quer Tornar Esta Entrega Principal ?</label>
+                <input type="checkbox" id="principalEntrega" name="principalEntrega" checked>
+            </div>
 
-            <label for="">Entrega principal</label>
-            <input type="checkbox" id="principalEntrega" name="principalEntrega" checked><br>
+            <div class="form-group">
+                <label for="receptorEntrega">Receptor</label>
+                <input type="text" name="receptorEntrega" id="receptorEntrega" autocomplete="name" required
+                    placeholder="Quem Irá Receber a Entrega">
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="receptorEntrega">Receptor</label>
-            <input type="text" name="receptorEntrega" id="receptorEntrega" autocomplete="name" required
-                placeholder="Quem irá receber a entrega">
+            <div class="form-group">
+                <label for="cepEntrega">Cep</label>
+                <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" required autocomplete="on"
+                    pattern="\d{5}-\d{3}" onblur="buscarCEP()">
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="cepEntrega">CEP:</label>
-            <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" required autocomplete="off"
-                pattern="\d{5}-\d{3}" onblur="buscarCEP()"><br><br>
+            <div class="form-group">
+                <label for="tipoResidenciaEntrega">Tipo de Residência</label>
+                <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega"
+                    placeholder="Casa, Apartamento, Kitnet, Chalé, Cobertura" required autocomplete="on">
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="tipoResidenciaEntrega">Tipo de Residência:</label>
-            <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega"
-                placeholder="casa, apartamento, kitnet, chalé, cobertura etc" required autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="tipoLogradouroEntrega">Tipo de Logradouro</label>
+                <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega"
+                    placeholder="Rua, Avenida, Alameda, Travessa" required autocomplete="on">
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="tipoLogradouroEntrega">Tipo de Logradouro:</label>
-            <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega"
-                placeholder="Rua, Avenida, Alameda, Travessa, etc" required autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="logradouroEntrega">Logradouro</label>
+                <input type="text" id="logradouroEntrega" name="logradouroEntrega"
+                    placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required autocomplete="on">
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="logradouroEntrega">Logradouro:</label>
-            <input type="text" id="logradouroEntrega" name="logradouroEntrega"
-                placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required
-                autocomplete="off"><br><br>
+            <div class="form-group">
+                <label for="numeroEntrega">Número</label>
+                <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o número do Imóvel"
+                    inputmode="numeric" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="numeroEntrega">Número:</label>
-            <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o número do imóvel"
-                required><br><br>
+            <div class="form-group">
+                <label for="bairroEntrega">Bairro</label>
+                <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o Nome do Bairro"
+                    required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="bairroEntrega">Bairro:</label>
-            <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o nome do bairro"
-                required><br><br>
+            <div class="form-group">
+                <label for="observacaoEntrega">Observação</label>
+                <textarea id="observacaoEntrega" name="observacaoEntrega"
+                    placeholder="Inclua Observações Adicionais (Opcional)"></textarea>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="observacaoEntrega">Observação:</label>
-            <textarea id="observacaoEntrega" name="observacaoEntrega" placeholder="Opcional"></textarea><br><br>
+            <div class="form-group">
+                <label for="cidadeEntrega">Cidade</label>
+                <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua Cidade" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="cidadeEntrega">Cidade:</label>
-            <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua cidade" required><br><br>
+            <div class="form-group">
+                <label for="estadoEntrega">Estado</label>
+                <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu Estado" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="estadoEntrega">Estado:</label>
-            <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu estado" required><br><br>
+            <div class="form-group">
+                <label for="fraseEntregaEntrega">Frase de Entrega</label>
+                <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"
+                    placeholder="Informe Instruções Específicas de Entrega" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="fraseEntregaEntrega">Frase de Entrega:</label>
-            <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"
-                placeholder="Informe instruções específicas de entrega" required><br><br>
+            <div class="form-group">
+                <label for="paisEntrega">País</label>
+                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais" required>
+                <small class="mensagem-erro"></small>
+            </div>
 
-            <label for="paisEntrega">País:</label>
-            <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu pais" required
-                value="Brasil"><br><br>
-
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </fieldset>
+    </form>
 
     <script src="entrega/estilo/javascript/insert.js"></script>
     <script src="entrega/estilo/javascript/cep.js"></script>

@@ -1,0 +1,108 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(15, 9, 9, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+input,
+textarea,
+option,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 8px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.erro input,
+.erro select,
+.erro input[type="date"] {
+  border-color: red;
+}
+
+.erro small {
+  color: red;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  legend {
+    font-size: 20px;
+  }
+}
