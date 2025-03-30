@@ -1,0 +1,102 @@
+@import url(variaveis.css);
+
+.inscricao {
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-color: var(--fourth-color);
+    padding: 15px;
+    
+}
+
+.mensagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(41, 71, 61);
+
+}
+
+.mensagem h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(41, 71, 61);
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.inputs .email {
+    margin-right: 5px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 1px;
+    font-size: 16px;
+    outline: none;
+    min-width: 200px;
+    height: 40px;
+}
+
+.email {
+    width: 30%;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+
+.inputs .checkbox {
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 23px;
+    height: 23px;
+    margin-top: 1px;
+    margin-right: 20px;
+    outline: none;
+}
+
+.checkbox {
+    appearance: auto;
+    background-color: white; 
+}
+
+.politica {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    font-size: 10px;
+    color: rgb(41, 71, 61)
+}
+
+.botao {
+    margin-left: 8px;
+    background-color: var(--primary-color);
+    padding: 8px 25px 8px 25px;
+}
+
+.botao button {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(244, 241, 240);
+}
+
+.inputs .email,
+.botao button {
+    box-sizing: border-box;
+}
+
+.inscricao a {
+    text-decoration: underline;
+}

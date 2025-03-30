@@ -1,0 +1,37 @@
+@import url(../css-global/variaveis.css);
+
+.secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    margin-top: -30px;
+}
+
+.secao-principal {
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+.secao span {
+    margin-top: 5px;
+}
+
+.titulo {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.subtitulo {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--primary-color)
+}
+
+.textos-carrosel {
+    display: flex;
+    flex-direction: column;
+}

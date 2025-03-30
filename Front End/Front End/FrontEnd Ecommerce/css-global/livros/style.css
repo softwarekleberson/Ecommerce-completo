@@ -1,0 +1,60 @@
+@import url(../css-global/variaveis.css);
+
+.carrosel-livro {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+.livro-span {
+    width: calc((100% / 6) - 20px);
+    width: 100%;
+    text-align: left;
+}
+
+.livro-span span {
+    white-space: nowrap;
+}
+
+.secao-principal {
+    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-right: 60px;
+    min-width: 200px;
+}
+
+.carrosel-secao {
+    display: flex;
+    justify-content: space-between;
+}
+
+.livro-span {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.livro-span-subtitulo {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--subtitulo);
+    display: block;
+}
+
+.img {
+    width: 120px;
+    height: 180px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.livro-span span:first-child { 
+    white-space: normal; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    max-width: 150px; 
+    text-align: left; 
+}

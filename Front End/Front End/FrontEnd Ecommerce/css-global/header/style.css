@@ -1,0 +1,202 @@
+@import url(variaveis.css);
+
+header {
+    width: 100%;
+    height: 150px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+}
+
+.drop {
+    margin-left: 35px;
+    width: 420px;
+    height: 60px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0px 0px 4px 4px;
+    display: flex;
+}
+
+.drop span {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--font);
+}
+
+.drop button {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--font);
+    padding: 2px 7px 2px 7px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-left: 200px;
+}
+
+.drop i {
+    color: black;
+    margin-left: 10px;
+}
+
+.header-layote {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo {
+    text-align: center;
+    flex: 1;
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 12px 10px 12px 10px;
+}
+
+.account {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(244, 241, 240);
+}
+
+.bascket {
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.bascket,
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.logo .nome {
+    display: block;
+    font-family: "Lato", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--font);
+}
+
+.logo .descricao {
+    display: block;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.logo {
+    margin-left: 220px;
+}
+
+.bascket span {
+    display: block;
+    margin-top: 50px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    color: rgb(244, 241, 240);
+    margin-left: -53px;
+}
+
+.header-layote i {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.links-home {
+    margin-top: 150px;
+    height: 50px;
+    padding: 10px 100px 10px 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--second-color);
+    color: black;
+    font-size: 12px;
+}
+
+.links-home {
+    background-color: #F4F1F0;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+}
+
+
+.links-home a {
+    padding: 0px 6px 0px 6px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(0, 0, 0)
+}
+
+.links-home a:hover {
+    background-color: white;
+    padding: 18px 10px 6.75px 10px;
+    text-align: center;
+}
+
+.search-container {
+    margin-left: 60px;
+
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    background: #fff;
+
+    max-width: 250px;
+    min-width: 200px;
+    font-size: 12px;
+}
+
+.search-input {
+    width: 100%;
+    margin-right: 5px;
+}
+
+.descricao-home a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--third-color);
+    color: var(--font);
+    font-size: 13px;
+    padding: 5px 0px 5px 0px;
+    margin-top: 190px;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+}

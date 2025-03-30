@@ -1,0 +1,75 @@
+
+/* Reset CSS - Normalize + Melhorias */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Remove estilos de listas */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Remove decoração de links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Reset de botões */
+  button, input, textarea, select {
+    font: inherit;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  /* Ajuste de imagens */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Tabelas */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Evita zoom em inputs no iOS */
+  input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Removendo a aparência padrão de botões nos navegadores */
+  button {
+    cursor: pointer;
+  }
+  
+  /* Melhorando acessibilidade no focus */
+  a, button, input, textarea, select {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline-offset: 2px;
+  }
+  

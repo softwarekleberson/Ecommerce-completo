@@ -5,103 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="home/style/home.css">
-    <link rel="stylesheet" href="home/style/pesquisa.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css-global/css-global/reset.css">
+    <link rel="stylesheet" href="css-global/header/style.css">
+    <link rel="stylesheet" href="css-global/banner/style.css">
+    <link rel="stylesheet" href="css-global/secao-secundaria/style.css">
+    <link rel="stylesheet" href="css-global/livros/style.css">
+    <link rel="stylesheet" href="css-global/banner-terciario/style.css">
+    <link rel="stylesheet" href="css-global/inscricao/style.css">
+    <link rel="stylesheet" href="css-global/footer/style.css">
+    <title>Booksellers Since 1797 - Hatchards</title>
 </head>
 
 <body>
-
     <header>
-        <a class="logo" href="home.html">Hatchards</a>
-        <nav>
-            <a href="home.html#romance">Romance</a>
-            <a href="home.html#classico">Classico</a>
-            <a href="home.html#ficcao">Ficção</a>
-            <a href="home.html#autoajuda">Autoajuda</a>
-            <a href="contas-listas.html">Contas e Listas</a>
-            <a href="pedidos.html">Meus pedidos</a>
-        </nav>
+        <div class="header-layote">
+            <div class="account">
+                <span>Login</span>
+                <a href="login-cliente.html"><i class="fa-solid fa-user"></i></a>
+            </div>
 
-        <div class="search-box">
-            <input type="text" id="searchQuery" placeholder="Search">
-            <button type="submit" id="pesquisa"><i class="fas fa-search"></i></button>
-        </div>
+            <div class="logo">
+                <span class="nome">Hatchards</span>
+                <span class="descricao">MELHORES LIVROS DESDE 1797</span>
+            </div>
 
-        <div class="cart-and-avatar">
-            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Title, Author, Keyword, or ISBN">
+            </div>
+
+            <div class="bascket">
+                <i class="fas fa-shopping-bag"></i>
+                <a href="carrinho.html"><span>Carrinho</span></a>
+            </div>
         </div>
     </header>
 
+    <div class="links-home">
+        <a href="#">Livros Raros</a>
+        <a href="#">Livros</a>
+        <a href="#">Destaques</a>
+        <a href="#">Publicações Hatchards</a>
+        <a href="#">Assinaturas</a>
+        <a href="#">Bolsas Tote</a>
+        <a href="#">Vale-presentes</a>
+        <a href="#">Papelaria e Vale-presentes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Nossa História</a>
+        <a href="contas-listas.html">Contas e Listas</a>
+    </div>
+
+    <hr class="linha-hr">
+
+    <div class="descricao-home">
+        <a href="#">Entrega gratuita no Reino Unido para pedidos acima de R$ 25, caso contrário R$ 2,99</a>
+    </div>
+
+    <!--Banners-->
+    <div class="carrosel">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="home/imagens/banner1.webp" class="d-block w-100" alt="Imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="home/imagens/banner2.webp" class="d-block w-100" alt="Imagem 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="home/imagens/banner3.webp" class="d-block w-100" alt="Imagem 3">
+                </div>
+            </div>
+            <!-- Botões de navegação -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
     <main>
-        <section class="pesquisa-dinamica">
-            <form id="pesquisa-livros-form">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo"><br><br>
+        <div id="produtos"></div>
+    </main>
 
-                <label for="precoMenor">Preço Menor:</label>
-                <input type="number" id="precoMenor" name="precoMenor" step="0.01"><br><br>
+    <!--Banner terciario-->
+    <div class="banner-5">
+        <img src="home/imagens/banner4.webp" alt="">
+    </div>
 
-                <label for="precoMaior">Preço Maior:</label>
-                <input type="number" id="precoMaior" name="precoMaior" step="0.01"><br><br>
 
-                <label for="dataMenor">Data Mínima:</label>
-                <input type="date" id="dataMenor" name="dataMenor"><br><br>
-
-                <label for="dataMaior">Data Máxima:</label>
-                <input type="date" id="dataMaior" name="dataMaior"><br><br>
-
-                <label for="isbn">ISBN:</label>
-                <input type="text" id="isbn" name="isbn"><br><br>
-
-                <label for="paginas">Páginas:</label>
-                <input type="number" id="paginas" name="paginas"><br><br>
-
-                <label for="editora">Editora:</label>
-                <input type="text" id="editora" name="editora"><br><br>
-
-                <label for="edicao">Edição:</label>
-                <input type="text" id="edicao" name="edicao"><br><br>
-
-                <button type="submit">Filtrar Livros</button>
-            </form>
-        </section>
-
-        <section class="container">
-            <div id="produtos"></div>
-        </section>
+    <div class="inscricao">
+        <div class="mensagem">
+            <h3>Não perca</h3>
+            <span>Junte-se à nossa lista de e-mail para receber as últimas notícias sobre tudo o que acontece</span>
+            <span>Hatchards livros raros e primeiras edições</span>
+            <span>Os últimos livros autografados, sessões de autógrafos e emocionantes</span>
+            <span>Eventos</span>
+        </div>
+        <div class="inputs">
+            <input class="email" type="email" name="" id="" placeholder="Endereço de Email">
+            <input class="checkbox" type="checkbox" name="subscribe" checked>
+            <div class="politica">
+                <span>Ao assinar e-mails, você concorda com a nossa <a href="#">Política de Privacidade</a>.</span>
+                <span>Você pode cancelar a qualquer momento.</span>
+            </div>
+            <div class="botao">
+                <button type="submit">INSCREVER-SE</button>
+            </div>
+        </div>
+    </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Sobre Nós</h3>
-                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos
-                    clientes.</p>
-                <div class="contact">
-                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
-                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
-                </div>
-            </div>
-            <div class="footer-section links">
-                <h3 class="links-uteis">Links Úteis</h3>
-                <ul>
-                    <li><a href="home.html">Página Inicial</a></li>
-                    <li><a href="home.html#">Catálogo de Livros</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </div>
+        <div class="footer-column">
+            <span>Compras Conosco</span>
+            <a href="#">Nossas Lojas</a>
+            <a href="#">Nossa História</a>
+            <a href="#">Serviços da Livraria</a>
+            <a href="#">Recompensas Hatchards</a>
+            <a href="#">Serviços de Construção de Bibliotecas</a>
+            <a href="#">Carreiras na Hatchards</a>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        <div class="footer-column">
+            <span>Atendimento ao Cliente</span>
+            <a href="#">Fale Conosco</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Preços Online</a>
+            <a href="#">Entrega e Devoluções</a>
+            <a href="#">Clique e Retire</a>
+        </div>
+        <div class="footer-column">
+            <span>Legal</span>
+            <a href="#">Termos e Condições</a>
+            <a href="#">Aviso de Privacidade - Como Usamos Suas Informações</a>
+            <a href="#">Política de Cookies</a>
+            <a href="#">Gerenciar Cookies</a>
+            <a href="#">Regulamento Geral de Segurança de Produtos da UE (GPSR)</a>
+            <a href="#">Processo de Reclamações</a>
         </div>
     </footer>
 
     <script src="home/javascript/listar.js"></script>
-    <script src="home/javascript/pesquisa-geral.js"></script>
-    <script src="home/javascript/pesquisa-paramentros.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

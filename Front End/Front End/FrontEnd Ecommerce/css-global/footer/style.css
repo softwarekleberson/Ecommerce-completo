@@ -1,0 +1,35 @@
+@import url(/css-global/css-global/variaveis.css);
+
+footer {
+    width: 95%;
+    margin: auto;
+    margin-left: 35px;
+    margin-top: 25px;
+    background-color: var(--primary-color);
+    padding: 25px;
+    display: flex;
+}
+
+.footer-column {
+    justify-content: start;
+    color: white;
+    margin-right: 120px;
+}
+
+.footer-column span {
+    display: block;
+    margin-bottom: 15px;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(199, 214, 196);
+}
+
+.footer-column a {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(244, 241, 240);
+}

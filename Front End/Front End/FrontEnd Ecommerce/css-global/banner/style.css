@@ -1,0 +1,9 @@
+.carrosel {
+    width: 90%;
+    margin-top: 200px;
+    margin-left: 70px;
+}
+
+.carrosel img {
+    width: 150px;
+}

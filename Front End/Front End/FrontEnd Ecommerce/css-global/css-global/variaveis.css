@@ -1,0 +1,16 @@
+
+:root {
+    /*Cores globais*/
+    --primary-color: #29473D;
+    --second-color: #F4F1F0;
+    --third-color: #C7D6C4;
+    --fourth-color: #F3F1F0;
+    --font: #A48847;  
+    --subtitulo: #759577;
+
+    /*Peso de fonte*/
+    --title-weight-bold: 500;
+
+    /*Peso fonte secundaria*/
+    --title-weight-bold-secundary: 700
+}
