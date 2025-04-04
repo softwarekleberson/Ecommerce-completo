@@ -36,7 +36,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         if (data && data.content && Array.isArray(data.content)) {
             const cupomContainer = document.querySelector(".cupom-container");
-            cupomContainer.innerHTML = ""; 
+            if (!cupomContainer) {
+                console.error("Erro: Elemento '.cupom-container' não encontrado.");
+                return;
+            }
+
+            cupomContainer.innerHTML = "";
             data.content.forEach((cupom) => {
                 const cupomElement = document.createElement("div");
                 cupomElement.classList.add("cupom");

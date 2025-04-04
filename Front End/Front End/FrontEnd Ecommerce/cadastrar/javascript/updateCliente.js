@@ -2,16 +2,15 @@ async function enviarDados() {
     const token = localStorage.getItem("token");
     if (!token) {
         console.error("Erro: Token não encontrado. O usuário pode não estar autenticado.");
+        alert("Erro: Usuário não autenticado. Faça login novamente.");
         return;
     }
 
     const dados = {
-        genero: document.getElementById("genero").value || null,
-        nome: document.getElementById("nome").value || null,
+        nome: document.getElementById("nome").value.trim() || null,
         nascimento: document.getElementById("nascimento").value || null,
-        email: document.getElementById("email").value || null,
-        ddd: document.getElementById("ddd").value || null,
-        telefone: document.getElementById("telefone").value || null,
+        ddd: document.getElementById("ddd").value.trim() || null,
+        telefone: document.getElementById("telefone").value.trim() || null,
         tipo: document.getElementById("tipo").value || null
     };
 
@@ -39,7 +38,11 @@ async function enviarDados() {
         window.location.href = "contas-listas.html";
 
     } catch (error) {
-        console.error("Erro ao enviar os dados:", error);
-        alert("Ocorreu um erro ao atualizar os dados. Verifique e tente novamente.");
+        window.location.href = "contas-listas.html";
     }
 }
+
+document.getElementById("form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    await enviarDados();
+});

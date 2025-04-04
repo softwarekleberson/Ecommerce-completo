@@ -1,4 +1,4 @@
-document.getElementById("myForm").addEventListener("submit", async function(event) {
+document.getElementById("form").addEventListener("submit", async function(event) {
     event.preventDefault(); 
 
     const token = localStorage.getItem("token");

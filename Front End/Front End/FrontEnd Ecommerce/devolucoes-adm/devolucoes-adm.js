@@ -27,7 +27,7 @@ async function fetchDevolucoes() {
 }
 
 function populateTable(devolucoes) {
-    const devolucoesTable = document.getElementById('devolucoes');
+    const devolucoesTable = document.getElementById('form');
     devolucoesTable.innerHTML = ''; 
 
     devolucoes.forEach(devolucao => {

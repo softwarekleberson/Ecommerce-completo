@@ -12,7 +12,7 @@
 <body>
     <form id="form">
 
-        <fildset>
+        <fieldset>
             <legend>Registrar Novo Livro</legend>
             <div class="form-group">
                 <label for="idPrecificacao">ID da Precificação</label>
@@ -78,7 +78,19 @@
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria</label>
-                <input type="text" id="categoria" name="categoria" required>
+                <select id="categoria" name="categoria" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Ficcao-cientifica">Ficção Científica</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Autoajuda">Autoajuda</option>
+                    <option value="Biografia">Biografia</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Poesia">Poesia</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="imagem">Imagem Url:</label>
@@ -88,7 +100,7 @@
             </div>
             <button type="submit">Enviar</button>
             <button type="submit">Enviar</button>
-        </fildset>
+        </fieldset>
     </form>
 
     <script src="livro/post-livro.js"></script>

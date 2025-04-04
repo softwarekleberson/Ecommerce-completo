@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label for="cpf">Cpf</label>
-                <input type="text" id="cpf" name="cpf" placeholder="12345678904">
+                <input type="text" id="cpf" name="cpf" placeholder="12345678904" required>
             </div>
 
             <div class="form-group">
@@ -95,7 +95,7 @@
             <div class="form-group">
                 <label for="cepEntrega">Cep</label>
                 <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" pattern="\d{5}-\d{3}"
-                    required>
+                    required autocomplete="on">
             </div>
 
             <div class="form-group">
@@ -151,7 +151,7 @@
 
             <div class="form-group">
                 <label for="paisEntrega">País</label>
-                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais">
+                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais" value="Brasil" required>
             </div>
         </fieldset>
 
@@ -170,7 +170,7 @@
             <div class="form-group">
                 <label for="cepCobranca">Cep</label>
                 <input type="text" id="cepCobranca" name="cepCobranca" placeholder="12345-678" pattern="\d{5}-\d{3}"
-                    autocomplete="off">
+                    autocomplete="on" required>
             </div>
 
             <div class="form-group">
@@ -205,8 +205,7 @@
 
             <div class="form-group">
                 <label for="observacaoCobranca">Observação</label>
-                <input type="text" id="observacaoCobranca" name="observacaoCobranca" placeholder="Observação Adicional"
-                    required>
+                <input type="text" id="observacaoCobranca" name="observacaoCobranca" placeholder="Observação Adicional">
             </div>
 
             <div class="form-group">
@@ -221,7 +220,8 @@
 
             <div class="form-group">
                 <label for="paisCobranca">País</label>
-                <input type="text" id="paisCobranca" name="cobranca.paisCobranca" placeholder="Digite seu Pais">
+                <input type="text" id="paisCobranca" name="cobranca.paisCobranca" placeholder="Digite seu Pais"
+                    value="Brasil" required>
             </div>
         </fieldset>
 

@@ -1,7 +1,5 @@
-// Captura o form
 const form = document.getElementById('form');
 
-// Captura os campos
 const principal = document.getElementById('principal');
 const nomeImpresso = document.getElementById('nomeImpresso');
 const numeroCartao = document.getElementById('numeroCartao');
@@ -9,17 +7,15 @@ const codigo = document.getElementById('codigo');
 const dataExpiracao = document.getElementById('dataExpiracao');
 const bandeira = document.getElementById('bandeira');
 
-// Função para exibir erro
 function mostrarErro(input, mensagem) {
-    const formControl = input.parentElement; // Pega a div do campo
-    formControl.classList.add('erro'); // Adiciona a classe de erro
+    const formControl = input.parentElement; 
+    formControl.classList.add('erro'); 
     const small = formControl.querySelector('small');
     if (small) {
-        small.innerText = mensagem; // Exibe a mensagem de erro
+        small.innerText = mensagem; 
     }
 }
 
-// Função para remover o erro
 function removerErro(input) {
     const formControl = input.parentElement;
     formControl.classList.remove('erro');
@@ -29,7 +25,6 @@ function removerErro(input) {
     }
 }
 
-// Valida o nome impresso
 function validarNome(nomeImpresso) {
     if (nomeImpresso.value.trim() === '' || nomeImpresso.value.trim().length < 3) {
         mostrarErro(nomeImpresso, 'O nome é obrigatório e deve possuir mais de 2 caracteres');
@@ -40,7 +35,6 @@ function validarNome(nomeImpresso) {
     }
 }
 
-// Valida o número do cartão (16 dígitos)
 function validarNumeroCartao(numeroCartao) {
     const regex = /^\d{16}$/;
     if (!regex.test(numeroCartao.value.trim())) {
@@ -52,7 +46,6 @@ function validarNumeroCartao(numeroCartao) {
     }
 }
 
-// Valida o código de segurança (3 dígitos)
 function validarCodigo(codigo) {
     const regex = /^\d{3}$/;
     if (!regex.test(codigo.value.trim())) {
@@ -64,7 +57,6 @@ function validarCodigo(codigo) {
     }
 }
 
-// Valida a bandeira do cartão com base no ENUM (MAIÚSCULO)
 function validarBandeira(bandeira) {
     const opcoesValidas = ['MASTERCARD', 'VISA', 'ELO'];
     const valor = bandeira.value.trim();
@@ -78,7 +70,6 @@ function validarBandeira(bandeira) {
     }
 }
 
-// Valida a data de expiração (campo obrigatório)
 function validarDataExpiracao(dataExpiracao) {
     if (dataExpiracao.value.trim() === '') {
         mostrarErro(dataExpiracao, 'A data de expiração é obrigatória');
@@ -89,9 +80,8 @@ function validarDataExpiracao(dataExpiracao) {
     }
 }
 
-// Evento de envio do formulário
 form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Impede o envio automático para validar primeiro
+    e.preventDefault(); 
 
     const nomeValido = validarNome(nomeImpresso);
     const numeroValido = validarNumeroCartao(numeroCartao);
@@ -99,10 +89,9 @@ form.addEventListener('submit', function (e) {
     const bandeiraValida = validarBandeira(bandeira);
     const dataValida = validarDataExpiracao(dataExpiracao);
 
-    // Se todas as validações forem verdadeiras, o formulário é enviado
     if (nomeValido && numeroValido && codigoValido && bandeiraValida && dataValida) {
         console.log('Validações bem-sucedidas');
-        form.submit(); // Aqui pode fazer um fetch ou enviar o form direto
+        form.submit(); 
     } else {
         console.log('Por favor, corrija os erros antes de enviar.');
     }

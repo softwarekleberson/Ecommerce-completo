@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosAtualizacaoCliente;
+import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosDetalhamentoCliente;
 
 public interface RepositorioDeCliente {
 
@@ -18,4 +19,5 @@ public interface RepositorioDeCliente {
 	public Optional<Cliente> verificaExistenciaClienteId(Long id);
 	public Cliente recuperaClientePelo(Long id);
 	public Cliente pegaClienteAtivo(Long id);
+	public Optional<Cliente> clientePorId(Long id);
 }

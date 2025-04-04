@@ -1,4 +1,4 @@
-document.getElementById("entregaForm").addEventListener("submit", function(event) {
+document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     const codigo = document.getElementById("codigo").value;

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.engenharia.projeto.ProjetoFinal.casoDeUso.cliente.NovaSenha.CriptografaSenhaCliente;
-import br.com.engenharia.projeto.ProjetoFinal.casoDeUso.cliente.NovoCliente.IStrategyCliente;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DadosCadastroCliente;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.cliente.DetalharCliente;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
@@ -37,9 +36,6 @@ public class ServiceCliente {
     private RepositorioDeLog repositorioDeLog;
 
     @Autowired
-    private List<IStrategyCliente> validadores;
-
-    @Autowired
     private CriptografaSenhaCliente criptografiaSenha;
 
     @Transactional
@@ -48,7 +44,6 @@ public class ServiceCliente {
     	try {
     		
 			Cliente cliente = new Cliente(dados);
-			validadores.forEach(v -> v.processar(cliente));
 			
 			criptografiaSenha.processar(cliente);
 			repositorioDeCliente.salvar(cliente);

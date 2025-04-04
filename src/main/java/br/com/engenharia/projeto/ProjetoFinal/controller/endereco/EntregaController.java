@@ -1,8 +1,11 @@
 package br.com.engenharia.projeto.ProjetoFinal.controller.endereco;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosAtualizacaoEntregas;
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Entrega.DadosCadastroEntrega;
@@ -41,6 +45,20 @@ public class EntregaController {
 		repositorioDeEntrega.salvarNovoEntrega(entrega);
 		return ResponseEntity.ok(entrega);
 	}
+	
+	@GetMapping("/{entregaId}")
+	public ResponseEntity<Entrega> obterEntregaPorId(
+	        Authentication authentication, 
+	        @PathVariable Long entregaId) {
+	    
+	    UserEntity user = (UserEntity) authentication.getPrincipal();
+
+	    Entrega entrega = repositorioDeEntrega.entregaPorId(entregaId)
+	            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Entrega não encontrada"));
+
+	    return ResponseEntity.ok(entrega);
+	}
+
 	
 	@GetMapping
 	public ResponseEntity<Page<DadosDetalhamentoEntrega>> listarEnderecosEntrega(Authentication authentication, Pageable pageable){

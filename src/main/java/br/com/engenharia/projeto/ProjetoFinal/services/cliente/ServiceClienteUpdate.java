@@ -62,4 +62,8 @@ public class ServiceClienteUpdate {
 		repositorioDeLog.save(log);
 		return null;		
 	}
+
+	public Optional<Cliente> clientePorId(Long id) {
+		return repositorioDeCliente.clientePorId(id);
+	}
 }

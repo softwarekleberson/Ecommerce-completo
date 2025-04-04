@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -28,11 +27,13 @@ fieldset {
 }
 
 legend {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
   margin-bottom: 20px;
   text-align: center;
+
+  color: #121212;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 400;
 }
 
 .form-group {
@@ -42,8 +43,10 @@ legend {
 label {
   display: block;
   margin-bottom: 8px;
-  color: #333;
-  font-weight: 500;
+  color: #121212;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 400;
 }
 
 input,
@@ -56,6 +59,14 @@ select {
   border-radius: 6px;
   background-color: #fff;
   transition: border-color 0.3s;
+}
+
+
+input {
+  color: rgb(10, 10, 10);
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 input:focus,

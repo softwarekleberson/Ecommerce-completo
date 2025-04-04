@@ -1,4 +1,4 @@
-document.getElementById("estoqueForm").addEventListener("submit", async function (event) {
+document.getElementById("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const formData = new FormData(this);
@@ -11,7 +11,6 @@ document.getElementById("estoqueForm").addEventListener("submit", async function
         estadoProduto: formData.get("estadoProduto")
     };
 
-    // Obtém o token de autenticação
     const token = localStorage.getItem("token");
     if (!token) {
         alert("Erro: Token de autenticação não encontrado. Faça login novamente.");

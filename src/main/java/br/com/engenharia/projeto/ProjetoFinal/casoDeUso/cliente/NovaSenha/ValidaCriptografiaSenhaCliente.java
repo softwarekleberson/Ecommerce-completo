@@ -7,7 +7,7 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 
 @Service
 public class ValidaCriptografiaSenhaCliente implements CriptografaSenhaCliente{
-		
+
 	 private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	 public void processar(Cliente dominio) {

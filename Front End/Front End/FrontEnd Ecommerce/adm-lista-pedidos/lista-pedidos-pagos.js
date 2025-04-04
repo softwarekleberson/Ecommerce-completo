@@ -1,6 +1,6 @@
 async function fetchPedidos() {
     try {
-        const token = localStorage.getItem('token'); // Pegando o token do localStorage
+        const token = localStorage.getItem('token'); 
         if (!token) {
             console.error("Token não encontrado!");
             return;
@@ -9,7 +9,7 @@ async function fetchPedidos() {
         const response = await fetch('http://localhost:8080/admin/pedidos/listar-pedidos', {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}` // Incluindo o token no cabeçalho
+                'Authorization': `Bearer ${token}` 
             }
         });
 

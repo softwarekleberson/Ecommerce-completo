@@ -1,4 +1,4 @@
-document.getElementById("desativar-livro").addEventListener("submit", async function (event) {
+document.getElementById("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const formData = new FormData(this);
@@ -24,7 +24,6 @@ document.getElementById("desativar-livro").addEventListener("submit", async func
             body: JSON.stringify(data)
         });
 
-        // 🔹 Verifica se a resposta tem conteúdo antes de converter para JSON
         let result = null;
         const responseText = await response.text();
         if (responseText) {

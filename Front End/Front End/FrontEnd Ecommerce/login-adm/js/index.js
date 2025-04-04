@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("myForm").addEventListener("submit", async function (event) {
+    document.getElementById("form").addEventListener("submit", async function (event) {
         event.preventDefault();
         
         console.log("Evento submit acionado!");

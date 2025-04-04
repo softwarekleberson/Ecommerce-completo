@@ -66,10 +66,6 @@ public class ClienteDao implements RepositorioDeCliente {
 				clienteUpdate.setNome(dados.nome());
 			}
 			
-			if(dados.genero() != null) {
-				clienteUpdate.setGenero(dados.genero());
-			}
-			
 			if(dados.nascimento() != null) {
 				clienteUpdate.setNascimento(dados.nascimento());
 			}
@@ -153,5 +149,10 @@ public class ClienteDao implements RepositorioDeCliente {
 	@Override
 	public Cliente recuperaClientePelo(Long id) {
 	    return clienteRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Id do cliente não existe"));
+	}
+
+	@Override
+	public Optional<Cliente> clientePorId(Long id) {
+		return clienteRepository.findById(id);
 	}
 }

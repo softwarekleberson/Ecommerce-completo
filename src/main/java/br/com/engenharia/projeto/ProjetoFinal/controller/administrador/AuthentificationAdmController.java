@@ -30,7 +30,7 @@ public class AuthentificationAdmController {
 	
 	@PostMapping("/login/adm")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        String token = authenticationService.authenticate(request);
+		String token = authenticationService.authenticate(request);
         return ResponseEntity.ok(new AuthResponse(token));
     }
 	

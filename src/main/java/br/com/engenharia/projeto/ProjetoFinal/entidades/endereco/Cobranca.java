@@ -1,5 +1,7 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.engenharia.projeto.ProjetoFinal.dtos.Cobranca.DadosCadastroCobranca;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.cliente.cliente.Cliente;
 import jakarta.persistence.Entity;
@@ -21,6 +23,7 @@ public class Cobranca extends Endereco{
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "clientes_id")
+    @JsonIgnore
 	private Cliente cliente;
 	
 	private boolean principal;

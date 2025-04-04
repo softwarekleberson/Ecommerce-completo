@@ -12,31 +12,31 @@
 <body>
     <form id="form">
 
-        <fildset>
+        <fieldset>
             <legend>Registrar entrada no estoque</legend>
             <div class="form-group">
-                <label for="idLivro">ID do Livro:</label>
+                <label for="idLivro">ID do Livro</label>
                 <input type="number" id="idLivro" name="idLivro" placeholder="Id do Livro" required>
             </div>
             <div class="form-group">
-                <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" min="0" placeholder="Maior que 0" required>
+                <label for="quantidade">Entrada</label>
+                <input type="number" id="quantidade" name="quantidade" min="0" placeholder="Quantos livros entraram em estoque" required>
             </div>
             <div class="form-group">
-                <label for="valorCusto">Valor de Custo:</label>
+                <label for="valorCusto">Valor de Custo</label>
                 <input type="number" id="valorCusto" name="valorCusto" min="0" step="0.01" placeholder="Maior que 0"
                     required>
             </div>
             <div class="form-group">
-                <label for="dataEntrada">Data de Entrada:</label>
+                <label for="dataEntrada">Data de Entrada</label>
                 <input type="date" id="dataEntrada" name="dataEntrada" required>
             </div>
             <div class="form-group">
-                <label for="fornecedor">Fornecedor:</label>
+                <label for="fornecedor">Fornecedor</label>
                 <input type="text" id="fornecedor" name="fornecedor" required>
             </div>
             <div class="form-group">
-                <label for="estadoProduto">Estado do Produto:</label>
+                <label for="estadoProduto">Estado do Produto</label>
                 <select id="estadoProduto" name="estadoProduto" required>
                     <option value="NOVO">Novo</option>
                     <option value="SEME_NOVO">Seme Novo</option>
@@ -46,7 +46,7 @@
             </div>
             <button type="submit">Enviar</button>
             <button type="reset">Resetar</button>
-        </fildset>
+        </fieldset>
 
     </form>
 </body>

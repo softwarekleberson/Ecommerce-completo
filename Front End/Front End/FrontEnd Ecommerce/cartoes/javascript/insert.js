@@ -1,16 +1,14 @@
-document.getElementById("myForm").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Impede o recarregamento da página
+document.getElementById("form").addEventListener("submit", async function (event) {
+    event.preventDefault(); 
 
-    // Pegando o token correto do localStorage
     const token = localStorage.getItem("token");
 
     if (!token) {
         alert("Erro: Token JWT não encontrado! Faça login novamente.");
-        window.location.href = "login.html"; // Redireciona para o login
+        window.location.href = "login.html"; 
         return;
     }
 
-    // Pegando os dados do formulário
     const dadosCartao = {
         principal: document.getElementById("principal").checked,
         numeroCartao: document.getElementById("numeroCartao").value.trim(),
@@ -28,7 +26,7 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // Enviando o token corretamente
+                "Authorization": `Bearer ${token}` 
             },
             body: JSON.stringify(dadosCartao)
         });
@@ -41,7 +39,6 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
         console.log("Resposta do servidor:", resultado);
         alert("Cartão cadastrado com sucesso!");
 
-        // Redireciona para a página de cartões após o sucesso
         window.location.href = "cartoes.html";
 
     } catch (erro) {

@@ -154,4 +154,9 @@ public class CobrancaDao implements RepositorioDeCobranca{
 			repository.atualizarCobrancaPrincipal(idCliente);
 		}
 	}
+
+	@Override
+	public Optional<Cobranca> cobrancaPorId(Long cobrancaId) {
+		return repository.findById(cobrancaId);
+	}
 }

@@ -1,16 +1,14 @@
-document.getElementById("myForm").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Impede o recarregamento da página
+document.getElementById("form").addEventListener("submit", async function (event) {
+    event.preventDefault(); 
 
-    // Pegando o token correto do localStorage
     const token = localStorage.getItem("token");
 
     if (!token) {
         alert("Erro: Token JWT não encontrado! Faça login novamente.");
-        window.location.href = "login.html"; // Redireciona para o login
+        window.location.href = "login.html"; 
         return;
     }
 
-    // Pegando os dados do formulário
     const dadosCobranca = {
         principalCobranca: document.getElementById("principalCobranca").checked,
         receptorCobranca: document.getElementById("receptorCobranca").value.trim(),
@@ -34,7 +32,7 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // Enviando o token corretamente
+                "Authorization": `Bearer ${token}` 
             },
             body: JSON.stringify(dadosCobranca)
         });
@@ -47,11 +45,10 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
         console.log("Resposta do servidor:", resultado);
         alert("Endereço de cobrança cadastrado com sucesso!");
 
-        // Redireciona para a página de cobranças após o sucesso
         window.location.href = "cobranca.html";
 
     } catch (erro) {
         console.error("Erro ao enviar requisição:", erro);
-        alert("Erro ao adicionar endereço de cobrança. Verifique os dados e tente novamente.");
+        window.location.href = "cobranca.html"; 
     }
 });

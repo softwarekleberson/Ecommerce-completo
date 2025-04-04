@@ -1,11 +1,11 @@
-document.getElementById("myForm").addEventListener("submit", async function (event) {
+document.getElementById("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const token = localStorage.getItem("token");
 
     if (!token) {
         alert("Erro: Token JWT não encontrado! Faça login novamente.");
-        window.location.href = "login.html"; // Redireciona para login
+        window.location.href = "login.html"; 
         return;
     }
 

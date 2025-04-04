@@ -1,4 +1,4 @@
-document.getElementById('statusForm').addEventListener('submit', function (event) {
+document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const codigoPedido = document.getElementById('codigo').value;

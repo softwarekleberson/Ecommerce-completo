@@ -1,5 +1,7 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -13,4 +15,5 @@ public interface RepositorioDeEntrega {
 	Page<DadosDetalhamentoEntrega> listarEntregasDoCliente(Long clienteId, Pageable pageable);
 	void excluir(Long idEntrega);
 	public Entrega alterar(Long entregaId, DadosAtualizacaoEntregas dados);
+	public Optional<Entrega> entregaPorId(Long entregaId);
 }

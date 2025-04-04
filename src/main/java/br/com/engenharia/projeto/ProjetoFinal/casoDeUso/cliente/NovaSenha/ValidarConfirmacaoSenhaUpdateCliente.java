@@ -11,8 +11,7 @@ public class ValidarConfirmacaoSenhaUpdateCliente implements IStrategySenhaAtual
 	
 	@Override
 	public void processar(DadosAtualizacaoSenha dados) {
-		
-		if(!dados.senha().matches(dados.confirmarSenha())) {
+		if(!dados.senha().equals(dados.confirmarSenha())) {
 			throw new ValidacaoSenhaException(MENSAGEM_ERRO);
 		}		
 	}

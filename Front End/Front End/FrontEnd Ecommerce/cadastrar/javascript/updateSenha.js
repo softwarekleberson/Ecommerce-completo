@@ -1,22 +1,33 @@
+document.getElementById("form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Impede o recarregamento da página
+
+    await enviarDados(); // Chama a função para processar os dados
+});
+
 async function enviarDados() {
     const token = localStorage.getItem("token");
+
     if (!token) {
         console.error("Erro: Token não encontrado. O usuário pode não estar autenticado.");
+        alert("Erro de autenticação! Faça login novamente.");
         return;
     }
 
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
 
+    // Verificação básica das senhas
     if (senha !== confirmarSenha) {
         alert("As senhas não coincidem. Tente novamente.");
         return;
     }
 
-    const dados = {
-        senha: senha,
-        confirmarSenha: confirmarSenha
-    };
+    if (senha.length < 8) {
+        alert("A senha deve ter no mínimo 8 caracteres.");
+        return;
+    }
+
+    const dados = { senha, confirmarSenha };
 
     console.log("Enviando dados:", dados);
 

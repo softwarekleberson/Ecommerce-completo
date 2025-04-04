@@ -1,4 +1,4 @@
-document.getElementById('admin-form').addEventListener('submit', function(event) {
+document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     const email = document.getElementById('email').value;
@@ -24,7 +24,7 @@ document.getElementById('admin-form').addEventListener('submit', function(event)
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        document.getElementById('admin-form').reset();
+        document.getElementById('form').reset();
     })
 
     .catch((error) => {

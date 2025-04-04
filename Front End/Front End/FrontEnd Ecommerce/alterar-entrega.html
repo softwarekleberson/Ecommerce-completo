@@ -12,7 +12,7 @@
 <body>
     <form id="form" autocomplete="on">
 
-        <fildset>
+        <fieldset>
             <legend>Atualizar Entrega</legend>
             <div class="form-group">
                 <label for="principal">Endereço de Entrega Principal ?</label>
@@ -24,7 +24,7 @@
                 <input type="text" id="receptorEntrega" name="receptorEntrega" placeholder="Novo Receptor">
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="cepEntrega">Cep</label>
                 <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" autocomplete="on"
                     pattern="\d{5}-\d{3}">
@@ -81,16 +81,17 @@
 
             <div class="form-group">
                 <label for="paisEntrega">País</label>
-                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais">
+                <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu Pais" value="Brasil">
             </div>
 
             <button type="submit">Enviar</button>
             <button type="reset">Resetar</button>
-        </fildset>
+        </fieldset>
     </form>
 
-    <script src="entrega/estilo/javascript/update.js"></script>
+    <script src="entrega/estilo/javascript/entregaPorId.js"></script>
     <script src="entrega/estilo/javascript/update/cep.js"></script>
+    <script src="entrega/estilo/javascript/update.js"></script>
 </body>
 
 </html>

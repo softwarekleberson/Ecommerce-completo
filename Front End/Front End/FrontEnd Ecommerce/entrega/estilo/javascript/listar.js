@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!token) {
             alert("Erro: Token JWT não encontrado! Faça login novamente.");
-            window.location.href = "login.html"; // Redireciona para o login
+            window.location.href = "login.html"; 
             return;
         }
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const div = document.createElement('div');
                     div.classList.add('card');
                     div.innerHTML = `
-                        <h3 id="nome">${endereco.receptor}</h3>
+                        <h3 id="nome"> ${endereco.receptor}</h3>
                         <p id="logradouro"> ${endereco.logradouro}</p>
                         <p id="tipoResidencia"> ${endereco.tipoResidencia} - ${endereco.numero} ${endereco.observacao}</p>
                         <p id="estado"> ${endereco.cidade}, ${endereco.estado} ${endereco.cep}
@@ -61,7 +61,7 @@ async function excluirEntrega(idEntrega) {
 
     if (!token) {
         alert("Erro: Token JWT não encontrado! Faça login novamente.");
-        window.location.href = "login.html"; // Redireciona para o login
+        window.location.href = "login.html"; 
         return;
     }
 

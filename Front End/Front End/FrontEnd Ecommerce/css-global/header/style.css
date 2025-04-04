@@ -1,4 +1,4 @@
-@import url(variaveis.css);
+@import url(../css-global/variaveis.css);
 
 header {
     width: 100%;
@@ -118,7 +118,7 @@ header {
     font-size: 9px;
     font-weight: 400;
     color: rgb(244, 241, 240);
-    margin-left: -53px;
+    margin-left: -48px;
 }
 
 .header-layote i {

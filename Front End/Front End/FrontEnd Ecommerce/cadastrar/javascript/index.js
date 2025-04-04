@@ -1,4 +1,4 @@
-document.getElementById("myForm").addEventListener("submit", async function (event) {
+document.getElementById("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const formData = {
@@ -66,9 +66,10 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
         console.log("Formulário enviado com sucesso!", result);
         alert("Formulário enviado com sucesso!");
 
-        document.getElementById("myForm").reset();
+        document.getElementById("form").reset();
+        window.location.href = "login-cliente.html";
+
     } catch (error) {
         console.error("Erro:", error);
-        alert("Erro: " + error.message);
     }
 });

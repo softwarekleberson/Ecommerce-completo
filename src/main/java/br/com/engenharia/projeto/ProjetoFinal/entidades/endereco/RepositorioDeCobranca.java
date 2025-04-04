@@ -1,5 +1,7 @@
 package br.com.engenharia.projeto.ProjetoFinal.entidades.endereco;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -13,4 +15,5 @@ public interface RepositorioDeCobranca {
 	void excluir(Long idCobranca);
 	DadosDetalhamentoCobranca salvarNovaCobranca(Cobranca cobranca);
 	Cobranca alterar(Long cobrancaId, DadosAtualizacaoCobrancas dados);
+	Optional<Cobranca> cobrancaPorId(Long cobrancaId);
 }

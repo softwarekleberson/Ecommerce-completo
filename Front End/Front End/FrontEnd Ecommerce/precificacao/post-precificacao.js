@@ -1,11 +1,10 @@
-document.getElementById("precificacao").addEventListener("submit", async function (event) {
+document.getElementById("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
     const precificacao = formData.get("precificacao");
 
-    // Obtém o token de autenticação
     const token = localStorage.getItem("token");
     if (!token) {
         alert("Erro: Token de autenticação não encontrado. Faça login novamente.");

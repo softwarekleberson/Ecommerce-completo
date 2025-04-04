@@ -6,118 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="contas-listas/contas-listas.css">
+    <link rel="stylesheet" href="css-global/css-global/reset.css">
+    <link rel="stylesheet" href="css-global/header/style.css">
+    <link rel="stylesheet" href="css-global/footer/style.css">
+    <link rel="stylesheet" href="css-global/main/style.css">
     <title>Contas e Listas</title>
 </head>
 
 <body>
-    
+
     <header>
-        <a class="logo" href="home.html">Hatchards</a>
-        <nav>
-            <a href="home.html#romance">Romance</a>
-            <a href="home.html#classico">Classico</a>
-            <a href="home.html#ficcao">Ficção</a>
-            <a href="home.html#autoajuda">Autoajuda</a>
-            <a href="contas-listas.html">Contas e Listas</a>
-            <a href="pedidos.html">Meus pedidos</a>
-        </nav>
-    
-        <div class="search-box">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-    
-        <div class="cart-and-avatar">
-            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        <div class="header-layote">
+            <div class="account">
+                <span>Login</span>
+                <a href="login-cliente.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+
+            <div class="logo">
+                <a href="./home.html"><span class="nome">Hatchards</span></a>
+                <span class="descricao">MELHORES LIVROS DESDE 1797</span>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Title, Author, Keyword, or ISBN">
+            </div>
+
+            <div class="bascket">
+                <i class="fas fa-shopping-bag"></i>
+                <a href="carrinho.html"><span>Carrinho</span></a>
+            </div>
         </div>
     </header>
 
+    <div class="links-home">
+        <a href="#">Livros Raros</a>
+        <a href="#">Livros</a>
+        <a href="#">Destaques</a>
+        <a href="#">Publicações Hatchards</a>
+        <a href="#">Assinaturas</a>
+        <a href="#">Bolsas Tote</a>
+        <a href="#">Vale-presentes</a>
+        <a href="#">Papelaria e Vale-presentes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Nossa História</a>
+        <a href="contas-listas.html">Contas e Listas</a>
+    </div>
+
+    <hr class="linha-hr">
+
+    <div class="descricao-home">
+        <a href="#">Entrega gratuita no Brasil para pedidos acima de R$ 25, caso contrário R$ 2,99</a>
+    </div>
+
     <main>
         <section class="container">
-            
             <div>
                 <a href="cadastrar.html">
-                    <h3>Cadatrar cliente</h3>
-                    <p>Novo cliente</p>
+                    <h3>Cadatrar Cliente</h3>
+                    <p>Novo Cliente</p>
                 </a>
             </div>
-
             <div>
                 <a href="entrega.html">
-                    <h3>Endereço entrega</h3>
-                    <p>Novos Endereços de entrega</p>
+                    <h3>Endereço Entrega</h3>
+                    <p>Novos Endereços de Entrega</p>
                 </a>
             </div>
-
             <div>
                 <a href="cobranca.html">
-                    <h3>Endereço cobrança</h3>
-                    <p>Novo Endereço cobrança</p>
+                    <h3>Endereço Cobrança</h3>
+                    <p>Novo Endereço Cobrança</p>
                 </a>
             </div>
-
             <div>
                 <a href="cupom.html">
-                    <h3>Meus cupons</h3>
-                    <p>Cupom de troca e devolução</p>
+                    <h3>Meus Cupons</h3>
+                    <p>Cupom de Troca e Devolução</p>
                 </a>
             </div>
-
             <div>
                 <a href="login-cliente.html">
                     <h3>Login</h3>
-                    <p>Realize seu login</p>
+                    <p>Realize seu Login</p>
                 </a>
             </div>
-
             <div>
                 <a href="cartoes.html">
-                    <h3>Cartoes</h3>
-                    <p>Gerencie formas de pagamento</p>
+                    <h3>Cartões</h3>
+                    <p>Gerencie Forma de Pagamento</p>
                 </a>
             </div>
-
             <div>
                 <a href="alterar-cliente.html">
-                    <h3>Atualizar cliente</h3>
-                    <p>Informações Basicas</p>
+                    <h3>Atualizar Cliente</h3>
+                    <p>Informações Básicas</p>
                 </a>
             </div>
-
             <div>
                 <a href="alterar-senha.html">
-                    <h3>Atualizar senha</h3>
-                    <p>Alterar senha</p>
+                    <h3>Atualizar Senha</h3>
+                    <p>Alterar Senha</p>
                 </a>
             </div>
-
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Sobre Nós</h3>
-                <p>Somos uma livraria online dedicada a oferecer uma vasta seleção de livros de qualidade para nossos
-                    clientes.</p>
-                <div class="contact">
-                    <span><i class="fas fa-map-marker-alt"></i> 123 Rua das Livrarias, Cidade dos Livros, Brasil</span>
-                    <span><i class="fas fa-envelope"></i> info@minhalivraria.com</span>
-                </div>
-            </div>
-            <div class="footer-section links">
-                <h3 class="links-uteis">Links Úteis</h3>
-                <ul>
-                    <li><a href="home.html">Página Inicial</a></li>
-                    <li><a href="home.html#">Catálogo de Livros</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </div>
+        <div class="footer-column">
+            <span>Compras Conosco</span>
+            <a href="#">Nossas Lojas</a>
+            <a href="#">Nossa História</a>
+            <a href="#">Serviços da Livraria</a>
+            <a href="#">Recompensas Hatchards</a>
+            <a href="#">Serviços de Construção de Bibliotecas</a>
+            <a href="#">Carreiras na Hatchards</a>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 Minha Livraria. Todos os direitos reservados.
+        <div class="footer-column">
+            <span>Atendimento ao Cliente</span>
+            <a href="#">Fale Conosco</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Preços Online</a>
+            <a href="#">Entrega e Devoluções</a>
+            <a href="#">Clique e Retire</a>
+        </div>
+        <div class="footer-column">
+            <span>Legal</span>
+            <a href="#">Termos e Condições</a>
+            <a href="#">Aviso de Privacidade - Como Usamos Suas Informações</a>
+            <a href="#">Política de Cookies</a>
+            <a href="#">Gerenciar Cookies</a>
+            <a href="#">Regulamento Geral de Segurança de Produtos da UE (GPSR)</a>
+            <a href="#">Processo de Reclamações</a>
         </div>
     </footer>
 </body>

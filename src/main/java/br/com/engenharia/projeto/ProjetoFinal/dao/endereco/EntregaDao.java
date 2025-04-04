@@ -158,4 +158,9 @@ public class EntregaDao implements RepositorioDeEntrega{
 			repository.atualizarEntregaPrincipal(idCliente);
 		}
 	}
+
+	@Override
+	public Optional<Entrega> entregaPorId(Long entregaId) {
+		return repository.findById(entregaId);
+	}
 }

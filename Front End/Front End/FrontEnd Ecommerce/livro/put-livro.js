@@ -1,17 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("form", () => {
     const form = document.getElementById("livro");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        // Obtém o token de autenticação
         const token = localStorage.getItem("token");
         if (!token) {
             alert("Erro: Token de autenticação não encontrado. Faça login novamente.");
             return;
         }
 
-        // Captura os dados do formulário
         const formData = new FormData(form);
         const data = {
             id: formData.get("id"),
