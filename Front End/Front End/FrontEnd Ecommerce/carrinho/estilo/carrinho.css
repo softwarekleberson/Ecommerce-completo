@@ -1,109 +1,9 @@
-/* Estilos gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-:root {
-    --cor0: rgb(000, 000, 000);
-    --cor1: rgb(255, 255, 255);
-    --cor2: rgb(120, 120, 120);
-    --cor3: rgba(237, 228, 228, 0.41);
-    --cor4: rgba(237, 228, 228, 0.643);
-    --cor5: #FF7E1B;
-
-    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --font-destaque: 'Kumbh Sans', sans-serif;
-}
-
-body {
-    background-color: #f4f4f9;
-    color: #2e2d2d;
-}
-
-/* Cabeçalho */
-header {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 110px;
-    margin-bottom: 20px;
-}
-
-header a {
-    text-decoration: none;
-    color: #fff;
-}
-
-header nav a {
-    margin-right: 15px;
-}
-
-.logo {
-    font-size: 2em;
-    padding-left: 80px;
-}
-
-.cart-and-avatar {
-    display: flex;
-    align-items: center;
-}
-
-.fa-cart-shopping {
-    font-size: 24px;
-}
-
-/* Estilos do campo de pesquisa */
-.search-box {
-    display: flex;
-    align-items: center;
-}
-
-.search-box input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 5px;
-}
-
-.search-box button[type="submit"] {
-    background-color: white;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.fa-search {
-    font-size: 16px;
-    color: black;
-}
-
-.fa-cart-shopping {
-    margin-right: 20px;
-    color: white;
-}
-
-a {
-    text-decoration: none;
-    color: var(--cor1);
-}
-
-a:hover {
-    color: var(--cor5);
-}
-
-/* Carrinho */
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
+    margin-top: 220px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -158,7 +58,7 @@ table img {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .card-compra .item {
@@ -173,7 +73,8 @@ table img {
     color: #555;
 }
 
-.valor-subtotal, .valor-total {
+.valor-subtotal,
+.valor-total {
     font-weight: bold;
     font-size: 1.2rem;
     color: #333;
@@ -183,6 +84,10 @@ table img {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
 }
 
 .link-botao {
@@ -191,64 +96,15 @@ table img {
 
 .botao {
     padding: 0.8rem 1.5rem;
-    background-color: #333;
-    color: #fff;
+    background-color: #29473D;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.botao:hover {
-    background-color: #555;
 }
 
 .estilo-botao {
-    background-color: #ff8800;
+    background-color: #29473D;
+    color: #ffffff;
 }
 
-.estilo-botao:hover {
-    background-color: #ff9900;
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--cor0);
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-section {
-    flex: 1;
-    padding: 1rem;
-}
-
-.footer-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    padding: 10px;
-}
-
-.footer-section p, .footer-section span {
-    font-size: 0.9rem;
-    padding: 10px;
-}
-
-.footer-bottom {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-}
-
-.footer-section ul {
-    list-style: none; 
-    text-decoration: none; 
-    padding: 10px;
-}

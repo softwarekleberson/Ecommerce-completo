@@ -51,7 +51,7 @@ fetch('http://localhost:8080/livros/listar')
 
                 livroDiv.querySelector('.img').addEventListener('click', function () {
                     const livroId = livro.id;
-                    window.location.href = `detalhes.html?id=${livroId}`;
+                    window.location.href = `detalhe-produto.html?id=${livroId}`;
                 });
 
                 linhaLivros.appendChild(livroDiv);

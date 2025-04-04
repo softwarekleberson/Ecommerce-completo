@@ -78,7 +78,6 @@ select:focus {
 button {
   width: 100%;
   padding: 15px;
-  background-color: #3498db;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -86,10 +85,12 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: 8px;
-}
 
-button:hover {
-  background-color: #2980b9;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: #29473D;
+  color: #ffffff;
 }
 
 input[type="checkbox"] {
