@@ -1,5 +1,5 @@
-document.addEventListener("form", () => {
-    const form = document.getElementById("livro");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -15,7 +15,6 @@ document.addEventListener("form", () => {
             id: formData.get("id"),
             data: formData.get("data") || null,
             preco: formData.get("preco") ? parseFloat(formData.get("preco")) : null,
-            ativo: formData.get("ativo") === "on" || null,
             titulo: formData.get("titulo") || null,
             isbn: formData.get("isbn") || null,
             paginas: formData.get("paginas") ? parseInt(formData.get("paginas"), 10) : null,
@@ -28,11 +27,8 @@ document.addEventListener("form", () => {
                 profundidade: formData.get("profundidade") ? parseFloat(formData.get("profundidade")) : null
             },
             editora: formData.get("editora") || null,
-            precificacao: formData.get("precificacao") ? parseFloat(formData.get("precificacao")) : null,
             edicao: formData.get("edicao") || null
         };
-
-        console.log("Dados enviados:", data);
 
         try {
             const response = await fetch("http://localhost:8080/admin/livros", {
@@ -44,19 +40,12 @@ document.addEventListener("form", () => {
                 body: JSON.stringify(data),
             });
 
-            if (!response.ok) {
-                const errorResponse = await response.json();
-                throw new Error(errorResponse.message || "Erro ao atualizar o livro");
-            }
-
-            const result = await response.json();
-            console.log("Resposta do servidor:", result);
+            if (!response.ok) throw new Error("Erro ao atualizar o livro");
 
             alert("Livro atualizado com sucesso!");
             window.location.href = "home-adm.html";
 
         } catch (error) {
-            console.error("Erro:", error);
             alert("Erro ao atualizar o livro. Verifique os dados e tente novamente.");
         }
     });
