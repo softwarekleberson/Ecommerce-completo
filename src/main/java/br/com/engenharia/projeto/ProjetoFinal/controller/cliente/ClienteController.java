@@ -80,14 +80,14 @@ public class ClienteController {
 		return ResponseEntity.ok(updateCliente);
 	}
 	
-	@PutMapping("/senha")
-	public ResponseEntity<Void> atualizarSenha(Authentication authentication, @RequestBody @Valid DadosAtualizacaoSenha dados) {
+	@PutMapping("atualizar/senha")
+	public ResponseEntity<String> atualizarSenha(Authentication authentication, @RequestBody @Valid DadosAtualizacaoSenha dados) {
 		UserEntity user = (UserEntity) authentication.getPrincipal();
 	    Long id = user.getId();
 
 	    serviceClienteUpdate.atualizarSenha(dados, id);
 	    
-	    return ResponseEntity.noContent().build(); 
+	    return ResponseEntity.ok("Senha atualizada com sucesso"); 
 	}
 	
 	@DeleteMapping

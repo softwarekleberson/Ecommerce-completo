@@ -20,7 +20,7 @@ if (token) {
           const div = document.createElement('div');
           div.classList.add('card');
           div.innerHTML = `
-            <h4 id="nomeImpresso">${cartao.nomeImpresso}</h4>
+            <h3 id="nomeImpresso">${cartao.nomeImpresso}</h3>
             <p id="codigo">Código: ${cartao.codigo}</p>
             <p id="bandeira">Bandeira: ${cartao.bandeira}</p>
             <p id="principal">Principal: ${cartao.principal ? 'Sim' : 'Não'}</p>

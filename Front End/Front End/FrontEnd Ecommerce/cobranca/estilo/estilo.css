@@ -2,6 +2,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 200px;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -34,12 +35,6 @@ main {
     margin-top: 20px;
 }
 
-a {
-    font-family: "Playfair Display", serif;
-    font-size: 18px;
-    font-weight: 600;
-}
-
 h2 {
     margin-bottom: 5px;
     font-family: "Playfair Display", serif;
@@ -50,6 +45,12 @@ h2 {
 
 .link {
     margin: auto;
+}
+
+.link a {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 h3 {
@@ -64,4 +65,8 @@ p {
     font-family: "Lato", sans-serif;
     font-size: 14px;
     font-weight: 400;
+}
+
+.card h2 {
+    text-align: center;
 }

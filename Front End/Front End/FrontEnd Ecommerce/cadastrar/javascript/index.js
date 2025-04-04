@@ -58,13 +58,12 @@ document.getElementById("form").addEventListener("submit", async function (event
 
         if (!response.ok) {
             const errorData = await response.json();
-            console.error("Erro ao enviar o formulário:", errorData);
+            alert("Erro ao enviar o formulário:", errorData);
             throw new Error(`Erro ao enviar o formulário: ${errorData.message || 'Erro desconhecido'}`);
         }
 
         const result = await response.json();
         console.log("Formulário enviado com sucesso!", result);
-        alert("Formulário enviado com sucesso!");
 
         document.getElementById("form").reset();
         window.location.href = "login-cliente.html";

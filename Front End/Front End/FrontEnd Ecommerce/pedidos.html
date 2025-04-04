@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagem/fiveicon.jpeg" type="image/x-icon">
 
     <script src="https://kit.fontawesome.com/76a998f4ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css-global/css-global/reset.css">
+    <link rel="stylesheet" href="css-global/header/style.css">
+    <link rel="stylesheet" href="css-global/footer/style.css">
     <link rel="stylesheet" href="meus-pedidos/estilo/pedidos.css">
     <title>Meus pedidos</title>
 </head>
+
 <body>
-     
+
     <header>
-        <a class="logo" href="home.html">Hatchards</a>
-        <nav>
-            <a href="home.html#romance">Romance</a>
-            <a href="home.html#classico">Classico</a>
-            <a href="home.html#ficcao">Ficção</a>
-            <a href="home.html#autoajuda">Autoajuda</a>
-            <a href="contas-listas.html">Contas e Listas</a>
-            <a href="pedidos.html">Meus pedidos</a>
-        </nav>
-    
-        <div class="search-box">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-    
-        <div class="cart-and-avatar">
-            <a href="carrinho.html"><i class="fas fa-cart-shopping"></i></a>
+        <div class="header-layote">
+            <div class="account">
+                <a href="login-cliente.html"><span>Login</span></a>
+                <a href="login-cliente.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+
+            <div class="logo">
+                <a href="./home.html"><span class="nome">Hatchards</span></a>
+                <span class="descricao">MELHORES LIVROS DESDE 1797</span>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Title, Author, Keyword, or ISBN">
+            </div>
+
+            <div class="bascket">
+                <a href="carrinho.html"><i class="fas fa-shopping-bag"></i></a>
+                <a href="carrinho.html"><span>Carrinho</span></a>
+            </div>
         </div>
     </header>
+
+    <div class="links-home">
+        <a href="#">Livros Raros</a>
+        <a href="#">Livros</a>
+        <a href="#">Destaques</a>
+        <a href="#">Publicações Hatchards</a>
+        <a href="#">Assinaturas</a>
+        <a href="#">Bolsas Tote</a>
+        <a href="#">Vale-presentes</a>
+        <a href="#">Papelaria e Vale-presentes</a>
+        <a href="#">Eventos</a>
+        <a href="#">Nossa História</a>
+        <a href="contas-listas.html">Contas e Listas</a>
+    </div>
+
+    <hr class="linha-hr">
+
+    <div class="descricao-home">
+        <a href="#">Entrega gratuita no Brasil para pedidos acima de R$ 25, caso contrário R$ 2,99</a>
+    </div>
 
     <main>
         <div id="orders-container" class="caixa-principal">
@@ -38,6 +65,36 @@
         </div>
     </main>
 
+    <footer>
+        <div class="footer-column">
+            <span>Compras Conosco</span>
+            <a href="#">Nossas Lojas</a>
+            <a href="#">Nossa História</a>
+            <a href="#">Serviços da Livraria</a>
+            <a href="#">Recompensas Hatchards</a>
+            <a href="#">Serviços de Construção de Bibliotecas</a>
+            <a href="#">Carreiras na Hatchards</a>
+        </div>
+        <div class="footer-column">
+            <span>Atendimento ao Cliente</span>
+            <a href="#">Fale Conosco</a>
+            <a href="#">Ajuda</a>
+            <a href="#">Preços Online</a>
+            <a href="#">Entrega e Devoluções</a>
+            <a href="#">Clique e Retire</a>
+        </div>
+        <div class="footer-column">
+            <span>Legal</span>
+            <a href="#">Termos e Condições</a>
+            <a href="#">Aviso de Privacidade - Como Usamos Suas Informações</a>
+            <a href="#">Política de Cookies</a>
+            <a href="#">Gerenciar Cookies</a>
+            <a href="#">Regulamento Geral de Segurança de Produtos da UE (GPSR)</a>
+            <a href="#">Processo de Reclamações</a>
+        </div>
+    </footer>
+
     <script src="meus-pedidos/Lista-pedido/listar-pedido.js"></script>
 </body>
+
 </html>

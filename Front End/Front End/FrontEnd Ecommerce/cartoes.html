@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css-global/css-global/reset.css">
     <link rel="stylesheet" href="css-global/header/style.css">
     <link rel="stylesheet" href="css-global/footer/style.css">
-    <link rel="stylesheet" href="css-global/main/style.css">
+    <link rel="stylesheet" href="cobranca/estilo/estilo.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <header>
         <div class="header-layote">
             <div class="account">
-                <span>Login</span>
+                <a href="login-cliente.html"><span>Login</span></a>
                 <a href="login-cliente.html"><i class="fa-solid fa-user"></i></a>
             </div>
 
@@ -32,7 +32,7 @@
             </div>
 
             <div class="bascket">
-                <i class="fas fa-shopping-bag"></i>
+                <a href="carrinho.html"><i class="fas fa-shopping-bag"></i></a>
                 <a href="carrinho.html"><span>Carrinho</span></a>
             </div>
         </div>
@@ -61,16 +61,15 @@
     <main>
         <div class="container">
             <div class="card">
-                <h2>Adicionar Cartão</h2>
-                <p>Credito ou Debito</p>
+                <h2>Adicionar Cobrança</h2>
                 <div class="actions">
-                    <a href="adiciona-cartao.html">Adicionar</a>
+                    <a class="link" href="adiciona-cartao.html">Adicionar</a>
                 </div>
             </div>
-        </div>
 
-        <div id="userList">
-            <!-- Aqui serão inseridos os cartões -->
+            <div id="userList">
+                <!-- Aqui serão inseridos as cobranças -->
+            </div>
         </div>
     </main>
 

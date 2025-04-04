@@ -61,7 +61,7 @@ public class ServiceCliente {
 			return new DetalharCliente(cliente);
 			
 		} catch (Exception e) {
-			throw new ValidacaoClienteServiceExpetion("Erro ao salvar cliente");
+			throw new ValidacaoClienteServiceExpetion(e + " Erro ao salvar cliente");
 		}    	
     }
 

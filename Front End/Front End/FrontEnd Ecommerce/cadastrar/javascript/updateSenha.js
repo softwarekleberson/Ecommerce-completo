@@ -31,7 +31,7 @@ async function enviarDados() {
 
     console.log("Enviando dados:", dados);
 
-    const url = "http://localhost:8080/cliente/senha";
+    const url = "http://localhost:8080/cliente/atualizar/senha";
 
     try {
         const response = await fetch(url, {
@@ -43,14 +43,14 @@ async function enviarDados() {
             body: JSON.stringify(dados)
         });
 
-        const responseData = await response.json();
+        const responseText = await response.text(); // <- AQUI é text() ao invés de json()
 
         if (!response.ok) {
-            throw new Error(responseData.message || "Erro ao atualizar a senha");
+            throw new Error(responseText || "Erro ao atualizar a senha");
         }
 
-        console.log("Senha atualizada com sucesso:", responseData);
-        alert("Senha alterada com sucesso!");
+        console.log("Resposta do servidor:", responseText);
+        alert(responseText);
         window.location.href = "contas-listas.html";
 
     } catch (error) {
