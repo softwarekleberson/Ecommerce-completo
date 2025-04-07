@@ -1,21 +1,39 @@
-const url = 'http://localhost:8080/cliente/cartoes';
+document.addEventListener('DOMContentLoaded', function () {
+  const userList = document.getElementById('userList');
+  const token = localStorage.getItem('token');
 
-const token = localStorage.getItem('token');
+  if (!token) {
+    alert("Erro: Token JWT não encontrado! Faça login novamente.");
+    window.location.href = "login.html";
+    return;
+  }
 
-if (token) {
-  fetch(url, {
+  // Cria o card fixo "Adicionar Cobrança"
+  const cardFixo = document.createElement('div');
+  cardFixo.classList.add('card');
+  cardFixo.innerHTML = `
+    <h2>Adicionar Cartão</h2>
+    <div class="actions">
+      <a class="link" href="adiciona-cartao.html">Adicionar</a>
+    </div>
+  `;
+  userList.appendChild(cardFixo);
+
+  // Requisição para buscar cartões
+  fetch('http://localhost:8080/cliente/cartoes', {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`
     }
   })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erro ao buscar cartões: ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then(data => {
       if (data.content && data.content.length > 0) {
-        const userList = document.getElementById('userList');
-
-        userList.innerHTML = '';
-
         data.content.forEach(cartao => {
           const div = document.createElement('div');
           div.classList.add('card');
@@ -38,11 +56,11 @@ if (token) {
     })
     .catch(error => {
       console.error('Erro na requisição:', error);
+      alert("Não foi possível carregar os cartões. Tente novamente mais tarde.");
     });
-} else {
-  console.error('Token não encontrado no localStorage');
-}
+});
 
+// Função para excluir cartão
 function excluirCartao(cartaoId) {
   if (!confirm("Tem certeza que deseja excluir este cartão? Esta ação não pode ser desfeita.")) {
     return;
@@ -65,13 +83,14 @@ function excluirCartao(cartaoId) {
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error(`Erro ao excluir cartão: ${response.status} - ${response.statusText}`);
+        alert("Este cartão não pode ser excluído porque está vinculado a um pedido.");
+        throw new Error(`Erro ao excluir cartão: ${response.statusText}`);
       }
-      return response.text(); 
+      return response.text();
     })
     .then(() => {
       alert("Cartão excluído com sucesso!");
-      location.reload(); 
+      location.reload();
     })
     .catch(error => {
       console.error('Erro ao excluir cartão:', error);

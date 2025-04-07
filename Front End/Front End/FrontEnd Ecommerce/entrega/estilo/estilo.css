@@ -1,16 +1,17 @@
 main {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 200px;
-    margin-bottom: 40px;
+    margin-top: 250px;
+    margin-bottom: 130px;
 }
 
 .container {
     max-width: 1200px;
     margin: 10px auto 50px;
     padding: 0 20px;
+}
+
+#user-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
     gap: 20px;
 }
 
@@ -18,15 +19,10 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    margin-top: 50px;
     padding: 20px;
+    height: auto;
     box-sizing: border-box;
-    height: 220px;
-    box-sizing: border-box;
-}
-
-.card:first-child {
-    grid-column: span 1;
+    background: #fff;
 }
 
 .card .actions {
@@ -35,12 +31,11 @@ main {
     margin-top: 20px;
 }
 
-h2 {
-    margin-bottom: 5px;
+.card h2,
+.card h3 {
+    text-align: center;
     font-family: "Playfair Display", serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-left: 25px;
+    margin-bottom: 5px;
 }
 
 .link {
@@ -51,11 +46,16 @@ h2 {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     font-weight: 600;
-} 
+    text-decoration: none;
+    color: #333;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
 
 h3 {
-    margin-bottom: 5px;
-    font-family: "Playfair Display", serif;
     font-size: 18px;
     font-weight: 600;
 }
