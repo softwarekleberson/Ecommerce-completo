@@ -37,7 +37,7 @@ document.getElementById("form").addEventListener("submit", async function (event
 
         const resultado = await response.json();
         console.log("Resposta do servidor:", resultado);
-        window.location.href = "../cartoes.html";
+        window.location.href = "cartoes.html";
 
 
     } catch (erro) {

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const userList = document.getElementById('user-list');
+    const userList = document.getElementById('userList');
 
     async function carregarUsuarios() {
         const token = localStorage.getItem("token");

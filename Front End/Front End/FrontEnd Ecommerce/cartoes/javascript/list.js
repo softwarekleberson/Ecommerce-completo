@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(error => {
       console.error('Erro na requisição:', error);
-      alert("Não foi possível carregar os cartões. Tente novamente mais tarde.");
     });
 });
 
