@@ -1,4 +1,4 @@
-document.addEventListener("form", async () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
     if (!token) {
         alert("Você precisa estar logado para visualizar o carrinho.");
