@@ -34,8 +34,7 @@ document.getElementById("form").addEventListener("submit", async function (event
 
         const result = await response.json();
         console.log("Sucesso:", result);
-        alert("Estoque cadastrado com sucesso!");
-        this.reset();
+        window.location.href = "home-adm.html"
 
     } catch (error) {
         console.error("Erro:", error);

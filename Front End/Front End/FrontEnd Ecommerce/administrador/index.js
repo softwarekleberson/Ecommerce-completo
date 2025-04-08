@@ -24,7 +24,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        document.getElementById('form').reset();
+        window.location.href = "home-adm.html"
     })
 
     .catch((error) => {

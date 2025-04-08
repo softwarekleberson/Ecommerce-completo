@@ -29,16 +29,16 @@ document.getElementById('recusar').addEventListener('click', function (event) {
         },
         body: JSON.stringify(data)
     })
-    .then(response => {
-        if (response.ok) {
-            alert('Devolução recusada com sucesso!');
-            document.getElementById('formDevolucao').reset();
-        } else {
-            alert('Erro ao recusar devolução.');
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao processar sua solicitação.');
-    });
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "home-adm.html"
+                document.getElementById('formDevolucao').reset();
+            } else {
+                alert('Ocorreu ao recusar devolução.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu ao recusar devolução.');
+        });
 });

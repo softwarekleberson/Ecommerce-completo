@@ -37,14 +37,14 @@ document.getElementById('aceitar').addEventListener('click', function (event) {
     })
     .then(response => {
         if (response.ok) {
-            alert('Devolução aceita com sucesso!');
+            window.location.href = home-adm.html
             document.getElementById('formDevolucao').reset();
         } else {
-            alert('Erro ao aceitar devolução.');
+            alert('Ocorreu um erro ao aceitar a devolução.');
         }
     })
     .catch(error => {
         console.error('Erro:', error);
-        alert('Ocorreu um erro ao processar sua solicitação.');
+        alert('Ocorreu um erro ao aceitar a devolução.');
     });
 });

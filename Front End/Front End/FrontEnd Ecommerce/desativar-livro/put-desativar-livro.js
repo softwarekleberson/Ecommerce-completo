@@ -35,11 +35,11 @@ document.getElementById("form").addEventListener("submit", async function (event
         }
 
         console.log("Sucesso:", result);
-        alert("Livro desativado com sucesso!");
+        window.location.href = "home-adm.html"
         this.reset();
 
     } catch (error) {
         console.error("Erro:", error);
-        alert(error.message || "Erro ao desativar o livro.");
+        alert("Erro ao desativar o livro.");
     }
 });

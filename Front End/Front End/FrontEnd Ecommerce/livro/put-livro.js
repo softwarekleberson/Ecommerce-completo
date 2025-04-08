@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!response.ok) throw new Error("Erro ao atualizar o livro");
 
-            alert("Livro atualizado com sucesso!");
             window.location.href = "home-adm.html";
 
         } catch (error) {

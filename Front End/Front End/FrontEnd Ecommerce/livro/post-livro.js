@@ -42,9 +42,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
     .then(response => response.json())
     .then(result => {
         console.log('Success:', result);
+        window.location.href = "home-adm.html"
         form.reset();  
     })
     .catch(error => {
-        console.error('Error:', error);
+        alert('Erro ao cadastrar novo livro');
     });
 });

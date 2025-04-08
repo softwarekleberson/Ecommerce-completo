@@ -28,7 +28,7 @@ document.getElementById("form").addEventListener("submit", async function (event
 
         const data = await response.json();
         console.log("Success:", data);
-        alert("Precificação cadastrada com sucesso!");
+        window.location.href = "home-adm.html"
         form.reset();
 
     } catch (error) {

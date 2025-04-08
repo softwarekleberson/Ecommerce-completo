@@ -44,11 +44,11 @@ document.getElementById("form").addEventListener("submit", async function (event
         }
 
         console.log("Sucesso:", result);
-        alert("Livro ativado com sucesso!");
+        window.location.href = "home-adm.html"
         this.reset();
 
     } catch (error) {
         console.error("Erro:", error);
-        alert(error.message);
+        alert("Erro ao ativar livro");
     }
 });

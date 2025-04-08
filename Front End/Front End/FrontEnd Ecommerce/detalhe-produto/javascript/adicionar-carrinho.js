@@ -1,4 +1,4 @@
-document.addEventListener('form', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
@@ -15,17 +15,7 @@ document.addEventListener('form', () => {
             return;
         }
 
-        const quantidadeElement = document.getElementById('quantidade');
-        if (!quantidadeElement) {
-            console.error("Erro: Elemento de quantidade não encontrado.");
-            return;
-        }
-
-        const quantidade = parseInt(quantidadeElement.innerText, 10);
-        if (isNaN(quantidade) || quantidade <= 0) {
-            alert("Selecione uma quantidade válida.");
-            return;
-        }
+        const quantidade = 1; // Valor fixo definido aqui
 
         try {
             const response = await fetch(`http://localhost:8080/cliente/pedidos/${id}`, {

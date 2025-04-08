@@ -4,7 +4,7 @@ form.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const dias = document.getElementById('dias').value;
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem('token');
 
     if (!token) {
         console.error("Token não encontrado!");
@@ -21,7 +21,7 @@ form.addEventListener('submit', async function (event) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` 
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(dados)
         });
@@ -29,10 +29,9 @@ form.addEventListener('submit', async function (event) {
         if (response.ok) {
             alert('Todos os pedidos serão excluídos em ' + dias + " dias");
         } else {
-            alert('Erro ao excluir pedidos.');
+            alert('Erro ao excluir pedidos do carrinho.');
         }
     } catch (error) {
         console.error('Erro na requisição:', error);
-        alert('Erro ao enviar a requisição.');
     }
 });

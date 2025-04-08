@@ -61,42 +61,40 @@
   <main>
     <section class="detalhar-produto">
       <div class="detalhe-container">
-        <img class="imagem-principal" src="" alt="Imagem principal do livro">
-        <div class="detalhe-texto">
-          <h4 id="autor"></h4>
-          <h2 id="categoria"></h2>
-          <h2 id="titulo">Iliada</h2>
-          <p id="sinopse"></p>
+        <div class="caixa-imagem"><img class="imagem-principal" src="" alt="Imagem principal do livro"></div>
+      </div>
+      <div class="detalhe-texto">
+        <h2 id="titulo"></h2>
+        <h4 id="autor"></h4>
+        <p id="sinopse"></p>
+        <p id="preco"></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="botoes">
+        <div class="adicionar">
+          <a href="carrinho.html">
+            <button id="adicionar-carrinho">
+              <i class="fa-solid fa-cart-plus"></i>
+              <span>ADICIONAR AO CARRINHO</span>
+            </button>
+          </a>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="quantidade-container">
-        <button id="decrementar">-</button>
-        <span id="quantidade">1</span>
-        <button id="incrementar">+</button>
-      </div>
-    </section>
 
-    <section>
-      <div class="preco-container">
-        <span id="preco">R$ :</span>
-        <a href="carrinho.html">
-          <button id="adicionar-carrinho">
-            <i class="fa-solid fa-cart-plus"></i>
-          </button>
-        </a>
-      </div>
-    </section>
-
-    <section>
-      <table id="livroDetails">
-        <tr>
-          <th>Item</th>
-          <th>Informação</th>
-        </tr>
+      <table id="livroDetails" class="tabela-moderna">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Informação</th>
+          </tr>
+        </thead>
       </table>
+
     </section>
   </main>
 
