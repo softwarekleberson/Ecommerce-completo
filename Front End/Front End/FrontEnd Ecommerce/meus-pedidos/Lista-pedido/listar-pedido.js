@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <img src="${order.primeiraImagem}" alt="">
                     <p class="data-entrega">Entregue ${order.entregue}</p>
                     <p class="nome-produto">${order.nome}</p>
-                    <p class="quantidade-produto">${order.quantidade}</p>
+                    <p class="quantidade-produto">Quantidade ${order.quantidade}</p>
                     <button class="botao-devolucao">Troca</button>
                 </div>
             </div>

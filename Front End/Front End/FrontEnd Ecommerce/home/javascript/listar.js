@@ -23,7 +23,7 @@ fetch('http://localhost:8080/livros/listar')
                     <div class="textos-carrosel">
                         <span class="titulo">${categoria.toUpperCase()}</span>
                     </div>
-                        <span class="titulo">SEE ALL</span>
+                        <span class="titulo">VEJA MAIS</span>
                 </div>
             `;
 

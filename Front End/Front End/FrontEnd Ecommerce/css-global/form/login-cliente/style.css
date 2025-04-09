@@ -9,3 +9,7 @@ a {
     font-size: 17px;
     font-weight: 400;
 }
+
+a:hover {
+    color: #A48847;
+}
