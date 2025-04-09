@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const ordersContainer = document.getElementById('form');
+    const ordersContainer = document.getElementById('orders-container');
 
     const createOrderHTML = (order) => {
         return `
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const fetchOrders = async () => {
         try {
-            const token = localStorage.getItem('token'); 
+            const token = localStorage.getItem('token');
             if (!token) {
                 console.error("Token não encontrado!");
                 return;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch(`http://localhost:8080/cliente/pedidos/pagos`, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${token}` 
+                    'Authorization': `Bearer ${token}`
                 }
             });
 
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${token}` 
+                                    'Authorization': `Bearer ${token}`
                                 },
                                 body: JSON.stringify(requestBody)
                             });
@@ -108,5 +108,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    await fetchOrders(); 
+    await fetchOrders();
 });

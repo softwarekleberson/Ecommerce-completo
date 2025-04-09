@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!token) {
     alert("Erro: Token JWT não encontrado! Faça login novamente.");
-    window.location.href = "login.html";
+    window.location.href = "login-cliente.html";
     return;
   }
 
