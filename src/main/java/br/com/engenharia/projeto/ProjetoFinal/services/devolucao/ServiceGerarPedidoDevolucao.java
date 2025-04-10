@@ -25,7 +25,6 @@ import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.Pedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.RepositorioDePedido;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusEntrega;
 import br.com.engenharia.projeto.ProjetoFinal.entidades.pedido.StatusPedido;
-import br.com.engenharia.projeto.ProjetoFinal.persistencia.user.UserRepository;
 import jakarta.validation.Valid;
 
 @Service
@@ -53,7 +52,7 @@ public class ServiceGerarPedidoDevolucao {
 		
 		var pedido = carregaPedidoPeloCodigoPedido(dados);		
 		pedido.devolucaoPedida(DevolucaoFoiPedidaOUNAO.DEVOLUCAO_PEDIDO);
-		
+
 		if(pedido.getStatusPedido() != StatusPedido.PAGO) {
 			throw new ValidarPedidoDevolucaoServiceException("Pedido ainda não pago");
 		}
@@ -67,6 +66,7 @@ public class ServiceGerarPedidoDevolucao {
 		
 		var cliente = carregaClientePeloId(idCliente);
 		var admAleatorio = escolheAdmAleatoriamente();
+		
 		String codigoPedido = pedido.getCodigoPedido();
 		String criaCodigoDevolucao = UUID.randomUUID().toString();
 		

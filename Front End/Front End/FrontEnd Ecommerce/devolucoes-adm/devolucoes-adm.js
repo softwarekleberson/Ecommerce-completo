@@ -16,7 +16,7 @@ async function fetchDevolucoes() {
         });
 
         if (!response.ok) {
-            throw new Error('Erro ao buscar as devoluções');
+            console.log('Erro ao buscar as devoluções');
         }
 
         const data = await response.json();

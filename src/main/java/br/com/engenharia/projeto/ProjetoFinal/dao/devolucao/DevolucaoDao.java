@@ -21,7 +21,6 @@ public class DevolucaoDao implements RepositorioDeDevolucao{
 	
 	@Override
 	public void salvar(Devolucao devolucao) {
-		System.out.println(devolucao.toString());
 		this.devolucao.save(devolucao);
 	}
 

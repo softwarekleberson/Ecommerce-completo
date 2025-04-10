@@ -32,7 +32,6 @@ document.getElementById('recusar').addEventListener('click', function (event) {
         .then(response => {
             if (response.ok) {
                 window.location.href = "home-adm.html"
-                document.getElementById('formDevolucao').reset();
             } else {
                 alert('Ocorreu ao recusar devolução.');
             }
