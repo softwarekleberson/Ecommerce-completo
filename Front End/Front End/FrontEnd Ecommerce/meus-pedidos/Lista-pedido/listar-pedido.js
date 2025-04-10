@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ordersContainer = document.getElementById('orders-container');
 
     const createOrderHTML = (order) => {
+        console.log(order)
+        
         return `
         <div class="caixa-principal">
             <div class="cabecalho">
