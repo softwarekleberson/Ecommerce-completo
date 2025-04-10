@@ -103,6 +103,10 @@ table img {
     cursor: pointer;
 }
 
+.botao:hover {
+    background-color: #A48847;
+}
+
 .estilo-botao {
     background-color: #29473D;
     color: #ffffff;

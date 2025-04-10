@@ -109,6 +109,10 @@ button {
   border: none;
 }
 
+button:hover {
+  background-color: #A48847;
+}
+
 button i {
   margin-right: 5px;
 }

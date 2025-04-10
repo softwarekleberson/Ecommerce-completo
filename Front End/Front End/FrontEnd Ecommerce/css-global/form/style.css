@@ -93,6 +93,10 @@ button {
   color: #ffffff;
 }
 
+button:hover {
+  background-color: #A48847;
+}
+
 input[type="checkbox"] {
   width: auto;
   margin-right: 8px;
