@@ -6,21 +6,25 @@ a {
     margin-right: 60px;
 }
 
-.salvar {
-    color: #007BFF;
-    font-size: 1.1em;
-    margin-left: -20px;
-}
-
 .container {
     width: 80%;
     max-width: 1200px;
     margin: 180px auto;
+
+    font-family: "Lato", "sans-serif";
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
 }
 
 h2 {
     font-size: 28px;
     margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: rgb(164, 136, 71);
 }
 
 .grid-container {
@@ -42,13 +46,17 @@ h2 {
 }
 
 h3 {
-    font-size: 22px;
     margin-bottom: 15px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
 }
 
 .button-small {
     padding: 8px 12px;
-    background-color: #007BFF;
+    background-color: #29473D;
     color: white;
     border: none;
     border-radius: 10px;
@@ -58,7 +66,7 @@ h3 {
 }
 
 .button-small:hover {
-    background-color: #0056b3;
+    background-color: rgb(164, 136, 71);
 }
 
 .products-section {
@@ -133,7 +141,7 @@ input[type="number"] {
 
 .button {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: rgb(164, 136, 71);
     color: white;
     border: none;
     padding: 12px 0;
@@ -144,13 +152,49 @@ input[type="number"] {
 }
 
 .button:hover {
-    background-color: #45a049;
+    background-color: rgb(164, 136, 71);
 }
 
 #salvar {
     margin-left: 450px;
     transform: translatey(-25px);
 }
+
+.links {
+    color: #A48847;
+}
+
+.products-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: rgb(164, 136, 71);
+}
+
+.pedido-item .quantidade{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pedido-item .preco {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pedido-item .subtotal {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.pedido-item .hr {
+    margin-bottom: 15px;
+}
+
+.preco-final {
+    color: rgb(164, 136, 71);
+}
+
+
 
 @media(max-width: 768px) {
     .grid-container {

@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     pedidoElement.innerHTML = `
                         <h3>${pedido.nome}</h3>
                         <img src="${pedido.primeiraImagem}" alt="${pedido.nome}" width="100" />
-                        <p>Quantidade: ${pedido.quantidade}</p>
-                        <p>Preço Unitário: R$${pedido.precoUnitario.toFixed(2)}</p>
-                        <p>Subtotal: R$${pedido.subtotal.toFixed(2)}</p>
-                        <hr>
+                        <p class="quantidade">Quantidade: ${pedido.quantidade}</p>
+                        <p class="preco">Preço Unitário: R$${pedido.precoUnitario.toFixed(2)}</p>
+                        <p class="subtotal">Subtotal: R$${pedido.subtotal.toFixed(2)}</p>
+                        <hr class="hr">
                     `;
                     
                     pedidosSection.appendChild(pedidoElement);
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const totalElement = document.createElement('div');
                 totalElement.classList.add('total-geral');
                 totalElement.innerHTML = `
-                    <h3 class="preco-final">Total: R$${totalGeral.toFixed(2)}</h3>
-                    <p>Em 1 x no cartão R$${totalGeral.toFixed(2)}</p>
+                    <h3 class="preco-final">Total: R$ ${totalGeral.toFixed(2)}</h3>
+                    <p>Em 1 x no cartão R$ ${totalGeral.toFixed(2)}</p>
                 `;
                 
                 pedidosSection.appendChild(totalElement); 
