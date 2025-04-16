@@ -1,7 +1,5 @@
 package br.com.engenharia.projeto.ProjetoFinal.controller.endereco;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -49,7 +47,7 @@ public class CobrancaController {
 	}
 	
 	@GetMapping("/{cobrancaId}")
-	public ResponseEntity<Cobranca> obterCobrancaPorId(
+	public ResponseEntity<DadosDetalhamentoCobranca> obterCobrancaPorId(
 	        Authentication authentication, 
 	        @PathVariable Long cobrancaId) {
 	    
@@ -58,7 +56,8 @@ public class CobrancaController {
 	    Cobranca cobranca = repositorioDeCobranca.cobrancaPorId(cobrancaId)
 	            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cobrança não encontrada"));
 
-	    return ResponseEntity.ok(cobranca);
+	    DadosDetalhamentoCobranca dados = new DadosDetalhamentoCobranca(cobranca);
+	    return ResponseEntity.ok(dados); 
 	}
 
 	

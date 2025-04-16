@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("token", resultado.token);
 
                 setTimeout(function() {
-                    window.location.href = "/home.html";
+                    window.location.href = "../home.html";
                 }, 3000);
             } else {
                 console.error("Token não encontrado na resposta.");

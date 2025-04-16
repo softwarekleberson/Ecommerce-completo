@@ -45,7 +45,7 @@ public class EntregaController {
 	}
 	
 	@GetMapping("/{entregaId}")
-	public ResponseEntity<Entrega> obterEntregaPorId(
+	public ResponseEntity<DadosDetalhamentoEntrega> obterEntregaPorId(
 	        Authentication authentication, 
 	        @PathVariable Long entregaId) {
 	    
@@ -54,7 +54,9 @@ public class EntregaController {
 	    Entrega entrega = repositorioDeEntrega.entregaPorId(entregaId)
 	            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Entrega não encontrada"));
 
-	    return ResponseEntity.ok(entrega);
+	    DadosDetalhamentoEntrega dados = new DadosDetalhamentoEntrega(entrega);
+	    
+	    return ResponseEntity.ok(dados);
 	}
 
 	

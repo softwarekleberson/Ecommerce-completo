@@ -1,3 +1,51 @@
+document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        alert("Erro: Token JWT não encontrado! Faça login novamente.");
+        window.location.href = "login.html"; 
+        return;
+    }
+
+    const id = obterIdDaURL(); 
+    if (!id) {
+        alert("Erro: ID da cobrança não encontrado.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:8080/cliente/cobrancas/${id}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar dados da cobrança');
+        }
+
+        const dados = await response.json();
+
+        // Preenchendo o formulário com os dados da cobrança
+        document.getElementById('principal').checked = dados.principal;
+        document.getElementById('tipoResidenciaCobranca').value = dados.tipoResidencia;
+        document.getElementById('receptorCobranca').value = dados.receptor;
+        document.getElementById('tipoLogradouroCobranca').value = dados.tipoLogradouto;
+        document.getElementById('logradouroCobranca').value = dados.logradouro;
+        document.getElementById('numeroCobranca').value = dados.numero;
+        document.getElementById('bairroCobranca').value = dados.bairro;
+        document.getElementById('cepCobranca').value = dados.cep;
+        document.getElementById('observacaoCobranca').value = dados.observacao;
+        document.getElementById('cidadeCobranca').value = dados.cidade;
+        document.getElementById('estadoCobranca').value = dados.estado;
+        document.getElementById('paisCobranca').value = dados.pais;
+
+    } catch (error) {
+        console.error("Erro ao carregar dados da cobrança:", error);
+    }
+});
+
 document.getElementById("form").addEventListener("submit", async function(event) {
     event.preventDefault(); 
 
@@ -26,18 +74,18 @@ document.getElementById("form").addEventListener("submit", async function(event)
     console.log(id);
 
     const data = {
-        "principal": principal || null,
-        "receptorCobranca": receptorCobranca || null,
-        "tipoResidenciaCobranca": tipoResidenciaCobranca || null,
-        "tipoLogradouroCobranca": tipoLogradouroCobranca || null,
-        "logradouroCobranca": logradouroCobranca || null,
-        "numeroCobranca": numeroCobranca || null,
-        "bairroCobranca": bairroCobranca || null,
-        "cepCobranca": cepCobranca || null,
-        "observacaoCobranca": observacaoCobranca || null,
-        "cidadeCobranca": cidadeCobranca || null,
-        "estadoCobranca": estadoCobranca || null,
-        "paisCobranca": paisCobranca || null,
+        principal: principal,
+        receptorCobranca: receptorCobranca,
+        tipoResidenciaCobranca: tipoResidenciaCobranca,
+        tipoLogradouroCobranca: tipoLogradouroCobranca,
+        logradouroCobranca: logradouroCobranca,
+        numeroCobranca: numeroCobranca,
+        bairroCobranca: bairroCobranca,
+        cepCobranca: cepCobranca,
+        observacaoCobranca: observacaoCobranca,
+        cidadeCobranca: cidadeCobranca,
+        estadoCobranca: estadoCobranca,
+        paisCobranca: paisCobranca,
     };
 
     const url = `http://localhost:8080/cliente/cobrancas/${id}`; 

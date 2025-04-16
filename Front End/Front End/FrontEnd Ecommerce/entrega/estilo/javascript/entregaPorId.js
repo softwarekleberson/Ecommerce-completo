@@ -42,16 +42,16 @@ async function carregarDadosEntrega(id, token) {
 function preencherFormulario(entrega) {
     document.getElementById("principal").checked = entrega.principal || false;
     document.getElementById("receptorEntrega").value = entrega.receptor || "";
-    document.getElementById("tipoResidenciaEntrega").value = entrega.tipoResidencia.tipoResidencia || "";
-    document.getElementById("tipoLogradouroEntrega").value = entrega.tipoLogradouro.tipoLogradouro || "";
+    document.getElementById("tipoResidenciaEntrega").value = entrega.tipoResidencia || "";
+    document.getElementById("tipoLogradouroEntrega").value = entrega.tipoLogradouto || "";
     document.getElementById("logradouroEntrega").value = entrega.logradouro || "";
     document.getElementById("numeroEntrega").value = entrega.numero || "";
     document.getElementById("bairroEntrega").value = entrega.bairro || "";
-    document.getElementById("cepEntrega").value = entrega.cep.cep || "";
+    document.getElementById("cepEntrega").value = entrega.cep || "";
     document.getElementById("observacaoEntrega").value = entrega.observacao || "";
-    document.getElementById("cidadeEntrega").value = entrega.cidade.cidade || "";
-    document.getElementById("estadoEntrega").value = entrega.cidade.estado.estado || "";
-    document.getElementById("paisEntrega").value = entrega.pais.pais || "Brasil";
+    document.getElementById("cidadeEntrega").value = entrega.cidade || "";
+    document.getElementById("estadoEntrega").value = entrega.estado || "";
+    document.getElementById("paisEntrega").value = entrega.pais || "Brasil";
     document.getElementById("fraseEntregaEntrega").value = entrega.fraseEntrega || "";
 }
 

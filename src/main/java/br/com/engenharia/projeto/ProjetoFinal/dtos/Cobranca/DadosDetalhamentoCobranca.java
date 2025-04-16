@@ -6,10 +6,9 @@ public record DadosDetalhamentoCobranca(
 		
 		Long id, String logradouro, String numero,
 		String bairro, String cep, String observacao,
-		String tipoLogradouto,
-		String tipoResidencia, String cidade,
-		String estado, String pais, boolean principal,
-		String receptor
+		String tipoLogradouto, String tipoResidencia,
+		String cidade, String estado, String pais,
+		boolean principal, String receptor
 		
 		) {
 

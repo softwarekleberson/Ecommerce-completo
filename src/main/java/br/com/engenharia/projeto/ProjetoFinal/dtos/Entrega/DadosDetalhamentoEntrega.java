@@ -21,6 +21,6 @@ public record DadosDetalhamentoEntrega(
 				entrega.getTipoResidencia().getTipoResidencia(), entrega.getCidade().getCidade(),
 				entrega.getCidade().getEstado().getEstado(), 
 				entrega.getCidade().getEstado().getPais().getPais(), entrega.isPrincipal(),
-				entrega.getCliente().getNome());
+				entrega.getReceptor());
 	}
 }

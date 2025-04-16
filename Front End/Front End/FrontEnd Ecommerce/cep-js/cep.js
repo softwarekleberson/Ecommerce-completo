@@ -2,7 +2,7 @@ document.getElementById('cep').addEventListener('blur', function() {
     let cep = this.value.replace(/\D/g, '');
 
     if (cep !== "") {
-        let validacep = /^[0-9]{8}$/;
+        let validacep = /^[0-9]{5}-[0-9]{3}$/;
 
         if (validacep.test(cep)) {
             fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -23,7 +23,6 @@ document.getElementById('cep').addEventListener('blur', function() {
                 .catch(error => console.error('Erro ao buscar CEP:', error));
         } else {
             alert("Formato de CEP inválido.");
-            limpaFormulario();
         }
     } else {
         limpaFormulario();
