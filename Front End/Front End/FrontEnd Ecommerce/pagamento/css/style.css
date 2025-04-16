@@ -1,10 +1,4 @@
-a {
-    text-decoration: none;
-    color: var(--cor5);
-    font-size: 1.2em;
-    margin-left: 60px;
-    margin-right: 60px;
-}
+
 
 .container {
     width: 80%;
@@ -155,14 +149,6 @@ input[type="number"] {
     background-color: rgb(164, 136, 71);
 }
 
-#salvar {
-    margin-left: 450px;
-    transform: translatey(-25px);
-}
-
-.links {
-    color: #A48847;
-}
 
 .products-section h2 {
     font-family: "Playfair Display", serif;
@@ -190,11 +176,26 @@ input[type="number"] {
     margin-bottom: 15px;
 }
 
+#entrega {
+    margin-bottom: 20px;
+}
+
+#cobranca {
+    margin-bottom: 20px;
+}
+
+#cartao {
+    margin-bottom: 20px;
+}
+
 .preco-final {
     color: rgb(164, 136, 71);
 }
 
-
+.section .links {
+    color: rgb(164, 136, 71);
+    margin-top: 30px;
+}
 
 @media(max-width: 768px) {
     .grid-container {

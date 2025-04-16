@@ -98,7 +98,6 @@ public class ServicePagamento {
 		
 		ServicePagamentoPedido.associarPagamentoAPedidos(pagamento, pedidos, pedidoRepository);
 		ServiceBaixaEstoque.baixaNoEstoque(pedidos, estoqueRepository);
-		ServiceExclusaoCartao.cartaoSeraSalvo(dados.salvarCartao(), cartoes, cartaoRepository);
 		
 		Log log = new Log(clienteId);
 		repositorioDeLog.save(log);

@@ -15,7 +15,6 @@ async function enviarPagamento() {
             return;
         }
 
-        const salvarCartao = document.getElementById("salvar").checked;
         const cupom1 = sanitizeInput(document.getElementById("cupom1")?.value);
         const cupom2 = sanitizeInput(document.getElementById("cupom2")?.value);
 
@@ -29,7 +28,7 @@ async function enviarPagamento() {
             return;
         }
 
-        const dadosPagamento = { salvarCartao };
+        const dadosPagamento = {};
 
         if (idCartao1) {
             dadosPagamento.idCartao1 = parseInt(idCartao1);

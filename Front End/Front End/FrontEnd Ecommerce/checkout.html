@@ -25,41 +25,31 @@
   <div class="container">
     <h2>Finalizar Compra</h2>
     <div class="grid-container">
-      <!-- Seção principal com formulários -->
       <div>
-        <!-- Endereço de Entrega Principal -->
         <div class="section">
           <div id="entrega">
 
           </div>
-          <button class="button-small" id="editEntrega">Novo Endereço de Entrega</button>
-          <a href="entrega.html" target="_blank" class="links">Trocar entrega principal</a>
+          <a href="entrega.html" target="_blank" class="links">Nova Entrega</a>
+          <a href="entrega.html" target="_blank" class="links">Atualizar Entrega</a>
         </div>
 
-        <!-- Endereço de Cobrança Principal-->
         <div class="section">
           <div id="cobranca">
 
           </div>
-          <button class="button-small" id="editCobranca">Novo Endereço de Cobrança</button>
-          <a href="cobranca.html" target="_blank" class="links">Trocar cobrança principal</a>
+          <a href="cobranca.html" target="_blank" class="links">Nova Cobrança</a>
+          <a href="cobranca.html" target="_blank" class="links">Atualizar Cobrança</a>
         </div>
 
-        <!-- Informações do Cartão Principal-->
         <div class="section">
-
           <div id="cartao">
             <!--Aqui entra cartao principal-->
           </div>
-
-          <button class="button-small" id="editCartao">Novo Cartão</button>
-          <a href="cartoes.html" target="_blank" class="links">Trocar cartão</a>
-
-          <label for="salvar" class="links">Salvar cartão ?</label><br>
-          <input type="checkbox" class="checkbox" id="salvar" name="salvar" checked>
+          <a href="cartoes.html" target="_blank" class="links">Novo Cartão</a>
+          <a href="cartoes.html" target="_blank" class="links">Atualizar Cartão</a>
         </div>
 
-        <!-- Seção de Cupons -->
         <div id="validar-cupom">
           <h3>Usar cupom</h3>
           <input type="text" placeholder="Código do cupom 1" id="cupom1">
@@ -79,160 +69,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Modal de Endereço de Entrega -->
-  <div id="modalEntrega" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeEntrega">&times;</span>
-      <form id="nova-entrega">
-
-        <label for="principalEntrega">Entrega principal</label>
-        <input type="checkbox" id="principalEntrega" name="principal" checked><br>
-
-        <label for="receptorEntrega">Receptor</label>
-        <input type="text" name="receptorEntrega" id="receptorEntrega" autocomplete="name" required
-          placeholder="Quem irá receber a entrega">
-
-        <label for="tipoResidenciaEntrega">Tipo de Residência:</label>
-        <input type="text" id="tipoResidenciaEntrega" name="tipoResidenciaEntrega"
-          placeholder="casa, apartamento, kitnet, chalé, cobertura etc" required autocomplete="off"><br><br>
-
-        <label for="tipoLogradouroEntrega">Tipo de Logradouro:</label>
-        <input type="text" id="tipoLogradouroEntrega" name="tipoLogradouroEntrega"
-          placeholder="Rua, Avenida, Alameda, Travessa, etc" required autocomplete="off"><br><br>
-
-        <label for="logradouroEntrega">Logradouro:</label>
-        <input type="text" id="logradouroEntrega" name="logradouroEntrega"
-          placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required autocomplete="off"><br><br>
-
-        <label for="numeroEntrega">Número:</label>
-        <input type="text" id="numeroEntrega" name="numeroEntrega" placeholder="Digite o número do imóvel"
-          required><br><br>
-
-        <label for="bairroEntrega">Bairro:</label>
-        <input type="text" id="bairroEntrega" name="bairroEntrega" placeholder="Digite o nome do bairro"
-          required><br><br>
-
-        <label for="cepEntrega">CEP:</label>
-        <input type="text" id="cepEntrega" name="cepEntrega" placeholder="12345-678" required autocomplete="off"
-          pattern="\d{5}-\d{3}"><br><br>
-
-        <label for="observacaoEntrega">Observação:</label>
-        <textarea id="observacaoEntrega" name="observacaoEntrega" placeholder="Opcional"></textarea><br><br>
-
-        <label for="cidadeEntrega">Cidade:</label>
-        <input type="text" id="cidadeEntrega" name="cidadeEntrega" placeholder="Digite sua cidade" required><br><br>
-
-        <label for="estadoEntrega">Estado:</label>
-        <input type="text" id="estadoEntrega" name="estadoEntrega" placeholder="Digite seu estado" required><br><br>
-
-        <label for="paisEntrega">País:</label>
-        <input type="text" id="paisEntrega" name="paisEntrega" placeholder="Digite seu pais" required><br><br>
-
-        <label for="fraseEntregaEntrega">Frase de Entrega:</label>
-        <input type="text" id="fraseEntregaEntrega" name="fraseEntregaEntrega"
-          placeholder="Informe instruções específicas de entrega" required><br><br>
-
-        <button class="button">Salvar Endereço</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Modal de Endereço de Cobrança -->
-  <div id="modalCobranca" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeCobranca">&times;</span>
-
-      <form id="nova-cobranca" autocomplete="on">
-
-        <label for="principalCobranca">Cobranca principal</label>
-        <input type="checkbox" id="principalCobranca" name="principal" checked><br>
-
-        <label for="receptorCobranca">Receptor</label>
-        <input type="text" name="receptorCobranca" id="receptorCobranca" autocomplete="name" required
-          placeholder="Quem irá receber a cobrança" checked>
-
-        <label for="tipoResidenciaCobranca">Tipo de Residência:</label>
-        <input type="text" id="tipoResidenciaCobranca" name="tipoResidenciaCobranca"
-          placeholder="casa, apartamento, kitnet, chalé, cobertura etc" required autocomplete="off"><br><br>
-
-        <label for="tipoLogradouroCobranca">Tipo de Logradouro:</label>
-        <input type="text" id="tipoLogradouroCobranca" name="tipoLogradouroCobranca"
-          placeholder="Rua, Avenida, Alameda, Travessa, etc." required autocomplete="off"><br><br>
-
-        <label for="logradouroCobranca">Logradouro:</label>
-        <input type="text" id="logradouroCobranca" name="logradouroCobranca"
-          placeholder="Ex: Rua das Flores, Avenida Central, Praça da Liberdade" required autocomplete="off"><br><br>
-
-        <label for="numeroCobranca">Número:</label>
-        <input type="text" id="numeroCobranca" name="numeroCobranca" placeholder="Digite o número do imóvel"
-          required><br><br>
-
-        <label for="bairroCobranca">Bairro:</label>
-        <input type="text" id="bairroCobranca" name="bairroCobranca" placeholder="Digite o nome do bairro"
-          required><br><br>
-
-        <label for="cepCobranca">CEP:</label>
-        <input type="text" id="cepCobranca" name="cepCobranca" placeholder="12345-678" required autocomplete="off"
-          pattern="\d{5}-\d{3}"><br><br>
-
-        <label for="observacaoEntrega">Observação:</label>
-        <textarea id="observacaoCobranca" name="observacaoCobranca"
-          placeholder="Inclua observações adicionais (opcional)"></textarea><br><br>
-
-        <label for="cidadeCobranca">Cidade:</label>
-        <input type="text" id="cidadeCobranca" name="cidadeCobranca" placeholder="Digite sua cidade" required><br><br>
-
-        <label for="estadoCobranca">Estado:</label>
-        <input type="text" id="estadoCobranca" name="estadoCobranca" placeholder="Digite seu estado" required><br><br>
-
-        <label for="paisCobranca">País:</label>
-        <input type="text" id="paisCobranca" name="paisCobranca" placeholder="Digite seu pais" required><br><br>
-
-        <button class="button">Salvar Endereço</button>
-      </form>
-
-    </div>
-  </div>
-
-  <!-- Modal de Cartão -->
-  <div id="modalCartao" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeCartao">&times;</span>
-
-      <form id="novo-cartao" autocomplete="on">
-
-        <label for="principal">Principal:</label><br>
-        <input type="checkbox" id="principal" name="principal" checked><br>
-
-        <label for="numeroCartao">Número do Cartão:</label><br>
-        <input type="text" id="numeroCartao" name="numeroCartao" placeholder="Ex: 1234567899874563" required><br>
-
-        <label for="nomeImpresso">Nome Impresso:</label><br>
-        <input type="text" id="nomeImpresso" name="nomeImpresso" placeholder="Nome completo" required
-          autocomplete="name"><br>
-
-        <label for="codigo">Código:</label><br>
-        <input type="text" id="codigo" name="codigo" placeholder="Ex: 123" required><br>
-
-        <label for="dataExpiracao">Data validade</label><br>
-        <input type="date" id="dataExpiracao" name="dataExpiracao" placeholder="Data validade cartão">
-        <br>
-        <br>
-
-        <label for="bandeira">Bandeira:</label><br>
-        <select id="bandeira" name="bandeira">
-          <option value="ELO">ELO</option>
-          <option value="MASTERCARD" selected>Mastercard</option>
-          <option value="VISA">Visa</option>
-        </select><br>
-
-        <button class="button">Salvar Cartão</button>
-      </form>
-
-    </div>
-  </div>
-
 
   <footer>
     <div class="footer-column">
