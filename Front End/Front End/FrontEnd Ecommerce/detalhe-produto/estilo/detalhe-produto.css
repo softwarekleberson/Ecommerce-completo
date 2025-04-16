@@ -63,9 +63,9 @@
 
 #sinopse {
   text-align: left;
-  text-indent: 0;
+  text-indent: 30px;
   margin-top: 20px;
-  padding-left: 30px;
+  padding: 25px;
 
   font-family: "Lato", "sans-serif";
   ;

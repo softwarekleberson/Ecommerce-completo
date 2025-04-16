@@ -5,9 +5,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espaçamento entre seções */
+    gap: 10px; /* Espaçamento entre seções */
     padding: 0 60px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* Seção de cada categoria */

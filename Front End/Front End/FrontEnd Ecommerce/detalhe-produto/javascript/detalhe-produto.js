@@ -39,7 +39,7 @@ function preencherDetalhes(livro) {
   document.getElementById('titulo').textContent = livro.titulo;
   document.getElementById('autor').textContent = livro.autores;
   document.getElementById('sinopse').textContent = livro.sinopse;
-  document.getElementById('preco').textContent = livro.preco.toFixed(2);
+  document.getElementById('preco').textContent = 'R$ : ' + livro.preco.toFixed(2);
 }
 
 function exibirImagemPrincipal(urlImagem) {

@@ -1,0 +1,30 @@
+.carrosel-sacolas {
+    display: flex;
+    margin-left: 60px;
+    margin-top: 50px;
+    gap: 20px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(12, 12, 12);
+}
+
+.preco {
+    display: block;
+
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(12, 12, 12);
+    margin-top: 25px;
+} 
+
+.sacola-img {
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
