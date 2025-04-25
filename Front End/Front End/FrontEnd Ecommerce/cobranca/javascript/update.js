@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const dados = await response.json();
 
-        // Preenchendo o formulário com os dados da cobrança
         document.getElementById('principal').checked = dados.principal;
         document.getElementById('tipoResidenciaCobranca').value = dados.tipoResidencia;
         document.getElementById('receptorCobranca').value = dados.receptor;

@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Cria o card fixo "Adicionar Cobrança"
   const cardFixo = document.createElement('div');
   cardFixo.classList.add('card');
   cardFixo.innerHTML = `
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
   userList.appendChild(cardFixo);
 
-  // Requisição para buscar cartões
   fetch('http://localhost:8080/cliente/cartoes', {
     method: 'GET',
     headers: {
@@ -59,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Função para excluir cartão
 function excluirCartao(cartaoId) {
   if (!confirm("Tem certeza que deseja excluir este cartão? Esta ação não pode ser desfeita.")) {
     return;

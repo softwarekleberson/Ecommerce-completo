@@ -2,7 +2,7 @@ async function enviarDados() {
     const token = localStorage.getItem("token");
     if (!token) {
         console.error("Erro: Token não encontrado. O usuário pode não estar autenticado.");
-        alert("Erro: Usuário não autenticado. Faça login novamente.");
+        alert("Usuário não autenticado. Faça login novamente.");
         return;
     }
 

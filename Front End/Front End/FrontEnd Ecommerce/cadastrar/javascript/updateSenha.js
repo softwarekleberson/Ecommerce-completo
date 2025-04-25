@@ -1,14 +1,14 @@
 document.getElementById("form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Impede o recarregamento da página
+    event.preventDefault(); 
 
-    await enviarDados(); // Chama a função para processar os dados
+    await enviarDados(); 
 });
 
 async function enviarDados() {
     const token = localStorage.getItem("token");
 
     if (!token) {
-        console.error("Erro: Token não encontrado. O usuário pode não estar autenticado.");
+        console.error("Token não encontrado. O usuário pode não estar autenticado.");
         alert("Erro de autenticação! Faça login novamente.");
         return;
     }
@@ -43,7 +43,7 @@ async function enviarDados() {
             body: JSON.stringify(dados)
         });
 
-        const responseText = await response.text(); // <- AQUI é text() ao invés de json()
+        const responseText = await response.text(); 
 
         if (!response.ok) {
             throw new Error(responseText || "Erro ao atualizar a senha");

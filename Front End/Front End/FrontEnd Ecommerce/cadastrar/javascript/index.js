@@ -58,7 +58,7 @@ document.getElementById("form").addEventListener("submit", async function (event
 
         if (!response.ok) {
             const errorData = await response.json();
-            alert("Erro ao enviar o formulário:", errorData);
+            alert("Erro ao cadastrar novo cliente:");
             throw new Error(`Erro ao enviar o formulário: ${errorData.message || 'Erro desconhecido'}`);
         }
 

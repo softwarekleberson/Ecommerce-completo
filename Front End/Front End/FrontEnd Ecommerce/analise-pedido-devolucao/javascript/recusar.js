@@ -6,7 +6,7 @@ document.getElementById('recusar').addEventListener('click', function (event) {
     const esperandoDevolucaoOuRecebido = document.getElementById('esperandoDevolucaoOuRecebido').value;
     const produtoVoltaParaEstoque = document.getElementById('produtoVoltaParaEstoque').value;
     const estadoProduto = document.getElementById('estadoProduto').value;
-    const token = localStorage.getItem('token'); // Pegando o token do localStorage
+    const token = localStorage.getItem('token'); 
 
     if (!token) {
         console.error("Token não encontrado!");
@@ -25,7 +25,7 @@ document.getElementById('recusar').addEventListener('click', function (event) {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}` // Incluindo o token no cabeçalho
+            'Authorization': `Bearer ${token}` 
         },
         body: JSON.stringify(data)
     })

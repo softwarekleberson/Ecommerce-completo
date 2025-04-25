@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const data = await response.json();
 
-            // Limpa o conteúdo anterior
             userList.innerHTML = '';
 
-            // 👉 Adiciona o card fixo
             const cardFixo = document.createElement("div");
             cardFixo.className = "card";
             cardFixo.innerHTML = `
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             userList.appendChild(cardFixo);
 
-            // 👉 Adiciona os cards dinâmicos
             if (data.hasOwnProperty('content') && Array.isArray(data.content)) {
                 data.content.forEach(endereco => {
                     const div = document.createElement('div');

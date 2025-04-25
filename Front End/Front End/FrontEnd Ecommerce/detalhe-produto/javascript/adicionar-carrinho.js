@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const quantidade = 1; // Valor fixo definido aqui
+        const quantidade = 1; 
 
         try {
             const response = await fetch(`http://localhost:8080/cliente/pedidos/${id}`, {
